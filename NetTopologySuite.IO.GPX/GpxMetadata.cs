@@ -7,8 +7,9 @@ namespace NetTopologySuite.IO
 {
     public sealed class GpxMetadata
     {
-        public GpxMetadata(string name, string description, GpxPerson author, GpxCopyright copyright, ImmutableArray<GpxWebLink> webLinks, DateTime? creationTime, string keywords, GpxBoundingBox bounds, object extensions)
+        public GpxMetadata(string creator, string name, string description, GpxPerson author, GpxCopyright copyright, ImmutableArray<GpxWebLink> webLinks, DateTime? creationTime, string keywords, GpxBoundingBox bounds, object extensions)
         {
+            this.Creator = creator;
             this.Name = name;
             this.Description = description;
             this.Author = author;
@@ -20,7 +21,7 @@ namespace NetTopologySuite.IO
             this.Extensions = extensions;
         }
 
-        public static GpxMetadata Load(XElement element, GpxReaderSettings settings, Func<XElement, object> extensionCallback)
+        public static GpxMetadata Load(XElement element, GpxReaderSettings settings, string creator, Func<XElement, object> extensionCallback)
         {
             if (element is null)
             {
@@ -32,12 +33,18 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(settings));
             }
 
+            if (creator is null)
+            {
+                throw new ArgumentNullException(nameof(creator));
+            }
+
             if (extensionCallback is null)
             {
                 throw new ArgumentNullException(nameof(extensionCallback));
             }
 
             return new GpxMetadata(
+                creator: creator,
                 name: element.GpxElement("name")?.Value,
                 description: element.GpxElement("desc")?.Value,
                 author: GpxPerson.Load(element.GpxElement("author")),
@@ -48,6 +55,8 @@ namespace NetTopologySuite.IO
                 bounds: GpxBoundingBox.Load(element.GpxElement("bounds")),
                 extensions: extensionCallback(element.GpxElement("extensions")));
         }
+
+        public string Creator { get; }
 
         public string Name { get; }
 

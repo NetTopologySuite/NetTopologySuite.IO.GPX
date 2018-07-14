@@ -80,7 +80,7 @@ namespace NetTopologySuite.IO
                         // ideally, it should all be in this order, since the XSD validation
                         // would fail otherwise, but whatever.
                         case "metadata" when !readMetadata:
-                            ReadMetadata(reader, settings, visitor);
+                            ReadMetadata(reader, settings, creator, visitor);
                             readMetadata = true;
                             break;
 
@@ -123,10 +123,10 @@ namespace NetTopologySuite.IO
             return false;
         }
 
-        private static void ReadMetadata(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
+        private static void ReadMetadata(XmlReader reader, GpxReaderSettings settings, string creator, GpxVisitorBase visitor)
         {
             var element = (XElement)XNode.ReadFrom(reader);
-            var metadata = GpxMetadata.Load(element, settings, visitor.ConvertMetadataExtensionElement);
+            var metadata = GpxMetadata.Load(element, settings, creator, visitor.ConvertMetadataExtensionElement);
             visitor.VisitMetadata(metadata);
         }
 

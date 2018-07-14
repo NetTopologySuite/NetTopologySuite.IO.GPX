@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Xml;
+using System.Xml.Linq;
+
 using NetTopologySuite.Geometries;
 
 using Xunit;
@@ -13,9 +15,13 @@ namespace NetTopologySuite.IO
         [MemberData(nameof(GpxData))]
         public void Read(string gpxPath)
         {
-            using (var reader = XmlReader.Create(gpxPath))
+            string gpx = File.ReadAllText(gpxPath);
+            var gpxElement = XDocument.Parse(gpx).Root;
+            using (var stringReader = new StringReader(gpx))
+            using (var reader = XmlReader.Create(stringReader))
             {
-                GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
+                var (metadata, features) = GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
+                Assert.Equal(gpxElement.Attribute("creator").Value, metadata.Creator);
             }
         }
 
