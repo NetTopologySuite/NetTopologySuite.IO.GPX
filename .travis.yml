@@ -1,0 +1,8 @@
+language: csharp
+mono: none
+sudo: false
+dotnet: 2.1.300
+dist: trusty
+script:
+- dotnet build -c Release
+- dotnet test NetTopologySuite.IO.GPX.Tests --no-build --no-restore -c Release
