@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using System.Xml.Schema;
+
 using GeoAPI.Geometries;
 using NetTopologySuite.Features;
 
@@ -13,17 +9,17 @@ namespace NetTopologySuite.IO
 {
     public static class GpxReader
     {
-        private static readonly XmlReaderSettings Settings = new XmlReaderSettings
+        public static (GpxMetadata metadata, Feature[] features) ReadFeatures(XmlReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)
         {
-            CloseInput = false,
-        };
+            if (geometryFactory is null)
+            {
+                throw new ArgumentNullException(nameof(geometryFactory));
+            }
 
-        public static (GpxMetadata metadata, Feature[] features) ReadFeatures(TextReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)
-        {
             return ReadFeatures(reader, settings, new NetTopologySuiteFeatureBuilderVisitor(geometryFactory));
         }
 
-        public static (GpxMetadata metadata, Feature[] features) ReadFeatures(TextReader reader, GpxReaderSettings settings, NetTopologySuiteFeatureBuilderVisitor visitor)
+        public static (GpxMetadata metadata, Feature[] features) ReadFeatures(XmlReader reader, GpxReaderSettings settings, NetTopologySuiteFeatureBuilderVisitor visitor)
         {
             if (reader is null)
             {
@@ -39,7 +35,7 @@ namespace NetTopologySuite.IO
             return visitor.Terminate();
         }
 
-        public static void Read(TextReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
+        public static void Read(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
             if (reader is null)
             {
@@ -52,71 +48,68 @@ namespace NetTopologySuite.IO
             }
 
             settings = settings ?? new GpxReaderSettings();
-            using (var xmlReader = XmlReader.Create(reader, Settings, Helpers.GpxNamespace))
+            while (reader.ReadToFollowing("gpx", Helpers.GpxNamespace))
             {
-                while (xmlReader.ReadToFollowing("gpx", Helpers.GpxNamespace))
+                string version = null;
+                string creator = null;
+                for (bool hasAttribute = reader.MoveToFirstAttribute(); hasAttribute; hasAttribute = reader.MoveToNextAttribute())
                 {
-                    string version = null;
-                    string creator = null;
-                    for (bool hasAttribute = xmlReader.MoveToFirstAttribute(); hasAttribute; hasAttribute = xmlReader.MoveToNextAttribute())
+                    switch (reader.Name)
                     {
-                        switch (xmlReader.Name)
-                        {
-                            case "version":
-                                version = xmlReader.Value;
-                                break;
+                        case "version":
+                            version = reader.Value;
+                            break;
 
-                            case "creator":
-                                creator = xmlReader.Value;
-                                break;
-                        }
+                        case "creator":
+                            creator = reader.Value;
+                            break;
                     }
+                }
 
-                    if (version != "1.1" || creator is null)
+                if (version != "1.1" || creator is null)
+                {
+                    reader.Skip();
+                }
+
+                bool readMetadata = false;
+                bool readExtensions = false;
+                while (ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement))
+                {
+                    switch (reader.Name)
                     {
-                        xmlReader.Skip();
-                    }
+                        // ideally, it should all be in this order, since the XSD validation
+                        // would fail otherwise, but whatever.
+                        case "metadata" when !readMetadata:
+                            ReadMetadata(reader, settings, visitor);
+                            readMetadata = true;
+                            break;
 
-                    bool readMetadata = false;
-                    bool readExtensions = false;
-                    while (ReadTo(xmlReader, XmlNodeType.Element, XmlNodeType.EndElement))
-                    {
-                        switch (xmlReader.Name)
-                        {
-                            // ideally, it should all be in this order, since the XSD validation
-                            // would fail otherwise, but whatever.
-                            case "metadata" when !readMetadata:
-                                ReadMetadata(xmlReader, settings, visitor);
-                                readMetadata = true;
-                                break;
+                        case "wpt":
+                            ReadWaypoint(reader, settings, visitor);
+                            break;
 
-                            case "wpt":
-                                ReadWaypoint(xmlReader, settings, visitor);
-                                break;
+                        case "rte":
+                            ReadRoute(reader, settings, visitor);
+                            break;
 
-                            case "rte":
-                                ReadRoute(xmlReader, settings, visitor);
-                                break;
+                        case "trk":
+                            ReadTrack(reader, settings, visitor);
+                            break;
 
-                            case "trk":
-                                ReadTrack(xmlReader, settings, visitor);
-                                break;
-
-                            case "extensions" when !readExtensions:
-                                visitor.ConvertMetadataExtensionElement((XElement)XNode.ReadFrom(xmlReader));
-                                readExtensions = true;
-                                break;
-                        }
+                        case "extensions" when !readExtensions:
+                            visitor.ConvertMetadataExtensionElement((XElement)XNode.ReadFrom(reader));
+                            readExtensions = true;
+                            break;
                     }
                 }
             }
         }
 
-        private static bool ReadTo(XmlReader xmlReader, XmlNodeType trueNodeType, XmlNodeType falseNodeType)
+        private static bool ReadTo(XmlReader reader, XmlNodeType trueNodeType, XmlNodeType falseNodeType)
         {
-            while (xmlReader.Read())
+            while (reader.Read())
             {
-                var nt = xmlReader.NodeType;
+                var nt = reader.NodeType;
                 if (nt == trueNodeType)
                 {
                     return true;
@@ -130,30 +123,30 @@ namespace NetTopologySuite.IO
             return false;
         }
 
-        private static void ReadMetadata(XmlReader xmlReader, GpxReaderSettings settings, GpxVisitorBase visitor)
+        private static void ReadMetadata(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
-            var element = (XElement)XNode.ReadFrom(xmlReader);
+            var element = (XElement)XNode.ReadFrom(reader);
             var metadata = GpxMetadata.Load(element, settings, visitor.ConvertMetadataExtensionElement);
             visitor.VisitMetadata(metadata);
         }
 
-        private static void ReadWaypoint(XmlReader xmlReader, GpxReaderSettings settings, GpxVisitorBase visitor)
+        private static void ReadWaypoint(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
-            var element = (XElement)XNode.ReadFrom(xmlReader);
+            var element = (XElement)XNode.ReadFrom(reader);
             var waypoint = GpxWaypoint.Load(element, settings, visitor.ConvertWaypointExtensionElement);
             visitor.VisitWaypoint(waypoint);
         }
 
-        private static void ReadRoute(XmlReader xmlReader, GpxReaderSettings settings, GpxVisitorBase visitor)
+        private static void ReadRoute(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
-            var element = (XElement)XNode.ReadFrom(xmlReader);
+            var element = (XElement)XNode.ReadFrom(reader);
             var route = GpxRoute.Load(element, settings, visitor.ConvertRouteExtensionElement, visitor.ConvertWaypointExtensionElement);
             visitor.VisitRoute(route);
         }
 
-        private static void ReadTrack(XmlReader xmlReader, GpxReaderSettings settings, GpxVisitorBase visitor)
+        private static void ReadTrack(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
-            var element = (XElement)XNode.ReadFrom(xmlReader);
+            var element = (XElement)XNode.ReadFrom(reader);
             var track = GpxTrack.Load(element, settings, visitor.ConvertTrackExtensionElement, visitor.ConvertTrackSegmentExtensionElement, visitor.ConvertWaypointExtensionElement);
             visitor.VisitTrack(track);
         }
