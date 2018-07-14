@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <SolutionDir Condition=" '$(SolutionDir)' == '' ">$(ProjectDir)..\</SolutionDir>
+    <RootNamespace>NetTopologySuite.IO</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)NetTopologySuite.IO.GPX\NetTopologySuite.IO.GPX.csproj" />
+
+    <PackageReference Include="NetTopologySuite" Version="1.15.0" />
+    <PackageReference Include="NetTopologySuite.Features" Version="1.15.0-pre002" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0-preview-20180610-02" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0-rc.1.build4038" />
+    <PackageReference Include="xunit" Version="2.4.0-rc.1.build4038" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SampleData\*.gpx" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
