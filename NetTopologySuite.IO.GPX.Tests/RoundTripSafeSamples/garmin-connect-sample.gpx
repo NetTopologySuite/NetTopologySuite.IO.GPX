@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Garmin Connect"
+  xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <desc>airbreather grabbed this from https://developer.garmin.com/downloads/connect-api/sample_file.gpx</desc>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2015-01-20T13:26:30Z</time>
+  </metadata>
+  <trk>
+    <name>Run at  river side</name>
+    <trkseg>
+      <trkpt lon="121.6330941952765" lat="25.063348766416311">
+        <ele>19.799999237060547</ele>
+        <time>2015-01-20T13:26:30Z</time>
+      </trkpt>
+      <trkpt lon="121.63292722776532" lat="25.06322412751615">
+        <ele>19</ele>
+        <time>2015-01-20T13:26:41Z</time>
+      </trkpt>
+      <trkpt lon="121.63276956416667" lat="25.063085993751884">
+        <ele>19.799999237060547</ele>
+        <time>2015-01-20T13:26:49Z</time>
+      </trkpt>
+      <trkpt lon="121.63261651061475" lat="25.062967473641038">
+        <ele>21.600000381469727</ele>
+        <time>2015-01-20T13:26:57Z</time>
+      </trkpt>
+      <trkpt lon="121.63244836963713" lat="25.062837218865752">
+        <ele>21.799999237060547</ele>
+        <time>2015-01-20T13:27:06Z</time>
+      </trkpt>
+      <trkpt lon="121.63230814039707" lat="25.062705120071769">
+        <ele>24.399999618530273</ele>
+        <time>2015-01-20T13:27:15Z</time>
+      </trkpt>
+      <trkpt lon="121.63216346874833" lat="25.062573524191976">
+        <ele>23.600000381469727</ele>
+        <time>2015-01-20T13:27:25Z</time>
+      </trkpt>
+      <trkpt lon="121.63202122785151" lat="25.062446538358927">
+        <ele>23.399999618530273</ele>
+        <time>2015-01-20T13:27:34Z</time>
+      </trkpt>
+      <trkpt lon="121.63186809048057" lat="25.0623011123389">
+        <ele>25</ele>
+        <time>2015-01-20T13:27:43Z</time>
+      </trkpt>
+      <trkpt lon="121.63173724897206" lat="25.0621578656137">
+        <ele>25.600000381469727</ele>
+        <time>2015-01-20T13:27:51Z</time>
+      </trkpt>
+      <trkpt lon="121.63159877993166" lat="25.06202258169651">
+        <ele>25.200000762939453</ele>
+        <time>2015-01-20T13:27:59Z</time>
+      </trkpt>
+      <trkpt lon="121.63145410828292" lat="25.061879167333245">
+        <ele>27.399999618530273</ele>
+        <time>2015-01-20T13:28:08Z</time>
+      </trkpt>
+      <trkpt lon="121.63132854737341" lat="25.061717564240098">
+        <ele>29.399999618530273</ele>
+        <time>2015-01-20T13:28:17Z</time>
+      </trkpt>
+      <trkpt lon="121.63120281882584" lat="25.061573646962643">
+        <ele>29.200000762939453</ele>
+        <time>2015-01-20T13:28:26Z</time>
+      </trkpt>
+      <trkpt lon="121.63106937892735" lat="25.061426712200046">
+        <ele>28.200000762939453</ele>
+        <time>2015-01-20T13:28:35Z</time>
+      </trkpt>
+      <trkpt lon="121.63093627430499" lat="25.061274329200387">
+        <ele>26</ele>
+        <time>2015-01-20T13:28:45Z</time>
+      </trkpt>
+      <trkpt lon="121.63082580082119" lat="25.06111959926784">
+        <ele>24.399999618530273</ele>
+        <time>2015-01-20T13:28:54Z</time>
+      </trkpt>
+      <trkpt lon="121.63071834482253" lat="25.060943327844143">
+        <ele>23.799999237060547</ele>
+        <time>2015-01-20T13:29:03Z</time>
+      </trkpt>
+      <trkpt lon="121.63059387356043" lat="25.060796476900578">
+        <ele>24.399999618530273</ele>
+        <time>2015-01-20T13:29:12Z</time>
+      </trkpt>
+      <trkpt lon="121.63046043366194" lat="25.060653397813439">
+        <ele>23.600000381469727</ele>
+        <time>2015-01-20T13:29:21Z</time>
+      </trkpt>
+      <trkpt lon="121.63034199737012" lat="25.060491459444165">
+        <ele>22.799999237060547</ele>
+        <time>2015-01-20T13:29:30Z</time>
+      </trkpt>
+      <trkpt lon="121.63024216890335" lat="25.060327090322971">
+        <ele>22.200000762939453</ele>
+        <time>2015-01-20T13:29:39Z</time>
+      </trkpt>
+      <trkpt lon="121.63015013560653" lat="25.060149729251862">
+        <ele>21.600000381469727</ele>
+        <time>2015-01-20T13:29:48Z</time>
+      </trkpt>
+      <trkpt lon="121.63006388582289" lat="25.05998007953167">
+        <ele>21.399999618530273</ele>
+        <time>2015-01-20T13:29:57Z</time>
+      </trkpt>
+      <trkpt lon="121.62997679784894" lat="25.05979785695672">
+        <ele>21.200000762939453</ele>
+        <time>2015-01-20T13:30:07Z</time>
+      </trkpt>
+      <trkpt lon="121.62990052253008" lat="25.059619573876262">
+        <ele>21.399999618530273</ele>
+        <time>2015-01-20T13:30:16Z</time>
+      </trkpt>
+      <!-- truncated here -->
+    </trkseg>
+  </trk>
+</gpx>

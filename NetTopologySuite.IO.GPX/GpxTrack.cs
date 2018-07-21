@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
@@ -61,6 +62,34 @@ namespace NetTopologySuite.IO
                 classification: element.GpxElement("type")?.Value,
                 segments: ImmutableArray.CreateRange(element.GpxElements("trkseg").Select(el => GpxTrackSegment.LoadNoValidation(el, settings))),
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackExtensionElement(extensionsElement.Elements()));
+        }
+
+        public void Save(XmlWriter writer, GpxWriterSettings settings)
+        {
+            if (writer is null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
+
+            if (settings is null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            writer.WriteOptionalElementValue("name", this.Name);
+            writer.WriteOptionalElementValue("cmt", this.Comment);
+            writer.WriteOptionalElementValue("desc", this.Description);
+            writer.WriteOptionalElementValue("src", this.Source);
+            writer.WriteElementValues("link", this.Links);
+            writer.WriteOptionalElementValue("number", this.Number);
+            writer.WriteOptionalElementValue("type", this.Classification);
+            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertRouteExtension);
+            foreach (var segment in this.Segments)
+            {
+                writer.WriteStartElement("trkseg");
+                segment.SaveNoValidation(writer, settings);
+                writer.WriteEndElement();
+            }
         }
     }
 }

@@ -147,21 +147,13 @@ namespace NetTopologySuite.IO
 
         public void Save(XmlWriter writer, GpxWriterSettings settings, Func<object, IEnumerable<XElement>> extensionCallback)
         {
-            if (writer is null)
-            {
-                throw new ArgumentNullException(nameof(writer));
-            }
+            this.SaveNoValidation(writer ?? throw new ArgumentNullException(nameof(writer)),
+                                  settings ?? throw new ArgumentNullException(nameof(settings)),
+                                  extensionCallback ?? throw new ArgumentNullException(nameof(extensionCallback)));
+        }
 
-            if (settings is null)
-            {
-                throw new ArgumentNullException(nameof(settings));
-            }
-
-            if (extensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(extensionCallback));
-            }
-
+        internal void SaveNoValidation(XmlWriter writer, GpxWriterSettings settings, Func<object, IEnumerable<XElement>> extensionCallback)
+        {
             writer.WriteAttributeString("lat", this.Latitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
             writer.WriteAttributeString("lon", this.Longitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
             writer.WriteOptionalElementValue("ele", this.ElevationInMeters);

@@ -9,11 +9,12 @@ using Xunit;
 
 namespace NetTopologySuite.IO
 {
+    // the more "interesting" tests (the round-trip ones) are in GpxWriterTests.
     public sealed class GpxReaderTests
     {
         [Theory]
-        [MemberData(nameof(GpxData))]
-        public void Read(string gpxPath)
+        [MemberData(nameof(AllSampleGpxFiles))]
+        public void ReadSmokeTest(string gpxPath)
         {
             string gpx = File.ReadAllText(gpxPath);
             var gpxElement = XDocument.Parse(gpx).Root;
@@ -33,7 +34,7 @@ namespace NetTopologySuite.IO
         [InlineData("copyright-regression-insane-year-2.gpx", 20072007)]
         public void CopyrightYearRegressionTest(string gpxFileName, int expectedYear)
         {
-            using (var reader = XmlReader.Create(Path.Combine("SampleData", gpxFileName)))
+            using (var reader = XmlReader.Create(Path.Combine("CopyrightYearRegressionSamples", gpxFileName)))
             {
                 var (metadata, _) = GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
                 Assert.True(metadata.Copyright?.Year.HasValue);
@@ -42,6 +43,6 @@ namespace NetTopologySuite.IO
             }
         }
 
-        public static object[][] GpxData => Array.ConvertAll(Directory.GetFiles("SampleData", "*.gpx", SearchOption.TopDirectoryOnly), fl => new object[] { fl });
+        public static object[][] AllSampleGpxFiles => Array.ConvertAll(Directory.GetFiles(".", "*.gpx", SearchOption.AllDirectories), fl => new object[] { fl });
     }
 }

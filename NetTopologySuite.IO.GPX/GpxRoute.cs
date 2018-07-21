@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
@@ -61,6 +63,35 @@ namespace NetTopologySuite.IO
                 classification: element.GpxElement("type")?.Value,
                 waypoints: new ImmutableGpxWaypointTable(element.GpxElements("rtept"), settings, settings.ExtensionReader.ConvertRoutePointExtensionElement),
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertRouteExtensionElement(extensionsElement.Elements()));
+        }
+
+        public void Save(XmlWriter writer, GpxWriterSettings settings)
+        {
+            if (writer is null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
+
+            if (settings is null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            writer.WriteOptionalElementValue("name", this.Name);
+            writer.WriteOptionalElementValue("cmt", this.Comment);
+            writer.WriteOptionalElementValue("desc", this.Description);
+            writer.WriteOptionalElementValue("src", this.Source);
+            writer.WriteElementValues("link", this.Links);
+            writer.WriteOptionalElementValue("number", this.Number);
+            writer.WriteOptionalElementValue("type", this.Classification);
+            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertRouteExtension);
+            Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertRoutePointExtension;
+            foreach (var waypoint in this.Waypoints)
+            {
+                writer.WriteStartElement("rtept");
+                waypoint.SaveNoValidation(writer, settings, extensionCallback);
+                writer.WriteEndElement();
+            }
         }
     }
 }

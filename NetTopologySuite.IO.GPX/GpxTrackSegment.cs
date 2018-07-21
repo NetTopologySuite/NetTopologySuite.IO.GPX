@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
@@ -32,6 +34,25 @@ namespace NetTopologySuite.IO
             return new GpxTrackSegment(
                 waypoints: new ImmutableGpxWaypointTable(element.GpxElements("trkpt"), settings, settings.ExtensionReader.ConvertTrackPointExtensionElement),
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackSegmentExtensionElement(extensionsElement.Elements()));
+        }
+
+        public void Save(XmlWriter writer, GpxWriterSettings settings)
+        {
+            this.SaveNoValidation(writer ?? throw new ArgumentNullException(nameof(writer)),
+                                  settings ?? throw new ArgumentNullException(nameof(settings)));
+        }
+
+        internal void SaveNoValidation(XmlWriter writer, GpxWriterSettings settings)
+        {
+            Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertTrackPointExtension;
+            foreach (var waypoint in this.Waypoints)
+            {
+                writer.WriteStartElement("trkpt");
+                waypoint.Save(writer, settings, extensionCallback);
+                writer.WriteEndElement();
+            }
+
+            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertTrackSegmentExtension);
         }
     }
 }

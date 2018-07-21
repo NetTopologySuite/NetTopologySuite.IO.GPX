@@ -32,7 +32,7 @@ namespace NetTopologySuite.IO
         {
             if (element is null)
             {
-                return new GpxMetadata(creator);
+                throw new ArgumentNullException(nameof(element));
             }
 
             if (settings is null)

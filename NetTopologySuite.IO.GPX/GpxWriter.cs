@@ -41,6 +41,20 @@ namespace NetTopologySuite.IO
                 writer.WriteEndElement();
             }
 
+            foreach (var route in routes ?? Enumerable.Empty<GpxRoute>())
+            {
+                writer.WriteStartElement("rte");
+                route.Save(writer, settings);
+                writer.WriteEndElement();
+            }
+
+            foreach (var track in tracks ?? Enumerable.Empty<GpxTrack>())
+            {
+                writer.WriteStartElement("trk");
+                track.Save(writer, settings);
+                writer.WriteEndElement();
+            }
+
             writer.WriteEndElement();
             writer.WriteEndDocument();
         }

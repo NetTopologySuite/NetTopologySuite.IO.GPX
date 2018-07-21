@@ -71,19 +71,27 @@ namespace NetTopologySuite.IO
                     reader.Skip();
                 }
 
-                bool readMetadata = false;
+                bool expectingMetadata = true;
                 bool readExtensions = false;
                 while (ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement))
                 {
+                    if (expectingMetadata)
+                    {
+                        expectingMetadata = false;
+                        if (reader.Name == "metadata")
+                        {
+                            ReadMetadata(reader, settings, creator, visitor);
+                        }
+                        else
+                        {
+                            visitor.VisitMetadata(new GpxMetadata(creator));
+                        }
+                    }
+
                     switch (reader.Name)
                     {
                         // ideally, it should all be in this order, since the XSD validation
                         // would fail otherwise, but whatever.
-                        case "metadata" when !readMetadata:
-                            ReadMetadata(reader, settings, creator, visitor);
-                            readMetadata = true;
-                            break;
-
                         case "wpt":
                             ReadWaypoint(reader, settings, visitor);
                             break;

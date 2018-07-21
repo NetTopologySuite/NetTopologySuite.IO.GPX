@@ -42,14 +42,7 @@ namespace NetTopologySuite.IO
             base.VisitRoute(route);
 
             // a route is an ILineString feature.
-            var coords = new Coordinate[route.Waypoints.Count];
-            for (int i = 0; i < coords.Length; i++)
-            {
-                var waypoint = route.Waypoints[i];
-                coords[i] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
-            }
-
-            var lineString = this.geometryFactory.CreateLineString(coords);
+            var lineString = this.BuildLineString(route.Waypoints);
             var attributes = new AttributesTable { { "rte", route } };
             var feature = new Feature(lineString, attributes);
             this.currentFeatures.Add(feature);
@@ -63,15 +56,7 @@ namespace NetTopologySuite.IO
             var lineStrings = new ILineString[track.Segments.Length];
             for (int i = 0; i < lineStrings.Length; i++)
             {
-                var waypoints = track.Segments[i].Waypoints;
-                var coords = new Coordinate[waypoints.Count];
-                for (int j = 0; j < coords.Length; j++)
-                {
-                    var waypoint = waypoints[j];
-                    coords[j] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
-                }
-
-                lineStrings[i] = this.geometryFactory.CreateLineString(coords);
+                lineStrings[i] = this.BuildLineString(track.Segments[i].Waypoints);
             }
 
             var multiLineString = this.geometryFactory.CreateMultiLineString(lineStrings);
@@ -86,6 +71,28 @@ namespace NetTopologySuite.IO
             this.currentMetadata = null;
             this.currentFeatures.Clear();
             return result;
+        }
+
+        private ILineString BuildLineString(ImmutableGpxWaypointTable waypoints)
+        {
+            Coordinate[] coords;
+            if (waypoints.Count == 1)
+            {
+                var waypoint = waypoints[0];
+                coords = new Coordinate[2];
+                coords[0] = coords[1] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
+            }
+            else
+            {
+                coords = new Coordinate[waypoints.Count];
+                for (int i = 0; i < coords.Length; i++)
+                {
+                    var waypoint = waypoints[i];
+                    coords[i] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
+                }
+            }
+
+            return this.geometryFactory.CreateLineString(coords);
         }
     }
 }

@@ -119,7 +119,11 @@ namespace NetTopologySuite.IO
                 Add(ref secondsSinceLastDgpsUpdates, Helpers.ParseDouble(element.GpxElement("ageofdgpsdata")?.Value), cnt);
                 Add(ref dgpsStationIds, Helpers.ParseDgpsStationId(element.GpxElement("dgpsid")?.Value), cnt);
                 var extensionsElement = element.GpxElement("extensions");
-                if (!(extensionsElement is null))
+                if (extensionsElement is null)
+                {
+                    Add(ref allExtensions, null, cnt);
+                }
+                else
                 {
                     Add(ref allExtensions, extensionCallback(extensionsElement.Elements()), cnt);
                 }
@@ -308,7 +312,7 @@ namespace NetTopologySuite.IO
                 }
             }
 
-            public T? this[int index] => (this.flags.IsDefault || !this.flags[index]) ? this.values[index] : default(T?);
+            public T? this[int index] => (this.flags.IsDefault || !this.flags[index]) ? default(T?) : this.values[index];
         }
     }
 }
