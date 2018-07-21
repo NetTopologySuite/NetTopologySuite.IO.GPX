@@ -38,7 +38,7 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
-        public static GpxTrack Load(XElement element, GpxReaderSettings settings, Func<XElement, object> trackExtensionCallback, Func<XElement, object> trackSegmentExtensionCallback, Func<XElement, object> waypointExtensionCallback)
+        public static GpxTrack Load(XElement element, GpxReaderSettings settings)
         {
             if (element is null)
             {
@@ -50,21 +50,7 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            if (trackExtensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(trackExtensionCallback));
-            }
-
-            if (trackSegmentExtensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(trackSegmentExtensionCallback));
-            }
-
-            if (waypointExtensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(waypointExtensionCallback));
-            }
-
+            var extensionsElement = element.GpxElement("extensions");
             return new GpxTrack(
                 name: element.GpxElement("name")?.Value,
                 comment: element.GpxElement("cmt")?.Value,
@@ -73,8 +59,8 @@ namespace NetTopologySuite.IO
                 links: ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)),
                 number: Helpers.ParseUInt32(element.GpxElement("number")?.Value),
                 classification: element.GpxElement("type")?.Value,
-                segments: ImmutableArray.CreateRange(element.GpxElements("trkseg").Select(el => GpxTrackSegment.LoadNoValidation(el, settings, trackSegmentExtensionCallback, waypointExtensionCallback))),
-                extensions: trackExtensionCallback(element.GpxElement("extensions")));
+                segments: ImmutableArray.CreateRange(element.GpxElements("trkseg").Select(el => GpxTrackSegment.LoadNoValidation(el, settings))),
+                extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackExtensionElement(extensionsElement.Elements()));
         }
     }
 }

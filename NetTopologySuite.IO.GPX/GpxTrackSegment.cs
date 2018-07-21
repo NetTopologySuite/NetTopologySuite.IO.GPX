@@ -15,24 +15,23 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
-        public static GpxTrackSegment Load(XElement element, GpxReaderSettings settings, Func<XElement, object> trackSegmentExtensionCallback, Func<XElement, object> waypointExtensionCallback)
+        public static GpxTrackSegment Load(XElement element, GpxReaderSettings settings)
         {
             return LoadNoValidation(element,
-                                    settings ?? throw new ArgumentNullException(nameof(settings)),
-                                    trackSegmentExtensionCallback ?? throw new ArgumentNullException(nameof(trackSegmentExtensionCallback)),
-                                    waypointExtensionCallback ?? throw new ArgumentNullException(nameof(waypointExtensionCallback)));
+                                    settings ?? throw new ArgumentNullException(nameof(settings)));
         }
 
-        internal static GpxTrackSegment LoadNoValidation(XElement element, GpxReaderSettings settings, Func<XElement, object> trackSegmentExtensionCallback, Func<XElement, object> waypointExtensionCallback)
+        internal static GpxTrackSegment LoadNoValidation(XElement element, GpxReaderSettings settings)
         {
             if (element is null)
             {
                 return null;
             }
 
+            var extensionsElement = element.GpxElement("extensions");
             return new GpxTrackSegment(
-                waypoints: new ImmutableGpxWaypointTable(element.GpxElements("trkpt"), settings, waypointExtensionCallback),
-                extensions: trackSegmentExtensionCallback(element.GpxElement("extensions")));
+                waypoints: new ImmutableGpxWaypointTable(element.GpxElements("trkpt"), settings, settings.ExtensionReader.ConvertTrackPointExtensionElement),
+                extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackSegmentExtensionElement(extensionsElement.Elements()));
         }
     }
 }

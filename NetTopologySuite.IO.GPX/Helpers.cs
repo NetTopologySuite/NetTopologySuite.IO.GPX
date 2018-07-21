@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -10,6 +13,38 @@ namespace NetTopologySuite.IO
     internal static class Helpers
     {
         public const string GpxNamespace = "http://www.topografix.com/GPX/1/1";
+
+        private static readonly string[] FixKindStrings = { "none", "2d", "3d", "dgps", "pps" };
+
+        private static readonly Regex YearParseRegex = new Regex(@"^(?<yearFrag>-?(([1-9]\d\d\d+)|(0\d\d\d)))(Z|([+-]((((0\d)|(1[0-3])):[0-5]\d)|(14:00))))?$", RegexOptions.ExplicitCapture | RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+        // https://github.com/dotnet/coreclr/blob/cc52c67f5a0a26194c42fbd1b59e284d6727635a/src/System.Private.CoreLib/shared/System/Double.cs#L47-L54
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsFinite(this double d)
+        {
+            long bits = BitConverter.DoubleToInt64Bits(d);
+            return (bits & 0x7FFFFFFFFFFFFFFF) < 0x7FF0000000000000;
+        }
+
+        public static string ToRoundTripString(this double val, IFormatProvider formatProvider)
+        {
+            string result = val.ToString("R", formatProvider);
+
+            // work around dotnet/coreclr#13106
+            if (val.IsFinite())
+            {
+                if (val != double.Parse(result, formatProvider))
+                {
+                    result = val.ToString("G16", formatProvider);
+                    if (val != double.Parse(result, formatProvider))
+                    {
+                        result = val.ToString("G17", formatProvider);
+                    }
+                }
+            }
+
+            return result;
+        }
 
         public static string ListToString<TElement>(IEnumerable<TElement> lst)
         {
@@ -60,6 +95,91 @@ namespace NetTopologySuite.IO
         public static XElement GpxElement(this XElement element, string localName) => element.Element(XName.Get(localName, GpxNamespace));
 
         public static IEnumerable<XElement> GpxElements(this XElement element, string localName) => element.Elements(XName.Get(localName, GpxNamespace));
+
+        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, string value)
+        {
+            if (!(value is null))
+            {
+                writer.WriteElementString(localName, value);
+            }
+        }
+
+        public static void WriteExtensions(this XmlWriter writer, object extensions, Func<object, IEnumerable<XElement>> extensionCallback)
+        {
+            IEnumerable<XElement> elements;
+            if (extensions is null || (elements = extensionCallback(extensions)) is null)
+            {
+                return;
+            }
+
+            writer.WriteStartElement("extensions");
+            foreach (var element in elements)
+            {
+                element.WriteTo(writer);
+            }
+
+            writer.WriteEndElement();
+        }
+
+        public static void WriteOptionalElementValue<T>(this XmlWriter writer, string localName, T value)
+            where T : class, ICanWriteToXmlWriter
+        {
+            if (!(value is null))
+            {
+                writer.WriteStartElement(localName);
+                value.Save(writer);
+                writer.WriteEndElement();
+            }
+        }
+
+        public static void WriteElementValues<T>(this XmlWriter writer, string localName, ImmutableArray<T> values)
+            where T : class, ICanWriteToXmlWriter
+        {
+            foreach (var value in values)
+            {
+                writer.WriteStartElement(localName);
+                value.Save(writer);
+                writer.WriteEndElement();
+            }
+        }
+
+        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, GpxFixKind? value)
+        {
+            if (value.HasValue)
+            {
+                int intVal = (int)value.GetValueOrDefault();
+                if (unchecked((uint)intVal < (uint)FixKindStrings.Length))
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), value, "Unrecognized GpxFixKind value");
+                }
+
+                writer.WriteElementString(localName, FixKindStrings[intVal]);
+            }
+        }
+
+        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, uint? value)
+        {
+            if (value.HasValue)
+            {
+                writer.WriteElementString(localName, value.GetValueOrDefault().ToString(CultureInfo.InvariantCulture));
+            }
+        }
+
+        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, double? value)
+        {
+            if (value.HasValue)
+            {
+                writer.WriteElementString(localName, value.GetValueOrDefault().ToRoundTripString(CultureInfo.InvariantCulture));
+            }
+        }
+
+        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, DateTime? valueUtc)
+        {
+            if (valueUtc.HasValue)
+            {
+                writer.WriteElementString(localName, valueUtc.GetValueOrDefault().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture));
+            }
+        }
 
         public static uint? ParseUInt32(string text)
         {
@@ -135,29 +255,18 @@ namespace NetTopologySuite.IO
 
         public static GpxFixKind? ParseFixKind(string text)
         {
-            switch (text)
+            if (text is null)
             {
-                case null:
-                    return null;
-
-                case "none":
-                    return GpxFixKind.None;
-
-                case "2d":
-                    return GpxFixKind.TwoDimensional;
-
-                case "3d":
-                    return GpxFixKind.ThreeDimensional;
-
-                case "dgps":
-                    return GpxFixKind.DGPS;
-
-                case "pps":
-                    return GpxFixKind.PPS;
-
-                default:
-                    throw new XmlException("fix must be either 'none', '2d', '3d', 'dgps', or 'pps'");
+                return null;
             }
+
+            int idx = Array.IndexOf(FixKindStrings, text);
+            if (idx < 0)
+            {
+                throw new XmlException("fix must be either 'none', '2d', '3d', 'dgps', or 'pps'");
+            }
+
+            return (GpxFixKind)idx;
         }
 
         public static Uri ParseUri(string text)
@@ -172,14 +281,31 @@ namespace NetTopologySuite.IO
                 : throw new XmlException("uri must be formatted properly");
         }
 
-        public static GregorianYearWithOptionalOffset? ParseGregorianYearWithOptionalOffset(string text)
+        public static int? ParseGregorianYear(string text)
         {
             if (text is null)
             {
                 return null;
             }
 
-            return GregorianYearWithOptionalOffset.TryParse(text, out var result)
+            int start;
+            for (start = 0; start < text.Length && char.IsWhiteSpace(text, start); start++)
+            {
+            }
+
+            int end;
+            for (end = text.Length - 1; end > start && char.IsWhiteSpace(text, end); end--)
+            {
+            }
+
+            var match = YearParseRegex.Match(text, start, end - start + 1);
+            if (!match.Success)
+            {
+                throw new XmlException("year element must be formatted properly");
+            }
+
+            var yearFrag = match.Groups["yearFrag"];
+            return int.TryParse(yearFrag.Value, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out int result)
                 ? result
                 : throw new XmlException("year element must be formatted properly");
         }

@@ -1,9 +1,10 @@
-﻿using System.Xml;
+﻿using System.Globalization;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
 {
-    public sealed class GpxBoundingBox
+    public sealed class GpxBoundingBox : ICanWriteToXmlWriter
     {
         public GpxBoundingBox(GpxLongitude minLongitude, GpxLatitude minLatitude, GpxLongitude maxLongitude, GpxLatitude maxLatitude)
         {
@@ -25,6 +26,14 @@ namespace NetTopologySuite.IO
                 minLatitude: Helpers.ParseLatitude(element.GpxAttribute("minlat")?.Value) ?? throw new XmlException("bounds element must have minlat attribute"),
                 maxLongitude: Helpers.ParseLongitude(element.GpxAttribute("maxlon")?.Value) ?? throw new XmlException("bounds element must have maxlon attribute"),
                 maxLatitude: Helpers.ParseLatitude(element.GpxAttribute("maxlat")?.Value) ?? throw new XmlException("bounds element must have maxlat attribute"));
+        }
+
+        public void Save(XmlWriter writer)
+        {
+            writer.WriteAttributeString("minlat", this.MinLatitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("minlon", this.MinLongitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("maxlat", this.MaxLatitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("maxlon", this.MaxLongitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
         }
 
         public GpxLongitude MinLongitude { get; }

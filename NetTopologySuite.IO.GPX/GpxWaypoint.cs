@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
@@ -104,20 +106,21 @@ namespace NetTopologySuite.IO
 
         public object Extensions => this.uncommonProperties?.Extensions;
 
-        public static GpxWaypoint Load(XElement element, GpxReaderSettings settings, Func<XElement, object> extensionCallback)
+        public static GpxWaypoint Load(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
         {
             return LoadNoValidation(element,
                                     settings ?? throw new ArgumentNullException(nameof(settings)),
                                     extensionCallback ?? throw new ArgumentNullException(nameof(extensionCallback)));
         }
 
-        internal static GpxWaypoint LoadNoValidation(XElement element, GpxReaderSettings settings, Func<XElement, object> extensionCallback)
+        internal static GpxWaypoint LoadNoValidation(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
         {
             if (element is null)
             {
                 return null;
             }
 
+            var extensionsElement = element.GpxElement("extensions");
             return new GpxWaypoint(
                 longitude: Helpers.ParseLongitude(element.GpxAttribute("lon")?.Value) ?? throw new XmlException("waypoint must have lon attribute"),
                 latitude: Helpers.ParseLatitude(element.GpxAttribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"),
@@ -139,7 +142,47 @@ namespace NetTopologySuite.IO
                 positionDilutionOfPrecision: Helpers.ParseDouble(element.GpxElement("pdop")?.Value),
                 secondsSinceLastDgpsUpdate: Helpers.ParseDouble(element.GpxElement("ageofdgpsdata")?.Value),
                 dgpsStationId: Helpers.ParseDgpsStationId(element.GpxElement("dgpsid")?.Value),
-                extensions: extensionCallback(element.GpxElement("extensions")));
+                extensions: extensionsElement is null ? null : extensionCallback(extensionsElement.Elements()));
+        }
+
+        public void Save(XmlWriter writer, GpxWriterSettings settings, Func<object, IEnumerable<XElement>> extensionCallback)
+        {
+            if (writer is null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
+
+            if (settings is null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            if (extensionCallback is null)
+            {
+                throw new ArgumentNullException(nameof(extensionCallback));
+            }
+
+            writer.WriteAttributeString("lat", this.Latitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("lon", this.Longitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteOptionalElementValue("ele", this.ElevationInMeters);
+            writer.WriteOptionalElementValue("time", this.TimestampUtc);
+            writer.WriteOptionalElementValue("magvar", this.MagneticVariation);
+            writer.WriteOptionalElementValue("geoidheight", this.GeoidHeight);
+            writer.WriteOptionalElementValue("name", this.Name);
+            writer.WriteOptionalElementValue("cmt", this.Comment);
+            writer.WriteOptionalElementValue("desc", this.Description);
+            writer.WriteOptionalElementValue("src", this.Source);
+            writer.WriteElementValues("link", this.Links);
+            writer.WriteOptionalElementValue("sym", this.SymbolText);
+            writer.WriteOptionalElementValue("type", this.Classification);
+            writer.WriteOptionalElementValue("fix", this.FixKind);
+            writer.WriteOptionalElementValue("sat", this.NumberOfSatellites);
+            writer.WriteOptionalElementValue("hdop", this.HorizontalDilutionOfPrecision);
+            writer.WriteOptionalElementValue("vdop", this.VerticalDilutionOfPrecision);
+            writer.WriteOptionalElementValue("pdop", this.PositionDilutionOfPrecision);
+            writer.WriteOptionalElementValue("ageofdgpsdata", this.SecondsSinceLastDgpsUpdate);
+            writer.WriteOptionalElementValue("dgpsid", this.DgpsStationId);
+            writer.WriteExtensions(this.Extensions, extensionCallback);
         }
 
         private sealed class UncommonProperties

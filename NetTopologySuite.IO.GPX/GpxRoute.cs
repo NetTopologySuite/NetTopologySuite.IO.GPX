@@ -38,7 +38,7 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
-        public static GpxRoute Load(XElement element, GpxReaderSettings settings, Func<XElement, object> routeExtensionCallback, Func<XElement, object> waypointExtensionCallback)
+        public static GpxRoute Load(XElement element, GpxReaderSettings settings)
         {
             if (element is null)
             {
@@ -50,16 +50,7 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            if (routeExtensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(routeExtensionCallback));
-            }
-
-            if (waypointExtensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(waypointExtensionCallback));
-            }
-
+            var extensionsElement = element.GpxElement("extensions");
             return new GpxRoute(
                 name: element.GpxElement("name")?.Value,
                 comment: element.GpxElement("cmt")?.Value,
@@ -68,8 +59,8 @@ namespace NetTopologySuite.IO
                 links: ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)),
                 number: Helpers.ParseUInt32(element.GpxElement("number")?.Value),
                 classification: element.GpxElement("type")?.Value,
-                waypoints: new ImmutableGpxWaypointTable(element.GpxElements("rtept"), settings, waypointExtensionCallback),
-                extensions: routeExtensionCallback(element.GpxElement("extensions")));
+                waypoints: new ImmutableGpxWaypointTable(element.GpxElements("rtept"), settings, settings.ExtensionReader.ConvertRoutePointExtensionElement),
+                extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertRouteExtensionElement(extensionsElement.Elements()));
         }
     }
 }

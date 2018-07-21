@@ -8,7 +8,7 @@ namespace NetTopologySuite.IO
     /// A link to an external resource (Web page, digital photo, video clip, etc) with additional
     /// information.
     /// </summary>
-    public sealed class GpxWebLink
+    public sealed class GpxWebLink : ICanWriteToXmlWriter
     {
         public GpxWebLink(string text, string contentType, Uri href)
         {
@@ -28,6 +28,13 @@ namespace NetTopologySuite.IO
                 text: element.GpxElement("text")?.Value,
                 contentType: element.GpxElement("type")?.Value,
                 href: Helpers.ParseUri(element.GpxAttribute("href")?.Value) ?? throw new XmlException("link element must have 'href' attribute"));
+        }
+
+        public void Save(XmlWriter writer)
+        {
+            writer.WriteAttributeString("href", this.Href.OriginalString);
+            writer.WriteOptionalElementValue("text", this.Text);
+            writer.WriteOptionalElementValue("type", this.ContentType);
         }
 
         public string Text { get; }

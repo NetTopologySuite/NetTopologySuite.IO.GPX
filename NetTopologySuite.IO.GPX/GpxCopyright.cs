@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
 {
-    public sealed class GpxCopyright
+    public sealed class GpxCopyright : ICanWriteToXmlWriter
     {
-        public GpxCopyright(GregorianYearWithOptionalOffset? year, Uri licenseUri, string author)
+        public GpxCopyright(int? year, Uri licenseUri, string author)
         {
             this.Year = year;
             this.LicenseUri = licenseUri;
@@ -21,12 +22,18 @@ namespace NetTopologySuite.IO
             }
 
             return new GpxCopyright(
-                year: Helpers.ParseGregorianYearWithOptionalOffset(element.GpxElement("year")?.Value),
+                year: Helpers.ParseGregorianYear(element.GpxElement("year")?.Value),
                 licenseUri: Helpers.ParseUri(element.GpxElement("license")?.Value),
                 author: element.GpxAttribute("author")?.Value ?? throw new XmlException("copyright element must have author attribute."));
         }
 
-        public GregorianYearWithOptionalOffset? Year { get; }
+        public void Save(XmlWriter writer)
+        {
+            writer.WriteAttributeString("author", this.Author);
+            writer.WriteOptionalElementValue("year", this.Year?.ToString("0000", CultureInfo.InvariantCulture));
+        }
+
+        public int? Year { get; }
 
         public Uri LicenseUri { get; }
 

@@ -5,7 +5,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>NetTopologySuite.IO</RootNamespace>
 
-    <LangVersion>7.2</LangVersion>
+    <LangVersion>7.3</LangVersion>
 
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)nts.snk</AssemblyOriginatorKeyFile>
@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <PackageReference Include="NetTopologySuite" Version="1.15.0" />
-    <PackageReference Include="NetTopologySuite.Features" Version="1.15.0-pre002" />
+    <PackageReference Include="NetTopologySuite.Features" Version="1.15.0" />
 
     <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
   </ItemGroup>

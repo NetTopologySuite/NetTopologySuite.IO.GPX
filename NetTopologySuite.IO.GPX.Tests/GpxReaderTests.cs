@@ -25,6 +25,23 @@ namespace NetTopologySuite.IO
             }
         }
 
+        [Theory]
+        [InlineData("copyright-regression-no-timezone.gpx", 2040)]
+        [InlineData("copyright-regression-utc.gpx", 2001)]
+        [InlineData("copyright-regression-real-offset.gpx", 2009)]
+        [InlineData("copyright-regression-insane-year-1.gpx", -2)]
+        [InlineData("copyright-regression-insane-year-2.gpx", 20072007)]
+        public void CopyrightYearRegressionTest(string gpxFileName, int expectedYear)
+        {
+            using (var reader = XmlReader.Create(Path.Combine("SampleData", gpxFileName)))
+            {
+                var (metadata, _) = GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
+                Assert.True(metadata.Copyright?.Year.HasValue);
+                int value = metadata.Copyright.Year.GetValueOrDefault();
+                Assert.Equal(expectedYear, value);
+            }
+        }
+
         public static object[][] GpxData => Array.ConvertAll(Directory.GetFiles("SampleData", "*.gpx", SearchOption.TopDirectoryOnly), fl => new object[] { fl });
     }
 }

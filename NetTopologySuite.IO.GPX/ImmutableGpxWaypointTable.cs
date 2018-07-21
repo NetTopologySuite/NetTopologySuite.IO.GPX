@@ -56,7 +56,7 @@ namespace NetTopologySuite.IO
 
         private readonly OptionalClassList<object> allExtensions;
 
-        internal ImmutableGpxWaypointTable(IEnumerable<XElement> elements, GpxReaderSettings settings, Func<XElement, object> extensionCallback)
+        internal ImmutableGpxWaypointTable(IEnumerable<XElement> elements, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
         {
             if (elements is null)
             {
@@ -118,7 +118,11 @@ namespace NetTopologySuite.IO
                 Add(ref positionDilutionsOfPrecision, Helpers.ParseDouble(element.GpxElement("pdop")?.Value), cnt);
                 Add(ref secondsSinceLastDgpsUpdates, Helpers.ParseDouble(element.GpxElement("ageofdgpsdata")?.Value), cnt);
                 Add(ref dgpsStationIds, Helpers.ParseDgpsStationId(element.GpxElement("dgpsid")?.Value), cnt);
-                Add(ref allExtensions, extensionCallback(element.GpxElement("extensions")), cnt);
+                var extensionsElement = element.GpxElement("extensions");
+                if (!(extensionsElement is null))
+                {
+                    Add(ref allExtensions, extensionCallback(extensionsElement.Elements()), cnt);
+                }
 
                 ++cnt;
             }

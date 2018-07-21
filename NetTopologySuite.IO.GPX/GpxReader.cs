@@ -97,7 +97,9 @@ namespace NetTopologySuite.IO
                             break;
 
                         case "extensions" when !readExtensions:
-                            visitor.ConvertMetadataExtensionElement((XElement)XNode.ReadFrom(reader));
+                            var extensionElement = (XElement)XNode.ReadFrom(reader);
+                            object extensions = settings.ExtensionReader.ConvertGpxExtensionElement(extensionElement.Elements());
+                            visitor.VisitExtensions(extensions);
                             readExtensions = true;
                             break;
                     }
@@ -126,28 +128,28 @@ namespace NetTopologySuite.IO
         private static void ReadMetadata(XmlReader reader, GpxReaderSettings settings, string creator, GpxVisitorBase visitor)
         {
             var element = (XElement)XNode.ReadFrom(reader);
-            var metadata = GpxMetadata.Load(element, settings, creator, visitor.ConvertMetadataExtensionElement);
+            var metadata = GpxMetadata.Load(element, settings, creator);
             visitor.VisitMetadata(metadata);
         }
 
         private static void ReadWaypoint(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
             var element = (XElement)XNode.ReadFrom(reader);
-            var waypoint = GpxWaypoint.Load(element, settings, visitor.ConvertWaypointExtensionElement);
+            var waypoint = GpxWaypoint.Load(element, settings, settings.ExtensionReader.ConvertWaypointExtensionElement);
             visitor.VisitWaypoint(waypoint);
         }
 
         private static void ReadRoute(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
             var element = (XElement)XNode.ReadFrom(reader);
-            var route = GpxRoute.Load(element, settings, visitor.ConvertRouteExtensionElement, visitor.ConvertWaypointExtensionElement);
+            var route = GpxRoute.Load(element, settings);
             visitor.VisitRoute(route);
         }
 
         private static void ReadTrack(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
             var element = (XElement)XNode.ReadFrom(reader);
-            var track = GpxTrack.Load(element, settings, visitor.ConvertTrackExtensionElement, visitor.ConvertTrackSegmentExtensionElement, visitor.ConvertWaypointExtensionElement);
+            var track = GpxTrack.Load(element, settings);
             visitor.VisitTrack(track);
         }
     }

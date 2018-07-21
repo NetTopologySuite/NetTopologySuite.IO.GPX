@@ -2,12 +2,12 @@
 
 namespace NetTopologySuite.IO
 {
-    public sealed class GpxReaderSettings
+    public sealed class GpxWriterSettings
     {
         private static readonly TimeZoneInfo LocalTimeZone = TimeZoneInfo.Local;
 
         public TimeZoneInfo TimeZoneInfo { get; set; } = LocalTimeZone;
 
-        public GpxExtensionReader ExtensionReader { get; set; } = new GpxExtensionReader();
+        public GpxExtensionWriter ExtensionWriter { get; set; } = new GpxExtensionWriter();
     }
 }

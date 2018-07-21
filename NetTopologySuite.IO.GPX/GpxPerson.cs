@@ -1,8 +1,9 @@
-﻿using System.Xml.Linq;
+﻿using System.Xml;
+using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
 {
-    public sealed class GpxPerson
+    public sealed class GpxPerson : ICanWriteToXmlWriter
     {
         public GpxPerson(string name, GpxEmail email, GpxWebLink link)
         {
@@ -22,6 +23,13 @@ namespace NetTopologySuite.IO
                 name: element.GpxElement("name")?.Value,
                 email: GpxEmail.Load(element.GpxElement("email")),
                 link: GpxWebLink.Load(element.GpxElement("link")));
+        }
+
+        public void Save(XmlWriter writer)
+        {
+            writer.WriteOptionalElementValue("name", this.Name);
+            writer.WriteOptionalElementValue("email", this.Email);
+            writer.WriteOptionalElementValue("link", this.Link);
         }
 
         public string Name { get; }

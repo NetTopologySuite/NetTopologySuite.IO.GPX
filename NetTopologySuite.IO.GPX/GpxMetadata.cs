@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
 {
     public sealed class GpxMetadata
     {
+        public GpxMetadata(string creator)
+        {
+            this.Creator = creator;
+            this.IsTrivial = true;
+        }
+
         public GpxMetadata(string creator, string name, string description, GpxPerson author, GpxCopyright copyright, ImmutableArray<GpxWebLink> webLinks, DateTime? creationTime, string keywords, GpxBoundingBox bounds, object extensions)
         {
             this.Creator = creator;
@@ -21,11 +28,11 @@ namespace NetTopologySuite.IO
             this.Extensions = extensions;
         }
 
-        public static GpxMetadata Load(XElement element, GpxReaderSettings settings, string creator, Func<XElement, object> extensionCallback)
+        public static GpxMetadata Load(XElement element, GpxReaderSettings settings, string creator)
         {
             if (element is null)
             {
-                return null;
+                return new GpxMetadata(creator);
             }
 
             if (settings is null)
@@ -38,11 +45,7 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(creator));
             }
 
-            if (extensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(extensionCallback));
-            }
-
+            var extensionsElement = element.GpxElement("extensions");
             return new GpxMetadata(
                 creator: creator,
                 name: element.GpxElement("name")?.Value,
@@ -53,8 +56,24 @@ namespace NetTopologySuite.IO
                 creationTime: Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo),
                 keywords: element.GpxElement("keywords")?.Value,
                 bounds: GpxBoundingBox.Load(element.GpxElement("bounds")),
-                extensions: extensionCallback(element.GpxElement("extensions")));
+                extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertMetadataExtensionElement(extensionsElement.Elements()));
         }
+
+        public void Save(XmlWriter writer, GpxWriterSettings settings)
+        {
+            // caller wrote Creator (it's an attribute on the root tag)
+            writer.WriteOptionalElementValue("name", this.Name);
+            writer.WriteOptionalElementValue("desc", this.Description);
+            writer.WriteOptionalElementValue("author", this.Author);
+            writer.WriteOptionalElementValue("copyright", this.Copyright);
+            writer.WriteElementValues("link", this.WebLinks);
+            writer.WriteOptionalElementValue("time", this.CreationTime);
+            writer.WriteOptionalElementValue("keywords", this.Keywords);
+            writer.WriteOptionalElementValue("bounds", this.Bounds);
+            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertMetadataExtension);
+        }
+
+        public bool IsTrivial { get; }
 
         public string Creator { get; }
 
@@ -76,7 +95,8 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
-        public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
+        public override string ToString() => Helpers.BuildString((nameof(this.Creator), this.Creator),
+                                                                 (nameof(this.Name), this.Name),
                                                                  (nameof(this.Description), this.Description),
                                                                  (nameof(this.Author), this.Author),
                                                                  (nameof(this.Copyright), this.Copyright),
