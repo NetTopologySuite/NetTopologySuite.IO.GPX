@@ -6,7 +6,9 @@ using System.Xml;
 
 using GeoAPI.Geometries;
 using NetTopologySuite.Geometries;
+
 using Org.XmlUnit.Builder;
+
 using Xunit;
 
 namespace NetTopologySuite.IO
