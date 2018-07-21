@@ -19,7 +19,6 @@ namespace NetTopologySuite.IO
         [MemberData(nameof(RoundTripSafeSamples))]
         public void RoundTripTest(string path)
         {
-            var writerSettings = new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = true, CloseOutput = false };
             var (metadata, features) = GpxReader.ReadFeatures(XmlReader.Create(path), null, GeometryFactory.Default);
             var waypoints = new List<GpxWaypoint>();
             var routes = new List<GpxRoute>();
@@ -44,6 +43,7 @@ namespace NetTopologySuite.IO
 
             using (var ms = new MemoryStream())
             {
+                var writerSettings = new XmlWriterSettings { Encoding = Encoding.UTF8, CloseOutput = false };
                 using (var wr = XmlWriter.Create(ms, writerSettings))
                 {
                     GpxWriter.Write(wr, null, metadata, waypoints, routes, tracks);

@@ -148,7 +148,7 @@ namespace NetTopologySuite.IO
             if (value.HasValue)
             {
                 int intVal = (int)value.GetValueOrDefault();
-                if (unchecked((uint)intVal < (uint)FixKindStrings.Length))
+                if (!unchecked((uint)intVal < (uint)FixKindStrings.Length))
                 {
                     throw new ArgumentOutOfRangeException(nameof(value), value, "Unrecognized GpxFixKind value");
                 }

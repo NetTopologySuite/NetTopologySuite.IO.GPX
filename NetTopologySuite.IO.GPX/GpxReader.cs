@@ -68,7 +68,7 @@ namespace NetTopologySuite.IO
 
                 if (version != "1.1" || creator is null)
                 {
-                    reader.Skip();
+                    throw new XmlException("Only GPX version 1.1 is supported.");
                 }
 
                 bool expectingMetadata = true;
