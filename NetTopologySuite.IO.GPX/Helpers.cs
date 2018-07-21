@@ -133,7 +133,7 @@ namespace NetTopologySuite.IO
         }
 
         public static void WriteElementValues<T>(this XmlWriter writer, string localName, ImmutableArray<T> values)
-            where T : class, ICanWriteToXmlWriter
+            where T : ICanWriteToXmlWriter
         {
             foreach (var value in values)
             {
