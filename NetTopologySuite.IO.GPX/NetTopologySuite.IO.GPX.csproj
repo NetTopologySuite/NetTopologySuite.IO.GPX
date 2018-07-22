@@ -13,7 +13,7 @@
     <DebugType>embedded</DebugType>
 
     <VersionSuffix Condition=" '$(VersionSuffix)' == '' ">-pre00000</VersionSuffix>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
     <Version Condition=" '$(TRAVIS_BRANCH)' != 'master' ">$(Version)$(VersionSuffix)</Version>
     <Authors>NetTopologySuite - Team</Authors>
     <Company>NetTopologySuite - Team</Company>
@@ -21,7 +21,7 @@
     <PackageLicenseUrl>https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/LICENSE.md</PackageLicenseUrl>
     <PackageTags>NTS GPX</PackageTags>
     <Product>NTS - Topology Suite</Product>
-    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <AssemblyVersion>0.1.0.$(TRAVIS_BUILD_NUMBER)</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Description>Adds reading/writing support to go between NetTopologySuite features and GPX files.</Description>

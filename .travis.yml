@@ -1,8 +1,10 @@
 language: csharp
 mono: none
 sudo: false
-dotnet: 2.1.300
+dotnet: 2.1.302
 dist: trusty
 script:
-- dotnet build -c Release
-- dotnet test NetTopologySuite.IO.GPX.Tests --no-build --no-restore -c Release
+- bash ./travis-build.sh
+env:
+  global:
+    secure: i+WlRzzkN9kdXdNHtfZKLIJXT4Je9eBqgNpS0Ewb+GmO5O+4FFsLioZnFcnHRwyeslPb6bNGecX+k6dYqR5A/Aq0xwn6HJN9fSfaRVtAlWvBJBfhG8MTWyT+t5AELZ4GGGQJKt2iYKwDuHh8t7eG6oXjF6BAZoKJer6b+uC+T1YVIKLVroc3rKfo04a3cTdgCNKq+dbKMwl7OW01PnWzcxihchFi52k5b3XioIm8SASkYX1pwtp/05U/Ge0xfhYfhU/qn+OR7jwKfDrH03xmbuOxeiF19QTEAe1KSXrCH1zrhHPivGdGZGubCEGEQ+IEZf9WOHJEMXS5KZzE/a6y1A0XMywkwH6QMILOyTi6gV3KFLwAjWg3EEqbzF5LmkT6JBF7spksH9CRapeUitk1x20RJLka4ApUPxwDfOhjbjYskfDct5rSppQMAQGdlED7wd/bgFSolmRF6TFlCTr4VORuu+wGlZFBEWADSL0mlLyQ01vzhfNTZedkbZydwqFio88xWJRxkrgkdOXJ2kBAEhj91yW/DRu70AGyi7aQO1RVYMNuNugMYaM/LbAJ4Bwh42l/yJFipmwheDrPXPIpN/ZNFm975LNqHNAVIOp4gxI1diDKyh1Oq6QdixYd+mHy+Y0vJ2jYJoA8Dp2/1bvrbKMjPNt6nANB6jwOQmKPqE0=
