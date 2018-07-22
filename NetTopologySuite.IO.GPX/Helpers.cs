@@ -155,7 +155,7 @@ namespace NetTopologySuite.IO
                     throw new ArgumentOutOfRangeException(nameof(value), value, "Unrecognized GpxFixKind value");
                 }
 
-                writer.WriteElementString(localName, GpxNamespace, FixKindStrings[intVal]);
+                writer.WriteGpxElementString(localName, FixKindStrings[intVal]);
             }
         }
 
@@ -163,7 +163,7 @@ namespace NetTopologySuite.IO
         {
             if (value.HasValue)
             {
-                writer.WriteElementString(localName, GpxNamespace, value.GetValueOrDefault().ToString(CultureInfo.InvariantCulture));
+                writer.WriteGpxElementString(localName, value.GetValueOrDefault().ToString(CultureInfo.InvariantCulture));
             }
         }
 
@@ -171,7 +171,7 @@ namespace NetTopologySuite.IO
         {
             if (value.HasValue)
             {
-                writer.WriteElementString(localName, GpxNamespace, value.GetValueOrDefault().ToRoundTripString(CultureInfo.InvariantCulture));
+                writer.WriteGpxElementString(localName, value.GetValueOrDefault().ToRoundTripString(CultureInfo.InvariantCulture));
             }
         }
 
@@ -179,7 +179,7 @@ namespace NetTopologySuite.IO
         {
             if (valueUtc.HasValue)
             {
-                writer.WriteElementString(localName, GpxNamespace, valueUtc.GetValueOrDefault().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture));
+                writer.WriteGpxElementString(localName, valueUtc.GetValueOrDefault().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture));
             }
         }
 
