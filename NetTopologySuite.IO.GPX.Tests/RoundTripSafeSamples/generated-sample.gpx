@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx version="1.1" creator="creator1" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>name1</name>
+    <desc>desc1</desc>
+    <author>
+      <name>name1</name>
+      <email id="id1" domain="domain1" />
+      <link href="http://uri1">
+        <text>text1</text>
+        <type>type1</type>
+      </link>
+    </author>
+    <copyright author="author1">
+      <year>1900</year>
+      <license>http://uri1</license>
+    </copyright>
+    <link href="http://uri1">
+      <text>text1</text>
+      <type>type1</type>
+    </link>
+    <link href="http://uri2">
+      <text>text2</text>
+      <type>type2</type>
+    </link>
+    <link href="http://uri3">
+      <text>text3</text>
+      <type>type3</type>
+    </link>
+    <time>1900-01-01T01:01:01Z</time>
+    <keywords>keywords1</keywords>
+    <bounds minlat="-90" minlon="-180" maxlat="-90" maxlon="-180" />
+    <extensions />
+  </metadata>
+  <wpt lat="-90" lon="-180">
+    <ele>1</ele>
+    <time>1900-01-01T01:01:01Z</time>
+    <magvar>0</magvar>
+    <geoidheight>1</geoidheight>
+    <name>name1</name>
+    <cmt>cmt1</cmt>
+    <desc>desc1</desc>
+    <src>src1</src>
+    <link href="http://uri1">
+      <text>text1</text>
+      <type>type1</type>
+    </link>
+    <link href="http://uri2">
+      <text>text2</text>
+      <type>type2</type>
+    </link>
+    <link href="http://uri3">
+      <text>text3</text>
+      <type>type3</type>
+    </link>
+    <sym>sym1</sym>
+    <type>type1</type>
+    <fix>none</fix>
+    <sat>0</sat>
+    <hdop>1</hdop>
+    <vdop>1</vdop>
+    <pdop>1</pdop>
+    <ageofdgpsdata>1</ageofdgpsdata>
+    <dgpsid>0</dgpsid>
+    <extensions />
+  </wpt>
+  <wpt lat="90" lon="179">
+    <ele>-1234</ele>
+    <time>0001-01-01T00:00:00Z</time>
+    <magvar>359</magvar>
+    <geoidheight>-1234</geoidheight>
+    <name>name2</name>
+    <cmt>cmt2</cmt>
+    <desc>desc2</desc>
+    <src>src2</src>
+    <link href="http://uri4">
+      <text>text4</text>
+      <type>type4</type>
+    </link>
+    <link href="http://uri5">
+      <text>text5</text>
+      <type>type5</type>
+    </link>
+    <link href="http://uri6">
+      <text>text6</text>
+      <type>type6</type>
+    </link>
+    <sym>sym2</sym>
+    <type>type2</type>
+    <fix>2d</fix>
+    <sat>1234</sat>
+    <hdop>-1234</hdop>
+    <vdop>-1234</vdop>
+    <pdop>-1234</pdop>
+    <ageofdgpsdata>-1234</ageofdgpsdata>
+    <dgpsid>1023</dgpsid>
+    <extensions />
+  </wpt>
+  <wpt lat="-89.9" lon="-179.9">
+    <ele>1234</ele>
+    <time>9999-12-31T23:59:59Z</time>
+    <magvar>0.1</magvar>
+    <geoidheight>1234</geoidheight>
+    <name>name3</name>
+    <cmt>cmt3</cmt>
+    <desc>desc3</desc>
+    <src>src3</src>
+    <link href="http://uri7">
+      <text>text7</text>
+      <type>type7</type>
+    </link>
+    <link href="http://uri8">
+      <text>text8</text>
+      <type>type8</type>
+    </link>
+    <link href="http://uri9">
+      <text>text9</text>
+      <type>type9</type>
+    </link>
+    <sym>sym3</sym>
+    <type>type3</type>
+    <fix>3d</fix>
+    <sat>1</sat>
+    <hdop>1234</hdop>
+    <vdop>1234</vdop>
+    <pdop>1234</pdop>
+    <ageofdgpsdata>1234</ageofdgpsdata>
+    <dgpsid>1</dgpsid>
+    <extensions />
+  </wpt>
+  <rte>
+    <name>name1</name>
+    <cmt>cmt1</cmt>
+    <desc>desc1</desc>
+    <src>src1</src>
+    <link href="http://uri1">
+      <text>text1</text>
+      <type>type1</type>
+    </link>
+    <link href="http://uri2">
+      <text>text2</text>
+      <type>type2</type>
+    </link>
+    <link href="http://uri3">
+      <text>text3</text>
+      <type>type3</type>
+    </link>
+    <number>0</number>
+    <type>type1</type>
+    <extensions />
+    <rtept lat="-90" lon="-180">
+      <ele>1</ele>
+      <time>1900-01-01T01:01:01Z</time>
+      <magvar>0</magvar>
+      <geoidheight>1</geoidheight>
+      <name>name1</name>
+      <cmt>cmt1</cmt>
+      <desc>desc1</desc>
+      <src>src1</src>
+      <link href="http://uri10">
+        <text>text10</text>
+        <type>type10</type>
+      </link>
+      <link href="http://uri11">
+        <text>text11</text>
+        <type>type11</type>
+      </link>
+      <link href="http://uri12">
+        <text>text12</text>
+        <type>type12</type>
+      </link>
+      <sym>sym1</sym>
+      <type>type1</type>
+      <fix>none</fix>
+      <sat>0</sat>
+      <hdop>1</hdop>
+      <vdop>1</vdop>
+      <pdop>1</pdop>
+      <ageofdgpsdata>1</ageofdgpsdata>
+      <dgpsid>0</dgpsid>
+      <extensions />
+    </rtept>
+    <rtept lat="90" lon="179">
+      <ele>-1234</ele>
+      <time>0001-01-01T00:00:00Z</time>
+      <magvar>359</magvar>
+      <geoidheight>-1234</geoidheight>
+      <name>name2</name>
+      <cmt>cmt2</cmt>
+      <desc>desc2</desc>
+      <src>src2</src>
+      <link href="http://uri13">
+        <text>text13</text>
+        <type>type13</type>
+      </link>
+      <link href="http://uri14">
+        <text>text14</text>
+        <type>type14</type>
+      </link>
+      <link href="http://uri15">
+        <text>text15</text>
+        <type>type15</type>
+      </link>
+      <sym>sym2</sym>
+      <type>type2</type>
+      <fix>2d</fix>
+      <sat>1234</sat>
+      <hdop>-1234</hdop>
+      <vdop>-1234</vdop>
+      <pdop>-1234</pdop>
+      <ageofdgpsdata>-1234</ageofdgpsdata>
+      <dgpsid>1023</dgpsid>
+      <extensions />
+    </rtept>
+    <rtept lat="-89.9" lon="-179.9">
+      <ele>1234</ele>
+      <time>9999-12-31T23:59:59Z</time>
+      <magvar>0.1</magvar>
+      <geoidheight>1234</geoidheight>
+      <name>name3</name>
+      <cmt>cmt3</cmt>
+      <desc>desc3</desc>
+      <src>src3</src>
+      <link href="http://uri16">
+        <text>text16</text>
+        <type>type16</type>
+      </link>
+      <link href="http://uri17">
+        <text>text17</text>
+        <type>type17</type>
+      </link>
+      <link href="http://uri18">
+        <text>text18</text>
+        <type>type18</type>
+      </link>
+      <sym>sym3</sym>
+      <type>type3</type>
+      <fix>3d</fix>
+      <sat>1</sat>
+      <hdop>1234</hdop>
+      <vdop>1234</vdop>
+      <pdop>1234</pdop>
+      <ageofdgpsdata>1234</ageofdgpsdata>
+      <dgpsid>1</dgpsid>
+      <extensions />
+    </rtept>
+  </rte>
+  <rte>
+    <name>name2</name>
+    <cmt>cmt2</cmt>
+    <desc>desc2</desc>
+    <src>src2</src>
+    <link href="http://uri4">
+      <text>text4</text>
+      <type>type4</type>
+    </link>
+    <link href="http://uri5">
+      <text>text5</text>
+      <type>type5</type>
+    </link>
+    <link href="http://uri6">
+      <text>text6</text>
+      <type>type6</type>
+    </link>
+    <number>1234</number>
+    <type>type2</type>
+    <extensions />
+    <rtept lat="89.9" lon="178.9">
+      <ele>0.9</ele>
+      <time>1899-11-30T01:01:01Z</time>
+      <magvar>358.9</magvar>
+      <geoidheight>0.9</geoidheight>
+      <name>name4</name>
+      <cmt>cmt4</cmt>
+      <desc>desc4</desc>
+      <src>src4</src>
+      <link href="http://uri19">
+        <text>text19</text>
+        <type>type19</type>
+      </link>
+      <link href="http://uri20">
+        <text>text20</text>
+        <type>type20</type>
+      </link>
+      <link href="http://uri21">
+        <text>text21</text>
+        <type>type21</type>
+      </link>
+      <sym>sym4</sym>
+      <type>type4</type>
+      <fix>dgps</fix>
+      <sat>1234</sat>
+      <hdop>0.9</hdop>
+      <vdop>0.9</vdop>
+      <pdop>0.9</pdop>
+      <ageofdgpsdata>0.9</ageofdgpsdata>
+      <dgpsid>1022</dgpsid>
+      <extensions />
+    </rtept>
+    <rtept lat="-89.8" lon="-179.8">
+      <ele>1.1</ele>
+      <time>1900-02-02T01:01:01Z</time>
+      <magvar>0.2</magvar>
+      <geoidheight>1.1</geoidheight>
+      <name>name5</name>
+      <cmt>cmt5</cmt>
+      <desc>desc5</desc>
+      <src>src5</src>
+      <link href="http://uri22">
+        <text>text22</text>
+        <type>type22</type>
+      </link>
+      <link href="http://uri23">
+        <text>text23</text>
+        <type>type23</type>
+      </link>
+      <link href="http://uri24">
+        <text>text24</text>
+        <type>type24</type>
+      </link>
+      <sym>sym5</sym>
+      <type>type5</type>
+      <fix>pps</fix>
+      <sat>2</sat>
+      <hdop>1.1</hdop>
+      <vdop>1.1</vdop>
+      <pdop>1.1</pdop>
+      <ageofdgpsdata>1.1</ageofdgpsdata>
+      <dgpsid>2</dgpsid>
+      <extensions />
+    </rtept>
+    <rtept lat="89.8" lon="178.8">
+      <ele>-1234</ele>
+      <time>0001-02-02T00:00:00Z</time>
+      <magvar>358.8</magvar>
+      <geoidheight>-1234</geoidheight>
+      <name>name6</name>
+      <cmt>cmt6</cmt>
+      <desc>desc6</desc>
+      <src>src6</src>
+      <link href="http://uri25">
+        <text>text25</text>
+        <type>type25</type>
+      </link>
+      <link href="http://uri26">
+        <text>text26</text>
+        <type>type26</type>
+      </link>
+      <link href="http://uri27">
+        <text>text27</text>
+        <type>type27</type>
+      </link>
+      <sym>sym6</sym>
+      <type>type6</type>
+      <fix>none</fix>
+      <sat>1234</sat>
+      <hdop>-1234</hdop>
+      <vdop>-1234</vdop>
+      <pdop>-1234</pdop>
+      <ageofdgpsdata>-1234</ageofdgpsdata>
+      <dgpsid>1021</dgpsid>
+      <extensions />
+    </rtept>
+  </rte>
+  <rte>
+    <name>name3</name>
+    <cmt>cmt3</cmt>
+    <desc>desc3</desc>
+    <src>src3</src>
+    <link href="http://uri7">
+      <text>text7</text>
+      <type>type7</type>
+    </link>
+    <link href="http://uri8">
+      <text>text8</text>
+      <type>type8</type>
+    </link>
+    <link href="http://uri9">
+      <text>text9</text>
+      <type>type9</type>
+    </link>
+    <number>1</number>
+    <type>type3</type>
+    <extensions />
+    <rtept lat="-89.7" lon="-179.7">
+      <ele>1234</ele>
+      <time>9999-11-29T23:59:59Z</time>
+      <magvar>0.3</magvar>
+      <geoidheight>1234</geoidheight>
+      <name>name7</name>
+      <cmt>cmt7</cmt>
+      <desc>desc7</desc>
+      <src>src7</src>
+      <link href="http://uri28">
+        <text>text28</text>
+        <type>type28</type>
+      </link>
+      <link href="http://uri29">
+        <text>text29</text>
+        <type>type29</type>
+      </link>
+      <link href="http://uri30">
+        <text>text30</text>
+        <type>type30</type>
+      </link>
+      <sym>sym7</sym>
+      <type>type7</type>
+      <fix>2d</fix>
+      <sat>3</sat>
+      <hdop>1234</hdop>
+      <vdop>1234</vdop>
+      <pdop>1234</pdop>
+      <ageofdgpsdata>1234</ageofdgpsdata>
+      <dgpsid>3</dgpsid>
+      <extensions />
+    </rtept>
+    <rtept lat="89.7" lon="178.7">
+      <ele>0.8</ele>
+      <time>1899-10-29T01:01:01Z</time>
+      <magvar>358.7</magvar>
+      <geoidheight>0.8</geoidheight>
+      <name>name8</name>
+      <cmt>cmt8</cmt>
+      <desc>desc8</desc>
+      <src>src8</src>
+      <link href="http://uri31">
+        <text>text31</text>
+        <type>type31</type>
+      </link>
+      <link href="http://uri32">
+        <text>text32</text>
+        <type>type32</type>
+      </link>
+      <link href="http://uri33">
+        <text>text33</text>
+        <type>type33</type>
+      </link>
+      <sym>sym8</sym>
+      <type>type8</type>
+      <fix>3d</fix>
+      <sat>1234</sat>
+      <hdop>0.8</hdop>
+      <vdop>0.8</vdop>
+      <pdop>0.8</pdop>
+      <ageofdgpsdata>0.8</ageofdgpsdata>
+      <dgpsid>1020</dgpsid>
+      <extensions />
+    </rtept>
+    <rtept lat="-89.6" lon="-179.6">
+      <ele>1.2</ele>
+      <time>1900-03-06T01:01:01Z</time>
+      <magvar>0.4</magvar>
+      <geoidheight>1.2</geoidheight>
+      <name>name9</name>
+      <cmt>cmt9</cmt>
+      <desc>desc9</desc>
+      <src>src9</src>
+      <link href="http://uri34">
+        <text>text34</text>
+        <type>type34</type>
+      </link>
+      <link href="http://uri35">
+        <text>text35</text>
+        <type>type35</type>
+      </link>
+      <link href="http://uri36">
+        <text>text36</text>
+        <type>type36</type>
+      </link>
+      <sym>sym9</sym>
+      <type>type9</type>
+      <fix>dgps</fix>
+      <sat>4</sat>
+      <hdop>1.2</hdop>
+      <vdop>1.2</vdop>
+      <pdop>1.2</pdop>
+      <ageofdgpsdata>1.2</ageofdgpsdata>
+      <dgpsid>4</dgpsid>
+      <extensions />
+    </rtept>
+  </rte>
+  <trk>
+    <name>name1</name>
+    <cmt>cmt1</cmt>
+    <desc>desc1</desc>
+    <src>src1</src>
+    <link href="http://uri1">
+      <text>text1</text>
+      <type>type1</type>
+    </link>
+    <link href="http://uri2">
+      <text>text2</text>
+      <type>type2</type>
+    </link>
+    <link href="http://uri3">
+      <text>text3</text>
+      <type>type3</type>
+    </link>
+    <number>0</number>
+    <type>type1</type>
+    <extensions />
+    <trkseg>
+      <trkpt lat="-90" lon="-180">
+        <ele>1</ele>
+        <time>1900-01-01T01:01:01Z</time>
+        <magvar>0</magvar>
+        <geoidheight>1</geoidheight>
+        <name>name1</name>
+        <cmt>cmt1</cmt>
+        <desc>desc1</desc>
+        <src>src1</src>
+        <link href="http://uri37">
+          <text>text37</text>
+          <type>type37</type>
+        </link>
+        <link href="http://uri38">
+          <text>text38</text>
+          <type>type38</type>
+        </link>
+        <link href="http://uri39">
+          <text>text39</text>
+          <type>type39</type>
+        </link>
+        <sym>sym1</sym>
+        <type>type1</type>
+        <fix>none</fix>
+        <sat>0</sat>
+        <hdop>1</hdop>
+        <vdop>1</vdop>
+        <pdop>1</pdop>
+        <ageofdgpsdata>1</ageofdgpsdata>
+        <dgpsid>0</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="90" lon="179">
+        <ele>-1234</ele>
+        <time>0001-01-01T00:00:00Z</time>
+        <magvar>359</magvar>
+        <geoidheight>-1234</geoidheight>
+        <name>name2</name>
+        <cmt>cmt2</cmt>
+        <desc>desc2</desc>
+        <src>src2</src>
+        <link href="http://uri40">
+          <text>text40</text>
+          <type>type40</type>
+        </link>
+        <link href="http://uri41">
+          <text>text41</text>
+          <type>type41</type>
+        </link>
+        <link href="http://uri42">
+          <text>text42</text>
+          <type>type42</type>
+        </link>
+        <sym>sym2</sym>
+        <type>type2</type>
+        <fix>2d</fix>
+        <sat>1234</sat>
+        <hdop>-1234</hdop>
+        <vdop>-1234</vdop>
+        <pdop>-1234</pdop>
+        <ageofdgpsdata>-1234</ageofdgpsdata>
+        <dgpsid>1023</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-89.9" lon="-179.9">
+        <ele>1234</ele>
+        <time>9999-12-31T23:59:59Z</time>
+        <magvar>0.1</magvar>
+        <geoidheight>1234</geoidheight>
+        <name>name3</name>
+        <cmt>cmt3</cmt>
+        <desc>desc3</desc>
+        <src>src3</src>
+        <link href="http://uri43">
+          <text>text43</text>
+          <type>type43</type>
+        </link>
+        <link href="http://uri44">
+          <text>text44</text>
+          <type>type44</type>
+        </link>
+        <link href="http://uri45">
+          <text>text45</text>
+          <type>type45</type>
+        </link>
+        <sym>sym3</sym>
+        <type>type3</type>
+        <fix>3d</fix>
+        <sat>1</sat>
+        <hdop>1234</hdop>
+        <vdop>1234</vdop>
+        <pdop>1234</pdop>
+        <ageofdgpsdata>1234</ageofdgpsdata>
+        <dgpsid>1</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+    <trkseg>
+      <trkpt lat="89.9" lon="178.9">
+        <ele>0.9</ele>
+        <time>1899-11-30T01:01:01Z</time>
+        <magvar>358.9</magvar>
+        <geoidheight>0.9</geoidheight>
+        <name>name4</name>
+        <cmt>cmt4</cmt>
+        <desc>desc4</desc>
+        <src>src4</src>
+        <link href="http://uri46">
+          <text>text46</text>
+          <type>type46</type>
+        </link>
+        <link href="http://uri47">
+          <text>text47</text>
+          <type>type47</type>
+        </link>
+        <link href="http://uri48">
+          <text>text48</text>
+          <type>type48</type>
+        </link>
+        <sym>sym4</sym>
+        <type>type4</type>
+        <fix>dgps</fix>
+        <sat>1234</sat>
+        <hdop>0.9</hdop>
+        <vdop>0.9</vdop>
+        <pdop>0.9</pdop>
+        <ageofdgpsdata>0.9</ageofdgpsdata>
+        <dgpsid>1022</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-89.8" lon="-179.8">
+        <ele>1.1</ele>
+        <time>1900-02-02T01:01:01Z</time>
+        <magvar>0.2</magvar>
+        <geoidheight>1.1</geoidheight>
+        <name>name5</name>
+        <cmt>cmt5</cmt>
+        <desc>desc5</desc>
+        <src>src5</src>
+        <link href="http://uri49">
+          <text>text49</text>
+          <type>type49</type>
+        </link>
+        <link href="http://uri50">
+          <text>text50</text>
+          <type>type50</type>
+        </link>
+        <link href="http://uri51">
+          <text>text51</text>
+          <type>type51</type>
+        </link>
+        <sym>sym5</sym>
+        <type>type5</type>
+        <fix>pps</fix>
+        <sat>2</sat>
+        <hdop>1.1</hdop>
+        <vdop>1.1</vdop>
+        <pdop>1.1</pdop>
+        <ageofdgpsdata>1.1</ageofdgpsdata>
+        <dgpsid>2</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="89.8" lon="178.8">
+        <ele>-1234</ele>
+        <time>0001-02-02T00:00:00Z</time>
+        <magvar>358.8</magvar>
+        <geoidheight>-1234</geoidheight>
+        <name>name6</name>
+        <cmt>cmt6</cmt>
+        <desc>desc6</desc>
+        <src>src6</src>
+        <link href="http://uri52">
+          <text>text52</text>
+          <type>type52</type>
+        </link>
+        <link href="http://uri53">
+          <text>text53</text>
+          <type>type53</type>
+        </link>
+        <link href="http://uri54">
+          <text>text54</text>
+          <type>type54</type>
+        </link>
+        <sym>sym6</sym>
+        <type>type6</type>
+        <fix>none</fix>
+        <sat>1234</sat>
+        <hdop>-1234</hdop>
+        <vdop>-1234</vdop>
+        <pdop>-1234</pdop>
+        <ageofdgpsdata>-1234</ageofdgpsdata>
+        <dgpsid>1021</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-89.7" lon="-179.7">
+        <ele>1234</ele>
+        <time>9999-11-29T23:59:59Z</time>
+        <magvar>0.3</magvar>
+        <geoidheight>1234</geoidheight>
+        <name>name7</name>
+        <cmt>cmt7</cmt>
+        <desc>desc7</desc>
+        <src>src7</src>
+        <link href="http://uri55">
+          <text>text55</text>
+          <type>type55</type>
+        </link>
+        <link href="http://uri56">
+          <text>text56</text>
+          <type>type56</type>
+        </link>
+        <link href="http://uri57">
+          <text>text57</text>
+          <type>type57</type>
+        </link>
+        <sym>sym7</sym>
+        <type>type7</type>
+        <fix>2d</fix>
+        <sat>3</sat>
+        <hdop>1234</hdop>
+        <vdop>1234</vdop>
+        <pdop>1234</pdop>
+        <ageofdgpsdata>1234</ageofdgpsdata>
+        <dgpsid>3</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="89.7" lon="178.7">
+        <ele>0.8</ele>
+        <time>1899-10-29T01:01:01Z</time>
+        <magvar>358.7</magvar>
+        <geoidheight>0.8</geoidheight>
+        <name>name8</name>
+        <cmt>cmt8</cmt>
+        <desc>desc8</desc>
+        <src>src8</src>
+        <link href="http://uri58">
+          <text>text58</text>
+          <type>type58</type>
+        </link>
+        <link href="http://uri59">
+          <text>text59</text>
+          <type>type59</type>
+        </link>
+        <link href="http://uri60">
+          <text>text60</text>
+          <type>type60</type>
+        </link>
+        <sym>sym8</sym>
+        <type>type8</type>
+        <fix>3d</fix>
+        <sat>1234</sat>
+        <hdop>0.8</hdop>
+        <vdop>0.8</vdop>
+        <pdop>0.8</pdop>
+        <ageofdgpsdata>0.8</ageofdgpsdata>
+        <dgpsid>1020</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-89.6" lon="-179.6">
+        <ele>1.2</ele>
+        <time>1900-03-06T01:01:01Z</time>
+        <magvar>0.4</magvar>
+        <geoidheight>1.2</geoidheight>
+        <name>name9</name>
+        <cmt>cmt9</cmt>
+        <desc>desc9</desc>
+        <src>src9</src>
+        <link href="http://uri61">
+          <text>text61</text>
+          <type>type61</type>
+        </link>
+        <link href="http://uri62">
+          <text>text62</text>
+          <type>type62</type>
+        </link>
+        <link href="http://uri63">
+          <text>text63</text>
+          <type>type63</type>
+        </link>
+        <sym>sym9</sym>
+        <type>type9</type>
+        <fix>dgps</fix>
+        <sat>4</sat>
+        <hdop>1.2</hdop>
+        <vdop>1.2</vdop>
+        <pdop>1.2</pdop>
+        <ageofdgpsdata>1.2</ageofdgpsdata>
+        <dgpsid>4</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+  </trk>
+  <trk>
+    <name>name2</name>
+    <cmt>cmt2</cmt>
+    <desc>desc2</desc>
+    <src>src2</src>
+    <link href="http://uri4">
+      <text>text4</text>
+      <type>type4</type>
+    </link>
+    <link href="http://uri5">
+      <text>text5</text>
+      <type>type5</type>
+    </link>
+    <link href="http://uri6">
+      <text>text6</text>
+      <type>type6</type>
+    </link>
+    <number>1234</number>
+    <type>type2</type>
+    <extensions />
+    <trkseg>
+      <trkpt lat="89.6" lon="178.6">
+        <ele>-1234</ele>
+        <time>0001-03-06T00:00:00Z</time>
+        <magvar>358.6</magvar>
+        <geoidheight>-1234</geoidheight>
+        <name>name10</name>
+        <cmt>cmt10</cmt>
+        <desc>desc10</desc>
+        <src>src10</src>
+        <link href="http://uri64">
+          <text>text64</text>
+          <type>type64</type>
+        </link>
+        <link href="http://uri65">
+          <text>text65</text>
+          <type>type65</type>
+        </link>
+        <link href="http://uri66">
+          <text>text66</text>
+          <type>type66</type>
+        </link>
+        <sym>sym10</sym>
+        <type>type10</type>
+        <fix>pps</fix>
+        <sat>1234</sat>
+        <hdop>-1234</hdop>
+        <vdop>-1234</vdop>
+        <pdop>-1234</pdop>
+        <ageofdgpsdata>-1234</ageofdgpsdata>
+        <dgpsid>1019</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-89.5" lon="-179.5">
+        <ele>1234</ele>
+        <time>9999-10-28T23:59:59Z</time>
+        <magvar>0.5</magvar>
+        <geoidheight>1234</geoidheight>
+        <name>name11</name>
+        <cmt>cmt11</cmt>
+        <desc>desc11</desc>
+        <src>src11</src>
+        <link href="http://uri67">
+          <text>text67</text>
+          <type>type67</type>
+        </link>
+        <link href="http://uri68">
+          <text>text68</text>
+          <type>type68</type>
+        </link>
+        <link href="http://uri69">
+          <text>text69</text>
+          <type>type69</type>
+        </link>
+        <sym>sym11</sym>
+        <type>type11</type>
+        <fix>none</fix>
+        <sat>5</sat>
+        <hdop>1234</hdop>
+        <vdop>1234</vdop>
+        <pdop>1234</pdop>
+        <ageofdgpsdata>1234</ageofdgpsdata>
+        <dgpsid>5</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="89.5" lon="178.5">
+        <ele>0.7</ele>
+        <time>1899-09-27T01:01:01Z</time>
+        <magvar>358.5</magvar>
+        <geoidheight>0.7</geoidheight>
+        <name>name12</name>
+        <cmt>cmt12</cmt>
+        <desc>desc12</desc>
+        <src>src12</src>
+        <link href="http://uri70">
+          <text>text70</text>
+          <type>type70</type>
+        </link>
+        <link href="http://uri71">
+          <text>text71</text>
+          <type>type71</type>
+        </link>
+        <link href="http://uri72">
+          <text>text72</text>
+          <type>type72</type>
+        </link>
+        <sym>sym12</sym>
+        <type>type12</type>
+        <fix>2d</fix>
+        <sat>1234</sat>
+        <hdop>0.7</hdop>
+        <vdop>0.7</vdop>
+        <pdop>0.7</pdop>
+        <ageofdgpsdata>0.7</ageofdgpsdata>
+        <dgpsid>1018</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-89.4" lon="-179.4">
+        <ele>1.3</ele>
+        <time>1900-04-07T01:01:01Z</time>
+        <magvar>0.6</magvar>
+        <geoidheight>1.3</geoidheight>
+        <name>name13</name>
+        <cmt>cmt13</cmt>
+        <desc>desc13</desc>
+        <src>src13</src>
+        <link href="http://uri73">
+          <text>text73</text>
+          <type>type73</type>
+        </link>
+        <link href="http://uri74">
+          <text>text74</text>
+          <type>type74</type>
+        </link>
+        <link href="http://uri75">
+          <text>text75</text>
+          <type>type75</type>
+        </link>
+        <sym>sym13</sym>
+        <type>type13</type>
+        <fix>3d</fix>
+        <sat>6</sat>
+        <hdop>1.3</hdop>
+        <vdop>1.3</vdop>
+        <pdop>1.3</pdop>
+        <ageofdgpsdata>1.3</ageofdgpsdata>
+        <dgpsid>6</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="89.4" lon="178.4">
+        <ele>-1234</ele>
+        <time>0001-04-07T00:00:00Z</time>
+        <magvar>358.4</magvar>
+        <geoidheight>-1234</geoidheight>
+        <name>name14</name>
+        <cmt>cmt14</cmt>
+        <desc>desc14</desc>
+        <src>src14</src>
+        <link href="http://uri76">
+          <text>text76</text>
+          <type>type76</type>
+        </link>
+        <link href="http://uri77">
+          <text>text77</text>
+          <type>type77</type>
+        </link>
+        <link href="http://uri78">
+          <text>text78</text>
+          <type>type78</type>
+        </link>
+        <sym>sym14</sym>
+        <type>type14</type>
+        <fix>dgps</fix>
+        <sat>1234</sat>
+        <hdop>-1234</hdop>
+        <vdop>-1234</vdop>
+        <pdop>-1234</pdop>
+        <ageofdgpsdata>-1234</ageofdgpsdata>
+        <dgpsid>1017</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-89.3" lon="-179.3">
+        <ele>1234</ele>
+        <time>9999-09-26T23:59:59Z</time>
+        <magvar>0.7</magvar>
+        <geoidheight>1234</geoidheight>
+        <name>name15</name>
+        <cmt>cmt15</cmt>
+        <desc>desc15</desc>
+        <src>src15</src>
+        <link href="http://uri79">
+          <text>text79</text>
+          <type>type79</type>
+        </link>
+        <link href="http://uri80">
+          <text>text80</text>
+          <type>type80</type>
+        </link>
+        <link href="http://uri81">
+          <text>text81</text>
+          <type>type81</type>
+        </link>
+        <sym>sym15</sym>
+        <type>type15</type>
+        <fix>pps</fix>
+        <sat>7</sat>
+        <hdop>1234</hdop>
+        <vdop>1234</vdop>
+        <pdop>1234</pdop>
+        <ageofdgpsdata>1234</ageofdgpsdata>
+        <dgpsid>7</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+    <trkseg>
+      <trkpt lat="89.3" lon="178.3">
+        <ele>0.6</ele>
+        <time>1899-08-26T01:01:01Z</time>
+        <magvar>358.3</magvar>
+        <geoidheight>0.6</geoidheight>
+        <name>name16</name>
+        <cmt>cmt16</cmt>
+        <desc>desc16</desc>
+        <src>src16</src>
+        <link href="http://uri82">
+          <text>text82</text>
+          <type>type82</type>
+        </link>
+        <link href="http://uri83">
+          <text>text83</text>
+          <type>type83</type>
+        </link>
+        <link href="http://uri84">
+          <text>text84</text>
+          <type>type84</type>
+        </link>
+        <sym>sym16</sym>
+        <type>type16</type>
+        <fix>none</fix>
+        <sat>1234</sat>
+        <hdop>0.6</hdop>
+        <vdop>0.6</vdop>
+        <pdop>0.6</pdop>
+        <ageofdgpsdata>0.6</ageofdgpsdata>
+        <dgpsid>1016</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-89.2" lon="-179.2">
+        <ele>1.4</ele>
+        <time>1900-05-09T01:01:01Z</time>
+        <magvar>0.8</magvar>
+        <geoidheight>1.4</geoidheight>
+        <name>name17</name>
+        <cmt>cmt17</cmt>
+        <desc>desc17</desc>
+        <src>src17</src>
+        <link href="http://uri85">
+          <text>text85</text>
+          <type>type85</type>
+        </link>
+        <link href="http://uri86">
+          <text>text86</text>
+          <type>type86</type>
+        </link>
+        <link href="http://uri87">
+          <text>text87</text>
+          <type>type87</type>
+        </link>
+        <sym>sym17</sym>
+        <type>type17</type>
+        <fix>2d</fix>
+        <sat>8</sat>
+        <hdop>1.4</hdop>
+        <vdop>1.4</vdop>
+        <pdop>1.4</pdop>
+        <ageofdgpsdata>1.4</ageofdgpsdata>
+        <dgpsid>8</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="89.2" lon="178.2">
+        <ele>-1234</ele>
+        <time>0001-05-09T00:00:00Z</time>
+        <magvar>358.2</magvar>
+        <geoidheight>-1234</geoidheight>
+        <name>name18</name>
+        <cmt>cmt18</cmt>
+        <desc>desc18</desc>
+        <src>src18</src>
+        <link href="http://uri88">
+          <text>text88</text>
+          <type>type88</type>
+        </link>
+        <link href="http://uri89">
+          <text>text89</text>
+          <type>type89</type>
+        </link>
+        <link href="http://uri90">
+          <text>text90</text>
+          <type>type90</type>
+        </link>
+        <sym>sym18</sym>
+        <type>type18</type>
+        <fix>3d</fix>
+        <sat>1234</sat>
+        <hdop>-1234</hdop>
+        <vdop>-1234</vdop>
+        <pdop>-1234</pdop>
+        <ageofdgpsdata>-1234</ageofdgpsdata>
+        <dgpsid>1015</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+  </trk>
+  <trk>
+    <name>name3</name>
+    <cmt>cmt3</cmt>
+    <desc>desc3</desc>
+    <src>src3</src>
+    <link href="http://uri7">
+      <text>text7</text>
+      <type>type7</type>
+    </link>
+    <link href="http://uri8">
+      <text>text8</text>
+      <type>type8</type>
+    </link>
+    <link href="http://uri9">
+      <text>text9</text>
+      <type>type9</type>
+    </link>
+    <number>1</number>
+    <type>type3</type>
+    <extensions />
+    <trkseg>
+      <trkpt lat="-89.1" lon="-179.1">
+        <ele>1234</ele>
+        <time>9999-08-25T23:59:59Z</time>
+        <magvar>0.9</magvar>
+        <geoidheight>1234</geoidheight>
+        <name>name19</name>
+        <cmt>cmt19</cmt>
+        <desc>desc19</desc>
+        <src>src19</src>
+        <link href="http://uri91">
+          <text>text91</text>
+          <type>type91</type>
+        </link>
+        <link href="http://uri92">
+          <text>text92</text>
+          <type>type92</type>
+        </link>
+        <link href="http://uri93">
+          <text>text93</text>
+          <type>type93</type>
+        </link>
+        <sym>sym19</sym>
+        <type>type19</type>
+        <fix>dgps</fix>
+        <sat>9</sat>
+        <hdop>1234</hdop>
+        <vdop>1234</vdop>
+        <pdop>1234</pdop>
+        <ageofdgpsdata>1234</ageofdgpsdata>
+        <dgpsid>9</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="89.1" lon="178.1">
+        <ele>0.5</ele>
+        <time>1899-07-25T01:01:01Z</time>
+        <magvar>358.1</magvar>
+        <geoidheight>0.5</geoidheight>
+        <name>name20</name>
+        <cmt>cmt20</cmt>
+        <desc>desc20</desc>
+        <src>src20</src>
+        <link href="http://uri94">
+          <text>text94</text>
+          <type>type94</type>
+        </link>
+        <link href="http://uri95">
+          <text>text95</text>
+          <type>type95</type>
+        </link>
+        <link href="http://uri96">
+          <text>text96</text>
+          <type>type96</type>
+        </link>
+        <sym>sym20</sym>
+        <type>type20</type>
+        <fix>pps</fix>
+        <sat>1234</sat>
+        <hdop>0.5</hdop>
+        <vdop>0.5</vdop>
+        <pdop>0.5</pdop>
+        <ageofdgpsdata>0.5</ageofdgpsdata>
+        <dgpsid>1014</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-89" lon="-179">
+        <ele>1.5</ele>
+        <time>1900-06-10T01:01:01Z</time>
+        <magvar>1</magvar>
+        <geoidheight>1.5</geoidheight>
+        <name>name21</name>
+        <cmt>cmt21</cmt>
+        <desc>desc21</desc>
+        <src>src21</src>
+        <link href="http://uri97">
+          <text>text97</text>
+          <type>type97</type>
+        </link>
+        <link href="http://uri98">
+          <text>text98</text>
+          <type>type98</type>
+        </link>
+        <link href="http://uri99">
+          <text>text99</text>
+          <type>type99</type>
+        </link>
+        <sym>sym21</sym>
+        <type>type21</type>
+        <fix>none</fix>
+        <sat>10</sat>
+        <hdop>1.5</hdop>
+        <vdop>1.5</vdop>
+        <pdop>1.5</pdop>
+        <ageofdgpsdata>1.5</ageofdgpsdata>
+        <dgpsid>10</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+    <trkseg>
+      <trkpt lat="89" lon="178">
+        <ele>-1234</ele>
+        <time>0001-06-10T00:00:00Z</time>
+        <magvar>358</magvar>
+        <geoidheight>-1234</geoidheight>
+        <name>name22</name>
+        <cmt>cmt22</cmt>
+        <desc>desc22</desc>
+        <src>src22</src>
+        <link href="http://uri100">
+          <text>text100</text>
+          <type>type100</type>
+        </link>
+        <link href="http://uri101">
+          <text>text101</text>
+          <type>type101</type>
+        </link>
+        <link href="http://uri102">
+          <text>text102</text>
+          <type>type102</type>
+        </link>
+        <sym>sym22</sym>
+        <type>type22</type>
+        <fix>2d</fix>
+        <sat>1234</sat>
+        <hdop>-1234</hdop>
+        <vdop>-1234</vdop>
+        <pdop>-1234</pdop>
+        <ageofdgpsdata>-1234</ageofdgpsdata>
+        <dgpsid>1013</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-88.9" lon="-178.9">
+        <ele>1234</ele>
+        <time>9999-07-24T23:59:59Z</time>
+        <magvar>1.1</magvar>
+        <geoidheight>1234</geoidheight>
+        <name>name23</name>
+        <cmt>cmt23</cmt>
+        <desc>desc23</desc>
+        <src>src23</src>
+        <link href="http://uri103">
+          <text>text103</text>
+          <type>type103</type>
+        </link>
+        <link href="http://uri104">
+          <text>text104</text>
+          <type>type104</type>
+        </link>
+        <link href="http://uri105">
+          <text>text105</text>
+          <type>type105</type>
+        </link>
+        <sym>sym23</sym>
+        <type>type23</type>
+        <fix>3d</fix>
+        <sat>11</sat>
+        <hdop>1234</hdop>
+        <vdop>1234</vdop>
+        <pdop>1234</pdop>
+        <ageofdgpsdata>1234</ageofdgpsdata>
+        <dgpsid>11</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="88.9" lon="177.9">
+        <ele>0.4</ele>
+        <time>1899-06-23T01:01:01Z</time>
+        <magvar>357.9</magvar>
+        <geoidheight>0.4</geoidheight>
+        <name>name24</name>
+        <cmt>cmt24</cmt>
+        <desc>desc24</desc>
+        <src>src24</src>
+        <link href="http://uri106">
+          <text>text106</text>
+          <type>type106</type>
+        </link>
+        <link href="http://uri107">
+          <text>text107</text>
+          <type>type107</type>
+        </link>
+        <link href="http://uri108">
+          <text>text108</text>
+          <type>type108</type>
+        </link>
+        <sym>sym24</sym>
+        <type>type24</type>
+        <fix>dgps</fix>
+        <sat>1234</sat>
+        <hdop>0.4</hdop>
+        <vdop>0.4</vdop>
+        <pdop>0.4</pdop>
+        <ageofdgpsdata>0.4</ageofdgpsdata>
+        <dgpsid>1012</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-88.8" lon="-178.8">
+        <ele>1.6</ele>
+        <time>1900-07-12T01:01:01Z</time>
+        <magvar>1.2</magvar>
+        <geoidheight>1.6</geoidheight>
+        <name>name25</name>
+        <cmt>cmt25</cmt>
+        <desc>desc25</desc>
+        <src>src25</src>
+        <link href="http://uri109">
+          <text>text109</text>
+          <type>type109</type>
+        </link>
+        <link href="http://uri110">
+          <text>text110</text>
+          <type>type110</type>
+        </link>
+        <link href="http://uri111">
+          <text>text111</text>
+          <type>type111</type>
+        </link>
+        <sym>sym25</sym>
+        <type>type25</type>
+        <fix>pps</fix>
+        <sat>12</sat>
+        <hdop>1.6</hdop>
+        <vdop>1.6</vdop>
+        <pdop>1.6</pdop>
+        <ageofdgpsdata>1.6</ageofdgpsdata>
+        <dgpsid>12</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="88.8" lon="177.8">
+        <ele>-1234</ele>
+        <time>0001-07-12T00:00:00Z</time>
+        <magvar>357.8</magvar>
+        <geoidheight>-1234</geoidheight>
+        <name>name26</name>
+        <cmt>cmt26</cmt>
+        <desc>desc26</desc>
+        <src>src26</src>
+        <link href="http://uri112">
+          <text>text112</text>
+          <type>type112</type>
+        </link>
+        <link href="http://uri113">
+          <text>text113</text>
+          <type>type113</type>
+        </link>
+        <link href="http://uri114">
+          <text>text114</text>
+          <type>type114</type>
+        </link>
+        <sym>sym26</sym>
+        <type>type26</type>
+        <fix>none</fix>
+        <sat>1234</sat>
+        <hdop>-1234</hdop>
+        <vdop>-1234</vdop>
+        <pdop>-1234</pdop>
+        <ageofdgpsdata>-1234</ageofdgpsdata>
+        <dgpsid>1011</dgpsid>
+        <extensions />
+      </trkpt>
+      <trkpt lat="-88.7" lon="-178.7">
+        <ele>1234</ele>
+        <time>9999-06-22T23:59:59Z</time>
+        <magvar>1.3</magvar>
+        <geoidheight>1234</geoidheight>
+        <name>name27</name>
+        <cmt>cmt27</cmt>
+        <desc>desc27</desc>
+        <src>src27</src>
+        <link href="http://uri115">
+          <text>text115</text>
+          <type>type115</type>
+        </link>
+        <link href="http://uri116">
+          <text>text116</text>
+          <type>type116</type>
+        </link>
+        <link href="http://uri117">
+          <text>text117</text>
+          <type>type117</type>
+        </link>
+        <sym>sym27</sym>
+        <type>type27</type>
+        <fix>2d</fix>
+        <sat>13</sat>
+        <hdop>1234</hdop>
+        <vdop>1234</vdop>
+        <pdop>1234</pdop>
+        <ageofdgpsdata>1234</ageofdgpsdata>
+        <dgpsid>13</dgpsid>
+        <extensions />
+      </trkpt>
+      <extensions />
+    </trkseg>
+  </trk>
+  <extensions />
+</gpx>

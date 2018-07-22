@@ -9,7 +9,7 @@ namespace NetTopologySuite.IO
 {
     public static class GpxReader
     {
-        public static (GpxMetadata metadata, Feature[] features) ReadFeatures(XmlReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)
+        public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)
         {
             if (geometryFactory is null)
             {
@@ -19,7 +19,7 @@ namespace NetTopologySuite.IO
             return ReadFeatures(reader, settings, new NetTopologySuiteFeatureBuilderVisitor(geometryFactory));
         }
 
-        public static (GpxMetadata metadata, Feature[] features) ReadFeatures(XmlReader reader, GpxReaderSettings settings, NetTopologySuiteFeatureBuilderVisitor visitor)
+        public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, NetTopologySuiteFeatureBuilderVisitor visitor)
         {
             if (reader is null)
             {

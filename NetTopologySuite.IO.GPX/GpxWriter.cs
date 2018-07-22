@@ -8,7 +8,7 @@ namespace NetTopologySuite.IO
 {
     public static class GpxWriter
     {
-        public static void Write(XmlWriter writer, GpxWriterSettings settings, GpxMetadata metadata, IEnumerable<GpxWaypoint> waypoints, IEnumerable<GpxRoute> routes, IEnumerable<GpxTrack> tracks)
+        public static void Write(XmlWriter writer, GpxWriterSettings settings, GpxMetadata metadata, IEnumerable<GpxWaypoint> waypoints, IEnumerable<GpxRoute> routes, IEnumerable<GpxTrack> tracks, object extensions)
         {
             if (writer is null)
             {
@@ -54,6 +54,8 @@ namespace NetTopologySuite.IO
                 track.Save(writer, settings);
                 writer.WriteEndElement();
             }
+
+            writer.WriteExtensions(extensions, settings.ExtensionWriter.ConvertGpxExtension);
 
             writer.WriteEndElement();
             writer.WriteEndDocument();

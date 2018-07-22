@@ -31,6 +31,7 @@ namespace NetTopologySuite.IO
         {
             writer.WriteAttributeString("author", this.Author);
             writer.WriteOptionalGpxElementValue("year", this.Year?.ToString("0000", CultureInfo.InvariantCulture));
+            writer.WriteOptionalGpxElementValue("license", this.LicenseUri?.OriginalString);
         }
 
         public int? Year { get; }

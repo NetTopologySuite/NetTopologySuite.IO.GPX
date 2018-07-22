@@ -21,7 +21,7 @@ namespace NetTopologySuite.IO
             using (var stringReader = new StringReader(gpx))
             using (var reader = XmlReader.Create(stringReader))
             {
-                var (metadata, features) = GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
+                var (metadata, features, extensions) = GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
                 Assert.Equal(gpxElement.Attribute("creator").Value, metadata.Creator);
             }
         }
@@ -36,7 +36,7 @@ namespace NetTopologySuite.IO
         {
             using (var reader = XmlReader.Create(Path.Combine("CopyrightYearRegressionSamples", gpxFileName)))
             {
-                var (metadata, _) = GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
+                var (metadata, _, _) = GpxReader.ReadFeatures(reader, null, GeometryFactory.Default);
                 Assert.True(metadata.Copyright?.Year.HasValue);
                 int value = metadata.Copyright.Year.GetValueOrDefault();
                 Assert.Equal(expectedYear, value);

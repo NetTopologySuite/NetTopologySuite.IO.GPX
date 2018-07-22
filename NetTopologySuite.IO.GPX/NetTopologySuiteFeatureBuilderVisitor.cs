@@ -14,6 +14,8 @@ namespace NetTopologySuite.IO
 
         private GpxMetadata currentMetadata;
 
+        private object currentExtensions;
+
         public NetTopologySuiteFeatureBuilderVisitor(IGeometryFactory geometryFactory)
         {
             this.geometryFactory = geometryFactory ?? throw new ArgumentNullException(nameof(geometryFactory));
@@ -65,11 +67,18 @@ namespace NetTopologySuite.IO
             this.currentFeatures.Add(feature);
         }
 
-        public (GpxMetadata metadata, Feature[] features) Terminate()
+        public override void VisitExtensions(object extensions)
         {
-            var result = (this.currentMetadata, this.currentFeatures.ToArray());
+            base.VisitExtensions(extensions);
+            this.currentExtensions = extensions;
+        }
+
+        public (GpxMetadata metadata, Feature[] features, object extensions) Terminate()
+        {
+            var result = (this.currentMetadata, this.currentFeatures.ToArray(), this.currentExtensions);
             this.currentMetadata = null;
             this.currentFeatures.Clear();
+            this.currentExtensions = null;
             return result;
         }
 
