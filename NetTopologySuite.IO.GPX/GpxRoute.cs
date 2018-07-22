@@ -77,18 +77,18 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            writer.WriteOptionalElementValue("name", this.Name);
-            writer.WriteOptionalElementValue("cmt", this.Comment);
-            writer.WriteOptionalElementValue("desc", this.Description);
-            writer.WriteOptionalElementValue("src", this.Source);
-            writer.WriteElementValues("link", this.Links);
-            writer.WriteOptionalElementValue("number", this.Number);
-            writer.WriteOptionalElementValue("type", this.Classification);
+            writer.WriteOptionalGpxElementValue("name", this.Name);
+            writer.WriteOptionalGpxElementValue("cmt", this.Comment);
+            writer.WriteOptionalGpxElementValue("desc", this.Description);
+            writer.WriteOptionalGpxElementValue("src", this.Source);
+            writer.WriteGpxElementValues("link", this.Links);
+            writer.WriteOptionalGpxElementValue("number", this.Number);
+            writer.WriteOptionalGpxElementValue("type", this.Classification);
             writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertRouteExtension);
             Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertRoutePointExtension;
             foreach (var waypoint in this.Waypoints)
             {
-                writer.WriteStartElement("rtept");
+                writer.WriteGpxStartElement("rtept");
                 waypoint.SaveNoValidation(writer, settings, extensionCallback);
                 writer.WriteEndElement();
             }

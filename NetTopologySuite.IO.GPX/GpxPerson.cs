@@ -27,9 +27,9 @@ namespace NetTopologySuite.IO
 
         public void Save(XmlWriter writer)
         {
-            writer.WriteOptionalElementValue("name", this.Name);
-            writer.WriteOptionalElementValue("email", this.Email);
-            writer.WriteOptionalElementValue("link", this.Link);
+            writer.WriteOptionalGpxElementValue("name", this.Name);
+            writer.WriteOptionalGpxElementValue("email", this.Email);
+            writer.WriteOptionalGpxElementValue("link", this.Link);
         }
 
         public string Name { get; }

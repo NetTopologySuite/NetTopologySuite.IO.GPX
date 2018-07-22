@@ -24,13 +24,13 @@ namespace NetTopologySuite.IO
             return new GpxCopyright(
                 year: Helpers.ParseGregorianYear(element.GpxElement("year")?.Value),
                 licenseUri: Helpers.ParseUri(element.GpxElement("license")?.Value),
-                author: element.GpxAttribute("author")?.Value ?? throw new XmlException("copyright element must have author attribute."));
+                author: element.Attribute("author")?.Value ?? throw new XmlException("copyright element must have author attribute."));
         }
 
         public void Save(XmlWriter writer)
         {
             writer.WriteAttributeString("author", this.Author);
-            writer.WriteOptionalElementValue("year", this.Year?.ToString("0000", CultureInfo.InvariantCulture));
+            writer.WriteOptionalGpxElementValue("year", this.Year?.ToString("0000", CultureInfo.InvariantCulture));
         }
 
         public int? Year { get; }

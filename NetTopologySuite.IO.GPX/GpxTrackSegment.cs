@@ -47,7 +47,7 @@ namespace NetTopologySuite.IO
             Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertTrackPointExtension;
             foreach (var waypoint in this.Waypoints)
             {
-                writer.WriteStartElement("trkpt");
+                writer.WriteGpxStartElement("trkpt");
                 waypoint.Save(writer, settings, extensionCallback);
                 writer.WriteEndElement();
             }

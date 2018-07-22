@@ -27,14 +27,14 @@ namespace NetTopologySuite.IO
             return new GpxWebLink(
                 text: element.GpxElement("text")?.Value,
                 contentType: element.GpxElement("type")?.Value,
-                href: Helpers.ParseUri(element.GpxAttribute("href")?.Value) ?? throw new XmlException("link element must have 'href' attribute"));
+                href: Helpers.ParseUri(element.Attribute("href")?.Value) ?? throw new XmlException("link element must have 'href' attribute"));
         }
 
         public void Save(XmlWriter writer)
         {
             writer.WriteAttributeString("href", this.Href.OriginalString);
-            writer.WriteOptionalElementValue("text", this.Text);
-            writer.WriteOptionalElementValue("type", this.ContentType);
+            writer.WriteOptionalGpxElementValue("text", this.Text);
+            writer.WriteOptionalGpxElementValue("type", this.ContentType);
         }
 
         public string Text { get; }

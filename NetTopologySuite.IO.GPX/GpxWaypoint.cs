@@ -122,8 +122,8 @@ namespace NetTopologySuite.IO
 
             var extensionsElement = element.GpxElement("extensions");
             return new GpxWaypoint(
-                longitude: Helpers.ParseLongitude(element.GpxAttribute("lon")?.Value) ?? throw new XmlException("waypoint must have lon attribute"),
-                latitude: Helpers.ParseLatitude(element.GpxAttribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"),
+                longitude: Helpers.ParseLongitude(element.Attribute("lon")?.Value) ?? throw new XmlException("waypoint must have lon attribute"),
+                latitude: Helpers.ParseLatitude(element.Attribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"),
                 elevationInMeters: Helpers.ParseDouble(element.GpxElement("ele")?.Value),
                 timestampUtc: Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo),
                 name: element.GpxElement("name")?.Value,
@@ -156,24 +156,24 @@ namespace NetTopologySuite.IO
         {
             writer.WriteAttributeString("lat", this.Latitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
             writer.WriteAttributeString("lon", this.Longitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
-            writer.WriteOptionalElementValue("ele", this.ElevationInMeters);
-            writer.WriteOptionalElementValue("time", this.TimestampUtc);
-            writer.WriteOptionalElementValue("magvar", this.MagneticVariation);
-            writer.WriteOptionalElementValue("geoidheight", this.GeoidHeight);
-            writer.WriteOptionalElementValue("name", this.Name);
-            writer.WriteOptionalElementValue("cmt", this.Comment);
-            writer.WriteOptionalElementValue("desc", this.Description);
-            writer.WriteOptionalElementValue("src", this.Source);
-            writer.WriteElementValues("link", this.Links);
-            writer.WriteOptionalElementValue("sym", this.SymbolText);
-            writer.WriteOptionalElementValue("type", this.Classification);
-            writer.WriteOptionalElementValue("fix", this.FixKind);
-            writer.WriteOptionalElementValue("sat", this.NumberOfSatellites);
-            writer.WriteOptionalElementValue("hdop", this.HorizontalDilutionOfPrecision);
-            writer.WriteOptionalElementValue("vdop", this.VerticalDilutionOfPrecision);
-            writer.WriteOptionalElementValue("pdop", this.PositionDilutionOfPrecision);
-            writer.WriteOptionalElementValue("ageofdgpsdata", this.SecondsSinceLastDgpsUpdate);
-            writer.WriteOptionalElementValue("dgpsid", this.DgpsStationId);
+            writer.WriteOptionalGpxElementValue("ele", this.ElevationInMeters);
+            writer.WriteOptionalGpxElementValue("time", this.TimestampUtc);
+            writer.WriteOptionalGpxElementValue("magvar", this.MagneticVariation);
+            writer.WriteOptionalGpxElementValue("geoidheight", this.GeoidHeight);
+            writer.WriteOptionalGpxElementValue("name", this.Name);
+            writer.WriteOptionalGpxElementValue("cmt", this.Comment);
+            writer.WriteOptionalGpxElementValue("desc", this.Description);
+            writer.WriteOptionalGpxElementValue("src", this.Source);
+            writer.WriteGpxElementValues("link", this.Links);
+            writer.WriteOptionalGpxElementValue("sym", this.SymbolText);
+            writer.WriteOptionalGpxElementValue("type", this.Classification);
+            writer.WriteOptionalGpxElementValue("fix", this.FixKind);
+            writer.WriteOptionalGpxElementValue("sat", this.NumberOfSatellites);
+            writer.WriteOptionalGpxElementValue("hdop", this.HorizontalDilutionOfPrecision);
+            writer.WriteOptionalGpxElementValue("vdop", this.VerticalDilutionOfPrecision);
+            writer.WriteOptionalGpxElementValue("pdop", this.PositionDilutionOfPrecision);
+            writer.WriteOptionalGpxElementValue("ageofdgpsdata", this.SecondsSinceLastDgpsUpdate);
+            writer.WriteOptionalGpxElementValue("dgpsid", this.DgpsStationId);
             writer.WriteExtensions(this.Extensions, extensionCallback);
         }
 

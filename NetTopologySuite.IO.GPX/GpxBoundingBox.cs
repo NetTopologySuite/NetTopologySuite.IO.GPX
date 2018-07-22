@@ -22,10 +22,10 @@ namespace NetTopologySuite.IO
             }
 
             return new GpxBoundingBox(
-                minLongitude: Helpers.ParseLongitude(element.GpxAttribute("minlon")?.Value) ?? throw new XmlException("bounds element must have minlon attribute"),
-                minLatitude: Helpers.ParseLatitude(element.GpxAttribute("minlat")?.Value) ?? throw new XmlException("bounds element must have minlat attribute"),
-                maxLongitude: Helpers.ParseLongitude(element.GpxAttribute("maxlon")?.Value) ?? throw new XmlException("bounds element must have maxlon attribute"),
-                maxLatitude: Helpers.ParseLatitude(element.GpxAttribute("maxlat")?.Value) ?? throw new XmlException("bounds element must have maxlat attribute"));
+                minLongitude: Helpers.ParseLongitude(element.Attribute("minlon")?.Value) ?? throw new XmlException("bounds element must have minlon attribute"),
+                minLatitude: Helpers.ParseLatitude(element.Attribute("minlat")?.Value) ?? throw new XmlException("bounds element must have minlat attribute"),
+                maxLongitude: Helpers.ParseLongitude(element.Attribute("maxlon")?.Value) ?? throw new XmlException("bounds element must have maxlon attribute"),
+                maxLatitude: Helpers.ParseLatitude(element.Attribute("maxlat")?.Value) ?? throw new XmlException("bounds element must have maxlat attribute"));
         }
 
         public void Save(XmlWriter writer)

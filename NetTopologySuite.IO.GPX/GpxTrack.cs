@@ -76,17 +76,17 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            writer.WriteOptionalElementValue("name", this.Name);
-            writer.WriteOptionalElementValue("cmt", this.Comment);
-            writer.WriteOptionalElementValue("desc", this.Description);
-            writer.WriteOptionalElementValue("src", this.Source);
-            writer.WriteElementValues("link", this.Links);
-            writer.WriteOptionalElementValue("number", this.Number);
-            writer.WriteOptionalElementValue("type", this.Classification);
+            writer.WriteOptionalGpxElementValue("name", this.Name);
+            writer.WriteOptionalGpxElementValue("cmt", this.Comment);
+            writer.WriteOptionalGpxElementValue("desc", this.Description);
+            writer.WriteOptionalGpxElementValue("src", this.Source);
+            writer.WriteGpxElementValues("link", this.Links);
+            writer.WriteOptionalGpxElementValue("number", this.Number);
+            writer.WriteOptionalGpxElementValue("type", this.Classification);
             writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertRouteExtension);
             foreach (var segment in this.Segments)
             {
-                writer.WriteStartElement("trkseg");
+                writer.WriteGpxStartElement("trkseg");
                 segment.SaveNoValidation(writer, settings);
                 writer.WriteEndElement();
             }

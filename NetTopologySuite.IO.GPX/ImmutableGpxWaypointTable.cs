@@ -98,8 +98,8 @@ namespace NetTopologySuite.IO
 
             foreach (var element in elements)
             {
-                longitudes.Add(Helpers.ParseLongitude(element.GpxAttribute("lon")?.Value) ?? throw new XmlException("waypoint must have lon attribute"));
-                latitudes.Add(Helpers.ParseLatitude(element.GpxAttribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"));
+                longitudes.Add(Helpers.ParseLongitude(element.Attribute("lon")?.Value) ?? throw new XmlException("waypoint must have lon attribute"));
+                latitudes.Add(Helpers.ParseLatitude(element.Attribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"));
                 Add(ref elevationsInMeters, Helpers.ParseDouble(element.GpxElement("ele")?.Value), cnt);
                 Add(ref timestampsUtc, Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo), cnt);
                 Add(ref names, element.GpxElement("name")?.Value, cnt);

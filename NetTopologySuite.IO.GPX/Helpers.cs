@@ -90,17 +90,19 @@ namespace NetTopologySuite.IO
             return sb.Append("]").ToString();
         }
 
-        public static XAttribute GpxAttribute(this XElement element, string localName) => element.Attribute(localName);
-
         public static XElement GpxElement(this XElement element, string localName) => element.Element(XName.Get(localName, GpxNamespace));
 
         public static IEnumerable<XElement> GpxElements(this XElement element, string localName) => element.Elements(XName.Get(localName, GpxNamespace));
 
-        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, string value)
+        public static void WriteGpxElementString(this XmlWriter writer, string localName, string value) => writer.WriteElementString(localName, GpxNamespace, value);
+
+        public static void WriteGpxStartElement(this XmlWriter writer, string localName) => writer.WriteStartElement(localName, GpxNamespace);
+
+        public static void WriteOptionalGpxElementValue(this XmlWriter writer, string localName, string value)
         {
             if (!(value is null))
             {
-                writer.WriteElementString(localName, value);
+                writer.WriteGpxElementString(localName, value);
             }
         }
 
@@ -112,7 +114,7 @@ namespace NetTopologySuite.IO
                 return;
             }
 
-            writer.WriteStartElement("extensions");
+            writer.WriteGpxStartElement("extensions");
             foreach (var element in elements)
             {
                 element.WriteTo(writer);
@@ -121,29 +123,29 @@ namespace NetTopologySuite.IO
             writer.WriteEndElement();
         }
 
-        public static void WriteOptionalElementValue<T>(this XmlWriter writer, string localName, T value)
+        public static void WriteOptionalGpxElementValue<T>(this XmlWriter writer, string localName, T value)
             where T : class, ICanWriteToXmlWriter
         {
             if (!(value is null))
             {
-                writer.WriteStartElement(localName);
+                writer.WriteGpxStartElement(localName);
                 value.Save(writer);
                 writer.WriteEndElement();
             }
         }
 
-        public static void WriteElementValues<T>(this XmlWriter writer, string localName, ImmutableArray<T> values)
+        public static void WriteGpxElementValues<T>(this XmlWriter writer, string localName, ImmutableArray<T> values)
             where T : ICanWriteToXmlWriter
         {
             foreach (var value in values)
             {
-                writer.WriteStartElement(localName);
+                writer.WriteGpxStartElement(localName);
                 value.Save(writer);
                 writer.WriteEndElement();
             }
         }
 
-        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, GpxFixKind? value)
+        public static void WriteOptionalGpxElementValue(this XmlWriter writer, string localName, GpxFixKind? value)
         {
             if (value.HasValue)
             {
@@ -153,31 +155,31 @@ namespace NetTopologySuite.IO
                     throw new ArgumentOutOfRangeException(nameof(value), value, "Unrecognized GpxFixKind value");
                 }
 
-                writer.WriteElementString(localName, FixKindStrings[intVal]);
+                writer.WriteElementString(localName, GpxNamespace, FixKindStrings[intVal]);
             }
         }
 
-        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, uint? value)
+        public static void WriteOptionalGpxElementValue(this XmlWriter writer, string localName, uint? value)
         {
             if (value.HasValue)
             {
-                writer.WriteElementString(localName, value.GetValueOrDefault().ToString(CultureInfo.InvariantCulture));
+                writer.WriteElementString(localName, GpxNamespace, value.GetValueOrDefault().ToString(CultureInfo.InvariantCulture));
             }
         }
 
-        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, double? value)
+        public static void WriteOptionalGpxElementValue(this XmlWriter writer, string localName, double? value)
         {
             if (value.HasValue)
             {
-                writer.WriteElementString(localName, value.GetValueOrDefault().ToRoundTripString(CultureInfo.InvariantCulture));
+                writer.WriteElementString(localName, GpxNamespace, value.GetValueOrDefault().ToRoundTripString(CultureInfo.InvariantCulture));
             }
         }
 
-        public static void WriteOptionalElementValue(this XmlWriter writer, string localName, DateTime? valueUtc)
+        public static void WriteOptionalGpxElementValue(this XmlWriter writer, string localName, DateTime? valueUtc)
         {
             if (valueUtc.HasValue)
             {
-                writer.WriteElementString(localName, valueUtc.GetValueOrDefault().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture));
+                writer.WriteElementString(localName, GpxNamespace, valueUtc.GetValueOrDefault().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture));
             }
         }
 

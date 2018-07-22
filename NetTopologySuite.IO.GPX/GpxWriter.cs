@@ -23,12 +23,12 @@ namespace NetTopologySuite.IO
             settings = settings ?? new GpxWriterSettings();
 
             writer.WriteStartDocument();
-            writer.WriteStartElement("gpx", Helpers.GpxNamespace);
+            writer.WriteGpxStartElement("gpx");
             writer.WriteAttributeString("version", "1.1");
             writer.WriteAttributeString("creator", metadata.Creator);
             if (!metadata.IsTrivial)
             {
-                writer.WriteStartElement("metadata");
+                writer.WriteGpxStartElement("metadata");
                 metadata.Save(writer, settings);
                 writer.WriteEndElement();
             }
@@ -36,21 +36,21 @@ namespace NetTopologySuite.IO
             Func<object, IEnumerable<XElement>> waypointExtensionCallback = settings.ExtensionWriter.ConvertWaypointExtension;
             foreach (var waypoint in waypoints ?? Enumerable.Empty<GpxWaypoint>())
             {
-                writer.WriteStartElement("wpt");
+                writer.WriteGpxStartElement("wpt");
                 waypoint.Save(writer, settings, waypointExtensionCallback);
                 writer.WriteEndElement();
             }
 
             foreach (var route in routes ?? Enumerable.Empty<GpxRoute>())
             {
-                writer.WriteStartElement("rte");
+                writer.WriteGpxStartElement("rte");
                 route.Save(writer, settings);
                 writer.WriteEndElement();
             }
 
             foreach (var track in tracks ?? Enumerable.Empty<GpxTrack>())
             {
-                writer.WriteStartElement("trk");
+                writer.WriteGpxStartElement("trk");
                 track.Save(writer, settings);
                 writer.WriteEndElement();
             }

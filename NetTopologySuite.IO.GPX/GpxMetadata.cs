@@ -62,14 +62,14 @@ namespace NetTopologySuite.IO
         public void Save(XmlWriter writer, GpxWriterSettings settings)
         {
             // caller wrote Creator (it's an attribute on the root tag)
-            writer.WriteOptionalElementValue("name", this.Name);
-            writer.WriteOptionalElementValue("desc", this.Description);
-            writer.WriteOptionalElementValue("author", this.Author);
-            writer.WriteOptionalElementValue("copyright", this.Copyright);
-            writer.WriteElementValues("link", this.WebLinks);
-            writer.WriteOptionalElementValue("time", this.CreationTime);
-            writer.WriteOptionalElementValue("keywords", this.Keywords);
-            writer.WriteOptionalElementValue("bounds", this.Bounds);
+            writer.WriteOptionalGpxElementValue("name", this.Name);
+            writer.WriteOptionalGpxElementValue("desc", this.Description);
+            writer.WriteOptionalGpxElementValue("author", this.Author);
+            writer.WriteOptionalGpxElementValue("copyright", this.Copyright);
+            writer.WriteGpxElementValues("link", this.WebLinks);
+            writer.WriteOptionalGpxElementValue("time", this.CreationTime);
+            writer.WriteOptionalGpxElementValue("keywords", this.Keywords);
+            writer.WriteOptionalGpxElementValue("bounds", this.Bounds);
             writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertMetadataExtension);
         }
 

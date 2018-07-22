@@ -23,8 +23,8 @@ namespace NetTopologySuite.IO
             }
 
             return new GpxEmail(
-                id: element.GpxAttribute("id")?.Value ?? throw new XmlException("email element must have both 'id' and 'domain' attributes"),
-                domain: element.GpxAttribute("domain")?.Value ?? throw new XmlException("email element must have both 'id' and 'domain' attributes"));
+                id: element.Attribute("id")?.Value ?? throw new XmlException("email element must have both 'id' and 'domain' attributes"),
+                domain: element.Attribute("domain")?.Value ?? throw new XmlException("email element must have both 'id' and 'domain' attributes"));
         }
 
         public void Save(XmlWriter writer)
