@@ -8,6 +8,6 @@ Or, if you'd like, you could use this to simply read / write the data exactly as
 Targets .NET Standard 2.0.
 
 ## Project status
-| License | Builds | MyGet (pre-release) |
-| ------- | ------ | ------------------- |
-| [![License](https://img.shields.io/github/license/NetTopologySuite/NetTopologySuite.IO.GPX.svg)](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/LICENSE.md) | [![Travis](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX.svg?branch=develop)](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX) | [![MyGet](https://img.shields.io/myget/airbreather/vpre/NetTopologySuite.IO.GPX.svg?style=flat)](https://myget.org/feed/airbreather/package/nuget/NetTopologySuite.IO.GPX) |
+| License | Builds | NuGet | MyGet (pre-release) |
+| ------- | ------ | ----- | ------------------- |
+| [![License](https://img.shields.io/github/license/NetTopologySuite/NetTopologySuite.IO.GPX.svg)](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/LICENSE.md) | [![Travis](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX.svg?branch=develop)](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX) | [![NuGet](https://img.shields.io/nuget/v/NetTopologySuite.IO.GPX.svg)](https://www.nuget.org/packages/NetTopologySuite.IO.GPX/) | [![MyGet](https://img.shields.io/myget/airbreather/vpre/NetTopologySuite.IO.GPX.svg?style=flat)](https://myget.org/feed/airbreather/package/nuget/NetTopologySuite.IO.GPX) |
