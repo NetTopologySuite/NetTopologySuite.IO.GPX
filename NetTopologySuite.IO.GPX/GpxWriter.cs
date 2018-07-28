@@ -11,6 +11,17 @@ namespace NetTopologySuite.IO
 {
     public static class GpxWriter
     {
+        public static void Write(XmlWriter writer, GpxWriterSettings settings, GpxMetadata metadata, IEnumerable<IFeature> waypointFeatures, IEnumerable<IFeature> routeFeatures, IEnumerable<IFeature> trackFeatures, object extensions)
+        {
+            Write(writer,
+                  settings,
+                  metadata,
+                  waypointFeatures?.Select(NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint),
+                  routeFeatures?.Select(NetTopologySuiteGpxFeatureConverter.ToGpxRoute),
+                  trackFeatures?.Select(NetTopologySuiteGpxFeatureConverter.ToGpxTrack),
+                  extensions);
+        }
+
         public static void Write(XmlWriter writer, GpxWriterSettings settings, GpxMetadata metadata, IEnumerable<IFeature> features, object extensions)
         {
             if (writer is null)
