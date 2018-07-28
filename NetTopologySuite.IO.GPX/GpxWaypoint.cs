@@ -16,8 +16,8 @@ namespace NetTopologySuite.IO
 
         private readonly UncommonProperties uncommonProperties;
 
-        public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters, DateTime? timestampUtc, string name, string description, string symbolText)
-            : this(longitude, latitude, elevationInMeters, timestampUtc, name, description, symbolText, default, default, default, default, default, default, default, default, default, default, default, default, default, default)
+        public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters)
+            : this(longitude, latitude, elevationInMeters, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default)
         {
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+
 using GeoAPI;
 using GeoAPI.Geometries;
 using NetTopologySuite.Features;
@@ -232,11 +233,7 @@ namespace NetTopologySuite.IO
                 seq.GetCoordinate(i, coord);
                 yield return new GpxWaypoint(longitude: new GpxLongitude(coord.X),
                                              latitude: new GpxLatitude(coord.Y),
-                                             elevationInMeters: double.IsNaN(coord.Z) ? default(double?) : coord.Z,
-                                             timestampUtc: null,
-                                             name: null,
-                                             description: null,
-                                             symbolText: null);
+                                             elevationInMeters: double.IsNaN(coord.Z) ? default(double?) : coord.Z);
             }
         }
 

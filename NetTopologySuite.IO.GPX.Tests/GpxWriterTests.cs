@@ -20,37 +20,12 @@ namespace NetTopologySuite.IO
         public void RoundTripTest(string path)
         {
             var (metadata, features, extensions) = GpxReader.ReadFeatures(XmlReader.Create(path), null, GeometryFactory.Default);
-            var waypoints = new List<GpxWaypoint>();
-            var routes = new List<GpxRoute>();
-            var tracks = new List<GpxTrack>();
-            foreach (var feature in features)
-            {
-                switch (feature.Geometry)
-                {
-                    case IPoint _:
-                        waypoints.Add(NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(feature));
-                        break;
-
-                    case ILineString _:
-                        routes.Add(NetTopologySuiteGpxFeatureConverter.ToGpxRoute(feature));
-                        break;
-
-                    case IMultiLineString _:
-                        tracks.Add(NetTopologySuiteGpxFeatureConverter.ToGpxTrack(feature));
-                        break;
-
-                    default:
-                        Assert.True(false, "Only those feature types are supported.");
-                        throw null;
-                }
-            }
-
             using (var ms = new MemoryStream())
             {
                 var writerSettings = new XmlWriterSettings { Encoding = Encoding.UTF8, CloseOutput = false };
                 using (var wr = XmlWriter.Create(ms, writerSettings))
                 {
-                    GpxWriter.Write(wr, null, metadata, waypoints, routes, tracks, extensions);
+                    GpxWriter.Write(wr, null, metadata, features, extensions);
                 }
 
                 ms.Position = 0;
