@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
@@ -56,21 +55,45 @@ namespace NetTopologySuite.IO
 
         private readonly OptionalClassList<object> allExtensions;
 
-        internal ImmutableGpxWaypointTable(IEnumerable<XElement> elements, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
+        public ImmutableGpxWaypointTable(IEnumerable<XElement> elements, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
+            : this(elements is null ? throw new ArgumentNullException(nameof(elements)) :
+                   settings is null ? throw new ArgumentNullException(nameof(settings)) :
+                   extensionCallback is null ? throw new ArgumentNullException(nameof(extensionCallback)) :
+                   elements.Select(element => element is null ? throw new ArgumentException("No null elements are allowed", nameof(elements)) : GpxWaypoint.LoadNoValidation(element, settings, extensionCallback)))
         {
-            if (elements is null)
-            {
-                throw new ArgumentNullException(nameof(elements));
-            }
+        }
 
-            if (settings is null)
+        public ImmutableGpxWaypointTable(IEnumerable<GpxWaypoint> waypoints)
+        {
+            switch (waypoints)
             {
-                throw new ArgumentNullException(nameof(settings));
-            }
+                case null:
+                    throw new ArgumentNullException(nameof(waypoints));
 
-            if (extensionCallback is null)
-            {
-                throw new ArgumentNullException(nameof(extensionCallback));
+                case ImmutableGpxWaypointTable otherTable:
+                    this.longitudes = otherTable.longitudes;
+                    this.latitudes = otherTable.latitudes;
+                    this.elevationsInMeters = otherTable.elevationsInMeters;
+                    this.timestampsUtc = otherTable.timestampsUtc;
+                    this.names = otherTable.names;
+                    this.descriptions = otherTable.descriptions;
+                    this.symbolTexts = otherTable.symbolTexts;
+                    this.magneticVariations = otherTable.magneticVariations;
+                    this.geoidHeights = otherTable.geoidHeights;
+                    this.comments = otherTable.comments;
+                    this.sources = otherTable.sources;
+                    this.webLinkLists = otherTable.webLinkLists;
+                    this.classifications = otherTable.classifications;
+                    this.fixKinds = otherTable.fixKinds;
+                    this.numbersOfSatellites = otherTable.numbersOfSatellites;
+                    this.horizontalDilutionsOfPrecision = otherTable.horizontalDilutionsOfPrecision;
+                    this.verticalDilutionsOfPrecision = otherTable.verticalDilutionsOfPrecision;
+                    this.positionDilutionsOfPrecision = otherTable.positionDilutionsOfPrecision;
+                    this.secondsSinceLastDgpsUpdates = otherTable.secondsSinceLastDgpsUpdates;
+                    this.dgpsStationIds = otherTable.dgpsStationIds;
+                    this.allExtensions = otherTable.allExtensions;
+                    this.Count = otherTable.Count;
+                    return;
             }
 
             int cnt = 0;
@@ -96,37 +119,29 @@ namespace NetTopologySuite.IO
             List<GpxDgpsStationId?> dgpsStationIds = null;
             List<object> allExtensions = null;
 
-            foreach (var element in elements)
+            foreach (var waypoint in waypoints)
             {
-                longitudes.Add(Helpers.ParseLongitude(element.Attribute("lon")?.Value) ?? throw new XmlException("waypoint must have lon attribute"));
-                latitudes.Add(Helpers.ParseLatitude(element.Attribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"));
-                Add(ref elevationsInMeters, Helpers.ParseDouble(element.GpxElement("ele")?.Value), cnt);
-                Add(ref timestampsUtc, Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo), cnt);
-                Add(ref names, element.GpxElement("name")?.Value, cnt);
-                Add(ref descriptions, element.GpxElement("desc")?.Value, cnt);
-                Add(ref symbolTexts, element.GpxElement("sym")?.Value, cnt);
-                Add(ref magneticVariations, Helpers.ParseDegrees(element.GpxElement("magvar")?.Value), cnt);
-                Add(ref geoidHeights, Helpers.ParseDouble(element.GpxElement("geoidheight")?.Value), cnt);
-                Add(ref comments, element.GpxElement("cmt")?.Value, cnt);
-                Add(ref sources, element.GpxElement("src")?.Value, cnt);
-                Add(ref webLinkLists, ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)), cnt);
-                Add(ref classifications, element.GpxElement("type")?.Value, cnt);
-                Add(ref fixKinds, Helpers.ParseFixKind(element.GpxElement("fix")?.Value), cnt);
-                Add(ref numbersOfSatellites, Helpers.ParseUInt32(element.GpxElement("sat")?.Value), cnt);
-                Add(ref horizontalDilutionsOfPrecision, Helpers.ParseDouble(element.GpxElement("hdop")?.Value), cnt);
-                Add(ref verticalDilutionsOfPrecision, Helpers.ParseDouble(element.GpxElement("vdop")?.Value), cnt);
-                Add(ref positionDilutionsOfPrecision, Helpers.ParseDouble(element.GpxElement("pdop")?.Value), cnt);
-                Add(ref secondsSinceLastDgpsUpdates, Helpers.ParseDouble(element.GpxElement("ageofdgpsdata")?.Value), cnt);
-                Add(ref dgpsStationIds, Helpers.ParseDgpsStationId(element.GpxElement("dgpsid")?.Value), cnt);
-                var extensionsElement = element.GpxElement("extensions");
-                if (extensionsElement is null)
-                {
-                    Add(ref allExtensions, null, cnt);
-                }
-                else
-                {
-                    Add(ref allExtensions, extensionCallback(extensionsElement.Elements()), cnt);
-                }
+                longitudes.Add(waypoint.Longitude);
+                latitudes.Add(waypoint.Latitude);
+                Add(ref elevationsInMeters, waypoint.ElevationInMeters, cnt);
+                Add(ref timestampsUtc, waypoint.TimestampUtc, cnt);
+                Add(ref names, waypoint.Name, cnt);
+                Add(ref descriptions, waypoint.Description, cnt);
+                Add(ref symbolTexts, waypoint.SymbolText, cnt);
+                Add(ref magneticVariations, waypoint.MagneticVariation, cnt);
+                Add(ref geoidHeights, waypoint.GeoidHeight, cnt);
+                Add(ref comments, waypoint.Comment, cnt);
+                Add(ref sources, waypoint.Source, cnt);
+                Add(ref webLinkLists, waypoint.Links, cnt);
+                Add(ref classifications, waypoint.Classification, cnt);
+                Add(ref fixKinds, waypoint.FixKind, cnt);
+                Add(ref numbersOfSatellites, waypoint.NumberOfSatellites, cnt);
+                Add(ref horizontalDilutionsOfPrecision, waypoint.HorizontalDilutionOfPrecision, cnt);
+                Add(ref verticalDilutionsOfPrecision, waypoint.VerticalDilutionOfPrecision, cnt);
+                Add(ref positionDilutionsOfPrecision, waypoint.PositionDilutionOfPrecision, cnt);
+                Add(ref secondsSinceLastDgpsUpdates, waypoint.SecondsSinceLastDgpsUpdate, cnt);
+                Add(ref dgpsStationIds, waypoint.DgpsStationId, cnt);
+                Add(ref allExtensions, waypoint.Extensions, cnt);
 
                 ++cnt;
             }

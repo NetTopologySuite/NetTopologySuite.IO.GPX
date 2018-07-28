@@ -28,16 +28,20 @@ namespace NetTopologySuite.IO
                 switch (feature.Geometry)
                 {
                     case IPoint _:
-                        waypoints.Add((GpxWaypoint)feature.Attributes["wpt"]);
+                        waypoints.Add(NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(feature));
                         break;
 
                     case ILineString _:
-                        routes.Add((GpxRoute)feature.Attributes["rte"]);
+                        routes.Add(NetTopologySuiteGpxFeatureConverter.ToGpxRoute(feature));
                         break;
 
                     case IMultiLineString _:
-                        tracks.Add((GpxTrack)feature.Attributes["trk"]);
+                        tracks.Add(NetTopologySuiteGpxFeatureConverter.ToGpxTrack(feature));
                         break;
+
+                    default:
+                        Assert.True(false, "Only those feature types are supported.");
+                        throw null;
                 }
             }
 

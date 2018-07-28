@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
+using NetTopologySuite.Features;
+
 namespace NetTopologySuite.IO
 {
     internal static class Helpers
@@ -17,6 +19,17 @@ namespace NetTopologySuite.IO
         private static readonly string[] FixKindStrings = { "none", "2d", "3d", "dgps", "pps" };
 
         private static readonly Regex YearParseRegex = new Regex(@"^(?<yearFrag>-?(([1-9]\d\d\d+)|(0\d\d\d)))(Z|([+-]((((0\d)|(1[0-3])):[0-5]\d)|(14:00))))?$", RegexOptions.ExplicitCapture | RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+        public static object GetOptionalValue(this IAttributesTable attributes, string attributeName)
+        {
+            object result = null;
+            if (attributes.Exists(attributeName))
+            {
+                result = attributes[attributeName];
+            }
+
+            return result;
+        }
 
         // https://github.com/dotnet/coreclr/blob/cc52c67f5a0a26194c42fbd1b59e284d6727635a/src/System.Private.CoreLib/shared/System/Double.cs#L47-L54
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

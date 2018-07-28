@@ -16,10 +16,10 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(geometryFactory));
             }
 
-            return ReadFeatures(reader, settings, new NetTopologySuiteFeatureBuilderVisitor(geometryFactory));
+            return ReadFeatures(reader, settings, new NetTopologySuiteFeatureBuilderGpxVisitor(geometryFactory));
         }
 
-        public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, NetTopologySuiteFeatureBuilderVisitor visitor)
+        public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, NetTopologySuiteFeatureBuilderGpxVisitor visitor)
         {
             if (reader is null)
             {
