@@ -36,7 +36,7 @@ namespace NetTopologySuite.IO
                 switch (feature?.Geometry)
                 {
                     case null:
-                        throw new ArgumentException("All features must be non-null and contain non-null geometries.");
+                        throw new ArgumentException("All features must be non-null and contain non-null geometries.", nameof(features));
 
                     case IPoint _:
                         waypoints.Add(NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(feature));
