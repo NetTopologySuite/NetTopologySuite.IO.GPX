@@ -3,10 +3,33 @@ using System.Runtime.CompilerServices;
 
 namespace NetTopologySuite.IO
 {
+    /// <summary>
+    /// Represents an angle, in degrees.
+    /// </summary>
+    /// <remarks>
+    /// In the official XSD schema for GPX 1.1, this corresponds to the simple type "<a href="http://www.topografix.com/GPX/1/1/#type_dgpsStationType">dgpsStationType</a>".
+    /// </remarks>
     public readonly struct GpxDgpsStationId : IEquatable<GpxDgpsStationId>, IComparable<GpxDgpsStationId>, IComparable, IFormattable, IConvertible
     {
-        private readonly ushort value;
+        /// <summary>
+        /// The value stored in this instance.
+        /// Guaranteed to be between 0 (inclusive) and 1024 (exclusive) under normal circumstances.
+        /// </summary>
+        public readonly ushort Value;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxDgpsStationId"/> struct.
+        /// </summary>
+        /// <param name="val">
+        /// The value to store in <see cref="Value"/>.
+        /// </param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Thrown when <paramref name="val"/> is:
+        /// <list type="bullet">
+        /// <item><description>equal to 1024, or</description></item>
+        /// <item><description>greater than 1024</description></item>
+        /// </list>
+        /// </exception>
         public GpxDgpsStationId(ushort val)
         {
             if (!(val < 1024))
@@ -14,31 +37,37 @@ namespace NetTopologySuite.IO
                 ThrowArgumentOutOfRangeException();
             }
 
-            this.value = val;
+            this.Value = val;
         }
 
-        public static bool operator ==(GpxDgpsStationId id1, GpxDgpsStationId id2) => id1.value == id2.value;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+        public static bool operator ==(GpxDgpsStationId deg1, GpxDgpsStationId deg2) => deg1.Value == deg2.Value;
 
-        public static bool operator !=(GpxDgpsStationId id1, GpxDgpsStationId id2) => id1.value != id2.value;
+        public static bool operator !=(GpxDgpsStationId deg1, GpxDgpsStationId deg2) => deg1.Value != deg2.Value;
 
-        public static bool operator <(GpxDgpsStationId id1, GpxDgpsStationId id2) => id1.value < id2.value;
+        public static bool operator <(GpxDgpsStationId deg1, GpxDgpsStationId deg2) => deg1.Value < deg2.Value;
 
-        public static bool operator <=(GpxDgpsStationId id1, GpxDgpsStationId id2) => id1.value <= id2.value;
+        public static bool operator <=(GpxDgpsStationId deg1, GpxDgpsStationId deg2) => deg1.Value <= deg2.Value;
 
-        public static bool operator >(GpxDgpsStationId id1, GpxDgpsStationId id2) => id1.value >= id2.value;
+        public static bool operator >(GpxDgpsStationId deg1, GpxDgpsStationId deg2) => deg1.Value >= deg2.Value;
 
-        public static bool operator >=(GpxDgpsStationId id1, GpxDgpsStationId id2) => id1.value >= id2.value;
+        public static bool operator >=(GpxDgpsStationId deg1, GpxDgpsStationId deg2) => deg1.Value >= deg2.Value;
 
-        public static implicit operator ushort(GpxDgpsStationId id) => id.value;
+        public static implicit operator ushort(GpxDgpsStationId deg) => deg.Value;
 
         public static explicit operator GpxDgpsStationId(ushort val) => new GpxDgpsStationId(val);
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
-        public override bool Equals(object obj) => obj is GpxDgpsStationId other && this.value == other.value;
+        /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxDgpsStationId other && this.Value == other.Value;
 
-        public bool Equals(GpxDgpsStationId other) => this.value == other.value;
+        /// <inheritdoc />
+        public bool Equals(GpxDgpsStationId other) => this.Value == other.Value;
 
-        public int CompareTo(GpxDgpsStationId other) => this.value.CompareTo(other.value);
+        /// <inheritdoc />
+        public int CompareTo(GpxDgpsStationId other) => this.Value.CompareTo(other.Value);
 
+        /// <inheritdoc />
         public int CompareTo(object obj)
         {
             if (!(obj is GpxDgpsStationId other))
@@ -47,37 +76,73 @@ namespace NetTopologySuite.IO
                 return 0;
             }
 
-            return this.value.CompareTo(other.value);
+            return this.Value.CompareTo(other.Value);
         }
 
-        public override int GetHashCode() => this.value.GetHashCode();
+        /// <inheritdoc />
+        public override int GetHashCode() => this.Value.GetHashCode();
 
-        public override string ToString() => this.value.ToString();
+        /// <inheritdoc />
+        public override string ToString() => this.Value.ToString();
 
-        public string ToString(string format, IFormatProvider formatProvider) => this.value.ToString(format, formatProvider);
+        /// <inheritdoc />
+        public string ToString(string format, IFormatProvider formatProvider) => this.Value.ToString(format, formatProvider);
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private static void ThrowArgumentException() => throw new ArgumentException("Type must be a DGPS station ID", "obj");
+        private static void ThrowArgumentException() => throw new ArgumentException("Type must be DgpsStationId", "obj");
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private static void ThrowArgumentOutOfRangeException() => throw new ArgumentOutOfRangeException("val", "Must be between 0 and 1023, inclusive");
+        private static void ThrowArgumentOutOfRangeException() => throw new ArgumentOutOfRangeException("val", "Must be between 0 (inclusive) and 1024 (exclusive)");
 
-        public TypeCode GetTypeCode() => this.value.GetTypeCode();
-        public bool ToBoolean(IFormatProvider provider) => ((IConvertible)this.value).ToBoolean(provider);
-        public byte ToByte(IFormatProvider provider) => ((IConvertible)this.value).ToByte(provider);
-        public char ToChar(IFormatProvider provider) => ((IConvertible)this.value).ToChar(provider);
-        public DateTime ToDateTime(IFormatProvider provider) => ((IConvertible)this.value).ToDateTime(provider);
-        public decimal ToDecimal(IFormatProvider provider) => ((IConvertible)this.value).ToDecimal(provider);
-        public double ToDouble(IFormatProvider provider) => ((IConvertible)this.value).ToDouble(provider);
-        public short ToInt16(IFormatProvider provider) => ((IConvertible)this.value).ToInt16(provider);
-        public int ToInt32(IFormatProvider provider) => ((IConvertible)this.value).ToInt32(provider);
-        public long ToInt64(IFormatProvider provider) => ((IConvertible)this.value).ToInt64(provider);
-        public sbyte ToSByte(IFormatProvider provider) => ((IConvertible)this.value).ToSByte(provider);
-        public float ToSingle(IFormatProvider provider) => ((IConvertible)this.value).ToSingle(provider);
-        public string ToString(IFormatProvider provider) => this.value.ToString(provider);
-        public object ToType(Type conversionType, IFormatProvider provider) => ((IConvertible)this.value).ToType(conversionType, provider);
-        public ushort ToUInt16(IFormatProvider provider) => ((IConvertible)this.value).ToUInt16(provider);
-        public uint ToUInt32(IFormatProvider provider) => ((IConvertible)this.value).ToUInt32(provider);
-        public ulong ToUInt64(IFormatProvider provider) => ((IConvertible)this.value).ToUInt64(provider);
+        /// <inheritdoc />
+        public TypeCode GetTypeCode() => this.Value.GetTypeCode();
+
+        /// <inheritdoc />
+        public bool ToBoolean(IFormatProvider provider) => ((IConvertible)this.Value).ToBoolean(provider);
+
+        /// <inheritdoc />
+        public byte ToByte(IFormatProvider provider) => ((IConvertible)this.Value).ToByte(provider);
+
+        /// <inheritdoc />
+        public char ToChar(IFormatProvider provider) => ((IConvertible)this.Value).ToChar(provider);
+
+        /// <inheritdoc />
+        public DateTime ToDateTime(IFormatProvider provider) => ((IConvertible)this.Value).ToDateTime(provider);
+
+        /// <inheritdoc />
+        public decimal ToDecimal(IFormatProvider provider) => ((IConvertible)this.Value).ToDecimal(provider);
+
+        /// <inheritdoc />
+        public double ToDouble(IFormatProvider provider) => ((IConvertible)this.Value).ToDouble(provider);
+
+        /// <inheritdoc />
+        public short ToInt16(IFormatProvider provider) => ((IConvertible)this.Value).ToInt16(provider);
+
+        /// <inheritdoc />
+        public int ToInt32(IFormatProvider provider) => ((IConvertible)this.Value).ToInt32(provider);
+
+        /// <inheritdoc />
+        public long ToInt64(IFormatProvider provider) => ((IConvertible)this.Value).ToInt64(provider);
+
+        /// <inheritdoc />
+        public sbyte ToSByte(IFormatProvider provider) => ((IConvertible)this.Value).ToSByte(provider);
+
+        /// <inheritdoc />
+        public float ToSingle(IFormatProvider provider) => ((IConvertible)this.Value).ToSingle(provider);
+
+        /// <inheritdoc />
+        public string ToString(IFormatProvider provider) => this.Value.ToString(provider);
+
+        /// <inheritdoc />
+        public object ToType(Type conversionType, IFormatProvider provider) => ((IConvertible)this.Value).ToType(conversionType, provider);
+
+        /// <inheritdoc />
+        public ushort ToUInt16(IFormatProvider provider) => ((IConvertible)this.Value).ToUInt16(provider);
+
+        /// <inheritdoc />
+        public uint ToUInt32(IFormatProvider provider) => ((IConvertible)this.Value).ToUInt32(provider);
+
+        /// <inheritdoc />
+        public ulong ToUInt64(IFormatProvider provider) => ((IConvertible)this.Value).ToUInt64(provider);
     }
 }
