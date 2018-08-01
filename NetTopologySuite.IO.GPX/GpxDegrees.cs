@@ -34,7 +34,7 @@ namespace NetTopologySuite.IO
         /// <item><description>not a number,</description></item>
         /// <item><description>less than 0,</description></item>
         /// <item><description>equal to 360, or</description></item>
-        /// <item><description>greater than 360, or</description></item>
+        /// <item><description>greater than 360</description></item>
         /// </list>
         /// </exception>
         public GpxDegrees(double val)
