@@ -72,7 +72,7 @@ namespace NetTopologySuite.IO
                 }
 
                 bool expectingMetadata = true;
-                bool readExtensions = false;
+                bool expectingExtensions = true;
                 while (ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement))
                 {
                     if (expectingMetadata)
@@ -104,11 +104,11 @@ namespace NetTopologySuite.IO
                             ReadTrack(reader, settings, visitor);
                             break;
 
-                        case "extensions" when !readExtensions:
+                        case "extensions" when expectingExtensions:
+                            expectingExtensions = false;
                             var extensionElement = (XElement)XNode.ReadFrom(reader);
                             object extensions = settings.ExtensionReader.ConvertGpxExtensionElement(extensionElement.Elements());
                             visitor.VisitExtensions(extensions);
-                            readExtensions = true;
                             break;
                     }
                 }
