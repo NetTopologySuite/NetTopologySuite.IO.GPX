@@ -1,0 +1,405 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Joe/src/NetTopologySuite.IO.GPX/doc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxBoundingBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxBoundingBox.html",
+          "hash": "EnNx647TSdVEC4udCiSNXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxCopyright.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxCopyright.html",
+          "hash": "b1O3nk6nDjGwypCAomNVeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxDegrees.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxDegrees.html",
+          "hash": "yBfYlWKzOy4V6F5aDxFwEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxDgpsStationId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxDgpsStationId.html",
+          "hash": "Be279q4NfII1INU1jg3uPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxEmail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxEmail.html",
+          "hash": "lqhGdlkMqeriwVmIoveP2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxExtensionReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxExtensionReader.html",
+          "hash": "Jo5Gpeo1v0IqtgsiLfaLQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxExtensionWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxExtensionWriter.html",
+          "hash": "4SEYtJm4eJiKsmz3LWzJ2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxFixKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxFixKind.html",
+          "hash": "kD9i0qKJ0hWNXyaAyulouw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxLatitude.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxLatitude.html",
+          "hash": "c71EcEcNJZ/vjAudwWzWMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxLongitude.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxLongitude.html",
+          "hash": "YAp+esCpmNrjjZJtL/Jk3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxMetadata.html",
+          "hash": "BUt7Q5N8FKtIck5wdOfJUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxPerson.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxPerson.html",
+          "hash": "D6iE8crdt+iVdjzpeLNFiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxReader.html",
+          "hash": "oIcmNYjCZBKic5scaXpSMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxReaderSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxReaderSettings.html",
+          "hash": "tYeXRaYIt4VeWEa1As+apQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxRoute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxRoute.html",
+          "hash": "sdrZbx4fSL7DcjXDCCzz2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxTrack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxTrack.html",
+          "hash": "b2tfqTBmrTTK79oHM7uREA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxTrackSegment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxTrackSegment.html",
+          "hash": "oIfP4Kt3mfqikxeqKszKDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxVisitorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxVisitorBase.html",
+          "hash": "f3bXtyiCLyp+j36wjt548g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxWaypoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxWaypoint.html",
+          "hash": "F2CBV3IsoW0uSQFe664V6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxWebLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxWebLink.html",
+          "hash": "X2nEpUrMPhKw0rajmcmwtw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxWriter.html",
+          "hash": "TSZpjhirWEVVgiDX/uMO+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.GpxWriterSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.GpxWriterSettings.html",
+          "hash": "yNPKswQ6hMl6JQ4Gw4saoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator.html",
+          "hash": "YCCGun25lFJuNN0sAnvZhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html",
+          "hash": "XW7du0TgFa2/Zqc5qPeJBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html",
+          "hash": "RqlyFFZLW8FMc1KoDI/kKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html",
+          "hash": "R78Vt0qs9x6kXH9aPXJ7Zg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NetTopologySuite.IO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NetTopologySuite.IO.html",
+          "hash": "6kQHXBamG4GyuiMfa9FJmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "aKzEh/cSylhNe01SbqkWwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "N+zTjAGcVKllR/33hxsK6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "NTpdJ26v6Ag1Uqvzt48RWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

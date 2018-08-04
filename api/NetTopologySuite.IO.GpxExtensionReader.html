@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GpxExtensionReader
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GpxExtensionReader
+   ">
+    <meta name="generator" content="docfx 2.37.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NetTopologySuite.IO.GpxExtensionReader">
+  
+  
+  <h1 id="NetTopologySuite_IO_GpxExtensionReader" data-uid="NetTopologySuite.IO.GpxExtensionReader" class="text-break">Class GpxExtensionReader
+  </h1>
+  <div class="markdown level0 summary"><p>Provides hooks to interpret arbitrary GPX extension element content as (perhaps) something
+with a richer, more type-safe data model.</p>
+<p>
+The default behavior in this base class preserves the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> representation
+of the source data, so that a <a class="xref" href="NetTopologySuite.IO.GpxExtensionWriter.html">GpxExtensionWriter</a> in its own default mode will
+be able to write it back out again.
+</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">GpxExtensionReader</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NetTopologySuite.IO.html">NetTopologySuite.IO</a></h6>
+  <h6><strong>Assembly</strong>: NetTopologySuite.IO.GPX.dll</h6>
+  <h5 id="NetTopologySuite_IO_GpxExtensionReader_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GpxExtensionReader</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertGpxExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertGpxExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L39">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertGpxExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertGpxExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertGpxExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertGpxExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertGpxExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into what <a class="xref" href="NetTopologySuite.IO.GpxVisitorBase.html#NetTopologySuite_IO_GpxVisitorBase_VisitExtensions_System_Object_">VisitExtensions(Object)</a> should observe.</p>
+<p>
+If <code>/gpx/extensions</code> does not exist, then this method will not be called.
+</p>
+<p>
+If <code>/gpx/extensions/*</code> selects no elements, then this method will be called with an
+empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>/gpx/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertGpxExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value that <a class="xref" href="NetTopologySuite.IO.GpxVisitorBase.html#NetTopologySuite_IO_GpxVisitorBase_VisitExtensions_System_Object_">VisitExtensions(Object)</a> should observe.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertMetadataExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertMetadataExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L62">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertMetadataExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertMetadataExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertMetadataExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertMetadataExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertMetadataExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Extensions">Extensions</a>.</p>
+<p>
+If <code>/gpx/metadata/extensions</code> does not exist, then this method will not be called.
+</p>
+<p>
+If <code>/gpx/metadata/extensions/*</code> selects no elements, then this method will be
+called with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>/gpx/metadata/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertMetadataExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertRouteExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertRouteExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L111">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertRouteExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRouteExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertRouteExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRouteExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertRouteExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for <a class="xref" href="NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Extensions">Extensions</a>.</p>
+<p>
+If <code>rte/extensions</code> does not exist, then this method will not be called for that
+node.
+</p>
+<p>
+If <code>rte/extensions/*</code> selects no elements, then this method will be called for
+that node, with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>rte/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertRouteExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertRoutePointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertRoutePointExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L136">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertRoutePointExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRoutePointExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertRoutePointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRoutePointExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertRoutePointExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Extensions">Extensions</a>, when
+stored in a <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a> instance's table.</p>
+<p>
+If <code>rtept/extensions</code> does not exist, then this method will not be called for that
+node.
+</p>
+<p>
+If <code>rtept/extensions/*</code> selects no elements, then this method will be called for
+that node, with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>rtept/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertRoutePointExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertTrackExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertTrackExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L160">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertTrackExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for <a class="xref" href="NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Extensions">Extensions</a>.</p>
+<p>
+If <code>trk/extensions</code> does not exist, then this method will not be called for that
+node.
+</p>
+<p>
+If <code>trk/extensions/*</code> selects no elements, then this method will be called for
+that node, with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>trk/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertTrackExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertTrackPointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertTrackPointExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L209">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackPointExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackPointExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackPointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackPointExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertTrackPointExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Extensions">Extensions</a>, when
+stored in a <a class="xref" href="NetTopologySuite.IO.GpxTrackSegment.html">GpxTrackSegment</a> instance's table.</p>
+<p>
+If <code>trkpt/extensions</code> does not exist, then this method will not be called for that
+node.
+</p>
+<p>
+If <code>trkpt/extensions/*</code> selects no elements, then this method will be called for
+that node, with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>trkpt/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertTrackPointExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertTrackSegmentExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertTrackSegmentExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L184">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackSegmentExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackSegmentExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackSegmentExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackSegmentExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertTrackSegmentExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for <a class="xref" href="NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Extensions">Extensions</a>.</p>
+<p>
+If <code>trkseg/extensions</code> does not exist, then this method will not be called for that
+node.
+</p>
+<p>
+If <code>trkseg/extensions/*</code> selects no elements, then this method will be called for
+that node, with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>trkseg/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertTrackSegmentExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertWaypointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertWaypointExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L87">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertWaypointExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertWaypointExtensionElement*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertWaypointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertWaypointExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertWaypointExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Extensions">Extensions</a>, when
+stored in a waypoint that <a class="xref" href="NetTopologySuite.IO.GpxVisitorBase.html#NetTopologySuite_IO_GpxVisitorBase_VisitWaypoint_NetTopologySuite_IO_GpxWaypoint_">VisitWaypoint(GpxWaypoint)</a> will observe.</p>
+<p>
+If <code>wpt/extensions</code> does not exist, then this method will not be called for that
+node.
+</p>
+<p>
+If <code>wpt/extensions/*</code> selects no elements, then this method will be called for
+that node, with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if <code>wpt/extensions</code> did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object ConvertWaypointExtensionElement(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
