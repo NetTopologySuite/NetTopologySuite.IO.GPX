@@ -11,7 +11,7 @@ Targets .NET Standard 2.0.
 Documentation is currently being published as [GitHub Pages](https://nettopologysuite.github.io/NetTopologySuite.IO.GPX/index.html).
 
 ## Release Notes
-See [`docs/release-notes.md`](docs/release-notes.md).
+See [`doc/release-notes.md`](doc/release-notes.md).
 
 ## Project status
 | License | Builds | NuGet | MyGet (pre-release) |
