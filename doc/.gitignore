@@ -1,3 +1,5 @@
 *.yml
+!toc.yml
+*/toc.yml
 .manifest
-gh-pages.7z
+generated-site-content/
