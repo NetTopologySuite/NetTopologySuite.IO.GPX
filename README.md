@@ -7,6 +7,9 @@ Or, if you'd like, you could use this to simply read / write the data exactly as
 
 Targets .NET Standard 2.0.
 
+## Release Notes
+See [`release-notes.md`](release-notes.md).
+
 ## Project status
 | License | Builds | NuGet | MyGet (pre-release) |
 | ------- | ------ | ----- | ------------------- |
