@@ -18,5 +18,6 @@
     git commit -m "Regenerating gh-pages branch.  This was performed automatically."
     git checkout gh-pages
     git reset --hard gh-pages-staging
+    git branch -D gh-pages-staging
     rem git push --force
 )
