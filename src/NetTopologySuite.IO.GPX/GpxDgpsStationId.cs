@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace NetTopologySuite.IO
 {
     /// <summary>
-    /// Represents an angle, in degrees.
+    /// Represents the ID of a DGPS station.
     /// </summary>
     /// <remarks>
     /// In the official XSD schema for GPX 1.1, this corresponds to the simple type "<a href="http://www.topografix.com/GPX/1/1/#type_dgpsStationType">dgpsStationType</a>".
