@@ -12,7 +12,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DebugType>embedded</DebugType>
 
-    <VersionPrefix>0.1.1</VersionPrefix>
+    <VersionPrefix>0.1.2</VersionPrefix>
     <Authors>NetTopologySuite - Team</Authors>
     <Company>NetTopologySuite - Team</Company>
     <PackageProjectUrl>https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX</PackageProjectUrl>
