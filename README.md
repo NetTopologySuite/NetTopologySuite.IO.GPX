@@ -7,8 +7,11 @@ Or, if you'd like, you could use this to simply read / write the data exactly as
 
 Targets .NET Standard 2.0.
 
+## Documentation
+Documentation is currently being published as [GitHub Pages](https://nettopologysuite.github.io/NetTopologySuite.IO.GPX/index.html).
+
 ## Release Notes
-See [`release-notes.md`](release-notes.md).
+See [`docs/release-notes.md`](docs/release-notes.md).
 
 ## Project status
 | License | Builds | NuGet | MyGet (pre-release) |

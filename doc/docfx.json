@@ -27,13 +27,13 @@
     "overwrite": [
       {
         "files": [ "overwrite/**.md" ],
-        "exclude": [ "obj/**", "_site/**" ]
+        "exclude": [ "obj/**" ]
       }
     ],
-    "dest": "generated-site-content",
+    "dest": "obj/generated-site-content",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
-    "template": [ "statictoc" ],
+    "template": [ "default" ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
