@@ -83,7 +83,7 @@ namespace NetTopologySuite.IO
             writer.WriteGpxElementValues("link", this.Links);
             writer.WriteOptionalGpxElementValue("number", this.Number);
             writer.WriteOptionalGpxElementValue("type", this.Classification);
-            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertRouteExtension);
+            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertTrackExtension);
             foreach (var segment in this.Segments)
             {
                 writer.WriteGpxStartElement("trkseg");
