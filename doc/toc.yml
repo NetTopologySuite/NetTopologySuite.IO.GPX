@@ -1,5 +1,7 @@
 - name: Home
   href: index.md
+- name: Source Code
+  href: https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX
 - name: Release Notes
   href: release-notes.md
 - name: API Documentation
