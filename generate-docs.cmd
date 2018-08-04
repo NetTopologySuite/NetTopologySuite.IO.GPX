@@ -14,7 +14,7 @@ xcopy /Q /E /R /Y _site gh-pages
 pushd gh-pages
 git add .
 git commit -m "Update docs.  This was performed automatically."
-git push
+git push origin gh-pages
 popd
 popd
 popd
