@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxBoundingBox.html",
-          "hash": "Q1dOz4UANI0pDTvOFDpo1w=="
+          "hash": "e1cPSsnxjMxcVhRaNAH7sA=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxCopyright.html",
-          "hash": "aUHtBj+RHOBo6rO1XuXRoA=="
+          "hash": "fvOx4U0CTajCKXsly4ul5g=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxDegrees.html",
-          "hash": "GzY/fdmKiQ+eL3iRTrkjxw=="
+          "hash": "huPbn9LaaBii472dd7MUmA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxDgpsStationId.html",
-          "hash": "mxwZVT2QNWIJbB75mUXfYg=="
+          "hash": "A+ZEbaI/VytQb3ZkZKw8ag=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxEmail.html",
-          "hash": "vOYrSzh+xm8As4erK+eGbA=="
+          "hash": "I1FLRuZrEmonqDuf+EhzwQ=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxExtensionReader.html",
-          "hash": "9Kwm0NKJ3RWSK9HbfetuOQ=="
+          "hash": "YZesZZpub2JOyfoAGVpXmw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxExtensionWriter.html",
-          "hash": "PIqsSYc2o0VJ90uR2G8qbQ=="
+          "hash": "xDzpzTiaENP0vyK0cQznAw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxFixKind.html",
-          "hash": "nNio4p5bNlcIKkQ8cm9S0g=="
+          "hash": "JmlxeEWy/xR2syPEv5u0ew=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxLatitude.html",
-          "hash": "gbdkBDQ7boKZSItUbm8cRg=="
+          "hash": "vWs5gZg6oMijltUUje9M5A=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxLongitude.html",
-          "hash": "zDcwrlvXw62+GiNzw4z0Qw=="
+          "hash": "6hjo45Ll4G24ruFjferJeQ=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxMetadata.html",
-          "hash": "fIrWHM/a3Z+MOduWN9KYFw=="
+          "hash": "aqukGM/Kg85sb0rM6TsmCQ=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxPerson.html",
-          "hash": "ceLSf/l+1u2hdLQjDK7LjQ=="
+          "hash": "asvDa2n/2rx3+sgpbdKlWg=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxReader.html",
-          "hash": "Bm3IU/Swc8AYY9LwYkGdPA=="
+          "hash": "m9eiUHKOsNrG6w5fmFbX6w=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxReaderSettings.html",
-          "hash": "D9lwJXIjCVWTzp0+2Up4Pw=="
+          "hash": "zTSjSQpSCaRk5oKPt/6JKA=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxRoute.html",
-          "hash": "Cuiimq2J46WjNiEq/YOiAg=="
+          "hash": "Rqh1N0d1ujKhxM+IHaP2wQ=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxTrack.html",
-          "hash": "7zz2CxKttwlP+ysHzANVAg=="
+          "hash": "nHcuanBkMIiQNoWSY8zL0w=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxTrackSegment.html",
-          "hash": "gxgyUOJb/7WR6zAYT3VwQQ=="
+          "hash": "PgIy0ho9ssOk6XqHnpVHhQ=="
         }
       },
       "is_incremental": false,
@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxVisitorBase.html",
-          "hash": "9ZM8/R5gBCMnwX07oiNxQQ=="
+          "hash": "Jc9YVGSUGvo3CPDUCLbuGg=="
         }
       },
       "is_incremental": false,
@@ -234,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxWaypoint.html",
-          "hash": "HxWseJGohWZvuWD+YeX92g=="
+          "hash": "jsUXL5G51Xi2FL96Z+uXcA=="
         }
       },
       "is_incremental": false,
@@ -246,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxWebLink.html",
-          "hash": "oNmV9ouWui0/3Dnxcpza6Q=="
+          "hash": "ZAnmMUSYbltnq8xeh8y1Ug=="
         }
       },
       "is_incremental": false,
@@ -258,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxWriter.html",
-          "hash": "/ZPNgbBUAquT1m6dS9q0+A=="
+          "hash": "D8EI43nwmEapufzIyvLcLA=="
         }
       },
       "is_incremental": false,
@@ -270,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxWriterSettings.html",
-          "hash": "wI3TxDmUQ0C+nkod/CSELA=="
+          "hash": "F9n53Xdqaf6qDx0Vf2AQbA=="
         }
       },
       "is_incremental": false,
@@ -282,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator.html",
-          "hash": "mHcYUJThPxE3rIOfnbY2zQ=="
+          "hash": "nyq9ZNrwY8D0poJqbF/+Pg=="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html",
-          "hash": "XHC0UhQKXZaNDFZMYuW/5g=="
+          "hash": "vzQ7cns6BNyGVovAWt1zpg=="
         }
       },
       "is_incremental": false,
@@ -306,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html",
-          "hash": "sDFXQ+CkRr1N9vYxvEYwCw=="
+          "hash": "TXGM1I6Pn7WU1IL9k7MCNw=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html",
-          "hash": "DbPwITzQN6WcZrlR3rZBFw=="
+          "hash": "8Be7yqN75wUIoDSzkz9NyQ=="
         }
       },
       "is_incremental": false,
@@ -330,7 +330,19 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.html",
-          "hash": "kioVtLxUkUYf7DtEJBkEUQ=="
+          "hash": "YmfGXkEfyJfKuL3vbtrR9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "N+zTjAGcVKllR/33hxsK6g=="
         }
       },
       "is_incremental": false,
@@ -342,7 +354,19 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "QZu/shGBGAj7J3c0Af97lA=="
+          "hash": "eUTtF/JaeboryXsN2Ol1uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "SG3PBsXoEZT0agxwoNASbQ=="
         }
       },
       "is_incremental": false,
@@ -352,7 +376,8 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build"
       },
       "processors": {
@@ -361,12 +386,12 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
           "incrementalPhase": "build"
         }
       }
