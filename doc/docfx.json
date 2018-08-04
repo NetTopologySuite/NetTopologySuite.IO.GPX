@@ -7,13 +7,15 @@
           "src": "../src"
         }
       ],
-      "dest": "api"
+      "dest": "obj/api"
     }
   ],
   "build": {
     "content": [
       {
-        "files": [ "api/**/*.yml" ],
+        "files": [ "**/*.yml" ],
+        "src": "obj/api",
+        "dest": "api"
       },
       {
         "files": ["articles/**.md", "articles/**/toc.yml", "toc.yml", "*.md" ]
@@ -24,12 +26,7 @@
         "files": [ "images/**" ]
       }
     ],
-    "overwrite": [
-      {
-        "files": [ "overwrite/**.md" ],
-        "exclude": [ "obj/**" ]
-      }
-    ],
+    "overwrite": "overwrite/**.md",
     "dest": "obj/generated-site-content",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],

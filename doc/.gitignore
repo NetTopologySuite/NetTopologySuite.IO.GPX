@@ -1,4 +1,0 @@
-*.yml
-!toc.yml
-*/toc.yml
-.manifest
