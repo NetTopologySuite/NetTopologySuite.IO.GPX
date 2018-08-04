@@ -18,4 +18,5 @@ git push origin gh-pages
 popd
 popd
 popd
+git push origin gh-pages
 popd
