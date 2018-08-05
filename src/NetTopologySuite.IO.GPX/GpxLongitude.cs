@@ -32,8 +32,8 @@ namespace NetTopologySuite.IO
         /// Thrown when <paramref name="val"/> is:
         /// <list type="bullet">
         /// <item><description>not a number,</description></item>
-        /// <item><description>less than -90, or,</description></item>
-        /// <item><description>greater than 90</description></item>
+        /// <item><description>less than -180, or,</description></item>
+        /// <item><description>greater than 180</description></item>
         /// </list>
         /// </exception>
         public GpxLongitude(double val)
