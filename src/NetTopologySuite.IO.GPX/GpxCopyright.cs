@@ -16,24 +16,46 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxCopyright"/> class.
         /// </summary>
-        /// <param name="year">
-        /// The value for <see cref="Year"/>.
-        /// </param>
-        /// <param name="licenseUri">
-        /// The value for <see cref="LicenseUri"/>.
-        /// </param>
         /// <param name="author">
         /// The value for <see cref="Author"/>.
         /// </param>
         /// <exception cref="ArgumentNullException">
         /// <paramref name="author"/> is <see langword="null" />.
         /// </exception>
-        public GpxCopyright(int? year, Uri licenseUri, string author)
+        public GpxCopyright(string author)
+            : this(author, null, null)
         {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxCopyright"/> class.
+        /// </summary>
+        /// <param name="author">
+        /// The value for <see cref="Author"/>.
+        /// </param>
+        /// <param name="year">
+        /// The value for <see cref="Year"/>.
+        /// </param>
+        /// <param name="licenseUri">
+        /// The value for <see cref="LicenseUri"/>.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// <paramref name="author"/> is <see langword="null" />.
+        /// </exception>
+        public GpxCopyright(string author, int? year, Uri licenseUri)
+        {
+            this.Author = author ?? throw new ArgumentNullException(nameof(author));
             this.Year = year;
             this.LicenseUri = licenseUri;
-            this.Author = author ?? throw new ArgumentNullException(nameof(author));
         }
+
+        /// <summary>
+        /// Gets the author who holds the copyright.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "author" attribute.
+        /// </remarks>
+        public string Author { get; }
 
         /// <summary>
         /// Gets an optional Gregorian year for the copyright.
@@ -60,18 +82,36 @@ namespace NetTopologySuite.IO
         /// </remarks>
         public Uri LicenseUri { get; }
 
-        /// <summary>
-        /// Gets the author who holds the copyright.
-        /// </summary>
-        /// <remarks>
-        /// In the official XSD schema for GPX 1.1, this corresponds to the "author" attribute.
-        /// </remarks>
-        public string Author { get; }
-
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Year), this.Year),
-                                                                 (nameof(this.LicenseUri), this.LicenseUri),
-                                                                 (nameof(this.Author), this.Author));
+        public override string ToString() => Helpers.BuildString((nameof(this.Author), this.Author),
+                                                                 (nameof(this.Year), this.Year),
+                                                                 (nameof(this.LicenseUri), this.LicenseUri));
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxCopyright"/> as a copy of this instance, but with
+        /// <see cref="Year"/> replaced by the given value.
+        /// </summary>
+        /// <param name="year">
+        /// The new value for <see cref="Year"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxCopyright"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Year"/> value set to <paramref name="year"/>.
+        /// </returns>
+        public GpxCopyright WithYear(int? year) => new GpxCopyright(this.Author, year, this.LicenseUri);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxCopyright"/> as a copy of this instance, but with
+        /// <see cref="LicenseUri"/> replaced by the given value.
+        /// </summary>
+        /// <param name="licenseUri">
+        /// The new value for <see cref="LicenseUri"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxCopyright"/> instance that's a copy of the current instance, but
+        /// with its <see cref="LicenseUri"/> value set to <paramref name="licenseUri"/>.
+        /// </returns>
+        public GpxCopyright WithLicenseUri(Uri licenseUri) => new GpxCopyright(this.Author, this.Year, licenseUri);
 
         internal static GpxCopyright Load(XElement element)
         {
@@ -81,9 +121,9 @@ namespace NetTopologySuite.IO
             }
 
             return new GpxCopyright(
+                author: element.Attribute("author")?.Value ?? throw new XmlException("copyright element must have author attribute."),
                 year: Helpers.ParseGregorianYear(element.GpxElement("year")?.Value),
-                licenseUri: Helpers.ParseUri(element.GpxElement("license")?.Value),
-                author: element.Attribute("author")?.Value ?? throw new XmlException("copyright element must have author attribute."));
+                licenseUri: Helpers.ParseUri(element.GpxElement("license")?.Value));
         }
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)
