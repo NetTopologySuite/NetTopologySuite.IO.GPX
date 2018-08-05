@@ -378,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "fyrY9zpWIV3Br8x9K/JZSA=="
+          "hash": "j3oulwYOKvqeq4y9sni+ew=="
         }
       },
       "is_incremental": false,
@@ -388,7 +388,8 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build"
       },
       "processors": {
@@ -398,11 +399,11 @@
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build"
         }
       }
