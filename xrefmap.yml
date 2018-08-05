@@ -97,15 +97,21 @@ references:
   commentId: T:NetTopologySuite.IO.GpxCopyright
   fullName: NetTopologySuite.IO.GpxCopyright
   nameWithType: GpxCopyright
-- uid: NetTopologySuite.IO.GpxCopyright.#ctor(System.Nullable{System.Int32},System.Uri,System.String)
-  name: GpxCopyright(Nullable<Int32>, Uri, String)
-  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright__ctor_System_Nullable_System_Int32__System_Uri_System_String_
-  commentId: M:NetTopologySuite.IO.GpxCopyright.#ctor(System.Nullable{System.Int32},System.Uri,System.String)
-  name.vb: GpxCopyright(Nullable(Of Int32), Uri, String)
-  fullName: NetTopologySuite.IO.GpxCopyright.GpxCopyright(System.Nullable<System.Int32>, System.Uri, System.String)
-  fullName.vb: NetTopologySuite.IO.GpxCopyright.GpxCopyright(System.Nullable(Of System.Int32), System.Uri, System.String)
-  nameWithType: GpxCopyright.GpxCopyright(Nullable<Int32>, Uri, String)
-  nameWithType.vb: GpxCopyright.GpxCopyright(Nullable(Of Int32), Uri, String)
+- uid: NetTopologySuite.IO.GpxCopyright.#ctor(System.String)
+  name: GpxCopyright(String)
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright__ctor_System_String_
+  commentId: M:NetTopologySuite.IO.GpxCopyright.#ctor(System.String)
+  fullName: NetTopologySuite.IO.GpxCopyright.GpxCopyright(System.String)
+  nameWithType: GpxCopyright.GpxCopyright(String)
+- uid: NetTopologySuite.IO.GpxCopyright.#ctor(System.String,System.Nullable{System.Int32},System.Uri)
+  name: GpxCopyright(String, Nullable<Int32>, Uri)
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright__ctor_System_String_System_Nullable_System_Int32__System_Uri_
+  commentId: M:NetTopologySuite.IO.GpxCopyright.#ctor(System.String,System.Nullable{System.Int32},System.Uri)
+  name.vb: GpxCopyright(String, Nullable(Of Int32), Uri)
+  fullName: NetTopologySuite.IO.GpxCopyright.GpxCopyright(System.String, System.Nullable<System.Int32>, System.Uri)
+  fullName.vb: NetTopologySuite.IO.GpxCopyright.GpxCopyright(System.String, System.Nullable(Of System.Int32), System.Uri)
+  nameWithType: GpxCopyright.GpxCopyright(String, Nullable<Int32>, Uri)
+  nameWithType.vb: GpxCopyright.GpxCopyright(String, Nullable(Of Int32), Uri)
 - uid: NetTopologySuite.IO.GpxCopyright.#ctor*
   name: GpxCopyright
   href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright__ctor_
@@ -152,6 +158,35 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxCopyright.ToString
   nameWithType: GpxCopyright.ToString
+- uid: NetTopologySuite.IO.GpxCopyright.WithLicenseUri(System.Uri)
+  name: WithLicenseUri(Uri)
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_WithLicenseUri_System_Uri_
+  commentId: M:NetTopologySuite.IO.GpxCopyright.WithLicenseUri(System.Uri)
+  fullName: NetTopologySuite.IO.GpxCopyright.WithLicenseUri(System.Uri)
+  nameWithType: GpxCopyright.WithLicenseUri(Uri)
+- uid: NetTopologySuite.IO.GpxCopyright.WithLicenseUri*
+  name: WithLicenseUri
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_WithLicenseUri_
+  commentId: Overload:NetTopologySuite.IO.GpxCopyright.WithLicenseUri
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxCopyright.WithLicenseUri
+  nameWithType: GpxCopyright.WithLicenseUri
+- uid: NetTopologySuite.IO.GpxCopyright.WithYear(System.Nullable{System.Int32})
+  name: WithYear(Nullable<Int32>)
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_WithYear_System_Nullable_System_Int32__
+  commentId: M:NetTopologySuite.IO.GpxCopyright.WithYear(System.Nullable{System.Int32})
+  name.vb: WithYear(Nullable(Of Int32))
+  fullName: NetTopologySuite.IO.GpxCopyright.WithYear(System.Nullable<System.Int32>)
+  fullName.vb: NetTopologySuite.IO.GpxCopyright.WithYear(System.Nullable(Of System.Int32))
+  nameWithType: GpxCopyright.WithYear(Nullable<Int32>)
+  nameWithType.vb: GpxCopyright.WithYear(Nullable(Of Int32))
+- uid: NetTopologySuite.IO.GpxCopyright.WithYear*
+  name: WithYear
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_WithYear_
+  commentId: Overload:NetTopologySuite.IO.GpxCopyright.WithYear
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxCopyright.WithYear
+  nameWithType: GpxCopyright.WithYear
 - uid: NetTopologySuite.IO.GpxCopyright.Year
   name: Year
   href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_Year
