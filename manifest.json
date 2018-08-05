@@ -366,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "release-notes.html",
-          "hash": "qflqjiBBpkY0kuTr6kA4Dw=="
+          "hash": "o4Xo1YZQJlJGOYloH1/3yA=="
         }
       },
       "is_incremental": false,
@@ -388,8 +388,7 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
@@ -399,11 +398,11 @@
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
