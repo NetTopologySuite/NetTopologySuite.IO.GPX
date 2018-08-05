@@ -83,7 +83,8 @@
   
   <h1 id="NetTopologySuite_IO_GpxLatitude" data-uid="NetTopologySuite.IO.GpxLatitude" class="text-break">Struct GpxLatitude
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents a latitude value.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -111,6 +112,9 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public struct GpxLatitude : IEquatable&lt;GpxLatitude&gt;, IComparable&lt;GpxLatitude&gt;, IComparable, IFormattable, IConvertible</code></pre>
   </div>
+  <h5 id="NetTopologySuite_IO_GpxLatitude_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the simple type &quot;<a href="http://www.topografix.com/GPX/1/1/#type_latitudeType">latitudeType</a>&quot;.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -118,11 +122,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude__ctor_System_Double_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.%23ctor(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L10">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L39">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude__ctor_" data-uid="NetTopologySuite.IO.GpxLatitude.#ctor*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude__ctor_System_Double_" data-uid="NetTopologySuite.IO.GpxLatitude.#ctor(System.Double)">GpxLatitude(Double)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxLatitude.html">GpxLatitude</a> struct.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -141,7 +146,25 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
         <td><span class="parametername">val</span></td>
-        <td></td>
+        <td><p>The value to store in <a class="xref" href="NetTopologySuite.IO.GpxLatitude.html#NetTopologySuite_IO_GpxLatitude_Value">Value</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">val</code> is:</p>
+<ul><li>not a number,</li><li>less than -90, or,</li><li>greater than 90</li></ul>
+</td>
       </tr>
     </tbody>
   </table>
@@ -152,10 +175,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_Value.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L8">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L23">View Source</a>
   </span>
   <h4 id="NetTopologySuite_IO_GpxLatitude_Value" data-uid="NetTopologySuite.IO.GpxLatitude.Value">Value</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The value stored in this instance.
+Guaranteed to be between -90 (inclusive) and 90 (exclusive) under normal circumstances.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -176,6 +201,11 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxLatitude_Value_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This value is not completely round-trip safe.  In GPX 1.1, its base type is &quot;decimal&quot;,
+which supports arbitrary levels of precision.  Here, it's <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>, which
+will only faithfully store a few more than a dozen significant digits.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -183,7 +213,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_CompareTo_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.CompareTo(NetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L40">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L74">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_CompareTo_" data-uid="NetTopologySuite.IO.GpxLatitude.CompareTo*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_CompareTo_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.CompareTo(NetTopologySuite.IO.GpxLatitude)">CompareTo(GpxLatitude)</h4>
@@ -230,7 +260,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_CompareTo_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.CompareTo(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L42">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L77">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_CompareTo_" data-uid="NetTopologySuite.IO.GpxLatitude.CompareTo*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_CompareTo_System_Object_" data-uid="NetTopologySuite.IO.GpxLatitude.CompareTo(System.Object)">CompareTo(Object)</h4>
@@ -277,7 +307,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_Equals_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.Equals(NetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L38">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L71">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_Equals_" data-uid="NetTopologySuite.IO.GpxLatitude.Equals*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_Equals_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.Equals(NetTopologySuite.IO.GpxLatitude)">Equals(GpxLatitude)</h4>
@@ -324,7 +354,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_Equals_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L36">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L68">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_Equals_" data-uid="NetTopologySuite.IO.GpxLatitude.Equals*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_Equals_System_Object_" data-uid="NetTopologySuite.IO.GpxLatitude.Equals(System.Object)">Equals(Object)</h4>
@@ -373,7 +403,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_GetHashCode.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L53">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L89">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_GetHashCode_" data-uid="NetTopologySuite.IO.GpxLatitude.GetHashCode*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_GetHashCode" data-uid="NetTopologySuite.IO.GpxLatitude.GetHashCode">GetHashCode()</h4>
@@ -405,7 +435,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_GetTypeCode.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.GetTypeCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L65">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L107">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_GetTypeCode_" data-uid="NetTopologySuite.IO.GpxLatitude.GetTypeCode*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_GetTypeCode" data-uid="NetTopologySuite.IO.GpxLatitude.GetTypeCode">GetTypeCode()</h4>
@@ -432,527 +462,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToBoolean_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToBoolean(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L66">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToBoolean_" data-uid="NetTopologySuite.IO.GpxLatitude.ToBoolean*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToBoolean_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToBoolean(System.IFormatProvider)">ToBoolean(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ToBoolean(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToByte_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToByte(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L67">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToByte_" data-uid="NetTopologySuite.IO.GpxLatitude.ToByte*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToByte_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToByte(System.IFormatProvider)">ToByte(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public byte ToByte(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToChar_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToChar(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L68">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToChar_" data-uid="NetTopologySuite.IO.GpxLatitude.ToChar*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToChar_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToChar(System.IFormatProvider)">ToChar(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public char ToChar(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToDateTime_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToDateTime(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L69">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToDateTime_" data-uid="NetTopologySuite.IO.GpxLatitude.ToDateTime*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToDateTime_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToDateTime(System.IFormatProvider)">ToDateTime(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime ToDateTime(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToDecimal_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToDecimal(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L70">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToDecimal_" data-uid="NetTopologySuite.IO.GpxLatitude.ToDecimal*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToDecimal_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToDecimal(System.IFormatProvider)">ToDecimal(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public decimal ToDecimal(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToDouble_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToDouble(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L71">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToDouble_" data-uid="NetTopologySuite.IO.GpxLatitude.ToDouble*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToDouble_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToDouble(System.IFormatProvider)">ToDouble(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double ToDouble(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToInt16_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToInt16(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L72">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToInt16_" data-uid="NetTopologySuite.IO.GpxLatitude.ToInt16*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToInt16_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToInt16(System.IFormatProvider)">ToInt16(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public short ToInt16(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToInt32_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToInt32(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L73">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToInt32_" data-uid="NetTopologySuite.IO.GpxLatitude.ToInt32*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToInt32_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToInt32(System.IFormatProvider)">ToInt32(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int ToInt32(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToInt64_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToInt64(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L74">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToInt64_" data-uid="NetTopologySuite.IO.GpxLatitude.ToInt64*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToInt64_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToInt64(System.IFormatProvider)">ToInt64(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long ToInt64(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToSByte_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToSByte(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L75">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToSByte_" data-uid="NetTopologySuite.IO.GpxLatitude.ToSByte*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToSByte_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToSByte(System.IFormatProvider)">ToSByte(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sbyte ToSByte(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToSingle_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToSingle(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L76">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToSingle_" data-uid="NetTopologySuite.IO.GpxLatitude.ToSingle*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToSingle_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToSingle(System.IFormatProvider)">ToSingle(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float ToSingle(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToString.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L55">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L92">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_ToString_" data-uid="NetTopologySuite.IO.GpxLatitude.ToString*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_ToString" data-uid="NetTopologySuite.IO.GpxLatitude.ToString">ToString()</h4>
@@ -984,7 +497,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToString_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToString(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L77">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L95">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_ToString_" data-uid="NetTopologySuite.IO.GpxLatitude.ToString*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_ToString_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToString(System.IFormatProvider)">ToString(IFormatProvider)</h4>
@@ -1031,7 +544,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToString_System_String_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToString(System.String%2CSystem.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L57">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L98">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_ToString_" data-uid="NetTopologySuite.IO.GpxLatitude.ToString*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_ToString_System_String_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToString(System.String,System.IFormatProvider)">ToString(String, IFormatProvider)</h4>
@@ -1078,199 +591,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToType_System_Type_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToType(System.Type%2CSystem.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L78">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToType_" data-uid="NetTopologySuite.IO.GpxLatitude.ToType*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToType_System_Type_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToType(System.Type,System.IFormatProvider)">ToType(Type, IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object ToType(Type conversionType, IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">conversionType</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToUInt16_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToUInt16(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L79">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToUInt16_" data-uid="NetTopologySuite.IO.GpxLatitude.ToUInt16*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToUInt16_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToUInt16(System.IFormatProvider)">ToUInt16(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ushort ToUInt16(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToUInt32_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToUInt32(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L80">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToUInt32_" data-uid="NetTopologySuite.IO.GpxLatitude.ToUInt32*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToUInt32_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToUInt32(System.IFormatProvider)">ToUInt32(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public uint ToUInt32(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_ToUInt64_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.ToUInt64(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L81">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxLatitude_ToUInt64_" data-uid="NetTopologySuite.IO.GpxLatitude.ToUInt64*"></a>
-  <h4 id="NetTopologySuite_IO_GpxLatitude_ToUInt64_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.ToUInt64(System.IFormatProvider)">ToUInt64(IFormatProvider)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ulong ToUInt64(IFormatProvider provider)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -1278,7 +598,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_Equality_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_Equality(NetTopologySuite.IO.GpxLatitude%2CNetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L20">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L50">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_Equality_" data-uid="NetTopologySuite.IO.GpxLatitude.op_Equality*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_Equality_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.op_Equality(NetTopologySuite.IO.GpxLatitude,NetTopologySuite.IO.GpxLatitude)">Equality(GpxLatitude, GpxLatitude)</h4>
@@ -1330,7 +650,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_Explicit_System_Double__NetTopologySuite_IO_GpxLatitude.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_Explicit(System.Double)~NetTopologySuite.IO.GpxLatitude%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L34">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L64">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_Explicit_" data-uid="NetTopologySuite.IO.GpxLatitude.op_Explicit*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_Explicit_System_Double__NetTopologySuite_IO_GpxLatitude" data-uid="NetTopologySuite.IO.GpxLatitude.op_Explicit(System.Double)~NetTopologySuite.IO.GpxLatitude">Explicit(Double to GpxLatitude)</h4>
@@ -1377,7 +697,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_GreaterThan_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_GreaterThan(NetTopologySuite.IO.GpxLatitude%2CNetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L28">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L58">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_GreaterThan_" data-uid="NetTopologySuite.IO.GpxLatitude.op_GreaterThan*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_GreaterThan_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.op_GreaterThan(NetTopologySuite.IO.GpxLatitude,NetTopologySuite.IO.GpxLatitude)">GreaterThan(GpxLatitude, GpxLatitude)</h4>
@@ -1429,7 +749,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_GreaterThanOrEqual_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_GreaterThanOrEqual(NetTopologySuite.IO.GpxLatitude%2CNetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L30">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L60">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_GreaterThanOrEqual_" data-uid="NetTopologySuite.IO.GpxLatitude.op_GreaterThanOrEqual*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_GreaterThanOrEqual_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.op_GreaterThanOrEqual(NetTopologySuite.IO.GpxLatitude,NetTopologySuite.IO.GpxLatitude)">GreaterThanOrEqual(GpxLatitude, GpxLatitude)</h4>
@@ -1481,7 +801,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_Implicit_NetTopologySuite_IO_GpxLatitude__System_Double.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_Implicit(NetTopologySuite.IO.GpxLatitude)~System.Double%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L32">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L62">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_Implicit_" data-uid="NetTopologySuite.IO.GpxLatitude.op_Implicit*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_Implicit_NetTopologySuite_IO_GpxLatitude__System_Double" data-uid="NetTopologySuite.IO.GpxLatitude.op_Implicit(NetTopologySuite.IO.GpxLatitude)~System.Double">Implicit(GpxLatitude to Double)</h4>
@@ -1528,7 +848,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_Inequality_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_Inequality(NetTopologySuite.IO.GpxLatitude%2CNetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L22">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L52">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_Inequality_" data-uid="NetTopologySuite.IO.GpxLatitude.op_Inequality*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_Inequality_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.op_Inequality(NetTopologySuite.IO.GpxLatitude,NetTopologySuite.IO.GpxLatitude)">Inequality(GpxLatitude, GpxLatitude)</h4>
@@ -1580,7 +900,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_LessThan_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_LessThan(NetTopologySuite.IO.GpxLatitude%2CNetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L24">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L54">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_LessThan_" data-uid="NetTopologySuite.IO.GpxLatitude.op_LessThan*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_LessThan_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.op_LessThan(NetTopologySuite.IO.GpxLatitude,NetTopologySuite.IO.GpxLatitude)">LessThan(GpxLatitude, GpxLatitude)</h4>
@@ -1632,7 +952,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_op_LessThanOrEqual_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.op_LessThanOrEqual(NetTopologySuite.IO.GpxLatitude%2CNetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L26">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L56">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxLatitude_op_LessThanOrEqual_" data-uid="NetTopologySuite.IO.GpxLatitude.op_LessThanOrEqual*"></a>
   <h4 id="NetTopologySuite_IO_GpxLatitude_op_LessThanOrEqual_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxLatitude.op_LessThanOrEqual(NetTopologySuite.IO.GpxLatitude,NetTopologySuite.IO.GpxLatitude)">LessThanOrEqual(GpxLatitude, GpxLatitude)</h4>
@@ -1679,6 +999,718 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToBoolean_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToBoolean(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L110">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToBoolean_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToBoolean*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToBoolean_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToBoolean(System.IFormatProvider)">IConvertible.ToBoolean(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IConvertible.ToBoolean(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToByte_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToByte(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L113">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToByte_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToByte*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToByte_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToByte(System.IFormatProvider)">IConvertible.ToByte(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">byte IConvertible.ToByte(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToChar_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToChar(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L116">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToChar_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToChar*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToChar_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToChar(System.IFormatProvider)">IConvertible.ToChar(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">char IConvertible.ToChar(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDateTime_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToDateTime(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L119">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDateTime_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToDateTime*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDateTime_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToDateTime(System.IFormatProvider)">IConvertible.ToDateTime(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DateTime IConvertible.ToDateTime(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDecimal_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToDecimal(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L122">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDecimal_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToDecimal*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDecimal_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToDecimal(System.IFormatProvider)">IConvertible.ToDecimal(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">decimal IConvertible.ToDecimal(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDouble_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToDouble(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L125">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDouble_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToDouble*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToDouble_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToDouble(System.IFormatProvider)">IConvertible.ToDouble(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">double IConvertible.ToDouble(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt16_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToInt16(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L128">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt16_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToInt16*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt16_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToInt16(System.IFormatProvider)">IConvertible.ToInt16(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">short IConvertible.ToInt16(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt32_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToInt32(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L131">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt32_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToInt32*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt32_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToInt32(System.IFormatProvider)">IConvertible.ToInt32(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int IConvertible.ToInt32(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt64_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToInt64(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L134">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt64_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToInt64*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToInt64_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToInt64(System.IFormatProvider)">IConvertible.ToInt64(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">long IConvertible.ToInt64(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToSByte_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToSByte(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L137">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToSByte_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToSByte*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToSByte_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToSByte(System.IFormatProvider)">IConvertible.ToSByte(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">sbyte IConvertible.ToSByte(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToSingle_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToSingle(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L140">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToSingle_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToSingle*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToSingle_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToSingle(System.IFormatProvider)">IConvertible.ToSingle(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float IConvertible.ToSingle(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToType_System_Type_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToType(System.Type%2CSystem.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L143">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToType_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToType*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToType_System_Type_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToType(System.Type,System.IFormatProvider)">IConvertible.ToType(Type, IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object IConvertible.ToType(Type conversionType, IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">conversionType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt16_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToUInt16(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L146">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt16_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToUInt16*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt16_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToUInt16(System.IFormatProvider)">IConvertible.ToUInt16(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ushort IConvertible.ToUInt16(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt32_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToUInt32(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L149">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt32_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToUInt32*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt32_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToUInt32(System.IFormatProvider)">IConvertible.ToUInt32(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">uint IConvertible.ToUInt32(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt64_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude.System%23IConvertible%23ToUInt64(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L152">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt64_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToUInt64*"></a>
+  <h4 id="NetTopologySuite_IO_GpxLatitude_System_IConvertible_ToUInt64_System_IFormatProvider_" data-uid="NetTopologySuite.IO.GpxLatitude.System#IConvertible#ToUInt64(System.IFormatProvider)">IConvertible.ToUInt64(IFormatProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ulong IConvertible.ToUInt64(IFormatProvider provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
@@ -1706,7 +1738,7 @@
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxLatitude.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxLatitude%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxLatitude.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

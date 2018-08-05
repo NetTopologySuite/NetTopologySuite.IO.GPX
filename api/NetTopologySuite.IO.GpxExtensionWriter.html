@@ -83,7 +83,14 @@
   
   <h1 id="NetTopologySuite_IO_GpxExtensionWriter" data-uid="NetTopologySuite.IO.GpxExtensionWriter" class="text-break">Class GpxExtensionWriter
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides hooks to turn extension content into GPX &quot;extensions&quot; elements.</p>
+<p>
+The default behavior in this base class passes through an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> of
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> objects if that&apos;s what&apos;s stored, otherwise it will yield an empty
+sequence.  This allows us to round-trip when the default <a class="xref" href="NetTopologySuite.IO.GpxExtensionReader.html">GpxExtensionReader</a>
+implementation is used, and not much else.
+</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -127,11 +134,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertGpxExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertGpxExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L9">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L36">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertGpxExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertGpxExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertGpxExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertGpxExtension(System.Object)">ConvertGpxExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>/gpx/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>/gpx/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -150,7 +167,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -165,7 +183,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>/gpx/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -174,11 +193,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertMetadataExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertMetadataExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L11">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L56">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertMetadataExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertMetadataExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertMetadataExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertMetadataExtension(System.Object)">ConvertMetadataExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>/gpx/metadata/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>/gpx/metadata/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -197,7 +226,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -212,7 +242,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>/gpx/metadata/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -221,11 +252,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertRouteExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertRouteExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L15">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L96">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertRouteExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertRouteExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertRouteExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertRouteExtension(System.Object)">ConvertRouteExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>rte/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>rte/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -244,7 +285,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -259,7 +301,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>rte/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -268,11 +311,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertRoutePointExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertRoutePointExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L17">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L116">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertRoutePointExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertRoutePointExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertRoutePointExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertRoutePointExtension(System.Object)">ConvertRoutePointExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>rtept/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>rtept/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -291,7 +344,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -306,7 +360,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>rtept/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -315,11 +370,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L19">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L136">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackExtension(System.Object)">ConvertTrackExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>trk/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>trk/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -338,7 +403,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -353,7 +419,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>trk/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -362,11 +429,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackPointExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackPointExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L23">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L176">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackPointExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackPointExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackPointExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackPointExtension(System.Object)">ConvertTrackPointExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>trkpt/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>trkpt/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -385,7 +462,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -400,7 +478,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>trkpt/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -409,11 +488,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackSegmentExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackSegmentExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L21">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L156">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackSegmentExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackSegmentExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertTrackSegmentExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertTrackSegmentExtension(System.Object)">ConvertTrackSegmentExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>trkseg/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>trkseg/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -432,7 +521,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -447,7 +537,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>trkseg/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -456,11 +547,21 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter_ConvertWaypointExtension_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter.ConvertWaypointExtension(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L13">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L76">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionWriter_ConvertWaypointExtension_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertWaypointExtension*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionWriter_ConvertWaypointExtension_System_Object_" data-uid="NetTopologySuite.IO.GpxExtensionWriter.ConvertWaypointExtension(System.Object)">ConvertWaypointExtension(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an arbitrary extension object into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>
+instances to write out as the content of <code>wpt/extensions</code>.</p>
+<p>
+If this method returns an empty sequence of elements, then the result will be an empty
+<code>wpt/extensions</code> element.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if there were no extension content at all.
+</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -479,7 +580,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extension</span></td>
-        <td></td>
+        <td><p>The extrension object to transform.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -494,7 +596,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
-        <td></td>
+        <td><p>The content to write out as <code>wpt/extensions</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -509,7 +612,7 @@
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionWriter.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxExtensionWriter.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

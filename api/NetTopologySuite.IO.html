@@ -107,7 +107,14 @@ be able to write it back out again.
 </p>
 </section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxExtensionWriter.html">GpxExtensionWriter</a></h4>
-      <section></section>
+      <section><p>Provides hooks to turn extension content into GPX &quot;extensions&quot; elements.</p>
+<p>
+The default behavior in this base class passes through an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> of
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> objects if that&apos;s what&apos;s stored, otherwise it will yield an empty
+sequence.  This allows us to round-trip when the default <a class="xref" href="NetTopologySuite.IO.GpxExtensionReader.html">GpxExtensionReader</a>
+implementation is used, and not much else.
+</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a></h4>
       <section></section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxPerson.html">GpxPerson</a></h4>
@@ -149,15 +156,18 @@ information.</p>
       <section><p>Represents the ID of a DGPS station.</p>
 </section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxLatitude.html">GpxLatitude</a></h4>
-      <section></section>
+      <section><p>Represents a latitude value.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxLongitude.html">GpxLongitude</a></h4>
-      <section></section>
+      <section><p>Represents a longitude value.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator.html">ImmutableGpxWaypointTable.Enumerator</a></h4>
       <section></section>
     <h3 id="enums">Enums
   </h3>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxFixKind.html">GpxFixKind</a></h4>
-      <section></section>
+      <section><p>Specifies what kind of GPS fix a particular waypoint had.</p>
+</section>
 </article>
           </div>
           
