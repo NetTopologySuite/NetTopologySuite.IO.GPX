@@ -5,6 +5,10 @@ REM content locally
 REM ===========================================================================
 set DOCFX_PACKAGE_VERSION=2.37.2
 pushd %~dp0
+REM incremental / cached builds tweak things about the output, so let's do it
+REM all fresh if we can help it...
+rd /s /q src\NetTopologySuite.IO.GPX\obj
+rd /s /q doc\obj
 dotnet restore
 pushd tools
 rd /s /q docfx.console.%DOCFX_PACKAGE_VERSION%
