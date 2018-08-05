@@ -15,10 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		nts.snk = nts.snk
 		NuGet.Config = NuGet.Config
 		README.md = README.md
-		release-notes.md = release-notes.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetTopologySuite.IO.GPX.Tests", "tests\NetTopologySuite.IO.GPX.Tests\NetTopologySuite.IO.GPX.Tests.csproj", "{09AFDADF-1CC1-4E6F-81DD-3D4D590BFA24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{68505BE9-93E1-43D2-AA7D-3FCAEE2CF8F2}"
+	ProjectSection(SolutionItems) = preProject
+		doc\docfx.json = doc\docfx.json
+		doc\index.md = doc\index.md
+		doc\release-notes.md = doc\release-notes.md
+		doc\toc.yml = doc\toc.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +44,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68505BE9-93E1-43D2-AA7D-3FCAEE2CF8F2} = {16A6CD7F-59F6-476B-9F81-EAE72A71F1A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {667A2FF0-CC5A-4467-AE8C-311329976FB8}
