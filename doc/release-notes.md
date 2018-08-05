@@ -1,7 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## *To be released*
-- xmldoc ([#6](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/6))
+- xmldoc on at least the foundational types ([#6](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/6))
 - Hiding the save / load methods on individual data elements.
     - That's really more of an implementation detail of these guys.
 
