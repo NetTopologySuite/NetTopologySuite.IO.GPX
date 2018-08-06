@@ -39,7 +39,7 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
-        public static GpxTrack Load(XElement element, GpxReaderSettings settings)
+        internal static GpxTrack Load(XElement element, GpxReaderSettings settings)
         {
             if (element is null)
             {
@@ -60,22 +60,12 @@ namespace NetTopologySuite.IO
                 links: ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)),
                 number: Helpers.ParseUInt32(element.GpxElement("number")?.Value),
                 classification: element.GpxElement("type")?.Value,
-                segments: ImmutableArray.CreateRange(element.GpxElements("trkseg").Select(el => GpxTrackSegment.LoadNoValidation(el, settings))),
+                segments: ImmutableArray.CreateRange(element.GpxElements("trkseg").Select(el => GpxTrackSegment.Load(el, settings))),
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackExtensionElement(extensionsElement.Elements()));
         }
 
-        public void Save(XmlWriter writer, GpxWriterSettings settings)
+        internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {
-            if (writer is null)
-            {
-                throw new ArgumentNullException(nameof(writer));
-            }
-
-            if (settings is null)
-            {
-                throw new ArgumentNullException(nameof(settings));
-            }
-
             writer.WriteOptionalGpxElementValue("name", this.Name);
             writer.WriteOptionalGpxElementValue("cmt", this.Comment);
             writer.WriteOptionalGpxElementValue("desc", this.Description);
@@ -87,7 +77,7 @@ namespace NetTopologySuite.IO
             foreach (var segment in this.Segments)
             {
                 writer.WriteGpxStartElement("trkseg");
-                segment.SaveNoValidation(writer, settings);
+                segment.Save(writer, settings);
                 writer.WriteEndElement();
             }
         }

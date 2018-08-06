@@ -40,7 +40,7 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
-        public static GpxRoute Load(XElement element, GpxReaderSettings settings)
+        internal static GpxRoute Load(XElement element, GpxReaderSettings settings)
         {
             if (element is null)
             {
@@ -65,18 +65,8 @@ namespace NetTopologySuite.IO
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertRouteExtensionElement(extensionsElement.Elements()));
         }
 
-        public void Save(XmlWriter writer, GpxWriterSettings settings)
+        internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {
-            if (writer is null)
-            {
-                throw new ArgumentNullException(nameof(writer));
-            }
-
-            if (settings is null)
-            {
-                throw new ArgumentNullException(nameof(settings));
-            }
-
             writer.WriteOptionalGpxElementValue("name", this.Name);
             writer.WriteOptionalGpxElementValue("cmt", this.Comment);
             writer.WriteOptionalGpxElementValue("desc", this.Description);
@@ -89,7 +79,7 @@ namespace NetTopologySuite.IO
             foreach (var waypoint in this.Waypoints)
             {
                 writer.WriteGpxStartElement("rtept");
-                waypoint.SaveNoValidation(writer, settings, extensionCallback);
+                waypoint.Save(writer, settings, extensionCallback);
                 writer.WriteEndElement();
             }
         }

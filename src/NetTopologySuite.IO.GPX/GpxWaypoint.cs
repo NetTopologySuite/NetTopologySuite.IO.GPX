@@ -106,14 +106,7 @@ namespace NetTopologySuite.IO
 
         public object Extensions => this.uncommonProperties?.Extensions;
 
-        public static GpxWaypoint Load(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
-        {
-            return LoadNoValidation(element,
-                                    settings ?? throw new ArgumentNullException(nameof(settings)),
-                                    extensionCallback ?? throw new ArgumentNullException(nameof(extensionCallback)));
-        }
-
-        internal static GpxWaypoint LoadNoValidation(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
+        internal static GpxWaypoint Load(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
         {
             if (element is null)
             {
@@ -145,14 +138,7 @@ namespace NetTopologySuite.IO
                 extensions: extensionsElement is null ? null : extensionCallback(extensionsElement.Elements()));
         }
 
-        public void Save(XmlWriter writer, GpxWriterSettings settings, Func<object, IEnumerable<XElement>> extensionCallback)
-        {
-            this.SaveNoValidation(writer ?? throw new ArgumentNullException(nameof(writer)),
-                                  settings ?? throw new ArgumentNullException(nameof(settings)),
-                                  extensionCallback ?? throw new ArgumentNullException(nameof(extensionCallback)));
-        }
-
-        internal void SaveNoValidation(XmlWriter writer, GpxWriterSettings settings, Func<object, IEnumerable<XElement>> extensionCallback)
+        internal void Save(XmlWriter writer, GpxWriterSettings settings, Func<object, IEnumerable<XElement>> extensionCallback)
         {
             writer.WriteAttributeString("lat", this.Latitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
             writer.WriteAttributeString("lon", this.Longitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));

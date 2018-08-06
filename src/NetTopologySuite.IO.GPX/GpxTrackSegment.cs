@@ -17,13 +17,7 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
-        public static GpxTrackSegment Load(XElement element, GpxReaderSettings settings)
-        {
-            return LoadNoValidation(element,
-                                    settings ?? throw new ArgumentNullException(nameof(settings)));
-        }
-
-        internal static GpxTrackSegment LoadNoValidation(XElement element, GpxReaderSettings settings)
+        internal static GpxTrackSegment Load(XElement element, GpxReaderSettings settings)
         {
             if (element is null)
             {
@@ -36,13 +30,7 @@ namespace NetTopologySuite.IO
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackSegmentExtensionElement(extensionsElement.Elements()));
         }
 
-        public void Save(XmlWriter writer, GpxWriterSettings settings)
-        {
-            this.SaveNoValidation(writer ?? throw new ArgumentNullException(nameof(writer)),
-                                  settings ?? throw new ArgumentNullException(nameof(settings)));
-        }
-
-        internal void SaveNoValidation(XmlWriter writer, GpxWriterSettings settings)
+        internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {
             Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertTrackPointExtension;
             foreach (var waypoint in this.Waypoints)

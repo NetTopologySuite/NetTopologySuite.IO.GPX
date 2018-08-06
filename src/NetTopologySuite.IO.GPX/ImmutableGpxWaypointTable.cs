@@ -59,7 +59,7 @@ namespace NetTopologySuite.IO
             : this(elements is null ? throw new ArgumentNullException(nameof(elements)) :
                    settings is null ? throw new ArgumentNullException(nameof(settings)) :
                    extensionCallback is null ? throw new ArgumentNullException(nameof(extensionCallback)) :
-                   elements.Select(element => element is null ? throw new ArgumentException("No null elements are allowed", nameof(elements)) : GpxWaypoint.LoadNoValidation(element, settings, extensionCallback)))
+                   elements.Select(element => element is null ? throw new ArgumentException("No null elements are allowed", nameof(elements)) : GpxWaypoint.Load(element, settings, extensionCallback)))
         {
         }
 

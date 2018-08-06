@@ -12,7 +12,18 @@ namespace NetTopologySuite.IO
             this.Link = link;
         }
 
-        public static GpxPerson Load(XElement element)
+        public string Name { get; }
+
+        public GpxEmail Email { get; }
+
+        public GpxWebLink Link { get; }
+
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
+                                                                 (nameof(this.Email), this.Email),
+                                                                 (nameof(this.Link), this.Link));
+
+        internal static GpxPerson Load(XElement element)
         {
             if (element is null)
             {
@@ -25,21 +36,11 @@ namespace NetTopologySuite.IO
                 link: GpxWebLink.Load(element.GpxElement("link")));
         }
 
-        public void Save(XmlWriter writer)
+        void ICanWriteToXmlWriter.Save(XmlWriter writer)
         {
             writer.WriteOptionalGpxElementValue("name", this.Name);
             writer.WriteOptionalGpxElementValue("email", this.Email);
             writer.WriteOptionalGpxElementValue("link", this.Link);
         }
-
-        public string Name { get; }
-
-        public GpxEmail Email { get; }
-
-        public GpxWebLink Link { get; }
-
-        public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
-                                                                 (nameof(this.Email), this.Email),
-                                                                 (nameof(this.Link), this.Link));
     }
 }
