@@ -2707,19 +2707,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxPerson.Link
   nameWithType: GpxPerson.Link
-- uid: NetTopologySuite.IO.GpxPerson.Load(System.Xml.Linq.XElement)
-  name: Load(XElement)
-  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Load_System_Xml_Linq_XElement_
-  commentId: M:NetTopologySuite.IO.GpxPerson.Load(System.Xml.Linq.XElement)
-  fullName: NetTopologySuite.IO.GpxPerson.Load(System.Xml.Linq.XElement)
-  nameWithType: GpxPerson.Load(XElement)
-- uid: NetTopologySuite.IO.GpxPerson.Load*
-  name: Load
-  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Load_
-  commentId: Overload:NetTopologySuite.IO.GpxPerson.Load
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxPerson.Load
-  nameWithType: GpxPerson.Load
 - uid: NetTopologySuite.IO.GpxPerson.Name
   name: Name
   href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Name
@@ -2733,19 +2720,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxPerson.Name
   nameWithType: GpxPerson.Name
-- uid: NetTopologySuite.IO.GpxPerson.Save(System.Xml.XmlWriter)
-  name: Save(XmlWriter)
-  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Save_System_Xml_XmlWriter_
-  commentId: M:NetTopologySuite.IO.GpxPerson.Save(System.Xml.XmlWriter)
-  fullName: NetTopologySuite.IO.GpxPerson.Save(System.Xml.XmlWriter)
-  nameWithType: GpxPerson.Save(XmlWriter)
-- uid: NetTopologySuite.IO.GpxPerson.Save*
-  name: Save
-  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Save_
-  commentId: Overload:NetTopologySuite.IO.GpxPerson.Save
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxPerson.Save
-  nameWithType: GpxPerson.Save
 - uid: NetTopologySuite.IO.GpxPerson.ToString
   name: ToString()
   href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_ToString
@@ -2916,19 +2890,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxRoute.Links
   nameWithType: GpxRoute.Links
-- uid: NetTopologySuite.IO.GpxRoute.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings)
-  name: Load(XElement, GpxReaderSettings)
-  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Load_System_Xml_Linq_XElement_NetTopologySuite_IO_GpxReaderSettings_
-  commentId: M:NetTopologySuite.IO.GpxRoute.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings)
-  fullName: NetTopologySuite.IO.GpxRoute.Load(System.Xml.Linq.XElement, NetTopologySuite.IO.GpxReaderSettings)
-  nameWithType: GpxRoute.Load(XElement, GpxReaderSettings)
-- uid: NetTopologySuite.IO.GpxRoute.Load*
-  name: Load
-  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Load_
-  commentId: Overload:NetTopologySuite.IO.GpxRoute.Load
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxRoute.Load
-  nameWithType: GpxRoute.Load
 - uid: NetTopologySuite.IO.GpxRoute.Name
   name: Name
   href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Name
@@ -2955,19 +2916,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxRoute.Number
   nameWithType: GpxRoute.Number
-- uid: NetTopologySuite.IO.GpxRoute.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  name: Save(XmlWriter, GpxWriterSettings)
-  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Save_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_
-  commentId: M:NetTopologySuite.IO.GpxRoute.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  fullName: NetTopologySuite.IO.GpxRoute.Save(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings)
-  nameWithType: GpxRoute.Save(XmlWriter, GpxWriterSettings)
-- uid: NetTopologySuite.IO.GpxRoute.Save*
-  name: Save
-  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Save_
-  commentId: Overload:NetTopologySuite.IO.GpxRoute.Save
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxRoute.Save
-  nameWithType: GpxRoute.Save
 - uid: NetTopologySuite.IO.GpxRoute.Source
   name: Source
   href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Source
@@ -3081,19 +3029,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrack.Links
   nameWithType: GpxTrack.Links
-- uid: NetTopologySuite.IO.GpxTrack.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings)
-  name: Load(XElement, GpxReaderSettings)
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Load_System_Xml_Linq_XElement_NetTopologySuite_IO_GpxReaderSettings_
-  commentId: M:NetTopologySuite.IO.GpxTrack.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings)
-  fullName: NetTopologySuite.IO.GpxTrack.Load(System.Xml.Linq.XElement, NetTopologySuite.IO.GpxReaderSettings)
-  nameWithType: GpxTrack.Load(XElement, GpxReaderSettings)
-- uid: NetTopologySuite.IO.GpxTrack.Load*
-  name: Load
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Load_
-  commentId: Overload:NetTopologySuite.IO.GpxTrack.Load
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxTrack.Load
-  nameWithType: GpxTrack.Load
 - uid: NetTopologySuite.IO.GpxTrack.Name
   name: Name
   href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Name
@@ -3120,19 +3055,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrack.Number
   nameWithType: GpxTrack.Number
-- uid: NetTopologySuite.IO.GpxTrack.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  name: Save(XmlWriter, GpxWriterSettings)
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Save_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_
-  commentId: M:NetTopologySuite.IO.GpxTrack.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  fullName: NetTopologySuite.IO.GpxTrack.Save(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings)
-  nameWithType: GpxTrack.Save(XmlWriter, GpxWriterSettings)
-- uid: NetTopologySuite.IO.GpxTrack.Save*
-  name: Save
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Save_
-  commentId: Overload:NetTopologySuite.IO.GpxTrack.Save
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxTrack.Save
-  nameWithType: GpxTrack.Save
 - uid: NetTopologySuite.IO.GpxTrack.Segments
   name: Segments
   href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Segments
@@ -3191,32 +3113,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrackSegment.Extensions
   nameWithType: GpxTrackSegment.Extensions
-- uid: NetTopologySuite.IO.GpxTrackSegment.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings)
-  name: Load(XElement, GpxReaderSettings)
-  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Load_System_Xml_Linq_XElement_NetTopologySuite_IO_GpxReaderSettings_
-  commentId: M:NetTopologySuite.IO.GpxTrackSegment.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings)
-  fullName: NetTopologySuite.IO.GpxTrackSegment.Load(System.Xml.Linq.XElement, NetTopologySuite.IO.GpxReaderSettings)
-  nameWithType: GpxTrackSegment.Load(XElement, GpxReaderSettings)
-- uid: NetTopologySuite.IO.GpxTrackSegment.Load*
-  name: Load
-  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Load_
-  commentId: Overload:NetTopologySuite.IO.GpxTrackSegment.Load
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxTrackSegment.Load
-  nameWithType: GpxTrackSegment.Load
-- uid: NetTopologySuite.IO.GpxTrackSegment.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  name: Save(XmlWriter, GpxWriterSettings)
-  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Save_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_
-  commentId: M:NetTopologySuite.IO.GpxTrackSegment.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  fullName: NetTopologySuite.IO.GpxTrackSegment.Save(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings)
-  nameWithType: GpxTrackSegment.Save(XmlWriter, GpxWriterSettings)
-- uid: NetTopologySuite.IO.GpxTrackSegment.Save*
-  name: Save
-  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Save_
-  commentId: Overload:NetTopologySuite.IO.GpxTrackSegment.Save
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxTrackSegment.Save
-  nameWithType: GpxTrackSegment.Save
 - uid: NetTopologySuite.IO.GpxTrackSegment.Waypoints
   name: Waypoints
   href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Waypoints
@@ -3475,22 +3371,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWaypoint.Links
   nameWithType: GpxWaypoint.Links
-- uid: NetTopologySuite.IO.GpxWaypoint.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings,System.Func{System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Object})
-  name: Load(XElement, GpxReaderSettings, Func<IEnumerable<XElement>, Object>)
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Load_System_Xml_Linq_XElement_NetTopologySuite_IO_GpxReaderSettings_System_Func_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__System_Object__
-  commentId: M:NetTopologySuite.IO.GpxWaypoint.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings,System.Func{System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Object})
-  name.vb: Load(XElement, GpxReaderSettings, Func(Of IEnumerable(Of XElement), Object))
-  fullName: NetTopologySuite.IO.GpxWaypoint.Load(System.Xml.Linq.XElement, NetTopologySuite.IO.GpxReaderSettings, System.Func<System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, System.Object>)
-  fullName.vb: NetTopologySuite.IO.GpxWaypoint.Load(System.Xml.Linq.XElement, NetTopologySuite.IO.GpxReaderSettings, System.Func(Of System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), System.Object))
-  nameWithType: GpxWaypoint.Load(XElement, GpxReaderSettings, Func<IEnumerable<XElement>, Object>)
-  nameWithType.vb: GpxWaypoint.Load(XElement, GpxReaderSettings, Func(Of IEnumerable(Of XElement), Object))
-- uid: NetTopologySuite.IO.GpxWaypoint.Load*
-  name: Load
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Load_
-  commentId: Overload:NetTopologySuite.IO.GpxWaypoint.Load
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxWaypoint.Load
-  nameWithType: GpxWaypoint.Load
 - uid: NetTopologySuite.IO.GpxWaypoint.Longitude
   name: Longitude
   href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude
@@ -3556,22 +3436,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWaypoint.PositionDilutionOfPrecision
   nameWithType: GpxWaypoint.PositionDilutionOfPrecision
-- uid: NetTopologySuite.IO.GpxWaypoint.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,System.Func{System.Object,System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})
-  name: Save(XmlWriter, GpxWriterSettings, Func<Object, IEnumerable<XElement>>)
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Save_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_System_Func_System_Object_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement___
-  commentId: M:NetTopologySuite.IO.GpxWaypoint.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,System.Func{System.Object,System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})
-  name.vb: Save(XmlWriter, GpxWriterSettings, Func(Of Object, IEnumerable(Of XElement)))
-  fullName: NetTopologySuite.IO.GpxWaypoint.Save(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, System.Func<System.Object, System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>>)
-  fullName.vb: NetTopologySuite.IO.GpxWaypoint.Save(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, System.Func(Of System.Object, System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement)))
-  nameWithType: GpxWaypoint.Save(XmlWriter, GpxWriterSettings, Func<Object, IEnumerable<XElement>>)
-  nameWithType.vb: GpxWaypoint.Save(XmlWriter, GpxWriterSettings, Func(Of Object, IEnumerable(Of XElement)))
-- uid: NetTopologySuite.IO.GpxWaypoint.Save*
-  name: Save
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Save_
-  commentId: Overload:NetTopologySuite.IO.GpxWaypoint.Save
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxWaypoint.Save
-  nameWithType: GpxWaypoint.Save
 - uid: NetTopologySuite.IO.GpxWaypoint.SecondsSinceLastDgpsUpdate
   name: SecondsSinceLastDgpsUpdate
   href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_SecondsSinceLastDgpsUpdate
@@ -3682,32 +3546,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWebLink.Href
   nameWithType: GpxWebLink.Href
-- uid: NetTopologySuite.IO.GpxWebLink.Load(System.Xml.Linq.XElement)
-  name: Load(XElement)
-  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Load_System_Xml_Linq_XElement_
-  commentId: M:NetTopologySuite.IO.GpxWebLink.Load(System.Xml.Linq.XElement)
-  fullName: NetTopologySuite.IO.GpxWebLink.Load(System.Xml.Linq.XElement)
-  nameWithType: GpxWebLink.Load(XElement)
-- uid: NetTopologySuite.IO.GpxWebLink.Load*
-  name: Load
-  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Load_
-  commentId: Overload:NetTopologySuite.IO.GpxWebLink.Load
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxWebLink.Load
-  nameWithType: GpxWebLink.Load
-- uid: NetTopologySuite.IO.GpxWebLink.Save(System.Xml.XmlWriter)
-  name: Save(XmlWriter)
-  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Save_System_Xml_XmlWriter_
-  commentId: M:NetTopologySuite.IO.GpxWebLink.Save(System.Xml.XmlWriter)
-  fullName: NetTopologySuite.IO.GpxWebLink.Save(System.Xml.XmlWriter)
-  nameWithType: GpxWebLink.Save(XmlWriter)
-- uid: NetTopologySuite.IO.GpxWebLink.Save*
-  name: Save
-  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Save_
-  commentId: Overload:NetTopologySuite.IO.GpxWebLink.Save
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxWebLink.Save
-  nameWithType: GpxWebLink.Save
 - uid: NetTopologySuite.IO.GpxWebLink.Text
   name: Text
   href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Text

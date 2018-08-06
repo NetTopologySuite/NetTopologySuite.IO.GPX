@@ -74,6 +74,7 @@
 
 <h2 id="020-not-yet-finished-or-released"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2">0.2.0</a> (<em>Not yet finished or released</em>)</h2>
 <ul>
+<li><code>ImmutableGpxWaypointTable</code> now throws <code>ArgumentException</code> if it encounters a <code>null</code> waypoint.</li>
 <li>Rename <code>GpxMetadata.CreationTime</code> to <code>GpxMetadata.CreationTimeUtc</code> and validate that it is, in fact, marked as UTC (when specified at all).</li>
 <li>xmldoc (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/6">#6</a>)</li>
 <li>Hiding the save / load methods on individual data elements.
