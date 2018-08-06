@@ -1,6 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.2.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2) (*Not yet finished or released*)
+- `ImmutableGpxWaypointTable` now throws `ArgumentException` if it encounters a `null` waypoint.
 - Rename `GpxMetadata.CreationTime` to `GpxMetadata.CreationTimeUtc` and validate that it is, in fact, marked as UTC (when specified at all).
 - xmldoc ([#6](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/6))
 - Hiding the save / load methods on individual data elements.

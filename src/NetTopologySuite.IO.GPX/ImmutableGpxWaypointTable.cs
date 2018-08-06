@@ -121,6 +121,11 @@ namespace NetTopologySuite.IO
 
             foreach (var waypoint in waypoints)
             {
+                if (waypoint is null)
+                {
+                    throw new ArgumentException("No null waypoints are allowed", nameof(waypoints));
+                }
+
                 longitudes.Add(waypoint.Longitude);
                 latitudes.Add(waypoint.Latitude);
                 Add(ref elevationsInMeters, waypoint.ElevationInMeters, cnt);
