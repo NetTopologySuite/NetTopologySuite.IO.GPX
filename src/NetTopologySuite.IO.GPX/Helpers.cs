@@ -77,7 +77,7 @@ namespace NetTopologySuite.IO
                 sb.Append(value);
             }
 
-            return sb.Append("]").ToString();
+            return sb.Length == 1 ? null : sb.Append("]").ToString();
         }
 
         public static string BuildString(params (string fieldName, object fieldValue)[] values)
