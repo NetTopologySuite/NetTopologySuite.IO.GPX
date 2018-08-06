@@ -2545,19 +2545,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxMetadata.Copyright
   nameWithType: GpxMetadata.Copyright
-- uid: NetTopologySuite.IO.GpxMetadata.CreationTime
-  name: CreationTime
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_CreationTime
-  commentId: P:NetTopologySuite.IO.GpxMetadata.CreationTime
-  fullName: NetTopologySuite.IO.GpxMetadata.CreationTime
-  nameWithType: GpxMetadata.CreationTime
-- uid: NetTopologySuite.IO.GpxMetadata.CreationTime*
-  name: CreationTime
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_CreationTime_
-  commentId: Overload:NetTopologySuite.IO.GpxMetadata.CreationTime
+- uid: NetTopologySuite.IO.GpxMetadata.CreationTimeUtc
+  name: CreationTimeUtc
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_CreationTimeUtc
+  commentId: P:NetTopologySuite.IO.GpxMetadata.CreationTimeUtc
+  fullName: NetTopologySuite.IO.GpxMetadata.CreationTimeUtc
+  nameWithType: GpxMetadata.CreationTimeUtc
+- uid: NetTopologySuite.IO.GpxMetadata.CreationTimeUtc*
+  name: CreationTimeUtc
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_CreationTimeUtc_
+  commentId: Overload:NetTopologySuite.IO.GpxMetadata.CreationTimeUtc
   isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxMetadata.CreationTime
-  nameWithType: GpxMetadata.CreationTime
+  fullName: NetTopologySuite.IO.GpxMetadata.CreationTimeUtc
+  nameWithType: GpxMetadata.CreationTimeUtc
 - uid: NetTopologySuite.IO.GpxMetadata.Creator
   name: Creator
   href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Creator
@@ -2636,19 +2636,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxMetadata.Links
   nameWithType: GpxMetadata.Links
-- uid: NetTopologySuite.IO.GpxMetadata.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings,System.String)
-  name: Load(XElement, GpxReaderSettings, String)
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Load_System_Xml_Linq_XElement_NetTopologySuite_IO_GpxReaderSettings_System_String_
-  commentId: M:NetTopologySuite.IO.GpxMetadata.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings,System.String)
-  fullName: NetTopologySuite.IO.GpxMetadata.Load(System.Xml.Linq.XElement, NetTopologySuite.IO.GpxReaderSettings, System.String)
-  nameWithType: GpxMetadata.Load(XElement, GpxReaderSettings, String)
-- uid: NetTopologySuite.IO.GpxMetadata.Load*
-  name: Load
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Load_
-  commentId: Overload:NetTopologySuite.IO.GpxMetadata.Load
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxMetadata.Load
-  nameWithType: GpxMetadata.Load
 - uid: NetTopologySuite.IO.GpxMetadata.Name
   name: Name
   href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Name
@@ -2662,19 +2649,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxMetadata.Name
   nameWithType: GpxMetadata.Name
-- uid: NetTopologySuite.IO.GpxMetadata.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  name: Save(XmlWriter, GpxWriterSettings)
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Save_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_
-  commentId: M:NetTopologySuite.IO.GpxMetadata.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
-  fullName: NetTopologySuite.IO.GpxMetadata.Save(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings)
-  nameWithType: GpxMetadata.Save(XmlWriter, GpxWriterSettings)
-- uid: NetTopologySuite.IO.GpxMetadata.Save*
-  name: Save
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Save_
-  commentId: Overload:NetTopologySuite.IO.GpxMetadata.Save
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxMetadata.Save
-  nameWithType: GpxMetadata.Save
 - uid: NetTopologySuite.IO.GpxMetadata.ToString
   name: ToString()
   href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_ToString

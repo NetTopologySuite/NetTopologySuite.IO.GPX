@@ -83,7 +83,8 @@
   
   <h1 id="NetTopologySuite_IO_GpxMetadata" data-uid="NetTopologySuite.IO.GpxMetadata" class="text-break">Class GpxMetadata
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents metadata about a GPX document.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -117,6 +118,10 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public sealed class GpxMetadata</code></pre>
   </div>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the complex type &quot;<a href="http://www.topografix.com/GPX/1/1/#type_metadataType">metadataType</a>&quot;,
+plus the &quot;creator&quot; attribute from the complex type &quot;<a href="http://www.topografix.com/GPX/1/1/#type_gpxType">gpxType</a>&quot;.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -124,11 +129,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata__ctor_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L11">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L31">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata__ctor_" data-uid="NetTopologySuite.IO.GpxMetadata.#ctor*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata__ctor_System_String_" data-uid="NetTopologySuite.IO.GpxMetadata.#ctor(System.String)">GpxMetadata(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -147,7 +153,28 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">creator</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Creator">Creator</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata__ctor_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_IsTrivial">IsTrivial</a> will always be <span class="xref">true</span> for instances initialized
+using this constructor.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">creator</code> is <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -156,15 +183,16 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata__ctor_System_String_System_String_System_String_NetTopologySuite_IO_GpxPerson_NetTopologySuite_IO_GpxCopyright_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_DateTime__System_String_NetTopologySuite_IO_GpxBoundingBox_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.%23ctor(System.String%2CSystem.String%2CSystem.String%2CNetTopologySuite.IO.GpxPerson%2CNetTopologySuite.IO.GpxCopyright%2CSystem.Collections.Immutable.ImmutableArray%7BNetTopologySuite.IO.GpxWebLink%7D%2CSystem.Nullable%7BSystem.DateTime%7D%2CSystem.String%2CNetTopologySuite.IO.GpxBoundingBox%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L16">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L77">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata__ctor_" data-uid="NetTopologySuite.IO.GpxMetadata.#ctor*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata__ctor_System_String_System_String_System_String_NetTopologySuite_IO_GpxPerson_NetTopologySuite_IO_GpxCopyright_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_DateTime__System_String_NetTopologySuite_IO_GpxBoundingBox_System_Object_" data-uid="NetTopologySuite.IO.GpxMetadata.#ctor(System.String,System.String,System.String,NetTopologySuite.IO.GpxPerson,NetTopologySuite.IO.GpxCopyright,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.DateTime},System.String,NetTopologySuite.IO.GpxBoundingBox,System.Object)">GpxMetadata(String, String, String, GpxPerson, GpxCopyright, ImmutableArray&lt;GpxWebLink&gt;, Nullable&lt;DateTime&gt;, String, GpxBoundingBox, Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GpxMetadata(string creator, string name, string description, GpxPerson author, GpxCopyright copyright, ImmutableArray&lt;GpxWebLink&gt; links, DateTime? creationTime, string keywords, GpxBoundingBox bounds, object extensions)</code></pre>
+    <pre><code class="lang-csharp hljs">public GpxMetadata(string creator, string name, string description, GpxPerson author, GpxCopyright copyright, ImmutableArray&lt;GpxWebLink&gt; links, DateTime? creationTimeUtc, string keywords, GpxBoundingBox bounds, object extensions)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -179,52 +207,83 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">creator</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Creator">Creator</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Name">Name</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">description</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Description">Description</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxPerson.html">GpxPerson</a></td>
         <td><span class="parametername">author</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Author">Author</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxCopyright.html">GpxCopyright</a></td>
         <td><span class="parametername">copyright</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Copyright">Copyright</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a>&gt;</td>
         <td><span class="parametername">links</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Links">Links</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a>&gt;</td>
-        <td><span class="parametername">creationTime</span></td>
-        <td></td>
+        <td><span class="parametername">creationTimeUtc</span></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_CreationTimeUtc">CreationTimeUtc</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">keywords</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Keywords">Keywords</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxBoundingBox.html">GpxBoundingBox</a></td>
         <td><span class="parametername">bounds</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Bounds">Bounds</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extensions</span></td>
-        <td></td>
+        <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Extensions">Extensions</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata__ctor_System_String_System_String_System_String_NetTopologySuite_IO_GpxPerson_NetTopologySuite_IO_GpxCopyright_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_DateTime__System_String_NetTopologySuite_IO_GpxBoundingBox_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_IsTrivial">IsTrivial</a> will be <span class="xref">false</span> for instances initialized using
+this constructor, unless <code data-dev-comment-type="paramref" class="paramref">links</code> contains no elements and all other
+parameters besides <code data-dev-comment-type="paramref" class="paramref">creator</code> are <span class="xref">null</span>.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">creator</code> is <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -235,11 +294,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Author.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Author%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L84">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L139">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Author_" data-uid="NetTopologySuite.IO.GpxMetadata.Author*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Author" data-uid="NetTopologySuite.IO.GpxMetadata.Author">Author</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an optional representation of the person who created this GPX file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -260,16 +320,20 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Author_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;author&quot; element.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Bounds.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Bounds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L94">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L197">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Bounds_" data-uid="NetTopologySuite.IO.GpxMetadata.Bounds*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Bounds" data-uid="NetTopologySuite.IO.GpxMetadata.Bounds">Bounds</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an optional representation of the lat/lon extents covered by this GPX file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -290,16 +354,26 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Bounds_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+In the official XSD schema for GPX 1.1, this corresponds to the &quot;bounds&quot; element.
+</p>
+<p>
+The system does not currently validate that this value is an accurate representation of
+the extents of the contents of a GPX file.
+</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Copyright.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Copyright%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L86">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L147">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Copyright_" data-uid="NetTopologySuite.IO.GpxMetadata.Copyright*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Copyright" data-uid="NetTopologySuite.IO.GpxMetadata.Copyright">Copyright</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an optional representation of the copyright that this GPX file was created under.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -320,20 +394,24 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Copyright_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;copyright&quot; element.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_CreationTime.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.CreationTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_CreationTimeUtc.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.CreationTimeUtc%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L90">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L169">View Source</a>
   </span>
-  <a id="NetTopologySuite_IO_GpxMetadata_CreationTime_" data-uid="NetTopologySuite.IO.GpxMetadata.CreationTime*"></a>
-  <h4 id="NetTopologySuite_IO_GpxMetadata_CreationTime" data-uid="NetTopologySuite.IO.GpxMetadata.CreationTime">CreationTime</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="NetTopologySuite_IO_GpxMetadata_CreationTimeUtc_" data-uid="NetTopologySuite.IO.GpxMetadata.CreationTimeUtc*"></a>
+  <h4 id="NetTopologySuite_IO_GpxMetadata_CreationTimeUtc" data-uid="NetTopologySuite.IO.GpxMetadata.CreationTimeUtc">CreationTimeUtc</h4>
+  <div class="markdown level1 summary"><p>Gets an optional timestamp indicating when this GPX file was created.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime? CreationTime { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime? CreationTimeUtc { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -350,16 +428,26 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_CreationTimeUtc_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+In the official XSD schema for GPX 1.1, this corresponds to the &quot;time&quot; element.
+</p>
+<p>
+The value, if present, will have its <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime.kind#System_DateTime_Kind">Kind</a> set to
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetimekind#System_DateTimeKind_Utc">Utc</a>.
+</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Creator.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Creator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L78">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L115">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Creator_" data-uid="NetTopologySuite.IO.GpxMetadata.Creator*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Creator" data-uid="NetTopologySuite.IO.GpxMetadata.Creator">Creator</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the creator of this GPX document.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -380,16 +468,21 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Creator_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;creator&quot; attribute of
+the top-level &quot;gpx&quot; element.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Description.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L82">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L131">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Description_" data-uid="NetTopologySuite.IO.GpxMetadata.Description*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Description" data-uid="NetTopologySuite.IO.GpxMetadata.Description">Description</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an optional description of the contents of this GPX file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -410,16 +503,20 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Description_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;desc&quot; element.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Extensions.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Extensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L96">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L213">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Extensions_" data-uid="NetTopologySuite.IO.GpxMetadata.Extensions*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Extensions" data-uid="NetTopologySuite.IO.GpxMetadata.Extensions">Extensions</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an optional representation of arbitrary data associated with the metadata of this GPX file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -440,16 +537,32 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Extensions_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+In the official XSD schema for GPX 1.1, this corresponds to the &quot;extensions&quot; element.
+</p>
+<p>
+This contains the extension content of the &quot;metadata&quot; element itself, <strong>not</strong> the
+extension content of the outermost &quot;gpx&quot; element.
+</p>
+</div>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Extensions_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="NetTopologySuite.IO.GpxExtensionReader.html#NetTopologySuite_IO_GpxExtensionReader_ConvertMetadataExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__">ConvertMetadataExtensionElement(IEnumerable&lt;XElement&gt;)</a></div>
+      <div><a class="xref" href="NetTopologySuite.IO.GpxExtensionWriter.html#NetTopologySuite_IO_GpxExtensionWriter_ConvertMetadataExtension_System_Object_">ConvertMetadataExtension(Object)</a></div>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_IsTrivial.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.IsTrivial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L76">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L106">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_IsTrivial_" data-uid="NetTopologySuite.IO.GpxMetadata.IsTrivial*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_IsTrivial" data-uid="NetTopologySuite.IO.GpxMetadata.IsTrivial">IsTrivial</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether or not <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Creator">Creator</a> is the only relevant data
+element.  Used to determine when we can skip writing out a &quot;metadata&quot; element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -470,16 +583,22 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_IsTrivial_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This behavior is not completely round-trip safe.  An instance loaded from XML that has a
+bare &quot;metadata&quot; element, without any content will look the same as an instance that had
+no &quot;metadata&quot; element at all.  It will be written out without a &quot;metadata&quot; element.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Keywords.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Keywords%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L92">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L183">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Keywords_" data-uid="NetTopologySuite.IO.GpxMetadata.Keywords*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Keywords" data-uid="NetTopologySuite.IO.GpxMetadata.Keywords">Keywords</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an optional list of keywords associated with this GPX file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -500,16 +619,26 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Keywords_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+In the official XSD schema for GPX 1.1, this corresponds to the &quot;keywords&quot; element.
+</p>
+<p>
+GPX does not define, by construction, how this string should be built when multiple
+keywords exist, so check with your provider / consumer what convention to use.
+</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Links.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Links%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L88">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L155">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Links_" data-uid="NetTopologySuite.IO.GpxMetadata.Links*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Links" data-uid="NetTopologySuite.IO.GpxMetadata.Links">Links</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a representation of URLs associated with the contents of this GPX file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -530,16 +659,20 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Links_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;link&quot; elements.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Name.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L80">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L123">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_Name_" data-uid="NetTopologySuite.IO.GpxMetadata.Name*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_Name" data-uid="NetTopologySuite.IO.GpxMetadata.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an optional name for this GPX file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -560,108 +693,17 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxMetadata_Name_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;name&quot; element.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Load_System_Xml_Linq_XElement_NetTopologySuite_IO_GpxReaderSettings_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Load(System.Xml.Linq.XElement%2CNetTopologySuite.IO.GpxReaderSettings%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L31">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxMetadata_Load_" data-uid="NetTopologySuite.IO.GpxMetadata.Load*"></a>
-  <h4 id="NetTopologySuite_IO_GpxMetadata_Load_System_Xml_Linq_XElement_NetTopologySuite_IO_GpxReaderSettings_System_String_" data-uid="NetTopologySuite.IO.GpxMetadata.Load(System.Xml.Linq.XElement,NetTopologySuite.IO.GpxReaderSettings,System.String)">Load(XElement, GpxReaderSettings, String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static GpxMetadata Load(XElement element, GpxReaderSettings settings, string creator)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></td>
-        <td><span class="parametername">element</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NetTopologySuite.IO.GpxReaderSettings.html">GpxReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">creator</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_Save_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.Save(System.Xml.XmlWriter%2CNetTopologySuite.IO.GpxWriterSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L62">View Source</a>
-  </span>
-  <a id="NetTopologySuite_IO_GpxMetadata_Save_" data-uid="NetTopologySuite.IO.GpxMetadata.Save*"></a>
-  <h4 id="NetTopologySuite_IO_GpxMetadata_Save_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_" data-uid="NetTopologySuite.IO.GpxMetadata.Save(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)">Save(XmlWriter, GpxWriterSettings)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Save(XmlWriter writer, GpxWriterSettings settings)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></td>
-        <td><span class="parametername">writer</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata_ToString.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L98">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L216">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxMetadata_ToString_" data-uid="NetTopologySuite.IO.GpxMetadata.ToString*"></a>
   <h4 id="NetTopologySuite_IO_GpxMetadata_ToString" data-uid="NetTopologySuite.IO.GpxMetadata.ToString">ToString()</h4>
@@ -699,7 +741,7 @@
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxMetadata.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxMetadata.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
