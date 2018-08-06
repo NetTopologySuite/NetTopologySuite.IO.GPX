@@ -30,6 +30,10 @@ namespace NetTopologySuite.IO
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackSegmentExtensionElement(extensionsElement.Elements()));
         }
 
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Waypoints), Helpers.BuildString((nameof(this.Waypoints.Count), this.Waypoints.Count))),
+                                                                 (nameof(this.Extensions), this.Extensions));
+
         internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {
             Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertTrackPointExtension;

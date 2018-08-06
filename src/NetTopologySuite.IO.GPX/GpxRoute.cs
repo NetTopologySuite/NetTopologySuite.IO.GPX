@@ -40,6 +40,17 @@ namespace NetTopologySuite.IO
 
         public object Extensions { get; }
 
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
+                                                                 (nameof(this.Comment), this.Comment),
+                                                                 (nameof(this.Description), this.Description),
+                                                                 (nameof(this.Source), this.Source),
+                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
+                                                                 (nameof(this.Number), this.Number),
+                                                                 (nameof(this.Classification), this.Classification),
+                                                                 (nameof(this.Waypoints), Helpers.BuildString((nameof(this.Waypoints.Count), this.Waypoints.Count))),
+                                                                 (nameof(this.Extensions), this.Extensions));
+
         internal static GpxRoute Load(XElement element, GpxReaderSettings settings)
         {
             if (element is null)

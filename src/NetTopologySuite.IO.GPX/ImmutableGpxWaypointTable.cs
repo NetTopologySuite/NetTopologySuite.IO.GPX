@@ -176,19 +176,20 @@ namespace NetTopologySuite.IO
             this.Count = cnt;
         }
 
+        /// <inheritdoc />
         public GpxWaypoint this[int index] => new GpxWaypoint(
             this.longitudes[index],
             this.latitudes[index],
             this.elevationsInMeters[index],
             this.timestampsUtc[index],
-            this.names[index],
-            this.descriptions[index],
-            this.symbolTexts[index],
             this.magneticVariations[index],
             this.geoidHeights[index],
+            this.names[index],
             this.comments[index],
+            this.descriptions[index],
             this.sources[index],
             this.webLinkLists[index],
+            this.symbolTexts[index],
             this.classifications[index],
             this.fixKinds[index],
             this.numbersOfSatellites[index],
@@ -199,13 +200,20 @@ namespace NetTopologySuite.IO
             this.dgpsStationIds[index],
             this.allExtensions[index]);
 
+        /// <inheritdoc />
         public int Count { get; }
 
+        /// <inheritdoc cref="IEnumerable{T}.GetEnumerator"/>
         public Enumerator GetEnumerator() => new Enumerator(this);
 
+        /// <inheritdoc />
         IEnumerator<GpxWaypoint> IEnumerable<GpxWaypoint>.GetEnumerator() => new Enumerator(this);
 
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
+
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Count), this.Count));
 
         private static void Add<T>(ref List<ImmutableArray<T>> lst, ImmutableArray<T> value, int cnt)
         {
@@ -248,6 +256,7 @@ namespace NetTopologySuite.IO
 
         private static OptionalStructList<T> Optional<T>(List<T?> values) where T : struct => new OptionalStructList<T>(values);
 
+        /// <inheritdoc />
         public struct Enumerator : IEnumerator<GpxWaypoint>
         {
 #pragma warning disable IDE0044 // Add readonly modifier
@@ -262,15 +271,20 @@ namespace NetTopologySuite.IO
                 this.curr = -1;
             }
 
+            /// <inheritdoc />
             public GpxWaypoint Current => this.table[this.curr];
 
+            /// <inheritdoc />
             object IEnumerator.Current => this.Current;
 
+            /// <inheritdoc />
             public bool MoveNext() => this.curr != this.table.Count &&
                                       ++this.curr != this.table.Count;
 
+            /// <inheritdoc />
             void IDisposable.Dispose() { }
 
+            /// <inheritdoc />
             void IEnumerator.Reset() { }
         }
 

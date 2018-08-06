@@ -21,7 +21,7 @@ namespace NetTopologySuite.IO
         {
         }
 
-        public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters, DateTime? timestampUtc, string name, string description, string symbolText, GpxDegrees? magneticVariation, double? geoidHeight, string comment, string source, ImmutableArray<GpxWebLink> links, string classification, GpxFixKind? fixKind, uint? numberOfSatellites, double? horizontalDilutionOfPrecision, double? verticalDilutionOfPrecision, double? positionDilutionOfPrecision, double? secondsSinceLastDgpsUpdate, GpxDgpsStationId? dgpsStationId, object extensions)
+        public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters, DateTime? timestampUtc, GpxDegrees? magneticVariation, double? geoidHeight, string name, string comment, string description, string source, ImmutableArray<GpxWebLink> links, string symbolText, string classification, GpxFixKind? fixKind, uint? numberOfSatellites, double? horizontalDilutionOfPrecision, double? verticalDilutionOfPrecision, double? positionDilutionOfPrecision, double? secondsSinceLastDgpsUpdate, GpxDgpsStationId? dgpsStationId, object extensions)
         {
             this.Longitude = longitude;
             this.Latitude = latitude;
@@ -72,21 +72,21 @@ namespace NetTopologySuite.IO
 
         public DateTime? TimestampUtc => this.timestampUtc.Kind == DateTimeKind.Unspecified ? default(DateTime?) : this.timestampUtc;
 
-        public string Name { get; }
-
-        public string Description { get; }
-
-        public string SymbolText { get; }
-
         public GpxDegrees? MagneticVariation => this.uncommonProperties?.MagneticVariation;
 
         public double? GeoidHeight => this.uncommonProperties?.GeoidHeight;
 
+        public string Name { get; }
+
         public string Comment => this.uncommonProperties?.Comment;
+
+        public string Description { get; }
 
         public string Source => this.uncommonProperties?.Source;
 
         public ImmutableArray<GpxWebLink> Links => this.uncommonProperties?.Links ?? ImmutableArray<GpxWebLink>.Empty;
+
+        public string SymbolText { get; }
 
         public string Classification => this.uncommonProperties?.Classification;
 
@@ -106,6 +106,28 @@ namespace NetTopologySuite.IO
 
         public object Extensions => this.uncommonProperties?.Extensions;
 
+        public override string ToString() => Helpers.BuildString((nameof(this.Longitude), this.Longitude),
+                                                                 (nameof(this.Latitude), this.Latitude),
+                                                                 (nameof(this.ElevationInMeters), this.ElevationInMeters),
+                                                                 (nameof(this.TimestampUtc), this.TimestampUtc),
+                                                                 (nameof(this.MagneticVariation), this.MagneticVariation),
+                                                                 (nameof(this.GeoidHeight), this.GeoidHeight),
+                                                                 (nameof(this.Name), this.Name),
+                                                                 (nameof(this.Comment), this.Comment),
+                                                                 (nameof(this.Description), this.Description),
+                                                                 (nameof(this.Source), this.Source),
+                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
+                                                                 (nameof(this.SymbolText), this.SymbolText),
+                                                                 (nameof(this.Classification), this.Classification),
+                                                                 (nameof(this.FixKind), this.FixKind),
+                                                                 (nameof(this.NumberOfSatellites), this.NumberOfSatellites),
+                                                                 (nameof(this.HorizontalDilutionOfPrecision), this.HorizontalDilutionOfPrecision),
+                                                                 (nameof(this.VerticalDilutionOfPrecision), this.VerticalDilutionOfPrecision),
+                                                                 (nameof(this.PositionDilutionOfPrecision), this.PositionDilutionOfPrecision),
+                                                                 (nameof(this.SecondsSinceLastDgpsUpdate), this.SecondsSinceLastDgpsUpdate),
+                                                                 (nameof(this.DgpsStationId), this.DgpsStationId),
+                                                                 (nameof(this.Extensions), this.Extensions));
+
         internal static GpxWaypoint Load(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
         {
             if (element is null)
@@ -119,14 +141,14 @@ namespace NetTopologySuite.IO
                 latitude: Helpers.ParseLatitude(element.Attribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"),
                 elevationInMeters: Helpers.ParseDouble(element.GpxElement("ele")?.Value),
                 timestampUtc: Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo),
-                name: element.GpxElement("name")?.Value,
-                description: element.GpxElement("desc")?.Value,
-                symbolText: element.GpxElement("sym")?.Value,
                 magneticVariation: Helpers.ParseDegrees(element.GpxElement("magvar")?.Value),
                 geoidHeight: Helpers.ParseDouble(element.GpxElement("geoidheight")?.Value),
+                name: element.GpxElement("name")?.Value,
                 comment: element.GpxElement("cmt")?.Value,
+                description: element.GpxElement("desc")?.Value,
                 source: element.GpxElement("src")?.Value,
                 links: ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)),
+                symbolText: element.GpxElement("sym")?.Value,
                 classification: element.GpxElement("type")?.Value,
                 fixKind: Helpers.ParseFixKind(element.GpxElement("fix")?.Value),
                 numberOfSatellites: Helpers.ParseUInt32(element.GpxElement("sat")?.Value),
