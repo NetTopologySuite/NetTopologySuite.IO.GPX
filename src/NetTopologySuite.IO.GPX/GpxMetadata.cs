@@ -100,7 +100,7 @@ namespace NetTopologySuite.IO
         /// </summary>
         /// <remarks>
         /// This behavior is not completely round-trip safe.  An instance loaded from XML that has a
-        /// bare "metadata" element, without any content will look the same as an instance that had
+        /// bare "metadata" element without any content will look the same as an instance that had
         /// no "metadata" element at all.  It will be written out without a "metadata" element.
         /// </remarks>
         public bool IsTrivial { get; }
