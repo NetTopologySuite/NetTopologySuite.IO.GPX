@@ -76,5 +76,15 @@ namespace NetTopologySuite.IO
                 }
             }
         }
+
+        [Fact]
+        public void GitHubIssue18RegressionTest()
+        {
+            using (var xmlReader = XmlReader.Create(Path.Join("RoundTripSafeSamples", "github-issue18-regression.gpx")))
+            {
+                var (_, features, _) = GpxReader.ReadFeatures(xmlReader, null, GeometryFactory.Default);
+                Assert.Equal(3, features.Length);
+            }
+        }
     }
 }

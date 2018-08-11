@@ -1,0 +1,2 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<gpx version='1.1' creator='IsraelHikingMap' xmlns='http://www.topografix.com/GPX/1/1'><metadata><bounds minlat='1' minlon='2' maxlat='16' maxlon='17' /></metadata><wpt lat='1' lon='2' /><trk><name>name1</name><extensions /><trkseg><trkpt lat='3' lon='4'><ele>5</ele></trkpt><trkpt lat='6' lon='7'><ele>8</ele></trkpt></trkseg></trk><trk><name>name2</name><extensions /><trkseg><trkpt lat='13' lon='14'><ele>15</ele></trkpt><trkpt lat='16' lon='17'><ele>18</ele></trkpt></trkseg></trk></gpx>

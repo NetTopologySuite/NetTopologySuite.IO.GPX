@@ -117,7 +117,7 @@ namespace NetTopologySuite.IO
 
         private static bool ReadTo(XmlReader reader, XmlNodeType trueNodeType, XmlNodeType falseNodeType)
         {
-            while (reader.Read())
+            do
             {
                 var nt = reader.NodeType;
                 if (nt == trueNodeType)
@@ -129,6 +129,7 @@ namespace NetTopologySuite.IO
                     return false;
                 }
             }
+            while (reader.Read());
 
             return false;
         }
