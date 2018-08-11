@@ -1,6 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.2.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2)
+- Fix an issue where values very close to zero would be written in scientific notation, violating the GPX spec ([#15](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/11)).
 - Added some more `ToString()` overrides
 - `GpxWaypoint` constructor parameters reordered to match the order of the elements that the XSD schema requires
 - `ImmutableGpxWaypointTable` now throws `ArgumentException` if it encounters a `null` waypoint.

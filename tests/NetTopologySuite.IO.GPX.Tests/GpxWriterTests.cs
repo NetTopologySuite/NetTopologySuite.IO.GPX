@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
 
-using GeoAPI.Geometries;
 using NetTopologySuite.Geometries;
 
 using Org.XmlUnit.Builder;

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -44,5 +46,35 @@ namespace NetTopologySuite.IO
         }
 
         public static object[][] AllSampleGpxFiles => Array.ConvertAll(Directory.GetFiles(".", "*.gpx", SearchOption.AllDirectories), fl => new object[] { fl });
+
+        [Fact]
+        public void GitHubIssue15RegressionTest()
+        {
+            using (var ms = new MemoryStream())
+            {
+                using (var textWriter = new StreamWriter(ms, Encoding.UTF8, 4096, true))
+                using (var xmlWriter = XmlWriter.Create(textWriter))
+                {
+                    GpxWriter.Write(xmlWriter,
+                                    null,
+                                    new GpxMetadata("creator is irrelevant"),
+                                    new[] { new GpxWaypoint(new GpxLongitude(0.00001), new GpxLatitude(double.Epsilon), -double.Epsilon) },
+                                    Enumerable.Empty<GpxRoute>(),
+                                    Enumerable.Empty<GpxTrack>(),
+                                    null);
+                }
+
+                ms.Position = 0;
+                using (var textReader = new StreamReader(ms, Encoding.UTF8, false, 4096, true))
+                using (var xmlReader = XmlReader.Create(textReader))
+                {
+                    var (_, features, _) = GpxReader.ReadFeatures(xmlReader, null, GeometryFactory.Default);
+                    var coord = features[0].Geometry.Coordinate;
+                    Assert.Equal(0.00001, coord.X);
+                    Assert.Equal(double.Epsilon, coord.Y);
+                    Assert.Equal(-double.Epsilon, coord.Z);
+                }
+            }
+        }
     }
 }

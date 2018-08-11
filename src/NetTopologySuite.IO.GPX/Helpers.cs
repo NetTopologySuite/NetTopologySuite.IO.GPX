@@ -54,6 +54,19 @@ namespace NetTopologySuite.IO
                         result = val.ToString("G17", formatProvider);
                     }
                 }
+
+                // "R", "G16", and "G17" all use exponential notation past a certain point, which we
+                // (and the GPX spec) won't be able to parse back later.
+                if (!TryParseDouble(result, out double attemptedRoundTrip))
+                {
+                    var formatStringBuilder = new StringBuilder(326, 326).Append("0.");
+                    do
+                    {
+                        formatStringBuilder.Append("##################");
+                        result = val.ToString(formatStringBuilder.ToString(), formatProvider);
+                    }
+                    while (!(TryParseDouble(result, out attemptedRoundTrip) && attemptedRoundTrip == val));
+                }
             }
 
             return result;
@@ -208,6 +221,8 @@ namespace NetTopologySuite.IO
                 : throw new XmlException("nonNegativeInteger must be formatted properly");
         }
 
+        private static bool TryParseDouble(string text, out double result) => double.TryParse(text, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite | NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out result);
+
         public static double? ParseDouble(string text)
         {
             if (text is null)
@@ -215,7 +230,7 @@ namespace NetTopologySuite.IO
                 return null;
             }
 
-            return double.TryParse(text, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite | NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result)
+            return TryParseDouble(text, out double result)
                 ? result
                 : throw new XmlException("decimal must be formatted properly");
         }
