@@ -74,6 +74,7 @@
 
 <h2 id="020"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2">0.2.0</a></h2>
 <ul>
+<li>Fix an issue where values very close to zero would be written in scientific notation, violating the GPX spec (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/11">#15</a>).</li>
 <li>Added some more <code>ToString()</code> overrides</li>
 <li><code>GpxWaypoint</code> constructor parameters reordered to match the order of the elements that the XSD schema requires</li>
 <li><code>ImmutableGpxWaypointTable</code> now throws <code>ArgumentException</code> if it encounters a <code>null</code> waypoint.</li>
