@@ -128,15 +128,23 @@ implementation is used, and not much else.
       <section><p>A bag of properties used to configure how <a class="xref" href="NetTopologySuite.IO.GpxReader.html">GpxReader</a> produces GPX elements.</p>
 </section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a></h4>
-      <section></section>
+      <section><p>Represents a route - an ordered list of waypoints representing a series of turn points
+leading to a destination.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a></h4>
-      <section></section>
+      <section><p>Represents a track - an ordered list of points describing a path.  Similar to a
+<a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a>, but separated into <a class="xref" href="NetTopologySuite.IO.GpxTrackSegment.html">GpxTrackSegment</a>s at points that may
+indicate GPS reception temporarily dropping off or the receiver being turned off.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxTrackSegment.html">GpxTrackSegment</a></h4>
-      <section></section>
+      <section><p>Represents a continuous span of track data, logically connected in order.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxVisitorBase.html">GpxVisitorBase</a></h4>
-      <section></section>
+      <section><p>Base class for the visitors that enable all the higher-order GPX reading functionality.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a></h4>
-      <section></section>
+      <section><p>Represents a waypoint, point of interest, or named feature on a map.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a></h4>
       <section><p>A link to an external resource (Web page, digital photo, video clip, etc) with additional
 information.</p>

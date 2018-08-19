@@ -2803,15 +2803,15 @@ references:
   commentId: T:NetTopologySuite.IO.GpxRoute
   fullName: NetTopologySuite.IO.GpxRoute
   nameWithType: GpxRoute
-- uid: NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,NetTopologySuite.IO.ImmutableGpxWaypointTable,System.Object)
-  name: GpxRoute(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, ImmutableGpxWaypointTable, Object)
-  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_NetTopologySuite_IO_ImmutableGpxWaypointTable_System_Object_
-  commentId: M:NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,NetTopologySuite.IO.ImmutableGpxWaypointTable,System.Object)
-  name.vb: GpxRoute(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, ImmutableGpxWaypointTable, Object)
-  fullName: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, NetTopologySuite.IO.ImmutableGpxWaypointTable, System.Object)
-  fullName.vb: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, NetTopologySuite.IO.ImmutableGpxWaypointTable, System.Object)
-  nameWithType: GpxRoute.GpxRoute(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, ImmutableGpxWaypointTable, Object)
-  nameWithType.vb: GpxRoute.GpxRoute(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, ImmutableGpxWaypointTable, Object)
+- uid: NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,NetTopologySuite.IO.ImmutableGpxWaypointTable)
+  name: GpxRoute(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableGpxWaypointTable)
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_NetTopologySuite_IO_ImmutableGpxWaypointTable_
+  commentId: M:NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,NetTopologySuite.IO.ImmutableGpxWaypointTable)
+  name.vb: GpxRoute(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableGpxWaypointTable)
+  fullName: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, System.Object, NetTopologySuite.IO.ImmutableGpxWaypointTable)
+  fullName.vb: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, System.Object, NetTopologySuite.IO.ImmutableGpxWaypointTable)
+  nameWithType: GpxRoute.GpxRoute(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableGpxWaypointTable)
+  nameWithType.vb: GpxRoute.GpxRoute(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableGpxWaypointTable)
 - uid: NetTopologySuite.IO.GpxRoute.#ctor*
   name: GpxRoute
   href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute__ctor_
@@ -2955,15 +2955,15 @@ references:
   commentId: T:NetTopologySuite.IO.GpxTrack
   fullName: NetTopologySuite.IO.GpxTrack
   nameWithType: GpxTrack
-- uid: NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment},System.Object)
-  name: GpxTrack(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, ImmutableArray<GpxTrackSegment>, Object)
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxTrackSegment__System_Object_
-  commentId: M:NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment},System.Object)
-  name.vb: GpxTrack(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, ImmutableArray(Of GpxTrackSegment), Object)
-  fullName: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxTrackSegment>, System.Object)
-  fullName.vb: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxTrackSegment), System.Object)
-  nameWithType: GpxTrack.GpxTrack(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, ImmutableArray<GpxTrackSegment>, Object)
-  nameWithType.vb: GpxTrack.GpxTrack(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, ImmutableArray(Of GpxTrackSegment), Object)
+- uid: NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
+  name: GpxTrack(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableArray<GpxTrackSegment>)
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxTrackSegment__
+  commentId: M:NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
+  name.vb: GpxTrack(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableArray(Of GpxTrackSegment))
+  fullName: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, System.Object, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxTrackSegment>)
+  fullName.vb: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, System.Object, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxTrackSegment))
+  nameWithType: GpxTrack.GpxTrack(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableArray<GpxTrackSegment>)
+  nameWithType.vb: GpxTrack.GpxTrack(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableArray(Of GpxTrackSegment))
 - uid: NetTopologySuite.IO.GpxTrack.#ctor*
   name: GpxTrack
   href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack__ctor_

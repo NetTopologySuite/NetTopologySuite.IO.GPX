@@ -119,6 +119,9 @@ information.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public sealed class GpxWebLink : ICanWriteToXmlWriter</code></pre>
   </div>
+  <h5 id="NetTopologySuite_IO_GpxWebLink_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the simple type &quot;<a href="http://www.topografix.com/GPX/1/1/#type_linkType">linkType</a>&quot;.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -126,11 +129,12 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink__ctor_System_String_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.%23ctor(System.String%2CSystem.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L13">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L31">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink__ctor_" data-uid="NetTopologySuite.IO.GpxWebLink.#ctor*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink__ctor_System_String_System_String_System_Uri_" data-uid="NetTopologySuite.IO.GpxWebLink.#ctor(System.String,System.String,System.Uri)">GpxWebLink(String, String, Uri)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -149,17 +153,36 @@ information.</p>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">text</span></td>
-        <td></td>
+        <td><p>The value of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Text">Text</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">contentType</span></td>
-        <td></td>
+        <td><p>The value of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_ContentType">ContentType</a>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">href</span></td>
-        <td></td>
+        <td><p>The value of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">href</code> is <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -170,11 +193,12 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_ContentType.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.ContentType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L22">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L52">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_ContentType_" data-uid="NetTopologySuite.IO.GpxWebLink.ContentType*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_ContentType" data-uid="NetTopologySuite.IO.GpxWebLink.ContentType">ContentType</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the MIME type of content (e.g., image/jpeg).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -195,16 +219,20 @@ information.</p>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxWebLink_ContentType_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;type&quot; element.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_Href.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.Href%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L24">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L60">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_Href_" data-uid="NetTopologySuite.IO.GpxWebLink.Href*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_Href" data-uid="NetTopologySuite.IO.GpxWebLink.Href">Href</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the URL of the hyperlink.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -225,16 +253,20 @@ information.</p>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxWebLink_Href_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;href&quot; attribute.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_Text.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.Text%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L20">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L44">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_Text_" data-uid="NetTopologySuite.IO.GpxWebLink.Text*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_Text" data-uid="NetTopologySuite.IO.GpxWebLink.Text">Text</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the text of the hyperlink.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -255,6 +287,9 @@ information.</p>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxWebLink_Text_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;text&quot; element.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -262,7 +297,7 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_ToString.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L27">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L63">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_ToString_" data-uid="NetTopologySuite.IO.GpxWebLink.ToString*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_ToString" data-uid="NetTopologySuite.IO.GpxWebLink.ToString">ToString()</h4>
@@ -300,7 +335,7 @@ information.</p>
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L14" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

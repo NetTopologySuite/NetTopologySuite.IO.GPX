@@ -83,7 +83,8 @@
   
   <h1 id="NetTopologySuite_IO_GpxVisitorBase" data-uid="NetTopologySuite.IO.GpxVisitorBase" class="text-break">Class GpxVisitorBase
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Base class for the visitors that enable all the higher-order GPX reading functionality.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -128,11 +129,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxVisitorBase_VisitExtensions_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxVisitorBase.VisitExtensions(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L13">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L72">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxVisitorBase_VisitExtensions_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitExtensions*"></a>
   <h4 id="NetTopologySuite_IO_GpxVisitorBase_VisitExtensions_System_Object_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitExtensions(System.Object)">VisitExtensions(Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Invoked when the reader has moved past a GPX wpt element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -151,20 +153,26 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extensions</span></td>
-        <td></td>
+        <td><p>The object instance that represents what we read, guaranteed non-<span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxVisitorBase_VisitExtensions_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is not guaranteed to be called for every GPX file.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxVisitorBase_VisitMetadata_NetTopologySuite_IO_GpxMetadata_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxVisitorBase.VisitMetadata(NetTopologySuite.IO.GpxMetadata)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L5">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L25">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxVisitorBase_VisitMetadata_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitMetadata*"></a>
   <h4 id="NetTopologySuite_IO_GpxVisitorBase_VisitMetadata_NetTopologySuite_IO_GpxMetadata_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitMetadata(NetTopologySuite.IO.GpxMetadata)">VisitMetadata(GpxMetadata)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Invoked when the reader has moved past either the GPX metadata element or where it would
+have been.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -183,20 +191,32 @@
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a></td>
         <td><span class="parametername">metadata</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a> that we read, guaranteed non-<span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxVisitorBase_VisitMetadata_NetTopologySuite_IO_GpxMetadata__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This is guaranteed to be called once per GPX file, even if there is no metadata element.
+When there is no metadata element, <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_IsTrivial">IsTrivial</a> will be
+<span class="xref">true</span>, and only <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Creator">Creator</a> will be set.
+</p>
+<p>
+This will be called before any other method for a given GPX file.
+</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxVisitorBase_VisitRoute_NetTopologySuite_IO_GpxRoute_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxVisitorBase.VisitRoute(NetTopologySuite.IO.GpxRoute)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L9">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L49">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxVisitorBase_VisitRoute_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitRoute*"></a>
   <h4 id="NetTopologySuite_IO_GpxVisitorBase_VisitRoute_NetTopologySuite_IO_GpxRoute_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitRoute(NetTopologySuite.IO.GpxRoute)">VisitRoute(GpxRoute)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Invoked when the reader has moved past a GPX rte element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -215,20 +235,26 @@
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a></td>
         <td><span class="parametername">route</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a> instance that represents what we read, guaranteed non-
+<span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxVisitorBase_VisitRoute_NetTopologySuite_IO_GpxRoute__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is not guaranteed to be called for every GPX file.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxVisitorBase_VisitTrack_NetTopologySuite_IO_GpxTrack_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxVisitorBase.VisitTrack(NetTopologySuite.IO.GpxTrack)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L11">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L61">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxVisitorBase_VisitTrack_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitTrack*"></a>
   <h4 id="NetTopologySuite_IO_GpxVisitorBase_VisitTrack_NetTopologySuite_IO_GpxTrack_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitTrack(NetTopologySuite.IO.GpxTrack)">VisitTrack(GpxTrack)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Invoked when the reader has moved past a GPX trk element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -247,20 +273,26 @@
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a></td>
         <td><span class="parametername">track</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a> instance that represents what we read, guaranteed non-
+<span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxVisitorBase_VisitTrack_NetTopologySuite_IO_GpxTrack__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is not guaranteed to be called for every GPX file.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxVisitorBase_VisitWaypoint_NetTopologySuite_IO_GpxWaypoint_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxVisitorBase.VisitWaypoint(NetTopologySuite.IO.GpxWaypoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L7">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L37">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxVisitorBase_VisitWaypoint_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitWaypoint*"></a>
   <h4 id="NetTopologySuite_IO_GpxVisitorBase_VisitWaypoint_NetTopologySuite_IO_GpxWaypoint_" data-uid="NetTopologySuite.IO.GpxVisitorBase.VisitWaypoint(NetTopologySuite.IO.GpxWaypoint)">VisitWaypoint(GpxWaypoint)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Invoked when the reader has moved past a GPX wpt element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -279,10 +311,15 @@
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a></td>
         <td><span class="parametername">waypoint</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> instance that represents what we read, guaranteed non-
+<span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="NetTopologySuite_IO_GpxVisitorBase_VisitWaypoint_NetTopologySuite_IO_GpxWaypoint__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is not guaranteed to be called for every GPX file.</p>
+</div>
 </article>
           </div>
           
@@ -294,7 +331,7 @@
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxVisitorBase.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxVisitorBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L3" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxVisitorBase.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
