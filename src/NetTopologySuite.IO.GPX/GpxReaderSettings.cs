@@ -3,11 +3,14 @@
 namespace NetTopologySuite.IO
 {
     /// <summary>
-    /// A bag of properties used to configure how <see cref="GpxReader"/> produces GPX elements.
+    /// A bag of properties used to configure how <see cref="GpxReader"/> produces GPX data objects
+    /// that correspond to the original XML elements.
     /// </summary>
     public sealed class GpxReaderSettings
     {
         private static readonly TimeZoneInfo UtcTimeZone = TimeZoneInfo.Utc;
+
+        private static readonly GpxExtensionReader DefaultExtensionReader = new GpxExtensionReader();
 
         /// <summary>
         /// Gets or sets the <see cref="System.TimeZoneInfo"/> instance that the system should use
@@ -19,8 +22,8 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Gets or sets the <see cref="GpxExtensionReader"/> instance to use to convert GPX
         /// extension elements into (potentially) more idiomatic .NET types.  Default is an instance
-        /// that preserves the original XML representations.
+        /// of the base class (see its summary documentation for details).
         /// </summary>
-        public GpxExtensionReader ExtensionReader { get; set; } = new GpxExtensionReader();
+        public GpxExtensionReader ExtensionReader { get; set; } = DefaultExtensionReader;
     }
 }

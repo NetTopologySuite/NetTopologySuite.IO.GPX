@@ -1,6 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.2.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2)
+- Add some more places where methods throw for `null` elements in `IEnumerable<T>` sequences.
 - Default time zone is now UTC instead of local, since the documentation indicates that this is the convention.
 - Reorder some data members (both in constructors and `.ToString()` overrides) according to XSD order.
 - Remove the awkward `GpxReader.ReadFeatures` overload that took in `NetTopologySuiteFeatureBuilderGpxVisitor`.
