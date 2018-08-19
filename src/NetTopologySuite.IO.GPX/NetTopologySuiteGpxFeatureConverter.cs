@@ -23,7 +23,8 @@ namespace NetTopologySuite.IO
             }
 
             var attributes = feature.Attributes;
-            return new GpxWaypoint(longitude: new GpxLongitude(wpt.X),
+            return new GpxWaypoint(
+                longitude: new GpxLongitude(wpt.X),
                 latitude: new GpxLatitude(wpt.Y),
                 elevationInMeters: double.IsNaN(wpt.Z) ? default(double?) : wpt.Z,
                 timestampUtc: (DateTime?)attributes?.GetOptionalValue(nameof(GpxWaypoint.TimestampUtc)),
@@ -59,7 +60,8 @@ namespace NetTopologySuite.IO
             }
 
             var attributes = feature.Attributes;
-            return new GpxRoute(name: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Name)),
+            return new GpxRoute(
+                name: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Name)),
                 comment: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Comment)),
                 description: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Description)),
                 source: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Source)),
@@ -85,7 +87,8 @@ namespace NetTopologySuite.IO
             var attributes = feature.Attributes;
             var trackSegments = (IEnumerable<GpxTrackSegment>)attributes?.GetOptionalValue(nameof(GpxTrack.Segments));
 
-            return new GpxTrack(name: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Name)),
+            return new GpxTrack(
+                name: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Name)),
                 comment: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Comment)),
                 description: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Description)),
                 source: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Source)),
