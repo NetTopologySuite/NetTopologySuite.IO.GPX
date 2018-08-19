@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class GpxWriter
    | NetTopologySuite.IO.GPX ">
-    <meta name="generator" content="docfx 2.37.2.0">
+    <meta name="generator" content="docfx 2.38.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -83,7 +83,8 @@
   
   <h1 id="NetTopologySuite_IO_GpxWriter" data-uid="NetTopologySuite.IO.GpxWriter" class="text-break">Class GpxWriter
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides methods that write out GPX data to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -127,11 +128,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter%2CNetTopologySuite.IO.GpxWriterSettings%2CNetTopologySuite.IO.GpxMetadata%2CSystem.Collections.Generic.IEnumerable%7BNetTopologySuite.Features.IFeature%7D%2CSystem.Collections.Generic.IEnumerable%7BNetTopologySuite.Features.IFeature%7D%2CSystem.Collections.Generic.IEnumerable%7BNetTopologySuite.Features.IFeature%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L14">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L45">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWriter_Write_" data-uid="NetTopologySuite.IO.GpxWriter.Write*"></a>
   <h4 id="NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object_" data-uid="NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Object)">Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable&lt;IFeature&gt;, IEnumerable&lt;IFeature&gt;, IEnumerable&lt;IFeature&gt;, Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the given features to an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -150,37 +152,48 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a> to write to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a></td>
         <td><span class="parametername">settings</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a> instance to use to control how GPX instances get
+written out, or <code>null</code> to use a general-purpose default.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a></td>
         <td><span class="parametername">metadata</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a> instance that includes metadata about the file.  Required.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">NetTopologySuite.Features.IFeature</span>&gt;</td>
         <td><span class="parametername">waypointFeatures</span></td>
-        <td></td>
+        <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span>s that include the top-level wpt instances.  Optional, but if
+specified, each must be an <span class="xref">GeoAPI.Geometries.IPoint</span> feature.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">NetTopologySuite.Features.IFeature</span>&gt;</td>
         <td><span class="parametername">routeFeatures</span></td>
-        <td></td>
+        <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span>s that include the top-level rte instances.  Optional, but if
+specified, each must be an <span class="xref">GeoAPI.Geometries.ILineString</span> feature.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">NetTopologySuite.Features.IFeature</span>&gt;</td>
         <td><span class="parametername">trackFeatures</span></td>
-        <td></td>
+        <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span>s that include the top-level trk instances.  Optional, but if
+specified, each must be an <span class="xref">GeoAPI.Geometries.IMultiLineString</span> feature.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extensions</span></td>
-        <td></td>
+        <td><p>The top-level extension data.  Optional.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -189,11 +202,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter%2CNetTopologySuite.IO.GpxWriterSettings%2CNetTopologySuite.IO.GpxMetadata%2CSystem.Collections.Generic.IEnumerable%7BNetTopologySuite.Features.IFeature%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L25">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L104">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWriter_Write_" data-uid="NetTopologySuite.IO.GpxWriter.Write*"></a>
   <h4 id="NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object_" data-uid="NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Object)">Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable&lt;IFeature&gt;, Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the given features to an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -212,27 +226,62 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a> to write to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a></td>
         <td><span class="parametername">settings</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a> instance to use to control how GPX instances get
+written out, or <code>null</code> to use a general-purpose default.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a></td>
         <td><span class="parametername">metadata</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a> instance that includes metadata about the file.  Required.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">NetTopologySuite.Features.IFeature</span>&gt;</td>
         <td><span class="parametername">features</span></td>
-        <td></td>
+        <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span>s to write out.  Required.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extensions</span></td>
-        <td></td>
+        <td><p>The top-level extension data.  Optional.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The top-level GPX data objects written out depend on the <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span>
+type, as follows:</p>
+<table><thead><tr><th>Type of <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span>Corresponding top-level data object</th><th></th></tr></thead><tbody><tr><td><span class="xref">GeoAPI.Geometries.IPoint</span><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a></td><td></td></tr><tr><td><span class="xref">GeoAPI.Geometries.ILineString</span><a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a></td><td></td></tr><tr><td><span class="xref">GeoAPI.Geometries.IMultiLineString</span><a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a></td><td></td></tr></tbody></table>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">writer</code>, <code data-dev-comment-type="paramref" class="paramref">metadata</code>, or
+<code data-dev-comment-type="paramref" class="paramref">features</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when an element of <code data-dev-comment-type="paramref" class="paramref">features</code> or its
+<span class="xref">NetTopologySuite.Features.IFeature.Geometry</span> is <span class="xref">null</span>, or is not an instance of one
+of the recognized geometry types (see remarks).</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -241,11 +290,12 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_IO_GpxWaypoint__System_Collections_Generic_IEnumerable_NetTopologySuite_IO_GpxRoute__System_Collections_Generic_IEnumerable_NetTopologySuite_IO_GpxTrack__System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter%2CNetTopologySuite.IO.GpxWriterSettings%2CNetTopologySuite.IO.GpxMetadata%2CSystem.Collections.Generic.IEnumerable%7BNetTopologySuite.IO.GpxWaypoint%7D%2CSystem.Collections.Generic.IEnumerable%7BNetTopologySuite.IO.GpxRoute%7D%2CSystem.Collections.Generic.IEnumerable%7BNetTopologySuite.IO.GpxTrack%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L72">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L187">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWriter_Write_" data-uid="NetTopologySuite.IO.GpxWriter.Write*"></a>
   <h4 id="NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_IO_GpxWaypoint__System_Collections_Generic_IEnumerable_NetTopologySuite_IO_GpxRoute__System_Collections_Generic_IEnumerable_NetTopologySuite_IO_GpxTrack__System_Object_" data-uid="NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.IO.GpxWaypoint},System.Collections.Generic.IEnumerable{NetTopologySuite.IO.GpxRoute},System.Collections.Generic.IEnumerable{NetTopologySuite.IO.GpxTrack},System.Object)">Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable&lt;GpxWaypoint&gt;, IEnumerable&lt;GpxRoute&gt;, IEnumerable&lt;GpxTrack&gt;, Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the given features to an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -264,37 +314,71 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a> to write to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a></td>
         <td><span class="parametername">settings</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a> instance to use to control how GPX instances get
+written out, or <code>null</code> to use a general-purpose default.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a></td>
         <td><span class="parametername">metadata</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxMetadata.html">GpxMetadata</a> instance that includes metadata about the file.  Required.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a>&gt;</td>
         <td><span class="parametername">waypoints</span></td>
-        <td></td>
+        <td><p>The top-level wpt instances to write out.  Optional, but if specified, each element must
+be non-<span class="xref">null</span>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a>&gt;</td>
         <td><span class="parametername">routes</span></td>
-        <td></td>
+        <td><p>The top-level rte instances to write out.  Optional, but if specified, each element must
+be non-<span class="xref">null</span>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a>&gt;</td>
         <td><span class="parametername">tracks</span></td>
-        <td></td>
+        <td><p>The top-level trk instances to write out.  Optional, but if specified, each element must
+be non-<span class="xref">null</span>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">extensions</span></td>
-        <td></td>
+        <td><p>The top-level extension data.  Optional.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">writer</code> or <code data-dev-comment-type="paramref" class="paramref">metadata</code> is
+<span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when an element of <code data-dev-comment-type="paramref" class="paramref">waypoints</code>, <code data-dev-comment-type="paramref" class="paramref">routes</code>, or
+<code data-dev-comment-type="paramref" class="paramref">tracks</code> is <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -309,7 +393,7 @@
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWriter.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriter.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

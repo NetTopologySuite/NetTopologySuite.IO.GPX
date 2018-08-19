@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class GpxWriterSettings
    | NetTopologySuite.IO.GPX ">
-    <meta name="generator" content="docfx 2.37.2.0">
+    <meta name="generator" content="docfx 2.38.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -83,7 +83,9 @@
   
   <h1 id="NetTopologySuite_IO_GpxWriterSettings" data-uid="NetTopologySuite.IO.GpxWriterSettings" class="text-break">Class GpxWriterSettings
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A bag of properties used to configure how <a class="xref" href="NetTopologySuite.IO.GpxWriter.html">GpxWriter</a> produces XML elements that
+correspond to the original GPX data objects.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -127,11 +129,14 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWriterSettings_ExtensionWriter.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWriterSettings.ExtensionWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriterSettings.cs/#L11">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriterSettings.cs/#L28">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWriterSettings_ExtensionWriter_" data-uid="NetTopologySuite.IO.GpxWriterSettings.ExtensionWriter*"></a>
   <h4 id="NetTopologySuite_IO_GpxWriterSettings_ExtensionWriter" data-uid="NetTopologySuite.IO.GpxWriterSettings.ExtensionWriter">ExtensionWriter</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="NetTopologySuite.IO.GpxExtensionWriter.html">GpxExtensionWriter</a> instance to use to convert
+(potentially) idiomatic .NET types into the corresponding XML representation.  Default
+is an instance of the base class (see its summary documentation for details).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -157,11 +162,15 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWriterSettings_TimeZoneInfo.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWriterSettings.TimeZoneInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriterSettings.cs/#L9">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriterSettings.cs/#L21">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWriterSettings_TimeZoneInfo_" data-uid="NetTopologySuite.IO.GpxWriterSettings.TimeZoneInfo*"></a>
   <h4 id="NetTopologySuite_IO_GpxWriterSettings_TimeZoneInfo" data-uid="NetTopologySuite.IO.GpxWriterSettings.TimeZoneInfo">TimeZoneInfo</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a> instance that the system should use
+to produce timestamps for the GPX file.  Default is <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timezoneinfo.utc#System_TimeZoneInfo_Utc">Utc</a>.
+When overwriting this property, note that the XSD schema specifies that, by convention,
+timestamps in GPX files are expected to be in UTC.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -193,7 +202,7 @@
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/develop/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWriterSettings.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWriterSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriterSettings.cs/#L5" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/src/NetTopologySuite.IO.GPX/GpxWriterSettings.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

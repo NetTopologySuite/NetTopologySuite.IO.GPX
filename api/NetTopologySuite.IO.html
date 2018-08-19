@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace NetTopologySuite.IO
    | NetTopologySuite.IO.GPX ">
-    <meta name="generator" content="docfx 2.37.2.0">
+    <meta name="generator" content="docfx 2.38.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -125,7 +125,8 @@ implementation is used, and not much else.
       <section><p>Provides methods that read in GPX data from a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlreader">XmlReader</a>.</p>
 </section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxReaderSettings.html">GpxReaderSettings</a></h4>
-      <section><p>A bag of properties used to configure how <a class="xref" href="NetTopologySuite.IO.GpxReader.html">GpxReader</a> produces GPX elements.</p>
+      <section><p>A bag of properties used to configure how <a class="xref" href="NetTopologySuite.IO.GpxReader.html">GpxReader</a> produces GPX data objects
+that correspond to the original XML elements.</p>
 </section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a></h4>
       <section><p>Represents a route - an ordered list of waypoints representing a series of turn points
@@ -150,9 +151,12 @@ indicate GPS reception temporarily dropping off or the receiver being turned off
 information.</p>
 </section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxWriter.html">GpxWriter</a></h4>
-      <section></section>
+      <section><p>Provides methods that write out GPX data to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a>.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a></h4>
-      <section></section>
+      <section><p>A bag of properties used to configure how <a class="xref" href="NetTopologySuite.IO.GpxWriter.html">GpxWriter</a> produces XML elements that
+correspond to the original GPX data objects.</p>
+</section>
       <h4><a class="xref" href="NetTopologySuite.IO.ImmutableGpxWaypointTable.html">ImmutableGpxWaypointTable</a></h4>
       <section></section>
       <h4><a class="xref" href="NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html">NetTopologySuiteFeatureBuilderGpxVisitor</a></h4>
