@@ -60,14 +60,14 @@ namespace NetTopologySuite.IO
 
             var attributes = feature.Attributes;
             return new GpxRoute(name: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Name)),
-                                comment: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Comment)),
-                                description: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Description)),
-                                source: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Source)),
-                                links: attributes?.GetOptionalValue(nameof(GpxRoute.Links)) is ImmutableArray<GpxWebLink> storedLinks && !storedLinks.IsDefaultOrEmpty ? storedLinks : ImmutableArray<GpxWebLink>.Empty,
-                                number: (uint?)attributes?.GetOptionalValue(nameof(GpxRoute.Number)),
-                                classification: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Classification)),
-                                waypoints: new ImmutableGpxWaypointTable(((IEnumerable<GpxWaypoint>)attributes?.GetOptionalValue(nameof(GpxRoute.Waypoints))) ?? GenerateWaypoints(rte)),
-                                extensions: attributes?.GetOptionalValue(nameof(GpxRoute.Extensions)));
+                comment: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Comment)),
+                description: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Description)),
+                source: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Source)),
+                links: attributes?.GetOptionalValue(nameof(GpxRoute.Links)) is ImmutableArray<GpxWebLink> storedLinks && !storedLinks.IsDefaultOrEmpty ? storedLinks : ImmutableArray<GpxWebLink>.Empty,
+                number: (uint?)attributes?.GetOptionalValue(nameof(GpxRoute.Number)),
+                classification: (string)attributes?.GetOptionalValue(nameof(GpxRoute.Classification)),
+                extensions: attributes?.GetOptionalValue(nameof(GpxRoute.Extensions)),
+                waypoints: new ImmutableGpxWaypointTable(((IEnumerable<GpxWaypoint>)attributes?.GetOptionalValue(nameof(GpxRoute.Waypoints))) ?? GenerateWaypoints(rte)));
         }
 
         public static GpxTrack ToGpxTrack(IFeature feature)
@@ -86,14 +86,14 @@ namespace NetTopologySuite.IO
             var trackSegments = (IEnumerable<GpxTrackSegment>)attributes?.GetOptionalValue(nameof(GpxTrack.Segments));
 
             return new GpxTrack(name: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Name)),
-                                comment: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Comment)),
-                                description: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Description)),
-                                source: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Source)),
-                                links: attributes?.GetOptionalValue(nameof(GpxTrack.Links)) is ImmutableArray<GpxWebLink> storedLinks && !storedLinks.IsDefaultOrEmpty ? storedLinks : ImmutableArray<GpxWebLink>.Empty,
-                                number: (uint?)attributes?.GetOptionalValue(nameof(GpxTrack.Number)),
-                                classification: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Classification)),
-                                segments: ImmutableArray.CreateRange(trackSegments ?? GenerateTrackSegments(trk)),
-                                extensions: attributes?.GetOptionalValue(nameof(GpxTrack.Extensions)));
+                comment: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Comment)),
+                description: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Description)),
+                source: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Source)),
+                links: attributes?.GetOptionalValue(nameof(GpxTrack.Links)) is ImmutableArray<GpxWebLink> storedLinks && !storedLinks.IsDefaultOrEmpty ? storedLinks : ImmutableArray<GpxWebLink>.Empty,
+                number: (uint?)attributes?.GetOptionalValue(nameof(GpxTrack.Number)),
+                classification: (string)attributes?.GetOptionalValue(nameof(GpxTrack.Classification)),
+                extensions: attributes?.GetOptionalValue(nameof(GpxTrack.Extensions)),
+                segments: ImmutableArray.CreateRange(trackSegments ?? GenerateTrackSegments(trk)));
         }
 
         public static Feature ToFeature(GpxWaypoint waypoint, IGeometryFactory geometryFactory)

@@ -72,25 +72,27 @@ namespace NetTopologySuite.IO
             return result;
         }
 
-        public static string ListToString<TElement>(IEnumerable<TElement> lst)
+        public static string ListToString<TElement>(ImmutableArray<TElement> lst)
         {
-            var sb = new StringBuilder("[");
-            bool appended = false;
-            foreach (var value in lst)
+            if (lst.IsDefaultOrEmpty)
             {
-                if (appended)
+                return null;
+            }
+
+            var sb = new StringBuilder("[");
+            int i = 0;
+            while (true)
+            {
+                sb.Append(lst[i]);
+                if (++i == lst.Length)
                 {
-                    sb.Append(", ");
+                    return sb.Append("]").ToString();
                 }
                 else
                 {
-                    appended = true;
+                    sb.Append(", ");
                 }
-
-                sb.Append(value);
             }
-
-            return sb.Length == 1 ? null : sb.Append("]").ToString();
         }
 
         public static string BuildString(params (string fieldName, object fieldValue)[] values)

@@ -5,16 +5,43 @@ using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
 {
+    /// <summary>
+    /// Represents a continuous span of track data, logically connected in order.
+    /// </summary>
+    /// <remarks>
+    /// In the official XSD schema for GPX 1.1, this corresponds to the complex type "<a href="http://www.topografix.com/GPX/1/1/#type_trksegType">trksegType</a>".
+    /// </remarks>
     public sealed class GpxTrackSegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxTrackSegment"/> class.
+        /// </summary>
+        /// <param name="waypoints">
+        /// The value for <see cref="Waypoints"/>.
+        /// </param>
+        /// <param name="extensions">
+        /// The value for <see cref="Extensions"/>.
+        /// </param>
         public GpxTrackSegment(ImmutableGpxWaypointTable waypoints, object extensions)
         {
             this.Waypoints = waypoints;
             this.Extensions = extensions;
         }
 
+        /// <summary>
+        /// Gets the waypoints that make up this segment.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "trkpt" elements.
+        /// </remarks>
         public ImmutableGpxWaypointTable Waypoints { get; }
 
+        /// <summary>
+        /// Gets arbitrary extension information associated with this segment.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "extensions" element.
+        /// </remarks>
         public object Extensions { get; }
 
         internal static GpxTrackSegment Load(XElement element, GpxReaderSettings settings)

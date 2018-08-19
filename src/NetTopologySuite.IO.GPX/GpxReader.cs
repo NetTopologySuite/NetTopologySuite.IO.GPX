@@ -138,7 +138,11 @@ namespace NetTopologySuite.IO
                             expectingExtensions = false;
                             var extensionElement = (XElement)XNode.ReadFrom(reader);
                             object extensions = settings.ExtensionReader.ConvertGpxExtensionElement(extensionElement.Elements());
-                            visitor.VisitExtensions(extensions);
+                            if (!(extensions is null))
+                            {
+                                visitor.VisitExtensions(extensions);
+                            }
+
                             break;
                     }
                 }

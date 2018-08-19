@@ -8,6 +8,12 @@ using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
 {
+    /// <summary>
+    /// Represents a waypoint, point of interest, or named feature on a map.
+    /// </summary>
+    /// <remarks>
+    /// In the official XSD schema for GPX 1.1, this corresponds to the simple type "<a href="http://www.topografix.com/GPX/1/1/#type_wptType">wptType</a>".
+    /// </remarks>
     public sealed class GpxWaypoint
     {
         private readonly double elevationInMeters;
@@ -16,11 +22,90 @@ namespace NetTopologySuite.IO
 
         private readonly UncommonProperties uncommonProperties;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxWaypoint"/> class.
+        /// Provides just the essential information for indicating the location, and nothing else.
+        /// </summary>
+        /// <param name="longitude">
+        /// The value for <see cref="Longitude"/>.
+        /// </param>
+        /// <param name="latitude">
+        /// The value for <see cref="Latitude"/>.
+        /// </param>
+        /// <param name="elevationInMeters">
+        /// The value for <see cref="ElevationInMeters"/>.
+        /// </param>
         public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters)
             : this(longitude, latitude, elevationInMeters, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxWaypoint"/> class.
+        /// </summary>
+        /// <param name="longitude">
+        /// The value for <see cref="Longitude"/>.
+        /// </param>
+        /// <param name="latitude">
+        /// The value for <see cref="Latitude"/>.
+        /// </param>
+        /// <param name="elevationInMeters">
+        /// The value for <see cref="ElevationInMeters"/>.
+        /// </param>
+        /// <param name="timestampUtc">
+        /// The value for <see cref="TimestampUtc"/>.
+        /// </param>
+        /// <param name="magneticVariation">
+        /// The value for <see cref="MagneticVariation"/>.
+        /// </param>
+        /// <param name="geoidHeight">
+        /// The value for <see cref="GeoidHeight"/>.
+        /// </param>
+        /// <param name="name">
+        /// The value for <see cref="Name"/>.
+        /// </param>
+        /// <param name="comment">
+        /// The value for <see cref="Comment"/>.
+        /// </param>
+        /// <param name="description">
+        /// The value for <see cref="Description"/>.
+        /// </param>
+        /// <param name="source">
+        /// The value for <see cref="Source"/>.
+        /// </param>
+        /// <param name="links">
+        /// The value for <see cref="Links"/>.
+        /// </param>
+        /// <param name="symbolText">
+        /// The value for <see cref="SymbolText"/>.
+        /// </param>
+        /// <param name="classification">
+        /// The value for <see cref="Classification"/>.
+        /// </param>
+        /// <param name="fixKind">
+        /// The value for <see cref="FixKind"/>.
+        /// </param>
+        /// <param name="numberOfSatellites">
+        /// The value for <see cref="NumberOfSatellites"/>.
+        /// </param>
+        /// <param name="horizontalDilutionOfPrecision">
+        /// The value for <see cref="HorizontalDilutionOfPrecision"/>.
+        /// </param>
+        /// <param name="verticalDilutionOfPrecision">
+        /// The value for <see cref="VerticalDilutionOfPrecision"/>.
+        /// </param>
+        /// <param name="positionDilutionOfPrecision">
+        /// The value for <see cref="PositionDilutionOfPrecision"/>.
+        /// </param>
+        /// <param name="secondsSinceLastDgpsUpdate">
+        /// The value for <see cref="SecondsSinceLastDgpsUpdate"/>.
+        /// </param>
+        /// <param name="dgpsStationId">
+        /// The value for <see cref="DgpsStationId"/>.
+        /// </param>
+        /// <param name="extensions">
+        /// The value for <see cref="Extensions"/>.
+        /// </param>
         public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters, DateTime? timestampUtc, GpxDegrees? magneticVariation, double? geoidHeight, string name, string comment, string description, string source, ImmutableArray<GpxWebLink> links, string symbolText, string classification, GpxFixKind? fixKind, uint? numberOfSatellites, double? horizontalDilutionOfPrecision, double? verticalDilutionOfPrecision, double? positionDilutionOfPrecision, double? secondsSinceLastDgpsUpdate, GpxDgpsStationId? dgpsStationId, object extensions)
         {
             this.Longitude = longitude;
@@ -64,48 +149,176 @@ namespace NetTopologySuite.IO
             this.uncommonProperties = new UncommonProperties(magneticVariation, geoidHeight, comment, source, links, classification, fixKind, numberOfSatellites, horizontalDilutionOfPrecision, verticalDilutionOfPrecision, positionDilutionOfPrecision, secondsSinceLastDgpsUpdate, dgpsStationId, extensions);
         }
 
+        /// <summary>
+        /// Gets the longitude of this location, in decimal degrees (WGS84).
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "lon" attribute.
+        /// </remarks>
         public GpxLongitude Longitude { get; }
 
+        /// <summary>
+        /// Gets the latitude of this location, in decimal degrees (WGS84).
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "lat" attribute.
+        /// </remarks>
         public GpxLatitude Latitude { get; }
 
+        /// <summary>
+        /// Gets the elevation of this point, in meters.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "ele" element.
+        /// </remarks>
         public double? ElevationInMeters => double.IsNaN(this.elevationInMeters) ? default(double?) : this.elevationInMeters;
 
+        /// <summary>
+        /// Gets the creation / modification timestamp of this location, in UTC time.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "time" element.
+        /// </remarks>
         public DateTime? TimestampUtc => this.timestampUtc.Kind == DateTimeKind.Unspecified ? default(DateTime?) : this.timestampUtc;
 
+        /// <summary>
+        /// Gets the magnetic variation at this location.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "magvar" element.
+        /// </remarks>
         public GpxDegrees? MagneticVariation => this.uncommonProperties?.MagneticVariation;
 
+        /// <summary>
+        /// Gets the height (in meters) of geoid (mean sea level) above WGS84 earth ellipsoid at
+        /// this location, as defined in NMEA GGA message.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "geoidheight" element.
+        /// </remarks>
         public double? GeoidHeight => this.uncommonProperties?.GeoidHeight;
 
+        /// <summary>
+        /// Gets the GPS name of this location, to be transferred to and from the GPS.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "name" element.
+        /// </remarks>
         public string Name { get; }
 
+        /// <summary>
+        /// Gets the GPS comment of this location, to be transferred to and from the GPS.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "cmt" element.
+        /// </remarks>
         public string Comment => this.uncommonProperties?.Comment;
 
+        /// <summary>
+        /// Gets an additional text description for this location for the user (not the GPS).
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "desc" element.
+        /// </remarks>
         public string Description { get; }
 
+        /// <summary>
+        /// Gets the source of the data, e.g., "Garmin eTrex", "USGS quad Boston North".
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "src" element.
+        /// </remarks>
         public string Source => this.uncommonProperties?.Source;
 
+        /// <summary>
+        /// Gets links to additional information about this location.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "link" elements.
+        /// </remarks>
         public ImmutableArray<GpxWebLink> Links => this.uncommonProperties?.Links ?? ImmutableArray<GpxWebLink>.Empty;
 
+        /// <summary>
+        /// Gets the text of the GPS symbol name for this location.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "sym" element.
+        /// </remarks>
         public string SymbolText { get; }
 
+        /// <summary>
+        /// Gets the classification of this location.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "type" element.
+        /// </remarks>
         public string Classification => this.uncommonProperties?.Classification;
 
+        /// <summary>
+        /// Gets the type of fix when this waypoint was generated.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "fix" element.
+        /// </remarks>
         public GpxFixKind? FixKind => this.uncommonProperties?.FixKind;
 
+        /// <summary>
+        /// Gets the number of satellites used to calculate the GPS fix.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "sat" element.
+        /// </remarks>
         public uint? NumberOfSatellites => this.uncommonProperties?.NumberOfSatellites;
 
+        /// <summary>
+        /// Gets the horizontal dilution of precision.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "hdop" element.
+        /// </remarks>
         public double? HorizontalDilutionOfPrecision => this.uncommonProperties?.HorizontalDilutionOfPrecision;
 
+        /// <summary>
+        /// Gets the vertical dilution of precision.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "vdop" element.
+        /// </remarks>
         public double? VerticalDilutionOfPrecision => this.uncommonProperties?.VerticalDilutionOfPrecision;
 
+        /// <summary>
+        /// Gets the position dilution of precision.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "pdop" element.
+        /// </remarks>
         public double? PositionDilutionOfPrecision => this.uncommonProperties?.PositionDilutionOfPrecision;
 
+        /// <summary>
+        /// Gets the number of seconds since the last DGPS update when this waypoint was generated.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "ageofdgpsdata" element.
+        /// </remarks>
         public double? SecondsSinceLastDgpsUpdate => this.uncommonProperties?.SecondsSinceLastDgpsUpdate;
 
+        /// <summary>
+        /// Gets the ID of the DGPS station used in differential correction.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "dgpsid" element.
+        /// </remarks>
         public GpxDgpsStationId? DgpsStationId => this.uncommonProperties?.DgpsStationId;
 
+        /// <summary>
+        /// Gets arbitrary extension information associated with this waypoint.
+        /// </summary>
+        /// <remarks>
+        /// In the official XSD schema for GPX 1.1, this corresponds to the "extensions" element.
+        /// </remarks>
         public object Extensions => this.uncommonProperties?.Extensions;
 
+        /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Longitude), this.Longitude),
                                                                  (nameof(this.Latitude), this.Latitude),
                                                                  (nameof(this.ElevationInMeters), this.ElevationInMeters),
@@ -193,7 +406,7 @@ namespace NetTopologySuite.IO
                 this.GeoidHeight = geoidHeight;
                 this.Comment = comment;
                 this.Source = source;
-                this.Links = links;
+                this.Links = links.IsDefault ? ImmutableArray<GpxWebLink>.Empty : links;
                 this.Classification = classification;
                 this.FixKind = fixKind;
                 this.NumberOfSatellites = numberOfSatellites;
