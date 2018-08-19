@@ -1,9 +1,10 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.2.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2)
+- Remove the awkward `GpxReader.ReadFeatures` overload that took in `NetTopologySuiteFeatureBuilderGpxVisitor`.
 - Fix an off-by-one issue that would cause features to get skipped over when not separated by whitespace. ([#18](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/18)).
 - Fix an issue where values very close to zero would be written in scientific notation, violating the GPX spec. ([#15](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/15)).
-- Added some more `ToString()` overrides
+- Add some more `ToString()` overrides
 - `GpxWaypoint` constructor parameters reordered to match the order of the elements that the XSD schema requires
 - `ImmutableGpxWaypointTable` now throws `ArgumentException` if it encounters a `null` waypoint.
 - Rename `GpxMetadata.CreationTime` to `GpxMetadata.CreationTimeUtc` and validate that it is, in fact, marked as UTC (when specified at all).

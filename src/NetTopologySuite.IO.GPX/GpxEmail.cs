@@ -28,7 +28,7 @@ namespace NetTopologySuite.IO
         }
 
         /// <summary>
-        /// Gets the user ID fragment of the e-mail address,
+        /// Gets the user ID fragment of the e-mail address.
         /// This is the part before the '@'.
         /// </summary>
         /// <remarks>
@@ -37,7 +37,7 @@ namespace NetTopologySuite.IO
         public string Id { get; }
 
         /// <summary>
-        /// Gets the user ID fragment of the e-mail address,
+        /// Gets the user ID fragment of the e-mail address.
         /// This is the part after the '@'.
         /// </summary>
         /// <remarks>

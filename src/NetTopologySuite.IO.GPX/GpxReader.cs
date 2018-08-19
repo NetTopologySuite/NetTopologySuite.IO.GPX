@@ -7,34 +7,64 @@ using NetTopologySuite.Features;
 
 namespace NetTopologySuite.IO
 {
+    /// <summary>
+    /// Provides methods that read in GPX data from a <see cref="XmlReader"/>.
+    /// </summary>
     public static class GpxReader
     {
+        /// <summary>
+        /// Reads in NTS <see cref="Feature"/>s and GPX metadata from an <see cref="XmlReader"/>.
+        /// </summary>
+        /// <param name="reader">
+        /// The <see cref="XmlReader"/> to read from.
+        /// </param>
+        /// <param name="settings">
+        /// The <see cref="GpxReaderSettings"/> instance to use to control how GPX instances get
+        /// read in, or <c>null</c> to use a general-purpose default.
+        /// </param>
+        /// <param name="geometryFactory">
+        /// The <see cref="IGeometryFactory"/> instance to use when creating the individual
+        /// <see cref="Feature.Geometry"/> elements.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Feature"/> instances that represent the top-level GPX data elements, as
+        /// well as the <see cref="GpxMetadata"/> for the GPX file and the top-level extension
+        /// content from the file.
+        /// </returns>
         public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)
-        {
-            if (geometryFactory is null)
-            {
-                throw new ArgumentNullException(nameof(geometryFactory));
-            }
-
-            return ReadFeatures(reader, settings, new NetTopologySuiteFeatureBuilderGpxVisitor(geometryFactory));
-        }
-
-        public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, NetTopologySuiteFeatureBuilderGpxVisitor visitor)
         {
             if (reader is null)
             {
                 throw new ArgumentNullException(nameof(reader));
             }
 
-            if (visitor is null)
+            if (geometryFactory is null)
             {
-                throw new ArgumentNullException(nameof(visitor));
+                throw new ArgumentNullException(nameof(geometryFactory));
             }
 
+            var visitor = new NetTopologySuiteFeatureBuilderGpxVisitor(geometryFactory);
             Read(reader, settings, visitor);
             return visitor.Terminate();
         }
 
+        /// <summary>
+        /// Processes a GPX file, invoking callbacks on a <see cref="GpxVisitorBase"/> instance as
+        /// elements are observed.
+        /// </summary>
+        /// <param name="reader">
+        /// The <see cref="XmlReader"/> to read from.
+        /// </param>
+        /// <param name="settings">
+        /// The <see cref="GpxReaderSettings"/> instance to use to control how GPX instances get
+        /// read in, or <c>null</c> to use a general-purpose default.
+        /// </param>
+        /// <param name="visitor">
+        /// The <see cref="GpxVisitorBase"/> instance that will receive callbacks.
+        /// </param>
+        /// <remarks>
+        /// This method is the "core" reading method; everything else builds off of this.
+        /// </remarks>
         public static void Read(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
             if (reader is null)
