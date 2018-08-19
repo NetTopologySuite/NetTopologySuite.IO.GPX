@@ -2758,12 +2758,6 @@ references:
   commentId: M:NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,GeoAPI.Geometries.IGeometryFactory)
   fullName: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings, GeoAPI.Geometries.IGeometryFactory)
   nameWithType: GpxReader.ReadFeatures(XmlReader, GpxReaderSettings, IGeometryFactory)
-- uid: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor)
-  name: ReadFeatures(XmlReader, GpxReaderSettings, NetTopologySuiteFeatureBuilderGpxVisitor)
-  href: api/NetTopologySuite.IO.GpxReader.html#NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_
-  commentId: M:NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor)
-  fullName: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings, NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor)
-  nameWithType: GpxReader.ReadFeatures(XmlReader, GpxReaderSettings, NetTopologySuiteFeatureBuilderGpxVisitor)
 - uid: NetTopologySuite.IO.GpxReader.ReadFeatures*
   name: ReadFeatures
   href: api/NetTopologySuite.IO.GpxReader.html#NetTopologySuite_IO_GpxReader_ReadFeatures_
