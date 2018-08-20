@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 dotnet build -c Release
 dotnet test tests/NetTopologySuite.IO.GPX.Tests --no-build --no-restore -c Release
 if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "develop" ]

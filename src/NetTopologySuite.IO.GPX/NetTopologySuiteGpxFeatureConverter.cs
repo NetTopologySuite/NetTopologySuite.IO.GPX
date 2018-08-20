@@ -389,33 +389,20 @@ namespace NetTopologySuite.IO
 
         private static ILineString BuildLineString(ImmutableGpxWaypointTable waypoints, IGeometryFactory geometryFactory)
         {
-            ICoordinateSequence coords;
+            Coordinate[] coords;
             if (waypoints.Count == 1)
             {
                 var waypoint = waypoints[0];
-                coords = geometryFactory.CoordinateSequenceFactory.Create(waypoints.Count, 2);
-                coords.SetOrdinate(0, Ordinate.X, waypoint.Longitude);
-                coords.SetOrdinate(1, Ordinate.X, waypoint.Longitude);
-                coords.SetOrdinate(0, Ordinate.Y, waypoint.Latitude);
-                coords.SetOrdinate(1, Ordinate.Y, waypoint.Latitude);
-                if (waypoint.ElevationInMeters.HasValue)
-                {
-                    coords.SetOrdinate(0, Ordinate.Z, waypoint.ElevationInMeters.Value);
-                    coords.SetOrdinate(1, Ordinate.Z, waypoint.ElevationInMeters.Value);
-                }
+                coords = new Coordinate[2];
+                coords[0] = coords[1] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
             }
             else
             {
-                coords = geometryFactory.CoordinateSequenceFactory.Create(waypoints.Count, 3);
-                for (int i = 0; i < waypoints.Count; i++)
+                coords = new Coordinate[waypoints.Count];
+                for (int i = 0; i < coords.Length; i++)
                 {
                     var waypoint = waypoints[i];
-                    coords.SetOrdinate(i, Ordinate.X, waypoint.Longitude);
-                    coords.SetOrdinate(i, Ordinate.Y, waypoint.Latitude);
-                    if (waypoint.ElevationInMeters.HasValue)
-                    {
-                        coords.SetOrdinate(i, Ordinate.Z, waypoint.ElevationInMeters.GetValueOrDefault());
-                    }
+                    coords[i] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
                 }
             }
 

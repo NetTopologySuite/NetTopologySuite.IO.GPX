@@ -31,6 +31,16 @@ namespace NetTopologySuite.IO
         /// well as the <see cref="GpxMetadata"/> for the GPX file and the top-level extension
         /// content from the file.
         /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="reader"/> or <paramref name="geometryFactory"/> is
+        /// <see langword="null"/>.
+        /// </exception>
+        /// <exception cref="XmlException">
+        /// Thrown when <paramref name="reader"/> does not specify a valid GPX file (i.e., cases
+        /// where XSD schema validation would fail, and/or some values are <b>well</b> outside of
+        /// the slightly stricter, but still completely reasonable, limits imposed by the idiomatic
+        /// .NET data types above and beyond the XSD limits).
+        /// </exception>
         public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)
         {
             if (reader is null)
@@ -65,6 +75,16 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// This method is the "core" reading method; everything else builds off of this.
         /// </remarks>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="reader"/> or <paramref name="visitor"/> is
+        /// <see langword="null"/>.
+        /// </exception>
+        /// <exception cref="XmlException">
+        /// Thrown when <paramref name="reader"/> does not specify a valid GPX file (i.e., cases
+        /// where XSD schema validation would fail, and/or some values are <b>well</b> outside of
+        /// the slightly stricter, but still completely reasonable, limits imposed by the idiomatic
+        /// .NET data types above and beyond the XSD limits).
+        /// </exception>
         public static void Read(XmlReader reader, GpxReaderSettings settings, GpxVisitorBase visitor)
         {
             if (reader is null)
