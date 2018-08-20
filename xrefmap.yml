@@ -3705,15 +3705,6 @@ references:
   fullName.vb: NetTopologySuite.IO.ImmutableGpxWaypointTable.ImmutableGpxWaypointTable(System.Collections.Generic.IEnumerable(Of NetTopologySuite.IO.GpxWaypoint))
   nameWithType: ImmutableGpxWaypointTable.ImmutableGpxWaypointTable(IEnumerable<GpxWaypoint>)
   nameWithType.vb: ImmutableGpxWaypointTable.ImmutableGpxWaypointTable(IEnumerable(Of GpxWaypoint))
-- uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.#ctor(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},NetTopologySuite.IO.GpxReaderSettings,System.Func{System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Object})
-  name: ImmutableGpxWaypointTable(IEnumerable<XElement>, GpxReaderSettings, Func<IEnumerable<XElement>, Object>)
-  href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable__ctor_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__NetTopologySuite_IO_GpxReaderSettings_System_Func_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__System_Object__
-  commentId: M:NetTopologySuite.IO.ImmutableGpxWaypointTable.#ctor(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},NetTopologySuite.IO.GpxReaderSettings,System.Func{System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Object})
-  name.vb: ImmutableGpxWaypointTable(IEnumerable(Of XElement), GpxReaderSettings, Func(Of IEnumerable(Of XElement), Object))
-  fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.ImmutableGpxWaypointTable(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, NetTopologySuite.IO.GpxReaderSettings, System.Func<System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, System.Object>)
-  fullName.vb: NetTopologySuite.IO.ImmutableGpxWaypointTable.ImmutableGpxWaypointTable(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), NetTopologySuite.IO.GpxReaderSettings, System.Func(Of System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), System.Object))
-  nameWithType: ImmutableGpxWaypointTable.ImmutableGpxWaypointTable(IEnumerable<XElement>, GpxReaderSettings, Func<IEnumerable<XElement>, Object>)
-  nameWithType.vb: ImmutableGpxWaypointTable.ImmutableGpxWaypointTable(IEnumerable(Of XElement), GpxReaderSettings, Func(Of IEnumerable(Of XElement), Object))
 - uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.#ctor*
   name: ImmutableGpxWaypointTable
   href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable__ctor_
@@ -3893,103 +3884,6 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.ToString
   nameWithType: ImmutableGpxWaypointTable.ToString
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor
-  name: NetTopologySuiteFeatureBuilderGpxVisitor
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html
-  commentId: T:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.#ctor(GeoAPI.Geometries.IGeometryFactory)
-  name: NetTopologySuiteFeatureBuilderGpxVisitor(IGeometryFactory)
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor__ctor_GeoAPI_Geometries_IGeometryFactory_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.#ctor(GeoAPI.Geometries.IGeometryFactory)
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.NetTopologySuiteFeatureBuilderGpxVisitor(GeoAPI.Geometries.IGeometryFactory)
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.NetTopologySuiteFeatureBuilderGpxVisitor(IGeometryFactory)
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.#ctor*
-  name: NetTopologySuiteFeatureBuilderGpxVisitor
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor__ctor_
-  commentId: Overload:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.#ctor
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.NetTopologySuiteFeatureBuilderGpxVisitor
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.NetTopologySuiteFeatureBuilderGpxVisitor
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.Terminate
-  name: Terminate()
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_Terminate
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.Terminate
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.Terminate()
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.Terminate()
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.Terminate*
-  name: Terminate
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_Terminate_
-  commentId: Overload:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.Terminate
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.Terminate
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.Terminate
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions(System.Object)
-  name: VisitExtensions(Object)
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitExtensions_System_Object_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions(System.Object)
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions(System.Object)
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions(Object)
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions*
-  name: VisitExtensions
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitExtensions_
-  commentId: Overload:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitExtensions
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata(NetTopologySuite.IO.GpxMetadata)
-  name: VisitMetadata(GpxMetadata)
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitMetadata_NetTopologySuite_IO_GpxMetadata_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata(NetTopologySuite.IO.GpxMetadata)
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata(NetTopologySuite.IO.GpxMetadata)
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata(GpxMetadata)
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata*
-  name: VisitMetadata
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitMetadata_
-  commentId: Overload:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitMetadata
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute(NetTopologySuite.IO.GpxRoute)
-  name: VisitRoute(GpxRoute)
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitRoute_NetTopologySuite_IO_GpxRoute_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute(NetTopologySuite.IO.GpxRoute)
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute(NetTopologySuite.IO.GpxRoute)
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute(GpxRoute)
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute*
-  name: VisitRoute
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitRoute_
-  commentId: Overload:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitRoute
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack(NetTopologySuite.IO.GpxTrack)
-  name: VisitTrack(GpxTrack)
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitTrack_NetTopologySuite_IO_GpxTrack_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack(NetTopologySuite.IO.GpxTrack)
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack(NetTopologySuite.IO.GpxTrack)
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack(GpxTrack)
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack*
-  name: VisitTrack
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitTrack_
-  commentId: Overload:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitTrack
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint(NetTopologySuite.IO.GpxWaypoint)
-  name: VisitWaypoint(GpxWaypoint)
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitWaypoint_NetTopologySuite_IO_GpxWaypoint_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint(NetTopologySuite.IO.GpxWaypoint)
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint(NetTopologySuite.IO.GpxWaypoint)
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint(GpxWaypoint)
-- uid: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint*
-  name: VisitWaypoint
-  href: api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html#NetTopologySuite_IO_NetTopologySuiteFeatureBuilderGpxVisitor_VisitWaypoint_
-  commentId: Overload:NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint
-  nameWithType: NetTopologySuiteFeatureBuilderGpxVisitor.VisitWaypoint
 - uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter
   name: NetTopologySuiteGpxFeatureConverter
   href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html

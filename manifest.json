@@ -234,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.GpxVisitorBase.html",
-          "hash": "c3VvFuofr3rmV3rJLy46uQ=="
+          "hash": "yRQrWJJLrwtbd3+7cbuNrw=="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator.html",
-          "hash": "5fMMeSjRUBa34a+SGtH3XA=="
+          "hash": "tVhGK5wXf8+znwdXVuTFuQ=="
         }
       },
       "is_incremental": false,
@@ -306,19 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html",
-          "hash": "YSbsXgCim2FV+BAjSrh47A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/NetTopologySuite.IO.NetTopologySuiteFeatureBuilderGpxVisitor.html",
-          "hash": "mIcqChBJQc2eAPl65ulvSA=="
+          "hash": "3IIZVEP20yYXNBsrIuSwFQ=="
         }
       },
       "is_incremental": false,
@@ -330,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html",
-          "hash": "guKULdeJYZ9pJzK+lro0jw=="
+          "hash": "s/o0hJcCVLjkxnpzF6KyzQ=="
         }
       },
       "is_incremental": false,
@@ -342,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NetTopologySuite.IO.html",
-          "hash": "1Xrp8sQUBmUZ/uZ9XO0Rzg=="
+          "hash": "I+FAdyG4OrlFc/t/HALITA=="
         }
       },
       "is_incremental": false,
@@ -354,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "vs5OSrE5AhW+LQsjfLi3gQ=="
+          "hash": "i76l/p6b0mzXfPz+hTs0QQ=="
         }
       },
       "is_incremental": false,
@@ -366,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "release-notes.html",
-          "hash": "XQKI/GOgvLriYPfRteXzRA=="
+          "hash": "H7Mlm9yKfwHr2eVaX2QBnA=="
         }
       },
       "is_incremental": false,
