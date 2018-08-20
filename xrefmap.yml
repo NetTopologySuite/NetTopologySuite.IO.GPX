@@ -1485,6 +1485,103 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxExtensionWriter.ConvertWaypointExtension
   nameWithType: GpxExtensionWriter.ConvertWaypointExtension
+- uid: NetTopologySuite.IO.GpxFile
+  name: GpxFile
+  href: api/NetTopologySuite.IO.GpxFile.html
+  commentId: T:NetTopologySuite.IO.GpxFile
+  fullName: NetTopologySuite.IO.GpxFile
+  nameWithType: GpxFile
+- uid: NetTopologySuite.IO.GpxFile.Extensions
+  name: Extensions
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Extensions
+  commentId: P:NetTopologySuite.IO.GpxFile.Extensions
+  fullName: NetTopologySuite.IO.GpxFile.Extensions
+  nameWithType: GpxFile.Extensions
+- uid: NetTopologySuite.IO.GpxFile.Extensions*
+  name: Extensions
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Extensions_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.Extensions
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.Extensions
+  nameWithType: GpxFile.Extensions
+- uid: NetTopologySuite.IO.GpxFile.Metadata
+  name: Metadata
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Metadata
+  commentId: P:NetTopologySuite.IO.GpxFile.Metadata
+  fullName: NetTopologySuite.IO.GpxFile.Metadata
+  nameWithType: GpxFile.Metadata
+- uid: NetTopologySuite.IO.GpxFile.Metadata*
+  name: Metadata
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Metadata_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.Metadata
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.Metadata
+  nameWithType: GpxFile.Metadata
+- uid: NetTopologySuite.IO.GpxFile.Read(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)
+  name: Read(XmlReader, GpxReaderSettings)
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Read_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_
+  commentId: M:NetTopologySuite.IO.GpxFile.Read(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)
+  fullName: NetTopologySuite.IO.GpxFile.Read(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings)
+  nameWithType: GpxFile.Read(XmlReader, GpxReaderSettings)
+- uid: NetTopologySuite.IO.GpxFile.Read*
+  name: Read
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Read_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.Read
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.Read
+  nameWithType: GpxFile.Read
+- uid: NetTopologySuite.IO.GpxFile.Routes
+  name: Routes
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Routes
+  commentId: P:NetTopologySuite.IO.GpxFile.Routes
+  fullName: NetTopologySuite.IO.GpxFile.Routes
+  nameWithType: GpxFile.Routes
+- uid: NetTopologySuite.IO.GpxFile.Routes*
+  name: Routes
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Routes_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.Routes
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.Routes
+  nameWithType: GpxFile.Routes
+- uid: NetTopologySuite.IO.GpxFile.Tracks
+  name: Tracks
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Tracks
+  commentId: P:NetTopologySuite.IO.GpxFile.Tracks
+  fullName: NetTopologySuite.IO.GpxFile.Tracks
+  nameWithType: GpxFile.Tracks
+- uid: NetTopologySuite.IO.GpxFile.Tracks*
+  name: Tracks
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Tracks_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.Tracks
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.Tracks
+  nameWithType: GpxFile.Tracks
+- uid: NetTopologySuite.IO.GpxFile.Waypoints
+  name: Waypoints
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Waypoints
+  commentId: P:NetTopologySuite.IO.GpxFile.Waypoints
+  fullName: NetTopologySuite.IO.GpxFile.Waypoints
+  nameWithType: GpxFile.Waypoints
+- uid: NetTopologySuite.IO.GpxFile.Waypoints*
+  name: Waypoints
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Waypoints_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.Waypoints
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.Waypoints
+  nameWithType: GpxFile.Waypoints
+- uid: NetTopologySuite.IO.GpxFile.WriteTo(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
+  name: WriteTo(XmlWriter, GpxWriterSettings)
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_WriteTo_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_
+  commentId: M:NetTopologySuite.IO.GpxFile.WriteTo(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)
+  fullName: NetTopologySuite.IO.GpxFile.WriteTo(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings)
+  nameWithType: GpxFile.WriteTo(XmlWriter, GpxWriterSettings)
+- uid: NetTopologySuite.IO.GpxFile.WriteTo*
+  name: WriteTo
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_WriteTo_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.WriteTo
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.WriteTo
+  nameWithType: GpxFile.WriteTo
 - uid: NetTopologySuite.IO.GpxFixKind
   name: GpxFixKind
   href: api/NetTopologySuite.IO.GpxFixKind.html
