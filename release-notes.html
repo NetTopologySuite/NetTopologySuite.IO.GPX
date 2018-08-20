@@ -74,8 +74,10 @@
 
 <h2 id="020"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2">0.2.0</a></h2>
 <ul>
+<li>Give most data objects constructors and <code>.WithX</code> methods to make it easier to create instances that only set a few members (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/13">#13</a>).</li>
+<li>Add <code>GpxFile</code> as a significantly easier way to read + write our underlying data object representation all in one go (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/12">#12</a> / <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/14">#14</a>).</li>
 <li>Make <code>NetTopologySuiteFeatureBuilderGpxVisitor</code> internal, since it's really just an implementation detail.</li>
-<li>Add some more places where methods throw for <code>null</code> elements in <code>IEnumerable&lt;T&gt;</code> sequences.</li>
+<li>Some more appropriate early <code>null</code> handling in miscellaneous places across-the-board.</li>
 <li>Default time zone is now UTC instead of local, since the documentation indicates that this is the convention.</li>
 <li>Reorder some data members (both in constructors and <code>.ToString()</code> overrides) according to XSD order.</li>
 <li>Remove the awkward <code>GpxReader.ReadFeatures</code> overload that took in <code>NetTopologySuiteFeatureBuilderGpxVisitor</code>.</li>

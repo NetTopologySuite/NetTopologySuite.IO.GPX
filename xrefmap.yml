@@ -2914,6 +2914,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxPerson
   fullName: NetTopologySuite.IO.GpxPerson
   nameWithType: GpxPerson
+- uid: NetTopologySuite.IO.GpxPerson.#ctor
+  name: GpxPerson()
+  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson__ctor
+  commentId: M:NetTopologySuite.IO.GpxPerson.#ctor
+  fullName: NetTopologySuite.IO.GpxPerson.GpxPerson()
+  nameWithType: GpxPerson.GpxPerson()
 - uid: NetTopologySuite.IO.GpxPerson.#ctor(System.String,NetTopologySuite.IO.GpxEmail,NetTopologySuite.IO.GpxWebLink)
   name: GpxPerson(String, GpxEmail, GpxWebLink)
   href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson__ctor_System_String_NetTopologySuite_IO_GpxEmail_NetTopologySuite_IO_GpxWebLink_
@@ -3088,6 +3094,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxRoute
   fullName: NetTopologySuite.IO.GpxRoute
   nameWithType: GpxRoute
+- uid: NetTopologySuite.IO.GpxRoute.#ctor
+  name: GpxRoute()
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute__ctor
+  commentId: M:NetTopologySuite.IO.GpxRoute.#ctor
+  fullName: NetTopologySuite.IO.GpxRoute.GpxRoute()
+  nameWithType: GpxRoute.GpxRoute()
 - uid: NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,NetTopologySuite.IO.ImmutableGpxWaypointTable)
   name: GpxRoute(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableGpxWaypointTable)
   href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_NetTopologySuite_IO_ImmutableGpxWaypointTable_
@@ -3366,6 +3378,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxTrack
   fullName: NetTopologySuite.IO.GpxTrack
   nameWithType: GpxTrack
+- uid: NetTopologySuite.IO.GpxTrack.#ctor
+  name: GpxTrack()
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack__ctor
+  commentId: M:NetTopologySuite.IO.GpxTrack.#ctor
+  fullName: NetTopologySuite.IO.GpxTrack.GpxTrack()
+  nameWithType: GpxTrack.GpxTrack()
 - uid: NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
   name: GpxTrack(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableArray<GpxTrackSegment>)
   href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxTrackSegment__
@@ -3802,6 +3820,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWaypoint
   fullName: NetTopologySuite.IO.GpxWaypoint
   nameWithType: GpxWaypoint
+- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude)
+  name: GpxWaypoint(GpxLongitude, GpxLatitude)
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude)
+  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.IO.GpxLongitude, NetTopologySuite.IO.GpxLatitude)
+  nameWithType: GpxWaypoint.GpxWaypoint(GpxLongitude, GpxLatitude)
 - uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double})
   name: GpxWaypoint(GpxLongitude, GpxLatitude, Nullable<Double>)
   href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__
@@ -4639,6 +4663,12 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.Count
   nameWithType: ImmutableGpxWaypointTable.Count
+- uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.Empty
+  name: Empty
+  href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable_Empty
+  commentId: F:NetTopologySuite.IO.ImmutableGpxWaypointTable.Empty
+  fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.Empty
+  nameWithType: ImmutableGpxWaypointTable.Empty
 - uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator
   name: ImmutableGpxWaypointTable.Enumerator
   href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator.html
