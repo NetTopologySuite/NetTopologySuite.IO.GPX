@@ -6,7 +6,7 @@ using NetTopologySuite.Features;
 
 namespace NetTopologySuite.IO
 {
-    public class NetTopologySuiteFeatureBuilderGpxVisitor : GpxVisitorBase
+    internal sealed class NetTopologySuiteFeatureBuilderGpxVisitor : GpxVisitorBase
     {
         private readonly IGeometryFactory geometryFactory;
 

@@ -7,10 +7,14 @@ using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
 {
-    // This could implement the slightly nicer IImmutableList<GpxWaypoint>, but I just don't feel
-    // like adding all the mutation operations.  It's totally immutable, though: after creation, no
-    // member fields can be overwritten, and none of their contents may be altered, without going to
-    // unsafe code.
+    /// <summary>
+    /// An immutable list of <see cref="GpxWaypoint"/> instances.
+    /// </summary>
+    /// <remarks>
+    /// Storage is optimized to minimize the cost of storing data members that are not actually used
+    /// by any included waypoints.  For example, if <see cref="GpxWaypoint.Links"/> is empty on all
+    /// included waypoints, then this table will not spend any memory on storing those empty lists.
+    /// </remarks>
     public sealed class ImmutableGpxWaypointTable : IReadOnlyList<GpxWaypoint>
     {
         private readonly ImmutableArray<GpxLongitude> longitudes = ImmutableArray<GpxLongitude>.Empty;
@@ -55,14 +59,18 @@ namespace NetTopologySuite.IO
 
         private readonly OptionalClassList<object> allExtensions;
 
-        public ImmutableGpxWaypointTable(IEnumerable<XElement> elements, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
-            : this(elements is null ? throw new ArgumentNullException(nameof(elements)) :
-                   settings is null ? throw new ArgumentNullException(nameof(settings)) :
-                   extensionCallback is null ? throw new ArgumentNullException(nameof(extensionCallback)) :
-                   elements.Select(element => element is null ? throw new ArgumentException("No null elements are allowed", nameof(elements)) : GpxWaypoint.Load(element, settings, extensionCallback)))
-        {
-        }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImmutableGpxWaypointTable"/> class.
+        /// </summary>
+        /// <param name="waypoints">
+        /// The <see cref="GpxWaypoint"/> instances to store.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="waypoints"/> is <see langword="null"/>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Thrown when an element of <paramref name="waypoints"/> is <see langword="null" />
+        /// </exception>
         public ImmutableGpxWaypointTable(IEnumerable<GpxWaypoint> waypoints)
         {
             switch (waypoints)
@@ -176,29 +184,37 @@ namespace NetTopologySuite.IO
             this.Count = cnt;
         }
 
+        internal ImmutableGpxWaypointTable(IEnumerable<XElement> elements, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
+            : this(elements is null ? throw new ArgumentNullException(nameof(elements)) :
+                   settings is null ? throw new ArgumentNullException(nameof(settings)) :
+                   extensionCallback is null ? throw new ArgumentNullException(nameof(extensionCallback)) :
+                   elements.Select(element => element is null ? throw new ArgumentException("No null elements are allowed", nameof(elements)) : GpxWaypoint.Load(element, settings, extensionCallback)))
+        {
+        }
+
         /// <inheritdoc />
         public GpxWaypoint this[int index] => new GpxWaypoint(
-            this.longitudes[index],
-            this.latitudes[index],
-            this.elevationsInMeters[index],
-            this.timestampsUtc[index],
-            this.magneticVariations[index],
-            this.geoidHeights[index],
-            this.names[index],
-            this.comments[index],
-            this.descriptions[index],
-            this.sources[index],
-            this.webLinkLists[index],
-            this.symbolTexts[index],
-            this.classifications[index],
-            this.fixKinds[index],
-            this.numbersOfSatellites[index],
-            this.horizontalDilutionsOfPrecision[index],
-            this.verticalDilutionsOfPrecision[index],
-            this.positionDilutionsOfPrecision[index],
-            this.secondsSinceLastDgpsUpdates[index],
-            this.dgpsStationIds[index],
-            this.allExtensions[index]);
+            longitude: this.longitudes[index],
+            latitude: this.latitudes[index],
+            elevationInMeters: this.elevationsInMeters[index],
+            timestampUtc: this.timestampsUtc[index],
+            magneticVariation: this.magneticVariations[index],
+            geoidHeight: this.geoidHeights[index],
+            name: this.names[index],
+            comment: this.comments[index],
+            description: this.descriptions[index],
+            source: this.sources[index],
+            links: this.webLinkLists[index],
+            symbolText: this.symbolTexts[index],
+            classification: this.classifications[index],
+            fixKind: this.fixKinds[index],
+            numberOfSatellites: this.numbersOfSatellites[index],
+            horizontalDilutionOfPrecision: this.horizontalDilutionsOfPrecision[index],
+            verticalDilutionOfPrecision: this.verticalDilutionsOfPrecision[index],
+            positionDilutionOfPrecision: this.positionDilutionsOfPrecision[index],
+            secondsSinceLastDgpsUpdate: this.secondsSinceLastDgpsUpdates[index],
+            dgpsStationId: this.dgpsStationIds[index],
+            extensions: this.allExtensions[index]);
 
         /// <inheritdoc />
         public int Count { get; }
@@ -285,7 +301,7 @@ namespace NetTopologySuite.IO
             void IDisposable.Dispose() { }
 
             /// <inheritdoc />
-            void IEnumerator.Reset() { }
+            void IEnumerator.Reset() => this.curr = -1;
         }
 
         private readonly struct OptionalImmutableArrayList<T>
