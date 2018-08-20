@@ -212,6 +212,139 @@ namespace NetTopologySuite.IO
         /// <seealso cref="GpxExtensionWriter.ConvertMetadataExtension"/>
         public object Extensions { get; }
 
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Creator"/> replaced by the given value.
+        /// </summary>
+        /// <param name="creator">
+        /// The new value for <see cref="Creator"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Creator"/> value set to <paramref name="creator"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="creator"/> is <see langword="null"/>.
+        /// </exception>
+        public GpxMetadata WithCreator(string creator) => new GpxMetadata(creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Name"/> replaced by the given value.
+        /// </summary>
+        /// <param name="name">
+        /// The new value for <see cref="Name"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Name"/> value set to <paramref name="name"/>.
+        /// </returns>
+        public GpxMetadata WithName(string name) => new GpxMetadata(this.Creator, name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Description"/> replaced by the given value.
+        /// </summary>
+        /// <param name="description">
+        /// The new value for <see cref="Description"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Description"/> value set to <paramref name="description"/>.
+        /// </returns>
+        public GpxMetadata WithDescription(string description) => new GpxMetadata(this.Creator, this.Name, description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Author"/> replaced by the given value.
+        /// </summary>
+        /// <param name="author">
+        /// The new value for <see cref="Author"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Author"/> value set to <paramref name="author"/>.
+        /// </returns>
+        public GpxMetadata WithAuthor(GpxPerson author) => new GpxMetadata(this.Creator, this.Name, this.Description, author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Copyright"/> replaced by the given value.
+        /// </summary>
+        /// <param name="copyright">
+        /// The new value for <see cref="Copyright"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Copyright"/> value set to <paramref name="copyright"/>.
+        /// </returns>
+        public GpxMetadata WithCopyright(GpxCopyright copyright) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Links"/> replaced by the given value.
+        /// </summary>
+        /// <param name="links">
+        /// The new value for <see cref="Links"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Links"/> value set to <paramref name="links"/>.
+        /// </returns>
+        public GpxMetadata WithLinks(ImmutableArray<GpxWebLink> links) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="CreationTimeUtc"/> replaced by the given value.
+        /// </summary>
+        /// <param name="creationTimeUtc">
+        /// The new value for <see cref="CreationTimeUtc"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="CreationTimeUtc"/> value set to <paramref name="creationTimeUtc"/>.
+        /// </returns>
+        public GpxMetadata WithCreationTimeUtc(DateTime? creationTimeUtc) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, creationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Keywords"/> replaced by the given value.
+        /// </summary>
+        /// <param name="keywords">
+        /// The new value for <see cref="Keywords"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Keywords"/> value set to <paramref name="keywords"/>.
+        /// </returns>
+        public GpxMetadata WithKeywords(string keywords) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, keywords, this.Bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Bounds"/> replaced by the given value.
+        /// </summary>
+        /// <param name="bounds">
+        /// The new value for <see cref="Bounds"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Bounds"/> value set to <paramref name="bounds"/>.
+        /// </returns>
+        public GpxMetadata WithBounds(GpxBoundingBox bounds) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, bounds, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
+        /// <see cref="Extensions"/> replaced by the given value.
+        /// </summary>
+        /// <param name="extensions">
+        /// The new value for <see cref="Extensions"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
+        /// </returns>
+        public GpxMetadata WithExtensions(object extensions) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, extensions);
+
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Creator), this.Creator),
                                                                  (nameof(this.Name), this.Name),

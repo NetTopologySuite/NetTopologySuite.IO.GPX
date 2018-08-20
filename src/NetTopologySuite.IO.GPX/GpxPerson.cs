@@ -54,6 +54,45 @@ namespace NetTopologySuite.IO
         /// </remarks>
         public GpxWebLink Link { get; }
 
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxPerson"/> as a copy of this instance, but with
+        /// <see cref="Name"/> replaced by the given value.
+        /// </summary>
+        /// <param name="name">
+        /// The new value for <see cref="Name"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxPerson"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Name"/> value set to <paramref name="name"/>.
+        /// </returns>
+        public GpxPerson WithName(string name) => new GpxPerson(name, this.Email, this.Link);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxPerson"/> as a copy of this instance, but with
+        /// <see cref="Email"/> replaced by the given value.
+        /// </summary>
+        /// <param name="email">
+        /// The new value for <see cref="Email"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxPerson"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Email"/> value set to <paramref name="email"/>.
+        /// </returns>
+        public GpxPerson WithEmail(GpxEmail email) => new GpxPerson(this.Name, email, this.Link);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxPerson"/> as a copy of this instance, but with
+        /// <see cref="Link"/> replaced by the given value.
+        /// </summary>
+        /// <param name="link">
+        /// The new value for <see cref="Link"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxPerson"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Link"/> value set to <paramref name="link"/>.
+        /// </returns>
+        public GpxPerson WithLink(GpxWebLink link) => new GpxPerson(this.Name, this.Email, link);
+
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
                                                                  (nameof(this.Email), this.Email),

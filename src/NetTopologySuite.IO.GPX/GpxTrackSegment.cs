@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -24,7 +25,7 @@ namespace NetTopologySuite.IO
         /// </param>
         public GpxTrackSegment(ImmutableGpxWaypointTable waypoints, object extensions)
         {
-            this.Waypoints = waypoints;
+            this.Waypoints = waypoints ?? new ImmutableGpxWaypointTable(Enumerable.Empty<GpxWaypoint>());
             this.Extensions = extensions;
         }
 
@@ -44,6 +45,39 @@ namespace NetTopologySuite.IO
         /// </remarks>
         public object Extensions { get; }
 
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxTrackSegment"/> as a copy of this instance, but with
+        /// <see cref="Waypoints"/> replaced by the given value.
+        /// </summary>
+        /// <param name="waypoints">
+        /// The new value for <see cref="Waypoints"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxTrackSegment"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Waypoints"/> value set to <paramref name="waypoints"/>.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when <paramref name="waypoints"/> contains <see langword="null"/> elements.
+        /// </exception>
+        public GpxTrackSegment WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxTrackSegment(new ImmutableGpxWaypointTable(waypoints ?? Enumerable.Empty<GpxWaypoint>()), this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxTrackSegment"/> as a copy of this instance, but with
+        /// <see cref="Extensions"/> replaced by the given value.
+        /// </summary>
+        /// <param name="extensions">
+        /// The new value for <see cref="Extensions"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxTrackSegment"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
+        /// </returns>
+        public GpxTrackSegment WithExtensions(object extensions) => new GpxTrackSegment(this.Waypoints, extensions);
+
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Waypoints), Helpers.BuildString((nameof(this.Waypoints.Count), this.Waypoints.Count))),
+                                                                 (nameof(this.Extensions), this.Extensions));
+
         internal static GpxTrackSegment Load(XElement element, GpxReaderSettings settings)
         {
             if (element is null)
@@ -56,10 +90,6 @@ namespace NetTopologySuite.IO
                 waypoints: new ImmutableGpxWaypointTable(element.GpxElements("trkpt"), settings, settings.ExtensionReader.ConvertTrackPointExtensionElement),
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackSegmentExtensionElement(extensionsElement.Elements()));
         }
-
-        /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Waypoints), Helpers.BuildString((nameof(this.Waypoints.Count), this.Waypoints.Count))),
-                                                                 (nameof(this.Extensions), this.Extensions));
 
         internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {

@@ -55,8 +55,8 @@ namespace NetTopologySuite.IO
             this.Links = links.IsDefault ? ImmutableArray<GpxWebLink>.Empty : links;
             this.Number = number;
             this.Classification = classification;
-            this.Waypoints = waypoints;
             this.Extensions = extensions;
+            this.Waypoints = waypoints ?? new ImmutableGpxWaypointTable(Enumerable.Empty<GpxWaypoint>());
         }
 
         /// <summary>
@@ -130,6 +130,126 @@ namespace NetTopologySuite.IO
         /// In the official XSD schema for GPX 1.1, this corresponds to the "rtept" elements.
         /// </remarks>
         public ImmutableGpxWaypointTable Waypoints { get; }
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Name"/> replaced by the given value.
+        /// </summary>
+        /// <param name="name">
+        /// The new value for <see cref="Name"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Name"/> value set to <paramref name="name"/>.
+        /// </returns>
+        public GpxRoute WithName(string name) => new GpxRoute(name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Comment"/> replaced by the given value.
+        /// </summary>
+        /// <param name="comment">
+        /// The new value for <see cref="Comment"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Comment"/> value set to <paramref name="comment"/>.
+        /// </returns>
+        public GpxRoute WithComment(string comment) => new GpxRoute(this.Name, comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Description"/> replaced by the given value.
+        /// </summary>
+        /// <param name="description">
+        /// The new value for <see cref="Description"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Description"/> value set to <paramref name="description"/>.
+        /// </returns>
+        public GpxRoute WithDescription(string description) => new GpxRoute(this.Name, this.Comment, description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Source"/> replaced by the given value.
+        /// </summary>
+        /// <param name="source">
+        /// The new value for <see cref="Source"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Source"/> value set to <paramref name="source"/>.
+        /// </returns>
+        public GpxRoute WithSource(string source) => new GpxRoute(this.Name, this.Comment, this.Description, source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Links"/> replaced by the given value.
+        /// </summary>
+        /// <param name="links">
+        /// The new value for <see cref="Links"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Links"/> value set to <paramref name="links"/>.
+        /// </returns>
+        public GpxRoute WithLinks(ImmutableArray<GpxWebLink> links) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Number"/> replaced by the given value.
+        /// </summary>
+        /// <param name="number">
+        /// The new value for <see cref="Number"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Number"/> value set to <paramref name="number"/>.
+        /// </returns>
+        public GpxRoute WithNumber(uint? number) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, number, this.Classification, this.Extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Classification"/> replaced by the given value.
+        /// </summary>
+        /// <param name="classification">
+        /// The new value for <see cref="Classification"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Classification"/> value set to <paramref name="classification"/>.
+        /// </returns>
+        public GpxRoute WithClassification(string classification) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, classification, this.Extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Extensions"/> replaced by the given value.
+        /// </summary>
+        /// <param name="extensions">
+        /// The new value for <see cref="Extensions"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
+        /// </returns>
+        public GpxRoute WithExtensions(object extensions) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, extensions, this.Waypoints);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
+        /// <see cref="Waypoints"/> replaced by the given value.
+        /// </summary>
+        /// <param name="waypoints">
+        /// The new value for <see cref="Waypoints"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Waypoints"/> value set to <paramref name="waypoints"/>.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when <paramref name="waypoints"/> contains <see langword="null"/> elements.
+        /// </exception>
+        public GpxRoute WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, new ImmutableGpxWaypointTable(waypoints ?? Enumerable.Empty<GpxWaypoint>()));
 
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),

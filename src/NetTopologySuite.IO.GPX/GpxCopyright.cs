@@ -89,6 +89,22 @@ namespace NetTopologySuite.IO
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxCopyright"/> as a copy of this instance, but with
+        /// <see cref="Author"/> replaced by the given value.
+        /// </summary>
+        /// <param name="author">
+        /// The new value for <see cref="Author"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxCopyright"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Author"/> value set to <paramref name="author"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="author"/> is <see langword="null"/>.
+        /// </exception>
+        public GpxCopyright WithAuthor(string author) => new GpxCopyright(author, this.Year, this.LicenseUri);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxCopyright"/> as a copy of this instance, but with
         /// <see cref="Year"/> replaced by the given value.
         /// </summary>
         /// <param name="year">

@@ -45,6 +45,9 @@ namespace NetTopologySuite.IO
         /// </remarks>
         public string Domain { get; }
 
+        /// <inheritdoc />
+        public override string ToString() => this.Id + "@" + this.Domain;
+
         internal static GpxEmail Load(XElement element)
         {
             if (element is null)
@@ -62,8 +65,5 @@ namespace NetTopologySuite.IO
             writer.WriteAttributeString("id", this.Id);
             writer.WriteAttributeString("domain", this.Domain);
         }
-
-        /// <inheritdoc />
-        public override string ToString() => this.Id + "@" + this.Domain;
     }
 }

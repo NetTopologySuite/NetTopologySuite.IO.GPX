@@ -16,23 +16,23 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxWebLink"/> class.
         /// </summary>
+        /// <param name="href">
+        /// The value of <see cref="Href"/>.
+        /// </param>
         /// <param name="text">
         /// The value of <see cref="Text"/>.
         /// </param>
         /// <param name="contentType">
         /// The value of <see cref="ContentType"/>.
         /// </param>
-        /// <param name="href">
-        /// The value of <see cref="Href"/>.
-        /// </param>
         /// <exception cref="ArgumentNullException">
         /// <paramref name="href"/> is <see langword="null"/>.
         /// </exception>
-        public GpxWebLink(string text, string contentType, Uri href)
+        public GpxWebLink(Uri href, string text, string contentType)
         {
+            this.Href = href ?? throw new ArgumentNullException(nameof(href));
             this.Text = text;
             this.ContentType = contentType;
-            this.Href = href ?? throw new ArgumentNullException(nameof(href));
         }
 
         /// <summary>
@@ -59,10 +59,52 @@ namespace NetTopologySuite.IO
         /// </remarks>
         public Uri Href { get; }
 
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWebLink"/> as a copy of this instance, but with
+        /// <see cref="Text"/> replaced by the given value.
+        /// </summary>
+        /// <param name="text">
+        /// The new value for <see cref="Text"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWebLink"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Text"/> value set to <paramref name="text"/>.
+        /// </returns>
+        public GpxWebLink WithText(string text) => new GpxWebLink(this.Href, text, this.ContentType);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWebLink"/> as a copy of this instance, but with
+        /// <see cref="ContentType"/> replaced by the given value.
+        /// </summary>
+        /// <param name="contentType">
+        /// The new value for <see cref="ContentType"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWebLink"/> instance that's a copy of the current instance, but
+        /// with its <see cref="ContentType"/> value set to <paramref name="contentType"/>.
+        /// </returns>
+        public GpxWebLink WithContentType(string contentType) => new GpxWebLink(this.Href, this.Text, contentType);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWebLink"/> as a copy of this instance, but with
+        /// <see cref="Href"/> replaced by the given value.
+        /// </summary>
+        /// <param name="href">
+        /// The new value for <see cref="Href"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWebLink"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Href"/> value set to <paramref name="href"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// <paramref name="href"/> is <see langword="null"/>.
+        /// </exception>
+        public GpxWebLink WithHref(Uri href) => new GpxWebLink(href, this.Text, this.ContentType);
+
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Text), this.Text),
-                                                                 (nameof(this.ContentType), this.ContentType),
-                                                                 (nameof(this.Href), this.Href));
+        public override string ToString() => Helpers.BuildString((nameof(this.Href), this.Href),
+                                                                 (nameof(this.Text), this.Text),
+                                                                 (nameof(this.ContentType), this.ContentType));
 
         internal static GpxWebLink Load(XElement element)
         {
@@ -72,9 +114,9 @@ namespace NetTopologySuite.IO
             }
 
             return new GpxWebLink(
+                href: Helpers.ParseUri(element.Attribute("href")?.Value) ?? throw new XmlException("link element must have 'href' attribute"),
                 text: element.GpxElement("text")?.Value,
-                contentType: element.GpxElement("type")?.Value,
-                href: Helpers.ParseUri(element.Attribute("href")?.Value) ?? throw new XmlException("link element must have 'href' attribute"));
+                contentType: element.GpxElement("type")?.Value);
         }
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)

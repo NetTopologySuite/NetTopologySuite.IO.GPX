@@ -35,6 +35,9 @@ namespace NetTopologySuite.IO
         /// <param name="elevationInMeters">
         /// The value for <see cref="ElevationInMeters"/>.
         /// </param>
+        /// <exception cref="ArgumentException">
+        /// Thrown when <paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and <see cref="double.IsNaN">not a number</see>.
+        /// </exception>
         public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters)
             : this(longitude, latitude, elevationInMeters, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default)
         {
@@ -106,6 +109,13 @@ namespace NetTopologySuite.IO
         /// <param name="extensions">
         /// The value for <see cref="Extensions"/>.
         /// </param>
+        /// <exception cref="ArgumentException">
+        /// Thrown when:
+        /// <list type="bullet">
+        /// <item><description><paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and <see cref="double.IsNaN">not a number</see> or</description></item>
+        /// <item><description><paramref name="timestampUtc"/> is <see cref="Nullable{T}.HasValue">non-null</see> and its <see cref="DateTime.Kind"/> is not <see cref="DateTimeKind.Utc"/>.</description></item>
+        /// </list>
+        /// </exception>
         public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters, DateTime? timestampUtc, GpxDegrees? magneticVariation, double? geoidHeight, string name, string comment, string description, string source, ImmutableArray<GpxWebLink> links, string symbolText, string classification, GpxFixKind? fixKind, uint? numberOfSatellites, double? horizontalDilutionOfPrecision, double? verticalDilutionOfPrecision, double? positionDilutionOfPrecision, double? secondsSinceLastDgpsUpdate, GpxDgpsStationId? dgpsStationId, object extensions)
         {
             this.Longitude = longitude;
@@ -317,6 +327,285 @@ namespace NetTopologySuite.IO
         /// In the official XSD schema for GPX 1.1, this corresponds to the "extensions" element.
         /// </remarks>
         public object Extensions => this.uncommonProperties?.Extensions;
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Longitude"/> replaced by the given value.
+        /// </summary>
+        /// <param name="longitude">
+        /// The new value for <see cref="Longitude"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Longitude"/> value set to <paramref name="longitude"/>.
+        /// </returns>
+        public GpxWaypoint WithLongitude(GpxLongitude longitude) => new GpxWaypoint(longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Latitude"/> replaced by the given value.
+        /// </summary>
+        /// <param name="latitude">
+        /// The new value for <see cref="Latitude"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Latitude"/> value set to <paramref name="latitude"/>.
+        /// </returns>
+        public GpxWaypoint WithLatitude(GpxLatitude latitude) => new GpxWaypoint(this.Longitude, latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="ElevationInMeters"/> replaced by the given value.
+        /// </summary>
+        /// <param name="elevationInMeters">
+        /// The new value for <see cref="ElevationInMeters"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="ElevationInMeters"/> value set to <paramref name="elevationInMeters"/>.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when <paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and <see cref="double.IsNaN">not a number</see>.
+        /// </exception>
+        public GpxWaypoint WithElevationInMeters(double? elevationInMeters) => new GpxWaypoint(this.Longitude, this.Latitude, elevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="TimestampUtc"/> replaced by the given value.
+        /// </summary>
+        /// <param name="timestampUtc">
+        /// The new value for <see cref="TimestampUtc"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="TimestampUtc"/> value set to <paramref name="timestampUtc"/>.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when <paramref name="timestampUtc"/> is <see cref="Nullable{T}.HasValue">non-null</see> and its <see cref="DateTime.Kind"/> is not <see cref="DateTimeKind.Utc"/>.
+        /// </exception>
+        public GpxWaypoint WithTimestampUtc(DateTime? timestampUtc) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, timestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="MagneticVariation"/> replaced by the given value.
+        /// </summary>
+        /// <param name="magneticVariation">
+        /// The new value for <see cref="MagneticVariation"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="MagneticVariation"/> value set to <paramref name="magneticVariation"/>.
+        /// </returns>
+        public GpxWaypoint WithMagneticVariation(GpxDegrees? magneticVariation) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, magneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="GeoidHeight"/> replaced by the given value.
+        /// </summary>
+        /// <param name="geoidHeight">
+        /// The new value for <see cref="GeoidHeight"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="GeoidHeight"/> value set to <paramref name="geoidHeight"/>.
+        /// </returns>
+        public GpxWaypoint WithGeoidHeight(double? geoidHeight) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, geoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Name"/> replaced by the given value.
+        /// </summary>
+        /// <param name="name">
+        /// The new value for <see cref="Name"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Name"/> value set to <paramref name="name"/>.
+        /// </returns>
+        public GpxWaypoint WithName(string name) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Comment"/> replaced by the given value.
+        /// </summary>
+        /// <param name="comment">
+        /// The new value for <see cref="Comment"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Comment"/> value set to <paramref name="comment"/>.
+        /// </returns>
+        public GpxWaypoint WithComment(string comment) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Description"/> replaced by the given value.
+        /// </summary>
+        /// <param name="description">
+        /// The new value for <see cref="Description"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Description"/> value set to <paramref name="description"/>.
+        /// </returns>
+        public GpxWaypoint WithDescription(string description) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Source"/> replaced by the given value.
+        /// </summary>
+        /// <param name="source">
+        /// The new value for <see cref="Source"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Source"/> value set to <paramref name="source"/>.
+        /// </returns>
+        public GpxWaypoint WithSource(string source) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Links"/> replaced by the given value.
+        /// </summary>
+        /// <param name="links">
+        /// The new value for <see cref="Links"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Links"/> value set to <paramref name="links"/>.
+        /// </returns>
+        public GpxWaypoint WithLinks(ImmutableArray<GpxWebLink> links) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="SymbolText"/> replaced by the given value.
+        /// </summary>
+        /// <param name="symbolText">
+        /// The new value for <see cref="SymbolText"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="SymbolText"/> value set to <paramref name="symbolText"/>.
+        /// </returns>
+        public GpxWaypoint WithSymbolText(string symbolText) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, symbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Classification"/> replaced by the given value.
+        /// </summary>
+        /// <param name="classification">
+        /// The new value for <see cref="Classification"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Classification"/> value set to <paramref name="classification"/>.
+        /// </returns>
+        public GpxWaypoint WithClassification(string classification) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="FixKind"/> replaced by the given value.
+        /// </summary>
+        /// <param name="fixKind">
+        /// The new value for <see cref="FixKind"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="FixKind"/> value set to <paramref name="fixKind"/>.
+        /// </returns>
+        public GpxWaypoint WithFixKind(GpxFixKind? fixKind) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, fixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="NumberOfSatellites"/> replaced by the given value.
+        /// </summary>
+        /// <param name="numberOfSatellites">
+        /// The new value for <see cref="NumberOfSatellites"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="NumberOfSatellites"/> value set to <paramref name="numberOfSatellites"/>.
+        /// </returns>
+        public GpxWaypoint WithNumberOfSatellites(uint? numberOfSatellites) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, numberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="HorizontalDilutionOfPrecision"/> replaced by the given value.
+        /// </summary>
+        /// <param name="horizontalDilutionOfPrecision">
+        /// The new value for <see cref="HorizontalDilutionOfPrecision"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="HorizontalDilutionOfPrecision"/> value set to <paramref name="horizontalDilutionOfPrecision"/>.
+        /// </returns>
+        public GpxWaypoint WithHorizontalDilutionOfPrecision(double? horizontalDilutionOfPrecision) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, horizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="VerticalDilutionOfPrecision"/> replaced by the given value.
+        /// </summary>
+        /// <param name="verticalDilutionOfPrecision">
+        /// The new value for <see cref="VerticalDilutionOfPrecision"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="VerticalDilutionOfPrecision"/> value set to <paramref name="verticalDilutionOfPrecision"/>.
+        /// </returns>
+        public GpxWaypoint WithVerticalDilutionOfPrecision(double? verticalDilutionOfPrecision) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, verticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="PositionDilutionOfPrecision"/> replaced by the given value.
+        /// </summary>
+        /// <param name="positionDilutionOfPrecision">
+        /// The new value for <see cref="PositionDilutionOfPrecision"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="PositionDilutionOfPrecision"/> value set to <paramref name="positionDilutionOfPrecision"/>.
+        /// </returns>
+        public GpxWaypoint WithPositionDilutionOfPrecision(double? positionDilutionOfPrecision) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, positionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="SecondsSinceLastDgpsUpdate"/> replaced by the given value.
+        /// </summary>
+        /// <param name="secondsSinceLastDgpsUpdate">
+        /// The new value for <see cref="SecondsSinceLastDgpsUpdate"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="SecondsSinceLastDgpsUpdate"/> value set to <paramref name="secondsSinceLastDgpsUpdate"/>.
+        /// </returns>
+        public GpxWaypoint WithSecondsSinceLastDgpsUpdate(double? secondsSinceLastDgpsUpdate) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, secondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="DgpsStationId"/> replaced by the given value.
+        /// </summary>
+        /// <param name="dgpsStationId">
+        /// The new value for <see cref="DgpsStationId"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="DgpsStationId"/> value set to <paramref name="dgpsStationId"/>.
+        /// </returns>
+        public GpxWaypoint WithDgpsStationId(GpxDgpsStationId? dgpsStationId) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, dgpsStationId, this.Extensions);
+
+        /// <summary>
+        /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
+        /// <see cref="Extensions"/> replaced by the given value.
+        /// </summary>
+        /// <param name="extensions">
+        /// The new value for <see cref="Extensions"/>.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
+        /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
+        /// </returns>
+        public GpxWaypoint WithExtensions(object extensions) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, extensions);
 
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Longitude), this.Longitude),
