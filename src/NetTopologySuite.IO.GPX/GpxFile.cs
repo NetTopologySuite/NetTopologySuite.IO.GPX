@@ -61,7 +61,7 @@ namespace NetTopologySuite.IO
         /// the slightly stricter, but still completely reasonable, limits imposed by the idiomatic
         /// .NET data types above and beyond the XSD limits).
         /// </exception>
-        public static GpxFile Read(XmlReader reader, GpxReaderSettings settings)
+        public static GpxFile ReadFrom(XmlReader reader, GpxReaderSettings settings)
         {
             var result = new GpxFile();
             var visitor = new GpxFileBuilderVisitor(result);

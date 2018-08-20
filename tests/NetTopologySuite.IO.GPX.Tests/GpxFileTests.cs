@@ -15,7 +15,7 @@ namespace NetTopologySuite.IO
         [MemberData(nameof(RoundTripSafeSamples))]
         public void RoundTripTest(string path)
         {
-            var file = GpxFile.Read(XmlReader.Create(path), null);
+            var file = GpxFile.ReadFrom(XmlReader.Create(path), null);
             using (var ms = new MemoryStream())
             {
                 var writerSettings = new XmlWriterSettings { Encoding = Encoding.UTF8, CloseOutput = false };
@@ -54,7 +54,7 @@ namespace NetTopologySuite.IO
                 }
 
                 ms.Position = 0;
-                file = GpxFile.Read(XmlReader.Create(ms), null);
+                file = GpxFile.ReadFrom(XmlReader.Create(ms), null);
                 Assert.NotNull(file);
                 Assert.Equal("NetTopologySuite.IO.GPX", file.Metadata.Creator);
                 Assert.True(file.Metadata.IsTrivial);
