@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace NetTopologySuite.IO
@@ -21,10 +22,14 @@ namespace NetTopologySuite.IO
         /// <param name="domain">
         /// The value for <see cref="Domain"/>.
         /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="id"/> or <paramref name="domain"/> is
+        /// <see langword="null"/>.
+        /// </exception>
         public GpxEmail(string id, string domain)
         {
-            this.Id = id;
-            this.Domain = domain;
+            this.Id = id ?? throw new ArgumentNullException(nameof(id));
+            this.Domain = domain ?? throw new ArgumentNullException(nameof(domain));
         }
 
         /// <summary>
