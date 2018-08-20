@@ -25,7 +25,11 @@ namespace NetTopologySuite.IO
         /// </param>
         public GpxTrackSegment(ImmutableGpxWaypointTable waypoints, object extensions)
         {
-            this.Waypoints = waypoints ?? new ImmutableGpxWaypointTable(Enumerable.Empty<GpxWaypoint>());
+            if (waypoints != null)
+            {
+                this.Waypoints = waypoints;
+            }
+
             this.Extensions = extensions;
         }
 
@@ -35,7 +39,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "trkpt" elements.
         /// </remarks>
-        public ImmutableGpxWaypointTable Waypoints { get; }
+        public ImmutableGpxWaypointTable Waypoints { get; } = ImmutableGpxWaypointTable.Empty;
 
         /// <summary>
         /// Gets arbitrary extension information associated with this segment.
@@ -59,7 +63,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="waypoints"/> contains <see langword="null"/> elements.
         /// </exception>
-        public GpxTrackSegment WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxTrackSegment(new ImmutableGpxWaypointTable(waypoints ?? Enumerable.Empty<GpxWaypoint>()), this.Extensions);
+        public GpxTrackSegment WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxTrackSegment(new ImmutableGpxWaypointTable(waypoints ?? ImmutableGpxWaypointTable.Empty), this.Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxTrackSegment"/> as a copy of this instance, but with

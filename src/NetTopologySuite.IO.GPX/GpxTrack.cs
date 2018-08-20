@@ -19,6 +19,13 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxTrack"/> class.
         /// </summary>
+        public GpxTrack()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxTrack"/> class.
+        /// </summary>
         /// <param name="name">
         /// The value for <see cref="Name"/>.
         /// </param>
@@ -52,11 +59,18 @@ namespace NetTopologySuite.IO
             this.Comment = comment;
             this.Description = description;
             this.Source = source;
-            this.Links = links.IsDefault ? ImmutableArray<GpxWebLink>.Empty : links;
+            if (!links.IsDefault)
+            {
+                this.Links = links;
+            }
+
             this.Number = number;
             this.Classification = classification;
             this.Extensions = extensions;
-            this.Segments = segments.IsDefault ? ImmutableArray<GpxTrackSegment>.Empty : segments;
+            if (!segments.IsDefault)
+            {
+                this.Segments = segments;
+            }
         }
 
         /// <summary>
@@ -97,7 +111,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "link" elements.
         /// </remarks>
-        public ImmutableArray<GpxWebLink> Links { get; }
+        public ImmutableArray<GpxWebLink> Links { get; } = ImmutableArray<GpxWebLink>.Empty;
 
         /// <summary>
         /// Gets the GPS track number.
@@ -129,7 +143,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "trkseg" elements.
         /// </remarks>
-        public ImmutableArray<GpxTrackSegment> Segments { get; }
+        public ImmutableArray<GpxTrackSegment> Segments { get; } = ImmutableArray<GpxTrackSegment>.Empty;
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxTrack"/> as a copy of this instance, but with

@@ -86,7 +86,11 @@ namespace NetTopologySuite.IO
             this.Description = description;
             this.Author = author;
             this.Copyright = copyright;
-            this.Links = links.IsDefault ? ImmutableArray<GpxWebLink>.Empty : links;
+            if (!links.IsDefault)
+            {
+                this.Links = links;
+            }
+
             this.CreationTimeUtc = creationTimeUtc;
             this.Keywords = keywords;
             this.Bounds = bounds;
@@ -152,7 +156,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "link" elements.
         /// </remarks>
-        public ImmutableArray<GpxWebLink> Links { get; }
+        public ImmutableArray<GpxWebLink> Links { get; } = ImmutableArray<GpxWebLink>.Empty;
 
         /// <summary>
         /// Gets an optional timestamp indicating when this GPX file was created.

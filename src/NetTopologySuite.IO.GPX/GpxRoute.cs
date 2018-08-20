@@ -19,6 +19,13 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxRoute"/> class.
         /// </summary>
+        public GpxRoute()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxRoute"/> class.
+        /// </summary>
         /// <param name="name">
         /// The value for <see cref="Name"/>.
         /// </param>
@@ -52,11 +59,18 @@ namespace NetTopologySuite.IO
             this.Comment = comment;
             this.Description = description;
             this.Source = source;
-            this.Links = links.IsDefault ? ImmutableArray<GpxWebLink>.Empty : links;
+            if (!links.IsDefault)
+            {
+                this.Links = links;
+            }
+
             this.Number = number;
             this.Classification = classification;
             this.Extensions = extensions;
-            this.Waypoints = waypoints ?? new ImmutableGpxWaypointTable(Enumerable.Empty<GpxWaypoint>());
+            if (!(waypoints is null))
+            {
+                this.Waypoints = waypoints;
+            }
         }
 
         /// <summary>
@@ -97,7 +111,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "link" elements.
         /// </remarks>
-        public ImmutableArray<GpxWebLink> Links { get; }
+        public ImmutableArray<GpxWebLink> Links { get; } = ImmutableArray<GpxWebLink>.Empty;
 
         /// <summary>
         /// Gets the GPS route number.
@@ -129,7 +143,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "rtept" elements.
         /// </remarks>
-        public ImmutableGpxWaypointTable Waypoints { get; }
+        public ImmutableGpxWaypointTable Waypoints { get; } = ImmutableGpxWaypointTable.Empty;
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -249,7 +263,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="waypoints"/> contains <see langword="null"/> elements.
         /// </exception>
-        public GpxRoute WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, new ImmutableGpxWaypointTable(waypoints ?? Enumerable.Empty<GpxWaypoint>()));
+        public GpxRoute WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, new ImmutableGpxWaypointTable(waypoints ?? ImmutableGpxWaypointTable.Empty));
 
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),

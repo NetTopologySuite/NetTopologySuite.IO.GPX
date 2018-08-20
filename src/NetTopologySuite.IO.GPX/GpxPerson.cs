@@ -14,6 +14,13 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxPerson"/> class.
         /// </summary>
+        public GpxPerson()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxPerson"/> class.
+        /// </summary>
         /// <param name="name">
         /// The value for <see cref="Name"/>.
         /// </param>

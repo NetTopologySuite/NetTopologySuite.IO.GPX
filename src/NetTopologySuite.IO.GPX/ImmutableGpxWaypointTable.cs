@@ -17,6 +17,11 @@ namespace NetTopologySuite.IO
     /// </remarks>
     public sealed class ImmutableGpxWaypointTable : IReadOnlyList<GpxWaypoint>
     {
+        /// <summary>
+        /// An empty instance of <see cref="ImmutableGpxWaypointTable"/>.
+        /// </summary>
+        public static readonly ImmutableGpxWaypointTable Empty = new ImmutableGpxWaypointTable(Enumerable.Empty<GpxWaypoint>());
+
         private readonly ImmutableArray<GpxLongitude> longitudes = ImmutableArray<GpxLongitude>.Empty;
 
         private readonly ImmutableArray<GpxLatitude> latitudes = ImmutableArray<GpxLatitude>.Empty;

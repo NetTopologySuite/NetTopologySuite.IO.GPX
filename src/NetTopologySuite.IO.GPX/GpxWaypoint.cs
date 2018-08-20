@@ -24,7 +24,20 @@ namespace NetTopologySuite.IO
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxWaypoint"/> class.
-        /// Provides just the essential information for indicating the location, and nothing else.
+        /// </summary>
+        /// <param name="longitude">
+        /// The value for <see cref="Longitude"/>.
+        /// </param>
+        /// <param name="latitude">
+        /// The value for <see cref="Latitude"/>.
+        /// </param>
+        public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude)
+            : this(longitude, latitude, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxWaypoint"/> class.
         /// </summary>
         /// <param name="longitude">
         /// The value for <see cref="Longitude"/>.
