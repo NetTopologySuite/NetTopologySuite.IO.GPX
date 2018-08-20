@@ -16,10 +16,7 @@ namespace NetTopologySuite.IO
 
         private object currentExtensions;
 
-        public NetTopologySuiteFeatureBuilderGpxVisitor(IGeometryFactory geometryFactory)
-        {
-            this.geometryFactory = geometryFactory ?? throw new ArgumentNullException(nameof(geometryFactory));
-        }
+        public NetTopologySuiteFeatureBuilderGpxVisitor(IGeometryFactory geometryFactory) => this.geometryFactory = geometryFactory;
 
         public override void VisitMetadata(GpxMetadata metadata)
         {
