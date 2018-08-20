@@ -1517,19 +1517,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxFile.Metadata
   nameWithType: GpxFile.Metadata
-- uid: NetTopologySuite.IO.GpxFile.Read(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)
-  name: Read(XmlReader, GpxReaderSettings)
-  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Read_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_
-  commentId: M:NetTopologySuite.IO.GpxFile.Read(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)
-  fullName: NetTopologySuite.IO.GpxFile.Read(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings)
-  nameWithType: GpxFile.Read(XmlReader, GpxReaderSettings)
-- uid: NetTopologySuite.IO.GpxFile.Read*
-  name: Read
-  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Read_
-  commentId: Overload:NetTopologySuite.IO.GpxFile.Read
+- uid: NetTopologySuite.IO.GpxFile.ReadFrom(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)
+  name: ReadFrom(XmlReader, GpxReaderSettings)
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_ReadFrom_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_
+  commentId: M:NetTopologySuite.IO.GpxFile.ReadFrom(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)
+  fullName: NetTopologySuite.IO.GpxFile.ReadFrom(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings)
+  nameWithType: GpxFile.ReadFrom(XmlReader, GpxReaderSettings)
+- uid: NetTopologySuite.IO.GpxFile.ReadFrom*
+  name: ReadFrom
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_ReadFrom_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.ReadFrom
   isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxFile.Read
-  nameWithType: GpxFile.Read
+  fullName: NetTopologySuite.IO.GpxFile.ReadFrom
+  nameWithType: GpxFile.ReadFrom
 - uid: NetTopologySuite.IO.GpxFile.Routes
   name: Routes
   href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Routes
