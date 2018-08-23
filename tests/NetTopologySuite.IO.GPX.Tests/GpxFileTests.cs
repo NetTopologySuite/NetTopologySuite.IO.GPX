@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Xml;
-
+using System.Xml.Linq;
 using Org.XmlUnit.Builder;
 
 using Xunit;
@@ -59,6 +59,44 @@ namespace NetTopologySuite.IO
         }
 
         public static object[][] RoundTripSafeSamples => Array.ConvertAll(Directory.GetFiles("RoundTripSafeSamples", "*.gpx", SearchOption.TopDirectoryOnly), fl => new object[] { fl });
+
+        [Fact]
+        public void TestParseUsingInlineText()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata />
+    <wpt lat='0.1' lon='2.3' />
+    <rte><rtept lat='4.5' lon='6.7' /></rte>
+    <trk><trkseg><trkpt lat='8.9' lon='10.11' /></trkseg></trk>
+    <extensions><someArbitraryElement xmlns='http://www.example.com' data='x' /></extensions>
+</gpx>
+";
+            var file = GpxFile.Parse(GpxText, null);
+            Assert.Equal("airbreather", file.Metadata.Creator);
+            Assert.True(file.Metadata.IsTrivial, "Metadata should be considered trivial, even if it's specified as blank.");
+
+            var actualWaypoint = Assert.Single(file.Waypoints);
+            Assert.Equal(0.1, actualWaypoint.Latitude);
+            Assert.Equal(2.3, actualWaypoint.Longitude);
+
+            var actualRoute = Assert.Single(file.Routes);
+            var actualRoutePoint = Assert.Single(actualRoute.Waypoints);
+            Assert.Equal(4.5, actualRoutePoint.Latitude);
+            Assert.Equal(6.7, actualRoutePoint.Longitude);
+
+            var actualTrack = Assert.Single(file.Tracks);
+            var actualTrackSegment = Assert.Single(actualTrack.Segments);
+            var actualTrackPoint = Assert.Single(actualTrackSegment.Waypoints);
+            Assert.Equal(8.9, actualTrackPoint.Latitude);
+            Assert.Equal(10.11, actualTrackPoint.Longitude);
+
+            Assert.NotNull(file.Extensions);
+            var actualExtensionElements = Assert.IsType<XElement[]>(file.Extensions);
+            var actualExtensionElement = Assert.Single(actualExtensionElements);
+            Assert.Equal(XName.Get("someArbitraryElement", "http://www.example.com"), actualExtensionElement.Name);
+            Assert.Equal("x", actualExtensionElement.Attribute("data")?.Value);
+        }
 
         [Fact]
         public void DefaultInstanceShouldBeValid()
