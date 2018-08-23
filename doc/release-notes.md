@@ -1,7 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.3.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4)
-*Nothing yet*
+- Add methods on `GpxFile` to allow converting to / from string ([#19](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/19)).
 
 ## [0.2.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2)
 - Give most data objects constructors and `.WithX` methods to make it easier to create instances that only set a few members ([#13](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/13)).
