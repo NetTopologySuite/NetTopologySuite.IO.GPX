@@ -83,5 +83,23 @@ namespace NetTopologySuite.IO
                 Assert.Null(file.Extensions);
             }
         }
+
+        [Fact]
+        public void GitHubIssue15RegressionTest()
+        {
+            var expectedWaypoint = new GpxWaypoint(new GpxLongitude(0.00001), new GpxLatitude(double.Epsilon), -double.Epsilon);
+            var file = new GpxFile
+            {
+                Waypoints = { expectedWaypoint },
+            };
+
+            file = GpxFile.Parse(file.BuildString(null), null);
+
+            var actualWaypoint = Assert.Single(file.Waypoints);
+
+            Assert.Equal(expectedWaypoint.Longitude, actualWaypoint.Longitude);
+            Assert.Equal(expectedWaypoint.Latitude, actualWaypoint.Latitude);
+            Assert.Equal(expectedWaypoint.ElevationInMeters, actualWaypoint.ElevationInMeters);
+        }
     }
 }
