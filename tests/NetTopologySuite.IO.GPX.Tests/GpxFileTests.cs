@@ -39,6 +39,25 @@ namespace NetTopologySuite.IO
             }
         }
 
+        [Theory]
+        [MemberData(nameof(RoundTripSafeSamples))]
+        public void RoundTripTestUsingText(string path)
+        {
+            string expected = File.ReadAllText(path);
+            var file = GpxFile.Parse(expected, null);
+            string actual = file.BuildString(null);
+            var diff = DiffBuilder.Compare(expected)
+                                  .NormalizeWhitespace()
+                                  .WithTest(actual)
+                                  .IgnoreComments()
+                                  .CheckForSimilar()
+                                  .Build();
+
+            // note that this is not a guarantee in the general case.  the inputs here have all been
+            // slightly tweaked such that it should succeed for our purposes.
+            Assert.False(diff.HasDifferences(), string.Join(Environment.NewLine, diff.Differences));
+        }
+
         public static object[][] RoundTripSafeSamples => Array.ConvertAll(Directory.GetFiles("RoundTripSafeSamples", "*.gpx", SearchOption.TopDirectoryOnly), fl => new object[] { fl });
 
         [Fact]
