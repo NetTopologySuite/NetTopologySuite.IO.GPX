@@ -1,6 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.3.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4)
+- Trying to set `GpxFile.Metadata` to `null` now throws `ArgumentNullException` right away ([#21](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/21)).
 - Add methods on `GpxFile` to allow converting to / from string ([#19](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/19)).
 
 ## [0.2.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2)

@@ -7,7 +7,8 @@ using System.Xml;
 namespace NetTopologySuite.IO
 {
     /// <summary>
-    /// A container that holds all the individual pieces of a GPX file.
+    /// A container that holds all the individual pieces of a GPX file and contains helper methods
+    /// to (somwehat) easily read / write them on-the-fly.
     /// </summary>
     public sealed class GpxFile
     {
@@ -27,11 +28,20 @@ namespace NetTopologySuite.IO
             OmitXmlDeclaration = true,
         };
 
+        private GpxMetadata metadata = new GpxMetadata(creator: "NetTopologySuite.IO.GPX");
+
         /// <summary>
         /// Gets or sets the <see cref="GpxMetadata"/> instance that describes the contents of this
         /// GPX file.
         /// </summary>
-        public GpxMetadata Metadata { get; set; } = new GpxMetadata(creator: "NetTopologySuite.IO.GPX");
+        /// <exception cref="ArgumentNullException">
+        /// Thrown by the property setter, when trying to set the value to <see langword="null"/>.
+        /// </exception>
+        public GpxMetadata Metadata
+        {
+            get => this.metadata;
+            set => this.metadata = value ?? throw new ArgumentNullException(nameof(value));
+        }
 
         /// <summary>
         /// Gets the list of <see cref="GpxWaypoint"/> instances that describe the top-level
