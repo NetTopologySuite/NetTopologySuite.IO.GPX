@@ -4,6 +4,9 @@
 - Trying to set `GpxFile.Metadata` to `null` now throws `ArgumentNullException` right away ([#21](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/21)).
 - Add methods on `GpxFile` to allow converting to / from string ([#19](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/19)).
 
+## [0.2.1](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/5)
+- Add a default constructor for `GpxTrackSegment` so that its `.WithX` methods are actually meaningful ([#22](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/22)).
+
 ## [0.2.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/2)
 - Give most data objects constructors and `.WithX` methods to make it easier to create instances that only set a few members ([#13](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/13)).
 - Add `GpxFile` as a significantly easier way to read + write our underlying data object representation all in one go ([#12](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/12) / [#14](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/14)).
