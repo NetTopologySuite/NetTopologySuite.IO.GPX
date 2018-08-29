@@ -3662,6 +3662,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxTrackSegment
   fullName: NetTopologySuite.IO.GpxTrackSegment
   nameWithType: GpxTrackSegment
+- uid: NetTopologySuite.IO.GpxTrackSegment.#ctor
+  name: GpxTrackSegment()
+  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment__ctor
+  commentId: M:NetTopologySuite.IO.GpxTrackSegment.#ctor
+  fullName: NetTopologySuite.IO.GpxTrackSegment.GpxTrackSegment()
+  nameWithType: GpxTrackSegment.GpxTrackSegment()
 - uid: NetTopologySuite.IO.GpxTrackSegment.#ctor(NetTopologySuite.IO.ImmutableGpxWaypointTable,System.Object)
   name: GpxTrackSegment(ImmutableGpxWaypointTable, Object)
   href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment__ctor_NetTopologySuite_IO_ImmutableGpxWaypointTable_System_Object_
