@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -14,6 +13,13 @@ namespace NetTopologySuite.IO
     /// </remarks>
     public sealed class GpxTrackSegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxTrackSegment"/> class.
+        /// </summary>
+        public GpxTrackSegment()
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxTrackSegment"/> class.
         /// </summary>
