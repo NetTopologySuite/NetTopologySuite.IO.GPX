@@ -69,12 +69,12 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(coordinate));
             }
 
-            if (!(coordinate.X >= -180 && coordinate.X <= 180))
+            if (!(Math.Abs(coordinate.X) <= 180))
             {
                 throw new ArgumentException("X must be a valid WGS-84 longitude value, in degrees", nameof(coordinate));
             }
 
-            if (!(coordinate.Y >= -90 && coordinate.Y <= 90))
+            if (!(Math.Abs(coordinate.Y) <= 90))
             {
                 throw new ArgumentException("Y must be a valid WGS-84 latitude value, in degrees", nameof(coordinate));
             }
