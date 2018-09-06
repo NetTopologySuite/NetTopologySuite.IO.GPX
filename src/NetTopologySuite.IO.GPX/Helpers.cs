@@ -232,7 +232,7 @@ namespace NetTopologySuite.IO
                 return null;
             }
 
-            return TryParseDouble(text, out double result)
+            return TryParseDouble(text, out double result) && result.IsFinite()
                 ? result
                 : throw new XmlException("decimal must be formatted properly");
         }
@@ -244,7 +244,7 @@ namespace NetTopologySuite.IO
                 return null;
             }
 
-            return double.TryParse(text, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite | NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result) && Math.Abs(result) <= 180
+            return TryParseDouble(text, out double result) && Math.Abs(result) <= 180
                 ? new GpxLongitude(result)
                 : throw new XmlException("longitude must be formatted properly and be between -180 and +180 inclusive");
         }
@@ -256,7 +256,7 @@ namespace NetTopologySuite.IO
                 return null;
             }
 
-            return double.TryParse(text, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite | NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result) && Math.Abs(result) <= 90
+            return TryParseDouble(text, out double result) && Math.Abs(result) <= 90
                 ? new GpxLatitude(result)
                 : throw new XmlException("latitude must be formatted properly and be between -90 and +90 inclusive");
         }
@@ -268,7 +268,7 @@ namespace NetTopologySuite.IO
                 return null;
             }
 
-            return double.TryParse(text, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite | NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result) && 0 <= result && result < 360
+            return TryParseDouble(text, out double result) && 0 <= result && result < 360
                 ? new GpxDegrees(result)
                 : throw new XmlException("degrees must be formatted properly and be between 0 (inclusive) and 360 (exclusive)");
         }

@@ -416,9 +416,7 @@ namespace NetTopologySuite.IO
             for (int i = 0, cnt = seq.Count; i < cnt; i++)
             {
                 seq.GetCoordinate(i, coord);
-                yield return new GpxWaypoint(longitude: new GpxLongitude(coord.X),
-                                             latitude: new GpxLatitude(coord.Y),
-                                             elevationInMeters: double.IsNaN(coord.Z) ? default(double?) : coord.Z);
+                yield return new GpxWaypoint(coord);
             }
         }
 

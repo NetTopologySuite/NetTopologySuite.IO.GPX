@@ -124,7 +124,9 @@ namespace NetTopologySuite.IO
         }
 
         [Fact]
-        public void GitHubIssue15RegressionTest()
+        [Regression]
+        [GitHubIssue(15)]
+        public void RoundTripForValuesVeryNearZeroShouldSucceed()
         {
             var expectedWaypoint = new GpxWaypoint(new GpxLongitude(0.00001), new GpxLatitude(double.Epsilon), -double.Epsilon);
             var file = new GpxFile
@@ -139,6 +141,17 @@ namespace NetTopologySuite.IO
             Assert.Equal(expectedWaypoint.Longitude, actualWaypoint.Longitude);
             Assert.Equal(expectedWaypoint.Latitude, actualWaypoint.Latitude);
             Assert.Equal(expectedWaypoint.ElevationInMeters, actualWaypoint.ElevationInMeters);
+        }
+
+        [Theory]
+        [Regression]
+        [GitHubIssue(24)]
+        [InlineData("<wpt lat='1' lon='1'><ele>+Infinity</ele></wpt>")]
+        [InlineData("<rte><rtept lat='1' lon='1'><ele>-Infinity</ele></rtept></rte>")]
+        [InlineData("<trk><trkseg><trkpt lat='1' lon='1'><ele>Infinity</ele></trkpt></trkseg></trk>")]
+        public void ParseWithInfiniteWaypointElevationShouldFail(string inner)
+        {
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse("<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>" + inner + "</gpx>", null));
         }
     }
 }

@@ -27,12 +27,13 @@ namespace NetTopologySuite.IO
         }
 
         [Theory]
+        [Regression]
         [InlineData("copyright-regression-no-timezone.gpx", 2040)]
         [InlineData("copyright-regression-utc.gpx", 2001)]
         [InlineData("copyright-regression-real-offset.gpx", 2009)]
         [InlineData("copyright-regression-insane-year-1.gpx", -2)]
         [InlineData("copyright-regression-insane-year-2.gpx", 20072007)]
-        public void CopyrightYearRegressionTest(string gpxFileName, int expectedYear)
+        public void CopyrightYearShouldAllowVariousLegalValues(string gpxFileName, int expectedYear)
         {
             using (var reader = XmlReader.Create(Path.Combine("CopyrightYearRegressionSamples", gpxFileName)))
             {
@@ -46,7 +47,9 @@ namespace NetTopologySuite.IO
         public static object[][] AllSampleGpxFiles => Array.ConvertAll(Directory.GetFiles(".", "*.gpx", SearchOption.AllDirectories), fl => new object[] { fl });
 
         [Fact]
-        public void GitHubIssue18RegressionTest()
+        [Regression]
+        [GitHubIssue(18)]
+        public void MinimalWhitespaceShouldNotCauseFeaturesToGetSkipped()
         {
             using (var xmlReader = XmlReader.Create(Path.Join("RoundTripSafeSamples", "github-issue18-regression.gpx")))
             {

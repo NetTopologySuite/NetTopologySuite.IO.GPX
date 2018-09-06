@@ -6,6 +6,8 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
+using GeoAPI.Geometries;
+
 namespace NetTopologySuite.IO
 {
     /// <summary>
@@ -16,9 +18,9 @@ namespace NetTopologySuite.IO
     /// </remarks>
     public sealed class GpxWaypoint
     {
-        private readonly double elevationInMeters;
+        private readonly double elevationInMeters = double.NaN;
 
-        private readonly DateTime timestampUtc;
+        private readonly DateTime timestampUtc = new DateTime(0, DateTimeKind.Unspecified);
 
         private readonly UncommonProperties uncommonProperties;
 
@@ -39,6 +41,60 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxWaypoint"/> class.
         /// </summary>
+        /// <param name="coordinate">
+        /// A <see cref="Coordinate"/> to use to initialize <see cref="Longitude"/> and
+        /// <see cref="Latitude"/>.
+        /// </param>
+        /// <remarks>
+        /// <see cref="Coordinate.X"/> and <see cref="Coordinate.Y"/> are assumed to be WGS-84
+        /// degrees, and <see cref="Coordinate.Z"/> is assumed to be an elevation in meters when it
+        /// isn't equal to <see cref="Coordinate.NullOrdinate"/>.
+        /// </remarks>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="coordinate"/> is <see langword="null"/>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Thrown when:
+        /// <list type="bullet">
+        /// <item><description><paramref name="coordinate"/>'s <see cref="Coordinate.X"/> value is not within the range of valid values for <see cref="GpxLongitude"/>,</description></item>
+        /// <item><description><paramref name="coordinate"/>'s <see cref="Coordinate.Y"/> value is not within the range of valid values for <see cref="GpxLatitude"/>, or</description></item>
+        /// <item><description><paramref name="coordinate"/>'s <see cref="Coordinate.Z"/> value <see cref="double.IsInfinity">is infinite</see></description></item>
+        /// </list>
+        /// </exception>
+        public GpxWaypoint(Coordinate coordinate)
+            : this(default, default)
+        {
+            if (coordinate is null)
+            {
+                throw new ArgumentNullException(nameof(coordinate));
+            }
+
+            if (!(coordinate.X >= -180 && coordinate.X <= 180))
+            {
+                throw new ArgumentException("X must be a valid WGS-84 longitude value, in degrees", nameof(coordinate));
+            }
+
+            if (!(coordinate.Y >= -90 && coordinate.Y <= 90))
+            {
+                throw new ArgumentException("Y must be a valid WGS-84 latitude value, in degrees", nameof(coordinate));
+            }
+
+            if (double.IsInfinity(coordinate.Z))
+            {
+                throw new ArgumentException("Z must be either a finite value, in meters, or Coordinate.NullOrdinate if the coordinate is two-dimensional", nameof(coordinate));
+            }
+
+            this.Longitude = new GpxLongitude(coordinate.X);
+            this.Latitude = new GpxLatitude(coordinate.Y);
+            if (!double.IsNaN(coordinate.Z))
+            {
+                this.elevationInMeters = coordinate.Z;
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxWaypoint"/> class.
+        /// </summary>
         /// <param name="longitude">
         /// The value for <see cref="Longitude"/>.
         /// </param>
@@ -48,8 +104,8 @@ namespace NetTopologySuite.IO
         /// <param name="elevationInMeters">
         /// The value for <see cref="ElevationInMeters"/>.
         /// </param>
-        /// <exception cref="ArgumentException">
-        /// Thrown when <paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and <see cref="double.IsNaN">not a number</see>.
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Thrown when <paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and not a finite number.
         /// </exception>
         public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters)
             : this(longitude, latitude, elevationInMeters, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default)
@@ -122,10 +178,10 @@ namespace NetTopologySuite.IO
         /// <param name="extensions">
         /// The value for <see cref="Extensions"/>.
         /// </param>
-        /// <exception cref="ArgumentException">
+        /// <exception cref="ArgumentOutOfRangeException">
         /// Thrown when:
         /// <list type="bullet">
-        /// <item><description><paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and <see cref="double.IsNaN">not a number</see> or</description></item>
+        /// <item><description><paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and not a finite number, or</description></item>
         /// <item><description><paramref name="timestampUtc"/> is <see cref="Nullable{T}.HasValue">non-null</see> and its <see cref="DateTime.Kind"/> is not <see cref="DateTimeKind.Utc"/>.</description></item>
         /// </list>
         /// </exception>
@@ -133,29 +189,21 @@ namespace NetTopologySuite.IO
         {
             this.Longitude = longitude;
             this.Latitude = latitude;
-            if (elevationInMeters is null)
-            {
-                this.elevationInMeters = double.NaN;
-            }
-            else
+            if (!(elevationInMeters is null))
             {
                 this.elevationInMeters = elevationInMeters.GetValueOrDefault();
-                if (double.IsNaN(this.elevationInMeters))
+                if (!this.elevationInMeters.IsFinite())
                 {
-                    throw new ArgumentException("Must be a number", nameof(elevationInMeters));
+                    throw new ArgumentOutOfRangeException(nameof(elevationInMeters), elevationInMeters, "Must be a finite number");
                 }
             }
 
-            if (timestampUtc is null)
-            {
-                this.timestampUtc = new DateTime(0, DateTimeKind.Unspecified);
-            }
-            else
+            if (!(timestampUtc is null))
             {
                 this.timestampUtc = timestampUtc.GetValueOrDefault();
                 if (this.timestampUtc.Kind != DateTimeKind.Utc)
                 {
-                    throw new ArgumentException("Must be UTC", nameof(timestampUtc));
+                    throw new ArgumentOutOfRangeException(nameof(timestampUtc), timestampUtc, "Must be UTC");
                 }
             }
 

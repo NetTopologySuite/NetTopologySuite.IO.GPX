@@ -1,8 +1,11 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.3.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4)
+- `GpxWaypoint` now has a constructor that accepts a `GeoAPI.Geometries.Coordinate` instance, for convenience ([#20](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/20)).
+- `GpxWaypoint` constructors and helper method now both reject infinite values of `elevationInMeters` ([#24](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/24)).
+- `GpxWaypoint` constructors and helper methods now throw `ArgumentOutOfRangeException` instead of `ArgumentException` in situations where the former is more appropriate.
 - Trying to set `GpxFile.Metadata` to `null` now throws `ArgumentNullException` right away ([#21](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/21)).
-- Add methods on `GpxFile` to allow converting to / from string ([#19](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/19)).
+- Add methods on `GpxFile` to allow converting to / from string, for convenience ([#19](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/19)).
 
 ## [0.2.1](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/5)
 - Add a default constructor for `GpxTrackSegment` so that its `.WithX` methods are actually meaningful ([#22](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/22)).
