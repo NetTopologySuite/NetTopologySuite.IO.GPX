@@ -101,6 +101,15 @@ namespace NetTopologySuite.IO
         public GpxPerson WithLink(GpxWebLink link) => new GpxPerson(this.Name, this.Email, link);
 
         /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxPerson other &&
+                                                   this.Name == other.Name &&
+                                                   Equals(this.Email, other.Email) &&
+                                                   Equals(this.Link, other.Link);
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Name, this.Email, this.Link).GetHashCode();
+
+        /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
                                                                  (nameof(this.Email), this.Email),
                                                                  (nameof(this.Link), this.Link));

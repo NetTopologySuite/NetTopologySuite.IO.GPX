@@ -263,6 +263,21 @@ namespace NetTopologySuite.IO
         public GpxTrack WithSegments(ImmutableArray<GpxTrackSegment> segments) => new GpxTrack(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, segments);
 
         /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxTrack other &&
+                                                   this.Name == other.Name &&
+                                                   this.Comment == other.Comment &&
+                                                   this.Description == other.Description &&
+                                                   this.Source == other.Source &&
+                                                   this.Links.ListEquals(other.Links) &&
+                                                   this.Number == other.Number &&
+                                                   this.Classification == other.Classification &&
+                                                   Equals(this.Extensions, other.Extensions) &&
+                                                   this.Segments.ListEquals(other.Segments);
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Name, this.Comment, this.Description, this.Source, Helpers.ListToHashCode(this.Links), this.Number, this.Classification, this.Extensions, Helpers.ListToHashCode(this.Segments)).GetHashCode();
+
+        /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
                                                                  (nameof(this.Comment), this.Comment),
                                                                  (nameof(this.Description), this.Description),

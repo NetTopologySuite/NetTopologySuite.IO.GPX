@@ -51,6 +51,14 @@ namespace NetTopologySuite.IO
         public string Domain { get; }
 
         /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxEmail other &&
+                                                   this.Id == other.Id &&
+                                                   this.Domain == other.Domain;
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Id, this.Domain).GetHashCode();
+
+        /// <inheritdoc />
         public override string ToString() => this.Id + "@" + this.Domain;
 
         internal static GpxEmail Load(XElement element)

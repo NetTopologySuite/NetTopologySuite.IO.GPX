@@ -216,6 +216,34 @@ namespace NetTopologySuite.IO
         /// <seealso cref="GpxExtensionWriter.ConvertMetadataExtension"/>
         public object Extensions { get; }
 
+        /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxMetadata other &&
+                                                   this.Creator == other.Creator &&
+                                                   this.Name == other.Name &&
+                                                   this.Description == other.Description &&
+                                                   Equals(this.Author, other.Author) &&
+                                                   Equals(this.Copyright, other.Copyright) &&
+                                                   this.Links.ListEquals(other.Links) &&
+                                                   this.CreationTimeUtc == other.CreationTimeUtc &&
+                                                   this.Keywords == other.Keywords &&
+                                                   Equals(this.Bounds, other.Bounds) &&
+                                                   Equals(this.Extensions, other.Extensions);
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Creator, this.Name, this.Description, this.Author, this.Copyright, Helpers.ListToHashCode(this.Links), this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions).GetHashCode();
+
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Creator), this.Creator),
+                                                                 (nameof(this.Name), this.Name),
+                                                                 (nameof(this.Description), this.Description),
+                                                                 (nameof(this.Author), this.Author),
+                                                                 (nameof(this.Copyright), this.Copyright),
+                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
+                                                                 (nameof(this.CreationTimeUtc), this.CreationTimeUtc),
+                                                                 (nameof(this.Keywords), this.Keywords),
+                                                                 (nameof(this.Bounds), this.Bounds),
+                                                                 (nameof(this.Extensions), this.Extensions));
+
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
         /// <see cref="Creator"/> replaced by the given value.
@@ -348,18 +376,6 @@ namespace NetTopologySuite.IO
         /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
         /// </returns>
         public GpxMetadata WithExtensions(object extensions) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, extensions);
-
-        /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Creator), this.Creator),
-                                                                 (nameof(this.Name), this.Name),
-                                                                 (nameof(this.Description), this.Description),
-                                                                 (nameof(this.Author), this.Author),
-                                                                 (nameof(this.Copyright), this.Copyright),
-                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
-                                                                 (nameof(this.CreationTimeUtc), this.CreationTimeUtc),
-                                                                 (nameof(this.Keywords), this.Keywords),
-                                                                 (nameof(this.Bounds), this.Bounds),
-                                                                 (nameof(this.Extensions), this.Extensions));
 
         internal static GpxMetadata Load(XElement element, GpxReaderSettings settings, string creator)
         {

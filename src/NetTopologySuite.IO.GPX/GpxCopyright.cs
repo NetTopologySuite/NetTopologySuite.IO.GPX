@@ -83,6 +83,15 @@ namespace NetTopologySuite.IO
         public Uri LicenseUri { get; }
 
         /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxCopyright other &&
+                                                   this.Author == other.Author &&
+                                                   this.Year == other.Year &&
+                                                   this.LicenseUri == other.LicenseUri;
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Author, this.Year, this.LicenseUri).GetHashCode();
+
+        /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Author), this.Author),
                                                                  (nameof(this.Year), this.Year),
                                                                  (nameof(this.LicenseUri), this.LicenseUri));

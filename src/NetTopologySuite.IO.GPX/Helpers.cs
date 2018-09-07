@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -93,6 +94,37 @@ namespace NetTopologySuite.IO
                     sb.Append(", ");
                 }
             }
+        }
+
+        public static int ListToHashCode<TElement>(ImmutableArray<TElement> lst)
+        {
+            if (lst.IsDefaultOrEmpty)
+            {
+                return 0;
+            }
+
+            int hc = 0;
+            foreach (var item in lst)
+            {
+                hc = (hc, item).GetHashCode();
+            }
+
+            return hc;
+        }
+
+        public static bool ListEquals<TElement>(this ImmutableArray<TElement> lst1, ImmutableArray<TElement> lst2, IEqualityComparer<TElement> comparer = null)
+        {
+            if (lst1.IsDefaultOrEmpty)
+            {
+                return lst2.IsDefaultOrEmpty;
+            }
+
+            if (lst2.IsDefaultOrEmpty)
+            {
+                return false;
+            }
+
+            return lst1.SequenceEqual(lst2, comparer);
         }
 
         public static string BuildString(params (string fieldName, object fieldValue)[] values)

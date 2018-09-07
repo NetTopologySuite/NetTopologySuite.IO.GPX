@@ -389,6 +389,43 @@ namespace NetTopologySuite.IO
         /// </remarks>
         public object Extensions => this.uncommonProperties?.Extensions;
 
+        /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxWaypoint other &&
+                                                   this.Longitude == other.Longitude &&
+                                                   this.Latitude == other.Latitude &&
+                                                   this.elevationInMeters == other.elevationInMeters &&
+                                                   this.timestampUtc == other.timestampUtc &&
+                                                   this.Name == other.Name &&
+                                                   this.Description == other.Description &&
+                                                   this.SymbolText == other.SymbolText &&
+                                                   Equals(this.uncommonProperties, other.uncommonProperties);
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Longitude, this.Latitude, this.elevationInMeters, this.timestampUtc, this.Name, this.Description, this.SymbolText, this.uncommonProperties).GetHashCode();
+
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Longitude), this.Longitude),
+                                                                 (nameof(this.Latitude), this.Latitude),
+                                                                 (nameof(this.ElevationInMeters), this.ElevationInMeters),
+                                                                 (nameof(this.TimestampUtc), this.TimestampUtc),
+                                                                 (nameof(this.MagneticVariation), this.MagneticVariation),
+                                                                 (nameof(this.GeoidHeight), this.GeoidHeight),
+                                                                 (nameof(this.Name), this.Name),
+                                                                 (nameof(this.Comment), this.Comment),
+                                                                 (nameof(this.Description), this.Description),
+                                                                 (nameof(this.Source), this.Source),
+                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
+                                                                 (nameof(this.SymbolText), this.SymbolText),
+                                                                 (nameof(this.Classification), this.Classification),
+                                                                 (nameof(this.FixKind), this.FixKind),
+                                                                 (nameof(this.NumberOfSatellites), this.NumberOfSatellites),
+                                                                 (nameof(this.HorizontalDilutionOfPrecision), this.HorizontalDilutionOfPrecision),
+                                                                 (nameof(this.VerticalDilutionOfPrecision), this.VerticalDilutionOfPrecision),
+                                                                 (nameof(this.PositionDilutionOfPrecision), this.PositionDilutionOfPrecision),
+                                                                 (nameof(this.SecondsSinceLastDgpsUpdate), this.SecondsSinceLastDgpsUpdate),
+                                                                 (nameof(this.DgpsStationId), this.DgpsStationId),
+                                                                 (nameof(this.Extensions), this.Extensions));
+
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
         /// <see cref="Longitude"/> replaced by the given value.
@@ -668,29 +705,6 @@ namespace NetTopologySuite.IO
         /// </returns>
         public GpxWaypoint WithExtensions(object extensions) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, extensions);
 
-        /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Longitude), this.Longitude),
-                                                                 (nameof(this.Latitude), this.Latitude),
-                                                                 (nameof(this.ElevationInMeters), this.ElevationInMeters),
-                                                                 (nameof(this.TimestampUtc), this.TimestampUtc),
-                                                                 (nameof(this.MagneticVariation), this.MagneticVariation),
-                                                                 (nameof(this.GeoidHeight), this.GeoidHeight),
-                                                                 (nameof(this.Name), this.Name),
-                                                                 (nameof(this.Comment), this.Comment),
-                                                                 (nameof(this.Description), this.Description),
-                                                                 (nameof(this.Source), this.Source),
-                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
-                                                                 (nameof(this.SymbolText), this.SymbolText),
-                                                                 (nameof(this.Classification), this.Classification),
-                                                                 (nameof(this.FixKind), this.FixKind),
-                                                                 (nameof(this.NumberOfSatellites), this.NumberOfSatellites),
-                                                                 (nameof(this.HorizontalDilutionOfPrecision), this.HorizontalDilutionOfPrecision),
-                                                                 (nameof(this.VerticalDilutionOfPrecision), this.VerticalDilutionOfPrecision),
-                                                                 (nameof(this.PositionDilutionOfPrecision), this.PositionDilutionOfPrecision),
-                                                                 (nameof(this.SecondsSinceLastDgpsUpdate), this.SecondsSinceLastDgpsUpdate),
-                                                                 (nameof(this.DgpsStationId), this.DgpsStationId),
-                                                                 (nameof(this.Extensions), this.Extensions));
-
         internal static GpxWaypoint Load(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
         {
             if (element is null)
@@ -795,6 +809,24 @@ namespace NetTopologySuite.IO
             public GpxDgpsStationId? DgpsStationId { get; }
 
             public object Extensions { get; }
+
+            public override bool Equals(object obj) => obj is UncommonProperties other &&
+                                                       this.MagneticVariation == other.MagneticVariation &&
+                                                       this.GeoidHeight == other.GeoidHeight &&
+                                                       this.Comment == other.Comment &&
+                                                       this.Source == other.Source &&
+                                                       this.Links.ListEquals(other.Links) &&
+                                                       this.Classification == other.Classification &&
+                                                       this.FixKind == other.FixKind &&
+                                                       this.NumberOfSatellites == other.NumberOfSatellites &&
+                                                       this.HorizontalDilutionOfPrecision == other.HorizontalDilutionOfPrecision &&
+                                                       this.VerticalDilutionOfPrecision == other.VerticalDilutionOfPrecision &&
+                                                       this.PositionDilutionOfPrecision == other.PositionDilutionOfPrecision &&
+                                                       this.SecondsSinceLastDgpsUpdate == other.SecondsSinceLastDgpsUpdate &&
+                                                       this.DgpsStationId == other.DgpsStationId &&
+                                                       Equals(this.Extensions, other.Extensions);
+
+            public override int GetHashCode() => (this.MagneticVariation, this.GeoidHeight, this.Comment, this.Source, Helpers.ListToHashCode(this.Links), this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions).GetHashCode();
         }
     }
 }

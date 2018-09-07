@@ -85,6 +85,14 @@ namespace NetTopologySuite.IO
         public GpxTrackSegment WithExtensions(object extensions) => new GpxTrackSegment(this.Waypoints, extensions);
 
         /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxTrackSegment other &&
+                                                   Equals(this.Waypoints, other.Waypoints) &&
+                                                   Equals(this.Extensions, other.Extensions);
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Waypoints, this.Extensions).GetHashCode();
+
+        /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Waypoints), Helpers.BuildString((nameof(this.Waypoints.Count), this.Waypoints.Count))),
                                                                  (nameof(this.Extensions), this.Extensions));
 

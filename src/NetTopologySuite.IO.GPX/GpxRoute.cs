@@ -266,6 +266,21 @@ namespace NetTopologySuite.IO
         public GpxRoute WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, new ImmutableGpxWaypointTable(waypoints ?? ImmutableGpxWaypointTable.Empty));
 
         /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxRoute other &&
+                                                   this.Name == other.Name &&
+                                                   this.Comment == other.Comment &&
+                                                   this.Description == other.Description &&
+                                                   this.Source == other.Source &&
+                                                   this.Links.ListEquals(other.Links) &&
+                                                   this.Number == other.Number &&
+                                                   this.Classification == other.Classification &&
+                                                   Equals(this.Extensions, other.Extensions) &&
+                                                   Equals(this.Waypoints, other.Waypoints);
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Name, this.Comment, this.Description, this.Source, Helpers.ListToHashCode(this.Links), this.Number, this.Classification, this.Extensions, this.Waypoints).GetHashCode();
+
+        /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
                                                                  (nameof(this.Comment), this.Comment),
                                                                  (nameof(this.Description), this.Description),

@@ -59,6 +59,20 @@ namespace NetTopologySuite.IO
         /// </remarks>
         public Uri Href { get; }
 
+        /// <inheritdoc />
+        public override bool Equals(object obj) => obj is GpxWebLink other &&
+                                                   this.Text == other.Text &&
+                                                   this.ContentType == other.ContentType &&
+                                                   this.Href == other.Href;
+
+        /// <inheritdoc />
+        public override int GetHashCode() => (this.Href, this.Text, this.ContentType).GetHashCode();
+
+        /// <inheritdoc />
+        public override string ToString() => Helpers.BuildString((nameof(this.Href), this.Href),
+                                                                 (nameof(this.Text), this.Text),
+                                                                 (nameof(this.ContentType), this.ContentType));
+
         /// <summary>
         /// Builds a new instance of <see cref="GpxWebLink"/> as a copy of this instance, but with
         /// <see cref="Text"/> replaced by the given value.
@@ -100,11 +114,6 @@ namespace NetTopologySuite.IO
         /// <paramref name="href"/> is <see langword="null"/>.
         /// </exception>
         public GpxWebLink WithHref(Uri href) => new GpxWebLink(href, this.Text, this.ContentType);
-
-        /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Href), this.Href),
-                                                                 (nameof(this.Text), this.Text),
-                                                                 (nameof(this.ContentType), this.ContentType));
 
         internal static GpxWebLink Load(XElement element)
         {

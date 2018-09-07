@@ -234,6 +234,54 @@ namespace NetTopologySuite.IO
         IEnumerator IEnumerable.GetEnumerator() => new Enumerator(this);
 
         /// <inheritdoc />
+        public override bool Equals(object obj)
+        {
+            if (this == obj)
+            {
+                return true;
+            }
+
+            if (!(obj is ImmutableGpxWaypointTable other) || this.Count != other.Count)
+            {
+                return false;
+            }
+
+            return this.longitudes.ListEquals(other.longitudes) &&
+                   this.latitudes.ListEquals(other.latitudes) &&
+                   this.elevationsInMeters.Equals(other.elevationsInMeters) &&
+                   this.timestampsUtc.Equals(other.timestampsUtc) &&
+                   this.magneticVariations.Equals(other.magneticVariations) &&
+                   this.geoidHeights.Equals(other.geoidHeights) &&
+                   this.names.Equals(other.names) &&
+                   this.comments.Equals(other.comments) &&
+                   this.descriptions.Equals(other.descriptions) &&
+                   this.sources.Equals(other.sources) &&
+                   this.webLinkLists.Equals(other.webLinkLists) &&
+                   this.symbolTexts.Equals(other.symbolTexts) &&
+                   this.classifications.Equals(other.classifications) &&
+                   this.fixKinds.Equals(other.fixKinds) &&
+                   this.numbersOfSatellites.Equals(other.numbersOfSatellites) &&
+                   this.horizontalDilutionsOfPrecision.Equals(other.horizontalDilutionsOfPrecision) &&
+                   this.verticalDilutionsOfPrecision.Equals(other.verticalDilutionsOfPrecision) &&
+                   this.positionDilutionsOfPrecision.Equals(other.positionDilutionsOfPrecision) &&
+                   this.secondsSinceLastDgpsUpdates.Equals(other.secondsSinceLastDgpsUpdates) &&
+                   this.dgpsStationIds.Equals(other.dgpsStationIds) &&
+                   this.allExtensions.Equals(other.allExtensions);
+        }
+
+        /// <inheritdoc />
+        public override int GetHashCode()
+        {
+            int hc = 0;
+            foreach (var waypoint in this)
+            {
+                hc = (hc, waypoint).GetHashCode();
+            }
+
+            return hc;
+        }
+
+        /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Count), this.Count));
 
         private static void Add<T>(ref List<ImmutableArray<T>> lst, ImmutableArray<T> value, int cnt)
@@ -309,16 +357,65 @@ namespace NetTopologySuite.IO
             void IEnumerator.Reset() => this.curr = -1;
         }
 
-        private readonly struct OptionalImmutableArrayList<T>
+        private readonly struct OptionalImmutableArrayList<T> : IEquatable<OptionalImmutableArrayList<T>>
         {
             private readonly ImmutableArray<ImmutableArray<T>> values;
 
             public OptionalImmutableArrayList(List<ImmutableArray<T>> values) => this.values = values?.ToImmutableArray() ?? default;
 
             public ImmutableArray<T> this[int index] => this.values.IsDefault ? ImmutableArray<T>.Empty : this.values[index];
+
+            public override bool Equals(object obj) => obj is OptionalImmutableArrayList<T> other && this.Equals(other);
+
+            public bool Equals(OptionalImmutableArrayList<T> other)
+            {
+                var selfValues = this.values;
+                var otherValues = other.values;
+                if (selfValues == otherValues)
+                {
+                    return true;
+                }
+
+                if (selfValues.IsDefault)
+                {
+                    return otherValues.IsDefault;
+                }
+
+                if (otherValues.IsDefault)
+                {
+                    return false;
+                }
+
+                for (int i = 0; i < selfValues.Length; i++)
+                {
+                    if (!selfValues[i].ListEquals(otherValues[i]))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            public override int GetHashCode()
+            {
+                var selfValues = this.values;
+                if (selfValues.IsDefault)
+                {
+                    return 0;
+                }
+
+                int hc = 0;
+                for (int i = 0; i < selfValues.Length; i++)
+                {
+                    hc = (hc, Helpers.ListToHashCode(selfValues[i])).GetHashCode();
+                }
+
+                return hc;
+            }
         }
 
-        private readonly struct OptionalClassList<T>
+        private readonly struct OptionalClassList<T> : IEquatable<OptionalClassList<T>>
             where T : class
         {
             private readonly ImmutableArray<T> values;
@@ -326,9 +423,15 @@ namespace NetTopologySuite.IO
             public OptionalClassList(List<T> values) => this.values = values?.ToImmutableArray() ?? default;
 
             public T this[int index] => this.values.IsDefault ? null : this.values[index];
+
+            public override bool Equals(object obj) => obj is OptionalClassList<T> other && this.Equals(other);
+
+            public bool Equals(OptionalClassList<T> other) => this.values.ListEquals(other.values);
+
+            public override int GetHashCode() => Helpers.ListToHashCode(this.values);
         }
 
-        private readonly struct OptionalStructList<T>
+        private readonly struct OptionalStructList<T> : IEquatable<OptionalStructList<T>>
             where T : struct
         {
             // the resolution of dotnet/corefx#11861 means we're probably not going to be getting
@@ -368,6 +471,12 @@ namespace NetTopologySuite.IO
             }
 
             public T? this[int index] => (this.flags.IsDefault || !this.flags[index]) ? default(T?) : this.values[index];
+
+            public override bool Equals(object obj) => obj is OptionalStructList<T> other && this.Equals(other);
+
+            public bool Equals(OptionalStructList<T> other) => this.values.ListEquals(other.values);
+
+            public override int GetHashCode() => Helpers.ListToHashCode(this.values);
         }
     }
 }
