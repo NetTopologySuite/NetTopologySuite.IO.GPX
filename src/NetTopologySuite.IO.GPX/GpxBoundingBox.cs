@@ -69,10 +69,10 @@ namespace NetTopologySuite.IO
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxBoundingBox other &&
-                                                   this.MinLongitude.Equals(other.MinLongitude) &&
-                                                   this.MinLatitude.Equals(other.MinLatitude) &&
-                                                   this.MaxLongitude.Equals(other.MaxLongitude) &&
-                                                   this.MaxLatitude.Equals(other.MaxLatitude);
+                                                   this.MinLongitude == other.MinLongitude &&
+                                                   this.MinLatitude == other.MinLatitude &&
+                                                   this.MaxLongitude == other.MaxLongitude &&
+                                                   this.MaxLatitude == other.MaxLatitude;
 
         /// <inheritdoc />
         public override int GetHashCode() => (this.MinLongitude, this.MinLatitude, this.MaxLongitude, this.MaxLatitude).GetHashCode();
