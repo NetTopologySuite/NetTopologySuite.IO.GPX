@@ -101,7 +101,7 @@ namespace NetTopologySuite.IO
             while (reader.ReadToFollowing("gpx", Helpers.GpxNamespace))
             {
                 string version = null;
-                string creator = null;
+                string creator = settings.DefaultCreatorIfMissing;
                 for (bool hasAttribute = reader.MoveToFirstAttribute(); hasAttribute; hasAttribute = reader.MoveToNextAttribute())
                 {
                     switch (reader.Name)
@@ -116,14 +116,25 @@ namespace NetTopologySuite.IO
                     }
                 }
 
-                if (version != "1.1" || creator is null)
+                if (version != "1.1")
                 {
-                    throw new XmlException("Only GPX version 1.1 is supported.");
+                    throw new XmlException("'version' must be '1.1'");
+                }
+
+                if (creator is null)
+                {
+                    throw new XmlException("'creator' must be specified");
+                }
+
+                if (!ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement))
+                {
+                    visitor.VisitMetadata(new GpxMetadata(creator));
+                    break;
                 }
 
                 bool expectingMetadata = true;
                 bool expectingExtensions = true;
-                while (ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement))
+                do
                 {
                     if (expectingMetadata)
                     {
@@ -166,6 +177,7 @@ namespace NetTopologySuite.IO
                             break;
                     }
                 }
+                while (ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement));
             }
         }
 

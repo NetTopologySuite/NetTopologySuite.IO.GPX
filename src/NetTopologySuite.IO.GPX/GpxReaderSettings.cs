@@ -25,5 +25,12 @@ namespace NetTopologySuite.IO
         /// of the base class (see its summary documentation for details).
         /// </summary>
         public GpxExtensionReader ExtensionReader { get; set; } = DefaultExtensionReader;
+
+        /// <summary>
+        /// Gets or sets the value to fill in for <see cref="GpxMetadata.Creator"/> if a value was
+        /// not given.  Provided to help work around a bug from an old version of Israel Hiking Map
+        /// (see NetTopologySuite/NetTopologySuite.IO.GPX#23).
+        /// </summary>
+        public string DefaultCreatorIfMissing { get; set; }
     }
 }

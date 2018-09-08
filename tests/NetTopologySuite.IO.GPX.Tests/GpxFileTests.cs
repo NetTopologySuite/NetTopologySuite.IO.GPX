@@ -185,5 +185,17 @@ namespace NetTopologySuite.IO
         {
             Assert.ThrowsAny<XmlException>(() => GpxFile.Parse("<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>" + inner + "</gpx>", null));
         }
+
+        [Fact]
+        [GitHubIssue(23)]
+        public void MissingCreatorShouldFillInDefault()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' />
+";
+            var settings = new GpxReaderSettings { DefaultCreatorIfMissing = "Legacy IHM" };
+            var file = GpxFile.Parse(GpxText, settings);
+            Assert.Equal("Legacy IHM", file.Metadata.Creator);
+        }
     }
 }
