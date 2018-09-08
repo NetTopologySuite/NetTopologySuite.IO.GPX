@@ -323,7 +323,7 @@ namespace NetTopologySuite.IO
 
         private static OptionalClassList<T> Optional<T>(List<T> values) where T : class => new OptionalClassList<T>(values);
 
-        private static OptionalStructList<T> Optional<T>(List<T?> values) where T : struct, IEquatable<T> => new OptionalStructList<T>(values);
+        private static OptionalStructList<T> Optional<T>(List<T?> values) where T : unmanaged, IEquatable<T> => new OptionalStructList<T>(values);
 
         /// <inheritdoc />
         public struct Enumerator : IEnumerator<GpxWaypoint>
@@ -432,7 +432,7 @@ namespace NetTopologySuite.IO
         }
 
         private readonly struct OptionalStructList<T> : IEquatable<OptionalStructList<T>>
-            where T : struct, IEquatable<T>
+            where T : unmanaged, IEquatable<T>
         {
             // the resolution of dotnet/corefx#11861 means we're probably not going to be getting
             // ImmutableBitArray, but we still should separate out HasValue so it packs more nicely.

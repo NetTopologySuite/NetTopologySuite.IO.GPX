@@ -1,6 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.3.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4)
+- `GpxReaderSettings` now has a `DefaultCreatorIfMissing` attribute to fill in 
 - Custom `GpxExtensionReader` and `GpxExtensionWriter` subclasses can now override just one method if there's a common way to handle extensions regardless of where they show up ([#26](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/26)).
 - All immutable data model types now override `Equals(object)` and `GetHashCode()` to have "value" semantics ([#9](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/9)).
     - Mutable types, such as `GpxFile`, do **not** do this, for your own safety.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
@@ -136,7 +137,6 @@ namespace NetTopologySuite.IO
             }
         }
 
-        // TODO: optimize hash code like I did for Equals...
         public static int ListToHashCode<TElement>(this ImmutableArray<TElement> lst, IEqualityComparer<TElement> comparer = null)
         {
             if (lst.IsDefaultOrEmpty)
@@ -170,6 +170,13 @@ namespace NetTopologySuite.IO
 
                 return hc;
             }
+        }
+
+        public static int ListToHashCode<TElement>(this ImmutableArray<TElement> lst)
+            where TElement : unmanaged
+        {
+            var bytes = MemoryMarshal.AsBytes(lst.AsReadOnlySpan());
+            return xxHash64.Hash(bytes).GetHashCode();
         }
 
         public static bool ListEquals<TElement>(this ImmutableArray<TElement> lst1, ImmutableArray<TElement> lst2, IEqualityComparer<TElement> comparer = null)

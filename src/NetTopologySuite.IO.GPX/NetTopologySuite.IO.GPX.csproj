@@ -5,6 +5,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>NetTopologySuite.IO</RootNamespace>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
     <LangVersion>7.3</LangVersion>
 
