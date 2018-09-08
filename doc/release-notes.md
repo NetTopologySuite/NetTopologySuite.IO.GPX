@@ -7,7 +7,7 @@
     - In **all** lists, including lists of web links, ordering matters.  [A, B] is not considered equal to [B, A].
     - `Extensions` values **are** considered for equality.
         - If you do not use a custom `GpxExtensionReader` for extensions, or if yours always returns `ImmutableXElementContainer`, then this should work like you would expect it to work.
-        - Otherwise, make sure that whenever you return non-`null`, it is your responsibility to make sure that you the result's `Equals(object)` and `GetHashCode()` semantics match what you want the container's semantics to be.
+        - Otherwise, whenever you return non-`null`, it is your responsibility to make sure that you the result's `Equals(object)` and `GetHashCode()` semantics match what you want the container's semantics to be.
 - `GpxWebLink` now has a constructor that accepts just the value for `Href`, since that's the only required value.
 - `GpxLongitude` no longer permits +180 as a legal value, in keeping with the GPX 1.1 schema. ([#25](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/25)).
     - Converting from NTS features will automatically replace +180 with the equivalent -180.
