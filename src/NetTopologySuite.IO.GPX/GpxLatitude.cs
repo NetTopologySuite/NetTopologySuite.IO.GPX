@@ -12,6 +12,16 @@ namespace NetTopologySuite.IO
     public readonly struct GpxLatitude : IEquatable<GpxLatitude>, IComparable<GpxLatitude>, IComparable, IFormattable, IConvertible
     {
         /// <summary>
+        /// The minimum legal value of <see cref="GpxLatitude"/> (-90).
+        /// </summary>
+        public static readonly GpxLatitude MinValue = new GpxLatitude(-90);
+
+        /// <summary>
+        /// The maximum legal value of <see cref="GpxLatitude"/> (90).
+        /// </summary>
+        public static readonly GpxLatitude MaxValue = new GpxLatitude(90);
+
+        /// <summary>
         /// The value stored in this instance.
         /// Guaranteed to be between -90 (inclusive) and 90 (exclusive) under normal circumstances.
         /// </summary>

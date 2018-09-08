@@ -33,7 +33,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>/gpx/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertGpxExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertGpxExtension(object extension) => this.ConvertExtensionCommon(extension);
 
         /// <summary>
         /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
@@ -53,7 +53,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>/gpx/metadata/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertMetadataExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertMetadataExtension(object extension) => this.ConvertExtensionCommon(extension);
 
         /// <summary>
         /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
@@ -73,7 +73,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>wpt/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertWaypointExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertWaypointExtension(object extension) => this.ConvertExtensionCommon(extension);
 
         /// <summary>
         /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
@@ -93,7 +93,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>rte/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertRouteExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertRouteExtension(object extension) => this.ConvertExtensionCommon(extension);
 
         /// <summary>
         /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
@@ -113,7 +113,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>rtept/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertRoutePointExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertRoutePointExtension(object extension) => this.ConvertExtensionCommon(extension);
 
         /// <summary>
         /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
@@ -133,7 +133,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>trk/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertTrackExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertTrackExtension(object extension) => this.ConvertExtensionCommon(extension);
 
         /// <summary>
         /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
@@ -153,7 +153,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>trkseg/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertTrackSegmentExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertTrackSegmentExtension(object extension) => this.ConvertExtensionCommon(extension);
 
         /// <summary>
         /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
@@ -173,6 +173,26 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The content to write out as <c>trkpt/extensions</c>.
         /// </returns>
-        public virtual IEnumerable<XElement> ConvertTrackPointExtension(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
+        public virtual IEnumerable<XElement> ConvertTrackPointExtension(object extension) => this.ConvertExtensionCommon(extension);
+
+        /// <summary>
+        /// Transforms an arbitrary extension object into a sequence of <see cref="XElement"/>
+        /// instances to write out as the content of an "extensions" element.
+        /// <para>
+        /// If this method returns an empty sequence of elements, then the result will be an empty
+        /// "extensions" element.
+        /// </para>
+        /// <para>
+        /// If this method returns <see langword="null"/>, then the result will be the same as it
+        /// would be if there were no extension content at all.
+        /// </para>
+        /// </summary>
+        /// <param name="extension">
+        /// The extrension object to transform.
+        /// </param>
+        /// <returns>
+        /// The content to write out as the content of an "extensions" element.
+        /// </returns>
+        protected virtual IEnumerable<XElement> ConvertExtensionCommon(object extension) => extension as IEnumerable<XElement> ?? Enumerable.Empty<XElement>();
     }
 }

@@ -84,7 +84,15 @@ namespace NetTopologySuite.IO
                 throw new ArgumentException("Z must be either a finite value, in meters, or Coordinate.NullOrdinate if the coordinate is two-dimensional", nameof(coordinate));
             }
 
-            this.Longitude = new GpxLongitude(coordinate.X);
+            double longitudeValue = coordinate.X;
+
+            // +180 and -180 represent the same longitude value, so the GPX schema only allows -180.
+            if (longitudeValue == 180)
+            {
+                longitudeValue = -180;
+            }
+
+            this.Longitude = new GpxLongitude(longitudeValue);
             this.Latitude = new GpxLatitude(coordinate.Y);
             if (!double.IsNaN(coordinate.Z))
             {
@@ -826,7 +834,7 @@ namespace NetTopologySuite.IO
                                                        this.DgpsStationId == other.DgpsStationId &&
                                                        Equals(this.Extensions, other.Extensions);
 
-            public override int GetHashCode() => (this.MagneticVariation, this.GeoidHeight, this.Comment, this.Source, Helpers.ListToHashCode(this.Links), this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions).GetHashCode();
+            public override int GetHashCode() => (this.MagneticVariation, this.GeoidHeight, this.Comment, this.Source, this.Links.ListToHashCode(), this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions).GetHashCode();
         }
     }
 }

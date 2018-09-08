@@ -19,6 +19,20 @@ namespace NetTopologySuite.IO
         /// <param name="href">
         /// The value of <see cref="Href"/>.
         /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// <paramref name="href"/> is <see langword="null"/>.
+        /// </exception>
+        public GpxWebLink(Uri href)
+            : this(href, default, default)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpxWebLink"/> class.
+        /// </summary>
+        /// <param name="href">
+        /// The value of <see cref="Href"/>.
+        /// </param>
         /// <param name="text">
         /// The value of <see cref="Text"/>.
         /// </param>

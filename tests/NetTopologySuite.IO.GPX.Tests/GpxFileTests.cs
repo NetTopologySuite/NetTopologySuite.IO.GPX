@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -62,6 +63,40 @@ namespace NetTopologySuite.IO
         public static object[][] RoundTripSafeSamples => Array.ConvertAll(Directory.GetFiles("RoundTripSafeSamples", "*.gpx", SearchOption.TopDirectoryOnly), fl => new object[] { fl });
 
         [Fact]
+        public void RoundTripTestStartingFromModelObjects()
+        {
+            var expectedMetadata = new GpxMetadata("airbreather")
+                .WithName("inline file")
+                .WithDescription("a file to test round-trip")
+                .WithAuthor(new GpxPerson()
+                                 .WithName("airbreather")
+                                 .WithEmail(new GpxEmail("airbreather", "linux.com"))
+                                 .WithLink(new GpxWebLink(new Uri("http://example.com"))
+                                               .WithText("example text")
+                                               .WithContentType("text/html")))
+                .WithCopyright(new GpxCopyright("airbreather")
+                                   .WithYear(2018)
+                                   .WithLicenseUri(new Uri("http://example.com")))
+                .WithLinks(ImmutableArray.Create(
+                               new GpxWebLink(new Uri("http://example.com/cool-tunes.mp3"))
+                                   .WithText("another example text")
+                                   .WithContentType("audio/x-mpeg-3")))
+                .WithCreationTimeUtc(new DateTime(2018, 09, 09, 16, 35, 00, DateTimeKind.Utc))
+                .WithKeywords("xunit.net test things-done-by-cool-people csharp dotnet")
+                .WithBounds(GpxBoundingBox.EntireWgs84Bounds)
+                .WithExtensions(new ImmutableXElementContainer(new[] { XElement.Parse("<something xmlns='http://example.com' data='12' />") }));
+
+            // TODO: finish me... this commit is getting way too big.
+            var file = new GpxFile
+            {
+                Metadata = expectedMetadata,
+            };
+
+            var file2 = GpxFile.Parse(file.BuildString(null), null);
+            Assert.Equal(expectedMetadata, file2.Metadata);
+        }
+
+        [Fact]
         public void TestParseUsingInlineText()
         {
             const string GpxText = @"
@@ -93,7 +128,7 @@ namespace NetTopologySuite.IO
             Assert.Equal(10.11, actualTrackPoint.Longitude);
 
             Assert.NotNull(file.Extensions);
-            var actualExtensionElements = Assert.IsType<XElement[]>(file.Extensions);
+            var actualExtensionElements = Assert.IsType<ImmutableXElementContainer>(file.Extensions);
             var actualExtensionElement = Assert.Single(actualExtensionElements);
             Assert.Equal(XName.Get("someArbitraryElement", "http://www.example.com"), actualExtensionElement.Name);
             Assert.Equal("x", actualExtensionElement.Attribute("data")?.Value);
@@ -137,10 +172,7 @@ namespace NetTopologySuite.IO
             file = GpxFile.Parse(file.BuildString(null), null);
 
             var actualWaypoint = Assert.Single(file.Waypoints);
-
-            Assert.Equal(expectedWaypoint.Longitude, actualWaypoint.Longitude);
-            Assert.Equal(expectedWaypoint.Latitude, actualWaypoint.Latitude);
-            Assert.Equal(expectedWaypoint.ElevationInMeters, actualWaypoint.ElevationInMeters);
+            Assert.Equal(expectedWaypoint, actualWaypoint);
         }
 
         [Theory]

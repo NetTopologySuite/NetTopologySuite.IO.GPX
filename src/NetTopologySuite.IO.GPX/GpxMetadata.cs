@@ -230,7 +230,7 @@ namespace NetTopologySuite.IO
                                                    Equals(this.Extensions, other.Extensions);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Creator, this.Name, this.Description, this.Author, this.Copyright, Helpers.ListToHashCode(this.Links), this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions).GetHashCode();
+        public override int GetHashCode() => (this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links.ListToHashCode(), this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions).GetHashCode();
 
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Creator), this.Creator),

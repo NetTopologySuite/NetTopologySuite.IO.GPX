@@ -12,6 +12,16 @@ namespace NetTopologySuite.IO
     public readonly struct GpxLongitude : IEquatable<GpxLongitude>, IComparable<GpxLongitude>, IComparable, IFormattable, IConvertible
     {
         /// <summary>
+        /// The minimum legal value of <see cref="GpxLongitude"/> (-180).
+        /// </summary>
+        public static readonly GpxLongitude MinValue = new GpxLongitude(-180);
+
+        /// <summary>
+        /// The maximum legal value of <see cref="GpxLongitude"/> (a value very slightly smaller than 180).
+        /// </summary>
+        public static readonly GpxLongitude MaxValue = new GpxLongitude(Helpers.GetLargestDoubleValueSmallerThanThisPositiveFiniteValue(180));
+
+        /// <summary>
         /// The value stored in this instance.
         /// Guaranteed to be between -180 (inclusive) and 180 (exclusive) under normal circumstances.
         /// </summary>
@@ -32,13 +42,14 @@ namespace NetTopologySuite.IO
         /// Thrown when <paramref name="val"/> is:
         /// <list type="bullet">
         /// <item><description>not a number,</description></item>
-        /// <item><description>less than -180, or,</description></item>
+        /// <item><description>less than -180, or</description></item>
+        /// <item><description>equal to 180, or</description></item>
         /// <item><description>greater than 180</description></item>
         /// </list>
         /// </exception>
         public GpxLongitude(double val)
         {
-            if (!(Math.Abs(val) <= 180))
+            if (!(-180 <= val && val < 180))
             {
                 ThrowArgumentOutOfRangeException();
             }

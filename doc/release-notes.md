@@ -1,6 +1,17 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.3.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4)
+- All immutable data model types now override `Equals(object)` and `GetHashCode()` to have "value" semantics ([#9](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/9)).
+    - Mutable types, such as `GpxFile`, do **not** do this, for your own safety.
+    - In **all** lists, including lists of web links, ordering matters.  [A, B] is not considered equal to [B, A].
+    - `Extensions` values **are** considered for equality.
+        - If you do not use a custom `GpxExtensionReader` for extensions, or if yours always returns `ImmutableXElementContainer` then this should work like you would expect it to work.
+        - Otherwise, make sure that whenever you return non-`null`, it is your responsibility to make sure that you the result's `Equals(object)` and `GetHashCode()` semantics match what you want the container's semantics to be.
+- `GpxWebLink` now has a constructor that accepts just the value for `Href`, since that's the only required value.
+- `GpxLongitude` no longer permits +180 as a legal value, in keeping with the GPX 1.1 schema. ([#25](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/25)).
+    - Converting from NTS features will automatically replace +180 with the equivalent -180.
+- `GpxLongitude`, `GpxLatitude`, `GpxDegrees`, and `GpxDgpsStationId` now all have static `MinValue` and `MaxValue` fields to get the smallest and largest legal values.
+- `GpxBounds` now has a shortcut for getting the a value that covers the entire WGS-84 ellipsoid.
 - `GpxWaypoint` now has a constructor that accepts a `GeoAPI.Geometries.Coordinate` instance, for convenience ([#20](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/20)).
 - `GpxWaypoint` constructors and helper method now both reject infinite values of `elevationInMeters` ([#24](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/24)).
 - `GpxWaypoint` constructors and helper methods now throw `ArgumentOutOfRangeException` instead of `ArgumentException` in situations where the former is more appropriate.

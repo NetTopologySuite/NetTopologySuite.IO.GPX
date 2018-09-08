@@ -12,6 +12,16 @@ namespace NetTopologySuite.IO
     public readonly struct GpxDgpsStationId : IEquatable<GpxDgpsStationId>, IComparable<GpxDgpsStationId>, IComparable, IFormattable, IConvertible
     {
         /// <summary>
+        /// The minimum legal value of <see cref="GpxDgpsStationId"/> (0).
+        /// </summary>
+        public static readonly GpxDgpsStationId MinValue = new GpxDgpsStationId(0);
+
+        /// <summary>
+        /// The maximum legal value of <see cref="GpxDgpsStationId"/> (1023).
+        /// </summary>
+        public static readonly GpxDgpsStationId MaxValue = new GpxDgpsStationId(1023);
+
+        /// <summary>
         /// The value stored in this instance.
         /// Guaranteed to be between 0 (inclusive) and 1024 (exclusive) under normal circumstances.
         /// </summary>

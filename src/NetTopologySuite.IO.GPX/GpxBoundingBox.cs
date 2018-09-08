@@ -13,6 +13,11 @@ namespace NetTopologySuite.IO
     public sealed class GpxBoundingBox : ICanWriteToXmlWriter
     {
         /// <summary>
+        /// Represents the entire WGS-84 bounds, as near as it can be represented in GPX.
+        /// </summary>
+        public static readonly GpxBoundingBox EntireWgs84Bounds = new GpxBoundingBox(GpxLongitude.MinValue, GpxLatitude.MinValue, GpxLongitude.MaxValue, GpxLatitude.MaxValue);
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="GpxBoundingBox"/> class.
         /// </summary>
         /// <param name="minLongitude">

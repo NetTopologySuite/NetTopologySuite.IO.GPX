@@ -48,7 +48,7 @@ namespace NetTopologySuite.IO
 
         private readonly OptionalClassList<string> classifications;
 
-        private readonly OptionalStructList<GpxFixKind> fixKinds;
+        private readonly OptionalStructList<int> fixKinds;
 
         private readonly OptionalStructList<uint> numbersOfSatellites;
 
@@ -123,7 +123,7 @@ namespace NetTopologySuite.IO
             List<string> sources = null;
             List<ImmutableArray<GpxWebLink>> webLinkLists = null;
             List<string> classifications = null;
-            List<GpxFixKind?> fixKinds = null;
+            List<int?> fixKinds = null;
             List<uint?> numbersOfSatellites = null;
             List<double?> horizontalDilutionsOfPrecision = null;
             List<double?> verticalDilutionsOfPrecision = null;
@@ -152,7 +152,7 @@ namespace NetTopologySuite.IO
                 Add(ref sources, waypoint.Source, cnt);
                 Add(ref webLinkLists, waypoint.Links, cnt);
                 Add(ref classifications, waypoint.Classification, cnt);
-                Add(ref fixKinds, waypoint.FixKind, cnt);
+                Add(ref fixKinds, (int?)waypoint.FixKind, cnt);
                 Add(ref numbersOfSatellites, waypoint.NumberOfSatellites, cnt);
                 Add(ref horizontalDilutionsOfPrecision, waypoint.HorizontalDilutionOfPrecision, cnt);
                 Add(ref verticalDilutionsOfPrecision, waypoint.VerticalDilutionOfPrecision, cnt);
@@ -212,7 +212,7 @@ namespace NetTopologySuite.IO
             links: this.webLinkLists[index],
             symbolText: this.symbolTexts[index],
             classification: this.classifications[index],
-            fixKind: this.fixKinds[index],
+            fixKind: (GpxFixKind?)this.fixKinds[index],
             numberOfSatellites: this.numbersOfSatellites[index],
             horizontalDilutionOfPrecision: this.horizontalDilutionsOfPrecision[index],
             verticalDilutionOfPrecision: this.verticalDilutionsOfPrecision[index],
@@ -323,7 +323,7 @@ namespace NetTopologySuite.IO
 
         private static OptionalClassList<T> Optional<T>(List<T> values) where T : class => new OptionalClassList<T>(values);
 
-        private static OptionalStructList<T> Optional<T>(List<T?> values) where T : struct => new OptionalStructList<T>(values);
+        private static OptionalStructList<T> Optional<T>(List<T?> values) where T : struct, IEquatable<T> => new OptionalStructList<T>(values);
 
         /// <inheritdoc />
         public struct Enumerator : IEnumerator<GpxWaypoint>
@@ -381,7 +381,7 @@ namespace NetTopologySuite.IO
                     return otherValues.IsDefault;
                 }
 
-                if (otherValues.IsDefault)
+                if (otherValues.IsDefault || selfValues.Length != otherValues.Length)
                 {
                     return false;
                 }
@@ -408,7 +408,7 @@ namespace NetTopologySuite.IO
                 int hc = 0;
                 for (int i = 0; i < selfValues.Length; i++)
                 {
-                    hc = (hc, Helpers.ListToHashCode(selfValues[i])).GetHashCode();
+                    hc = Helpers.HashHelpersCombine(hc, selfValues[i].ListToHashCode());
                 }
 
                 return hc;
@@ -428,11 +428,11 @@ namespace NetTopologySuite.IO
 
             public bool Equals(OptionalClassList<T> other) => this.values.ListEquals(other.values);
 
-            public override int GetHashCode() => Helpers.ListToHashCode(this.values);
+            public override int GetHashCode() => this.values.ListToHashCode();
         }
 
         private readonly struct OptionalStructList<T> : IEquatable<OptionalStructList<T>>
-            where T : struct
+            where T : struct, IEquatable<T>
         {
             // the resolution of dotnet/corefx#11861 means we're probably not going to be getting
             // ImmutableBitArray, but we still should separate out HasValue so it packs more nicely.
@@ -474,9 +474,10 @@ namespace NetTopologySuite.IO
 
             public override bool Equals(object obj) => obj is OptionalStructList<T> other && this.Equals(other);
 
-            public bool Equals(OptionalStructList<T> other) => this.values.ListEquals(other.values);
+            public bool Equals(OptionalStructList<T> other) => this.values.ListEquals(other.values) &&
+                                                               this.flags.ListEquals(other.flags);
 
-            public override int GetHashCode() => Helpers.ListToHashCode(this.values);
+            public override int GetHashCode() => (this.flags.ListToHashCode(), this.values.ListToHashCode()).GetHashCode();
         }
     }
 }

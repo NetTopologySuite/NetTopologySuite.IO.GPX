@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,9 +16,14 @@ namespace NetTopologySuite.IO
     {
         public const string GpxNamespace = "http://www.topografix.com/GPX/1/1";
 
+        private static readonly int RandomSeed = new Random().Next(int.MinValue, int.MaxValue);
+
         private static readonly string[] FixKindStrings = { "none", "2d", "3d", "dgps", "pps" };
 
         private static readonly Regex YearParseRegex = new Regex(@"^(?<yearFrag>-?(([1-9]\d\d\d+)|(0\d\d\d)))(Z|([+-]((((0\d)|(1[0-3])):[0-5]\d)|(14:00))))?$", RegexOptions.ExplicitCapture | RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+        // dotnet/corefx#22625
+        public static ReadOnlySpan<T> AsReadOnlySpan<T>(this ImmutableArray<T> array) => Unsafe.As<ImmutableArray<T>, T[]>(ref array);
 
         public static object GetOptionalValue(this IAttributesTable attributes, string attributeName)
         {
@@ -32,12 +36,41 @@ namespace NetTopologySuite.IO
             return result;
         }
 
+        public static bool TryGetCount<T>(this IEnumerable<T> source, out int count)
+        {
+            switch (source)
+            {
+                case ICollection<T> icollectionOfT:
+                    count = icollectionOfT.Count;
+                    return true;
+
+                case System.Collections.ICollection icollection:
+                    count = icollection.Count;
+                    return true;
+
+                case IReadOnlyCollection<T> ireadOnlyCollectionOfT:
+                    count = ireadOnlyCollectionOfT.Count;
+                    return true;
+
+                default:
+                    count = 0;
+                    return false;
+            }
+        }
+
         // https://github.com/dotnet/coreclr/blob/cc52c67f5a0a26194c42fbd1b59e284d6727635a/src/System.Private.CoreLib/shared/System/Double.cs#L47-L54
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsFinite(this double d)
         {
             long bits = BitConverter.DoubleToInt64Bits(d);
             return (bits & 0x7FFFFFFFFFFFFFFF) < 0x7FF0000000000000;
+        }
+
+        // https://github.com/dotnet/coreclr/blob/51c3dc3bbd5e7515cbc03249c5e34b239a87b281/src/System.Private.CoreLib/src/System/Numerics/Hashing/HashHelpers.cs#L17-L18
+        public static int HashHelpersCombine(int h1, int h2)
+        {
+            uint rol5 = ((uint)h1 << 5) | ((uint)h1 >> 27);
+            return ((int)rol5 + h1) ^ h2;
         }
 
         public static string ToRoundTripString(this double val, IFormatProvider formatProvider)
@@ -73,6 +106,13 @@ namespace NetTopologySuite.IO
             return result;
         }
 
+        public static double GetLargestDoubleValueSmallerThanThisPositiveFiniteValue(double maxExclusive)
+        {
+            long bits = BitConverter.DoubleToInt64Bits(maxExclusive);
+            --bits;
+            return BitConverter.Int64BitsToDouble(bits);
+        }
+
         public static string ListToString<TElement>(ImmutableArray<TElement> lst)
         {
             if (lst.IsDefaultOrEmpty)
@@ -96,35 +136,91 @@ namespace NetTopologySuite.IO
             }
         }
 
-        public static int ListToHashCode<TElement>(ImmutableArray<TElement> lst)
+        // TODO: optimize hash code like I did for Equals...
+        public static int ListToHashCode<TElement>(this ImmutableArray<TElement> lst, IEqualityComparer<TElement> comparer = null)
         {
             if (lst.IsDefaultOrEmpty)
             {
                 return 0;
             }
 
-            int hc = 0;
-            foreach (var item in lst)
+            if (default(TElement) == null)
             {
-                hc = (hc, item).GetHashCode();
+                // https://github.com/dotnet/coreclr/issues/17273
+                comparer = comparer ?? EqualityComparer<TElement>.Default;
             }
 
-            return hc;
+            if (comparer is null)
+            {
+                int hc = RandomSeed;
+                for (int i = 0; i < lst.Length; i++)
+                {
+                    hc = HashHelpersCombine(hc, EqualityComparer<TElement>.Default.GetHashCode(lst[i]));
+                }
+
+                return hc;
+            }
+            else
+            {
+                int hc = RandomSeed;
+                for (int i = 0; i < lst.Length; i++)
+                {
+                    hc = (hc, comparer.GetHashCode(lst[i])).GetHashCode();
+                }
+
+                return hc;
+            }
         }
 
         public static bool ListEquals<TElement>(this ImmutableArray<TElement> lst1, ImmutableArray<TElement> lst2, IEqualityComparer<TElement> comparer = null)
         {
-            if (lst1.IsDefaultOrEmpty)
+            if (lst1.IsDefault)
             {
-                return lst2.IsDefaultOrEmpty;
+                return lst2.IsDefault;
             }
 
-            if (lst2.IsDefaultOrEmpty)
+            if (lst2.IsDefault || lst1.Length != lst2.Length)
             {
                 return false;
             }
 
-            return lst1.SequenceEqual(lst2, comparer);
+            if (default(TElement) == null)
+            {
+                // https://github.com/dotnet/coreclr/issues/17273
+                comparer = comparer ?? EqualityComparer<TElement>.Default;
+            }
+
+            if (comparer is null)
+            {
+                for (int i = 0; i < lst1.Length; i++)
+                {
+                    if (!EqualityComparer<TElement>.Default.Equals(lst1[i], lst2[i]))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            else
+            {
+                for (int i = 0; i < lst1.Length; i++)
+                {
+                    if (!comparer.Equals(lst1[i], lst2[i]))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        public static bool ListEquals<TElement>(this ImmutableArray<TElement> lst1, ImmutableArray<TElement> lst2)
+            where TElement : struct, IEquatable<TElement>
+        {
+            // this works just fine for default / empty on either side.
+            return lst1.AsReadOnlySpan().SequenceEqual(lst2.AsReadOnlySpan());
         }
 
         public static string BuildString(params (string fieldName, object fieldValue)[] values)
@@ -276,9 +372,9 @@ namespace NetTopologySuite.IO
                 return null;
             }
 
-            return TryParseDouble(text, out double result) && Math.Abs(result) <= 180
+            return TryParseDouble(text, out double result) && -180 <= result && result < 180
                 ? new GpxLongitude(result)
-                : throw new XmlException("longitude must be formatted properly and be between -180 and +180 inclusive");
+                : throw new XmlException("longitude must be formatted properly and be between -180 (inclusive) and +180 (exclusive)");
         }
 
         public static GpxLatitude? ParseLatitude(string text)
@@ -290,7 +386,7 @@ namespace NetTopologySuite.IO
 
             return TryParseDouble(text, out double result) && Math.Abs(result) <= 90
                 ? new GpxLatitude(result)
-                : throw new XmlException("latitude must be formatted properly and be between -90 and +90 inclusive");
+                : throw new XmlException("latitude must be formatted properly and be between -90 (inclusive) and +90 (inclusive)");
         }
 
         public static GpxDegrees? ParseDegrees(string text)
@@ -314,7 +410,7 @@ namespace NetTopologySuite.IO
 
             return ushort.TryParse(text, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite | NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out ushort result) && 0 <= result && result < 1024
                 ? new GpxDgpsStationId(result)
-                : throw new XmlException("DGPS station ID must be formatted properly and be between 0 and 1023 inclusive");
+                : throw new XmlException("DGPS station ID must be formatted properly and be between 0 (inclusive) and 1024 (exclusive)");
         }
 
         public static GpxFixKind? ParseFixKind(string text)

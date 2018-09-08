@@ -278,7 +278,7 @@ namespace NetTopologySuite.IO
                                                    Equals(this.Waypoints, other.Waypoints);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Name, this.Comment, this.Description, this.Source, Helpers.ListToHashCode(this.Links), this.Number, this.Classification, this.Extensions, this.Waypoints).GetHashCode();
+        public override int GetHashCode() => (this.Name, this.Comment, this.Description, this.Source, this.Links.ListToHashCode(), this.Number, this.Classification, this.Extensions, this.Waypoints).GetHashCode();
 
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),

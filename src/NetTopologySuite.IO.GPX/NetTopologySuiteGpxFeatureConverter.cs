@@ -57,8 +57,16 @@ namespace NetTopologySuite.IO
             }
 
             var attributes = feature.Attributes;
+            double longitudeValue = wpt.X;
+
+            // +180 and -180 represent the same longitude value, so the GPX schema only allows -180.
+            if (longitudeValue == 180)
+            {
+                longitudeValue = -180;
+            }
+
             return new GpxWaypoint(
-                longitude: new GpxLongitude(wpt.X),
+                longitude: new GpxLongitude(longitudeValue),
                 latitude: new GpxLatitude(wpt.Y),
                 elevationInMeters: double.IsNaN(wpt.Z) ? default(double?) : wpt.Z,
                 timestampUtc: (DateTime?)attributes?.GetOptionalValue(nameof(GpxWaypoint.TimestampUtc)),

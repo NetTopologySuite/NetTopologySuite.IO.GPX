@@ -12,6 +12,16 @@ namespace NetTopologySuite.IO
     public readonly struct GpxDegrees : IEquatable<GpxDegrees>, IComparable<GpxDegrees>, IComparable, IFormattable, IConvertible
     {
         /// <summary>
+        /// The minimum legal value of <see cref="GpxDegrees"/> (0).
+        /// </summary>
+        public static readonly GpxDegrees MinValue = new GpxDegrees(0);
+
+        /// <summary>
+        /// The maximum legal value of <see cref="GpxDegrees"/> (a value very slightly smaller than 360).
+        /// </summary>
+        public static readonly GpxDegrees MaxValue = new GpxDegrees(Helpers.GetLargestDoubleValueSmallerThanThisPositiveFiniteValue(360));
+
+        /// <summary>
         /// The value stored in this instance.
         /// Guaranteed to be between 0 (inclusive) and 360 (exclusive) under normal circumstances.
         /// </summary>

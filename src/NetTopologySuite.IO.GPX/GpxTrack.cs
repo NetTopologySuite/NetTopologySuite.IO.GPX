@@ -275,7 +275,7 @@ namespace NetTopologySuite.IO
                                                    this.Segments.ListEquals(other.Segments);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Name, this.Comment, this.Description, this.Source, Helpers.ListToHashCode(this.Links), this.Number, this.Classification, this.Extensions, Helpers.ListToHashCode(this.Segments)).GetHashCode();
+        public override int GetHashCode() => (this.Name, this.Comment, this.Description, this.Source, this.Links.ListToHashCode(), this.Number, this.Classification, this.Extensions, this.Segments.ListToHashCode()).GetHashCode();
 
         /// <inheritdoc />
         public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
