@@ -83,7 +83,8 @@
   
   <h1 id="NetTopologySuite_IO_GpxFile" data-uid="NetTopologySuite.IO.GpxFile" class="text-break">Class GpxFile
   </h1>
-  <div class="markdown level0 summary"><p>A container that holds all the individual pieces of a GPX file.</p>
+  <div class="markdown level0 summary"><p>A container that holds all the individual pieces of a GPX file and contains helper methods
+to (somwehat) easily read / write them on-the-fly.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -128,7 +129,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_Extensions.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.Extensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L39">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L67">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxFile_Extensions_" data-uid="NetTopologySuite.IO.GpxFile.Extensions*"></a>
   <h4 id="NetTopologySuite_IO_GpxFile_Extensions" data-uid="NetTopologySuite.IO.GpxFile.Extensions">Extensions</h4>
@@ -159,7 +160,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_Metadata.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.Metadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L16">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L40">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxFile_Metadata_" data-uid="NetTopologySuite.IO.GpxFile.Metadata*"></a>
   <h4 id="NetTopologySuite_IO_GpxFile_Metadata" data-uid="NetTopologySuite.IO.GpxFile.Metadata">Metadata</h4>
@@ -186,12 +187,28 @@ GPX file.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown by the property setter, when trying to set the value to <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_Routes.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.Routes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L28">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L56">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxFile_Routes_" data-uid="NetTopologySuite.IO.GpxFile.Routes*"></a>
   <h4 id="NetTopologySuite_IO_GpxFile_Routes" data-uid="NetTopologySuite.IO.GpxFile.Routes">Routes</h4>
@@ -223,7 +240,7 @@ this GPX file.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_Tracks.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.Tracks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L34">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L62">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxFile_Tracks_" data-uid="NetTopologySuite.IO.GpxFile.Tracks*"></a>
   <h4 id="NetTopologySuite_IO_GpxFile_Tracks" data-uid="NetTopologySuite.IO.GpxFile.Tracks">Tracks</h4>
@@ -255,7 +272,7 @@ this GPX file.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_Waypoints.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.Waypoints%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L22">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L50">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxFile_Waypoints_" data-uid="NetTopologySuite.IO.GpxFile.Waypoints*"></a>
   <h4 id="NetTopologySuite_IO_GpxFile_Waypoints" data-uid="NetTopologySuite.IO.GpxFile.Waypoints">Waypoints</h4>
@@ -286,10 +303,143 @@ waypoints in this GPX file.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_BuildString_NetTopologySuite_IO_GpxWriterSettings_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.BuildString(NetTopologySuite.IO.GpxWriterSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L164">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxFile_BuildString_" data-uid="NetTopologySuite.IO.GpxFile.BuildString*"></a>
+  <h4 id="NetTopologySuite_IO_GpxFile_BuildString_NetTopologySuite_IO_GpxWriterSettings_" data-uid="NetTopologySuite.IO.GpxFile.BuildString(NetTopologySuite.IO.GpxWriterSettings)">BuildString(GpxWriterSettings)</h4>
+  <div class="markdown level1 summary"><p>Builds the string representation of this file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BuildString(GpxWriterSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxWriterSettings.html">GpxWriterSettings</a> instance to use to control how GPX instances get
+written out, or <code>null</code> to use a general-purpose default.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The string representation of this file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_Parse_System_String_NetTopologySuite_IO_GpxReaderSettings_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.Parse(System.String%2CNetTopologySuite.IO.GpxReaderSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L92">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxFile_Parse_" data-uid="NetTopologySuite.IO.GpxFile.Parse*"></a>
+  <h4 id="NetTopologySuite_IO_GpxFile_Parse_System_String_NetTopologySuite_IO_GpxReaderSettings_" data-uid="NetTopologySuite.IO.GpxFile.Parse(System.String,NetTopologySuite.IO.GpxReaderSettings)">Parse(String, GpxReaderSettings)</h4>
+  <div class="markdown level1 summary"><p>Reads the XML representation of a GPX file, and returns the result as an instance of
+<a class="xref" href="NetTopologySuite.IO.GpxFile.html">GpxFile</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GpxFile Parse(string text, GpxReaderSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The string representation of the GPX file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NetTopologySuite.IO.GpxReaderSettings.html">GpxReaderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The <a class="xref" href="NetTopologySuite.IO.GpxReaderSettings.html">GpxReaderSettings</a> instance to use to control how GPX instances get
+read in, or <code>null</code> to use a general-purpose default.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NetTopologySuite.IO.GpxFile.html">GpxFile</a></td>
+        <td><p>A <a class="xref" href="NetTopologySuite.IO.GpxFile.html">GpxFile</a> instance that contains the same contents as the given GPX file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">text</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlexception">XmlException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">text</code> does not specify a valid GPX file (i.e., cases
+where XSD schema validation would fail, and/or some values are <strong>well</strong> outside of
+the slightly stricter, but still completely reasonable, limits imposed by the idiomatic
+.NET data types above and beyond the XSD limits).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_ReadFrom_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.ReadFrom(System.Xml.XmlReader%2CNetTopologySuite.IO.GpxReaderSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L64">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L124">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxFile_ReadFrom_" data-uid="NetTopologySuite.IO.GpxFile.ReadFrom*"></a>
   <h4 id="NetTopologySuite_IO_GpxFile_ReadFrom_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_" data-uid="NetTopologySuite.IO.GpxFile.ReadFrom(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)">ReadFrom(XmlReader, GpxReaderSettings)</h4>
@@ -371,7 +521,7 @@ the slightly stricter, but still completely reasonable, limits imposed by the id
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile_WriteTo_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile.WriteTo(System.Xml.XmlWriter%2CNetTopologySuite.IO.GpxWriterSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L85">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L145">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxFile_WriteTo_" data-uid="NetTopologySuite.IO.GpxFile.WriteTo*"></a>
   <h4 id="NetTopologySuite_IO_GpxFile_WriteTo_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_" data-uid="NetTopologySuite.IO.GpxFile.WriteTo(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings)">WriteTo(XmlWriter, GpxWriterSettings)</h4>
@@ -434,7 +584,7 @@ written out, or <code>null</code> to use a general-purpose default.</p>
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxFile.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxFile.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

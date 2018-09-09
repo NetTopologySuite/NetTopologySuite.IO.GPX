@@ -131,10 +131,73 @@ be able to write it back out again.
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertExtensionElementsCommon_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L232">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertExtensionElementsCommon_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon*"></a>
+  <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertExtensionElementsCommon_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertExtensionElementsCommon(IEnumerable&lt;XElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Transforms a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a> instances that represent an &quot;extensions&quot;
+element's content into a value suitable for an <code>Extensions</code> property.</p>
+<p>
+If an &quot;extensions&quot; element does not exist, then this method will not be called for that
+node.
+</p>
+<p>
+If the &quot;extensions&quot; element exists, but it has no child elements, then this method will
+be called for that node, with an empty sequence of elements.
+</p>
+<p>
+If this method returns <span class="xref">null</span>, then the result will be the same as it
+would be if the &quot;extensions&quot; element did not exist at all.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual object ConvertExtensionElementsCommon(IEnumerable&lt;XElement&gt; extensionElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</td>
+        <td><span class="parametername">extensionElements</span></td>
+        <td><p>The individual elements of the &quot;extensions&quot; element's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value to store in the corresponding <code>Extensions</code> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertGpxExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertGpxExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L39">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L38">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertGpxExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertGpxExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertGpxExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertGpxExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertGpxExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -196,7 +259,7 @@ would be if <code>/gpx/extensions</code> did not exist at all.
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertMetadataExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertMetadataExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L62">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L61">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertMetadataExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertMetadataExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertMetadataExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertMetadataExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertMetadataExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -258,7 +321,7 @@ would be if <code>/gpx/metadata/extensions</code> did not exist at all.
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertRouteExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertRouteExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L111">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L110">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertRouteExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRouteExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertRouteExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRouteExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertRouteExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -321,7 +384,7 @@ would be if <code>rte/extensions</code> did not exist at all.
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertRoutePointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertRoutePointExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L136">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L135">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertRoutePointExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRoutePointExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertRoutePointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertRoutePointExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertRoutePointExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -385,7 +448,7 @@ would be if <code>rtept/extensions</code> did not exist at all.
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertTrackExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertTrackExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L160">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L159">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertTrackExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -448,7 +511,7 @@ would be if <code>trk/extensions</code> did not exist at all.
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertTrackPointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertTrackPointExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L209">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L208">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackPointExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackPointExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackPointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackPointExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertTrackPointExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -512,7 +575,7 @@ would be if <code>trkpt/extensions</code> did not exist at all.
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertTrackSegmentExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertTrackSegmentExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L184">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L183">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackSegmentExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackSegmentExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertTrackSegmentExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertTrackSegmentExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertTrackSegmentExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -575,7 +638,7 @@ would be if <code>trkseg/extensions</code> did not exist at all.
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader_ConvertWaypointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader.ConvertWaypointExtensionElement(System.Collections.Generic.IEnumerable%7BSystem.Xml.Linq.XElement%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L87">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L86">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxExtensionReader_ConvertWaypointExtensionElement_" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertWaypointExtensionElement*"></a>
   <h4 id="NetTopologySuite_IO_GpxExtensionReader_ConvertWaypointExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__" data-uid="NetTopologySuite.IO.GpxExtensionReader.ConvertWaypointExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})">ConvertWaypointExtensionElement(IEnumerable&lt;XElement&gt;)</h4>
@@ -645,7 +708,7 @@ would be if <code>wpt/extensions</code> did not exist at all.
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxExtensionReader.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxExtensionReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxExtensionReader.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

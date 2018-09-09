@@ -94,13 +94,7 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
-    </div>
-    <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
@@ -125,10 +119,72 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(GeoAPI.Geometries.Coordinate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L64">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxWaypoint__ctor_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor*"></a>
+  <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(GeoAPI.Geometries.Coordinate)">GpxWaypoint(Coordinate)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GpxWaypoint(Coordinate coordinate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GeoAPI.Geometries.Coordinate</span></td>
+        <td><span class="parametername">coordinate</span></td>
+        <td><p>A <span class="xref">GeoAPI.Geometries.Coordinate</span> to use to initialize <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> and
+<a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><span class="xref">GeoAPI.Geometries.Coordinate.X</span> and <span class="xref">GeoAPI.Geometries.Coordinate.Y</span> are assumed to be WGS-84
+degrees, and <span class="xref">GeoAPI.Geometries.Coordinate.Z</span> is assumed to be an elevation in meters when it
+isn't equal to <span class="xref">GeoAPI.Geometries.Coordinate.NullOrdinate</span>.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">coordinate</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when:</p>
+<ul><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">GeoAPI.Geometries.Coordinate.X</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLongitude.html">GpxLongitude</a>,</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">GeoAPI.Geometries.Coordinate.Y</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLatitude.html">GpxLatitude</a>, or</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">GeoAPI.Geometries.Coordinate.Z</span> value <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double.isinfinity#System_Double_IsInfinity_System_Double_">IsInfinity(Double)</a></li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(NetTopologySuite.IO.GpxLongitude%2CNetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L34">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L36">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint__ctor_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude)">GpxWaypoint(GpxLongitude, GpxLatitude)</h4>
@@ -168,7 +224,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(NetTopologySuite.IO.GpxLongitude%2CNetTopologySuite.IO.GpxLatitude%2CSystem.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L54">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L118">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint__ctor_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double})">GpxWaypoint(GpxLongitude, GpxLatitude, Nullable&lt;Double&gt;)</h4>
@@ -219,8 +275,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">elevationInMeters</code> is <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1.hasvalue#System_Nullable_1_HasValue">HasValue</a> and <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double.isnan#System_Double_IsNaN_System_Double_">IsNaN(Double)</a>.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">elevationInMeters</code> is <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1.hasvalue#System_Nullable_1_HasValue">HasValue</a> and not a finite number.</p>
 </td>
       </tr>
     </tbody>
@@ -230,7 +286,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(NetTopologySuite.IO.GpxLongitude%2CNetTopologySuite.IO.GpxLatitude%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BNetTopologySuite.IO.GpxDegrees%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Collections.Immutable.ImmutableArray%7BNetTopologySuite.IO.GpxWebLink%7D%2CSystem.String%2CSystem.String%2CSystem.Nullable%7BNetTopologySuite.IO.GpxFixKind%7D%2CSystem.Nullable%7BSystem.UInt32%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BNetTopologySuite.IO.GpxDgpsStationId%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L132">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L196">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint__ctor_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double},System.Nullable{System.DateTime},System.Nullable{NetTopologySuite.IO.GpxDegrees},System.Nullable{System.Double},System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.String,System.String,System.Nullable{NetTopologySuite.IO.GpxFixKind},System.Nullable{System.UInt32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{NetTopologySuite.IO.GpxDgpsStationId},System.Object)">GpxWaypoint(GpxLongitude, GpxLatitude, Nullable&lt;Double&gt;, Nullable&lt;DateTime&gt;, Nullable&lt;GpxDegrees&gt;, Nullable&lt;Double&gt;, String, String, String, String, ImmutableArray&lt;GpxWebLink&gt;, String, String, Nullable&lt;GpxFixKind&gt;, Nullable&lt;UInt32&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;GpxDgpsStationId&gt;, Object)</h4>
@@ -389,9 +445,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
         <td><p>Thrown when:</p>
-<ul><li><code data-dev-comment-type="paramref" class="paramref">elevationInMeters</code> is <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1.hasvalue#System_Nullable_1_HasValue">HasValue</a> and <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double.isnan#System_Double_IsNaN_System_Double_">IsNaN(Double)</a> or</li><li><code data-dev-comment-type="paramref" class="paramref">timestampUtc</code> is <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1.hasvalue#System_Nullable_1_HasValue">HasValue</a> and its <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime.kind#System_DateTime_Kind">Kind</a> is not <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetimekind#System_DateTimeKind_Utc">Utc</a>.</li></ul>
+<ul><li><code data-dev-comment-type="paramref" class="paramref">elevationInMeters</code> is <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1.hasvalue#System_Nullable_1_HasValue">HasValue</a> and not a finite number, or</li><li><code data-dev-comment-type="paramref" class="paramref">timestampUtc</code> is <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1.hasvalue#System_Nullable_1_HasValue">HasValue</a> and its <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime.kind#System_DateTime_Kind">Kind</a> is not <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetimekind#System_DateTimeKind_Utc">Utc</a>.</li></ul>
 </td>
       </tr>
     </tbody>
@@ -403,7 +459,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Classification.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Classification%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L278">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L334">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Classification_" data-uid="NetTopologySuite.IO.GpxWaypoint.Classification*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Classification" data-uid="NetTopologySuite.IO.GpxWaypoint.Classification">Classification</h4>
@@ -437,7 +493,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Comment.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Comment%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L238">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L294">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Comment_" data-uid="NetTopologySuite.IO.GpxWaypoint.Comment*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Comment" data-uid="NetTopologySuite.IO.GpxWaypoint.Comment">Comment</h4>
@@ -471,7 +527,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Description.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L246">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L302">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Description_" data-uid="NetTopologySuite.IO.GpxWaypoint.Description*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Description" data-uid="NetTopologySuite.IO.GpxWaypoint.Description">Description</h4>
@@ -505,7 +561,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_DgpsStationId.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.DgpsStationId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L334">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L390">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_DgpsStationId_" data-uid="NetTopologySuite.IO.GpxWaypoint.DgpsStationId*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_DgpsStationId" data-uid="NetTopologySuite.IO.GpxWaypoint.DgpsStationId">DgpsStationId</h4>
@@ -539,7 +595,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_ElevationInMeters.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.ElevationInMeters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L197">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L253">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_ElevationInMeters_" data-uid="NetTopologySuite.IO.GpxWaypoint.ElevationInMeters*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_ElevationInMeters" data-uid="NetTopologySuite.IO.GpxWaypoint.ElevationInMeters">ElevationInMeters</h4>
@@ -573,7 +629,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Extensions.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Extensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L342">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L398">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Extensions_" data-uid="NetTopologySuite.IO.GpxWaypoint.Extensions*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Extensions" data-uid="NetTopologySuite.IO.GpxWaypoint.Extensions">Extensions</h4>
@@ -607,7 +663,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_FixKind.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.FixKind%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L286">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L342">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_FixKind_" data-uid="NetTopologySuite.IO.GpxWaypoint.FixKind*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_FixKind" data-uid="NetTopologySuite.IO.GpxWaypoint.FixKind">FixKind</h4>
@@ -641,7 +697,7 @@
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_GeoidHeight.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.GeoidHeight%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L222">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L278">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_GeoidHeight_" data-uid="NetTopologySuite.IO.GpxWaypoint.GeoidHeight*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_GeoidHeight" data-uid="NetTopologySuite.IO.GpxWaypoint.GeoidHeight">GeoidHeight</h4>
@@ -676,7 +732,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_HorizontalDilutionOfPrecision.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.HorizontalDilutionOfPrecision%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L302">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L358">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_HorizontalDilutionOfPrecision_" data-uid="NetTopologySuite.IO.GpxWaypoint.HorizontalDilutionOfPrecision*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_HorizontalDilutionOfPrecision" data-uid="NetTopologySuite.IO.GpxWaypoint.HorizontalDilutionOfPrecision">HorizontalDilutionOfPrecision</h4>
@@ -710,7 +766,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Latitude.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Latitude%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L189">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L245">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Latitude_" data-uid="NetTopologySuite.IO.GpxWaypoint.Latitude*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Latitude" data-uid="NetTopologySuite.IO.GpxWaypoint.Latitude">Latitude</h4>
@@ -744,7 +800,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Links.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Links%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L262">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L318">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Links_" data-uid="NetTopologySuite.IO.GpxWaypoint.Links*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Links" data-uid="NetTopologySuite.IO.GpxWaypoint.Links">Links</h4>
@@ -778,7 +834,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Longitude.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Longitude%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L181">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L237">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Longitude_" data-uid="NetTopologySuite.IO.GpxWaypoint.Longitude*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Longitude" data-uid="NetTopologySuite.IO.GpxWaypoint.Longitude">Longitude</h4>
@@ -812,7 +868,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_MagneticVariation.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.MagneticVariation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L213">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L269">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_MagneticVariation_" data-uid="NetTopologySuite.IO.GpxWaypoint.MagneticVariation*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_MagneticVariation" data-uid="NetTopologySuite.IO.GpxWaypoint.MagneticVariation">MagneticVariation</h4>
@@ -846,7 +902,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Name.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L230">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L286">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Name_" data-uid="NetTopologySuite.IO.GpxWaypoint.Name*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Name" data-uid="NetTopologySuite.IO.GpxWaypoint.Name">Name</h4>
@@ -880,7 +936,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_NumberOfSatellites.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.NumberOfSatellites%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L294">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L350">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_NumberOfSatellites_" data-uid="NetTopologySuite.IO.GpxWaypoint.NumberOfSatellites*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_NumberOfSatellites" data-uid="NetTopologySuite.IO.GpxWaypoint.NumberOfSatellites">NumberOfSatellites</h4>
@@ -914,7 +970,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_PositionDilutionOfPrecision.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.PositionDilutionOfPrecision%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L318">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L374">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_PositionDilutionOfPrecision_" data-uid="NetTopologySuite.IO.GpxWaypoint.PositionDilutionOfPrecision*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_PositionDilutionOfPrecision" data-uid="NetTopologySuite.IO.GpxWaypoint.PositionDilutionOfPrecision">PositionDilutionOfPrecision</h4>
@@ -948,7 +1004,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_SecondsSinceLastDgpsUpdate.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.SecondsSinceLastDgpsUpdate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L326">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L382">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_SecondsSinceLastDgpsUpdate_" data-uid="NetTopologySuite.IO.GpxWaypoint.SecondsSinceLastDgpsUpdate*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_SecondsSinceLastDgpsUpdate" data-uid="NetTopologySuite.IO.GpxWaypoint.SecondsSinceLastDgpsUpdate">SecondsSinceLastDgpsUpdate</h4>
@@ -982,7 +1038,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Source.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Source%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L254">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L310">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_Source_" data-uid="NetTopologySuite.IO.GpxWaypoint.Source*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_Source" data-uid="NetTopologySuite.IO.GpxWaypoint.Source">Source</h4>
@@ -1016,7 +1072,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_SymbolText.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.SymbolText%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L270">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L326">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_SymbolText_" data-uid="NetTopologySuite.IO.GpxWaypoint.SymbolText*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_SymbolText" data-uid="NetTopologySuite.IO.GpxWaypoint.SymbolText">SymbolText</h4>
@@ -1050,7 +1106,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_TimestampUtc.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.TimestampUtc%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L205">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L261">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_TimestampUtc_" data-uid="NetTopologySuite.IO.GpxWaypoint.TimestampUtc*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_TimestampUtc" data-uid="NetTopologySuite.IO.GpxWaypoint.TimestampUtc">TimestampUtc</h4>
@@ -1084,7 +1140,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_VerticalDilutionOfPrecision.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.VerticalDilutionOfPrecision%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L310">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L366">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_VerticalDilutionOfPrecision_" data-uid="NetTopologySuite.IO.GpxWaypoint.VerticalDilutionOfPrecision*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_VerticalDilutionOfPrecision" data-uid="NetTopologySuite.IO.GpxWaypoint.VerticalDilutionOfPrecision">VerticalDilutionOfPrecision</h4>
@@ -1117,10 +1173,91 @@ this location, as defined in NMEA GGA message.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_Equals_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L401">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxWaypoint_Equals_" data-uid="NetTopologySuite.IO.GpxWaypoint.Equals*"></a>
+  <h4 id="NetTopologySuite_IO_GpxWaypoint_Equals_System_Object_" data-uid="NetTopologySuite.IO.GpxWaypoint.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_GetHashCode.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L412">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxWaypoint_GetHashCode_" data-uid="NetTopologySuite.IO.GpxWaypoint.GetHashCode*"></a>
+  <h4 id="NetTopologySuite_IO_GpxWaypoint_GetHashCode" data-uid="NetTopologySuite.IO.GpxWaypoint.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_ToString.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L624">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L415">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_ToString_" data-uid="NetTopologySuite.IO.GpxWaypoint.ToString*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_ToString" data-uid="NetTopologySuite.IO.GpxWaypoint.ToString">ToString()</h4>
@@ -1152,7 +1289,7 @@ this location, as defined in NMEA GGA message.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithClassification_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithClassification(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L517">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L610">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithClassification_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithClassification*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithClassification_System_String_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithClassification(System.String)">WithClassification(String)</h4>
@@ -1204,7 +1341,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithComment_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithComment(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L452">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L545">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithComment_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithComment*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithComment_System_String_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithComment(System.String)">WithComment(String)</h4>
@@ -1256,7 +1393,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithDescription_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithDescription(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L465">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L558">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithDescription_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithDescription*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithDescription_System_String_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithDescription(System.String)">WithDescription(String)</h4>
@@ -1308,7 +1445,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithDgpsStationId_System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithDgpsStationId(System.Nullable%7BNetTopologySuite.IO.GpxDgpsStationId%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L608">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L701">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithDgpsStationId_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithDgpsStationId*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithDgpsStationId_System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithDgpsStationId(System.Nullable{NetTopologySuite.IO.GpxDgpsStationId})">WithDgpsStationId(Nullable&lt;GpxDgpsStationId&gt;)</h4>
@@ -1360,7 +1497,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithElevationInMeters_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithElevationInMeters(System.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L384">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L477">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithElevationInMeters_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithElevationInMeters*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithElevationInMeters_System_Nullable_System_Double__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithElevationInMeters(System.Nullable{System.Double})">WithElevationInMeters(Nullable&lt;Double&gt;)</h4>
@@ -1428,7 +1565,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithExtensions_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithExtensions(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L621">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L714">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithExtensions_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithExtensions*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithExtensions_System_Object_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithExtensions(System.Object)">WithExtensions(Object)</h4>
@@ -1480,7 +1617,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithFixKind_System_Nullable_NetTopologySuite_IO_GpxFixKind__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithFixKind(System.Nullable%7BNetTopologySuite.IO.GpxFixKind%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L530">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L623">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithFixKind_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithFixKind*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithFixKind_System_Nullable_NetTopologySuite_IO_GpxFixKind__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithFixKind(System.Nullable{NetTopologySuite.IO.GpxFixKind})">WithFixKind(Nullable&lt;GpxFixKind&gt;)</h4>
@@ -1532,7 +1669,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithGeoidHeight_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithGeoidHeight(System.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L426">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L519">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithGeoidHeight_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithGeoidHeight*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithGeoidHeight_System_Nullable_System_Double__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithGeoidHeight(System.Nullable{System.Double})">WithGeoidHeight(Nullable&lt;Double&gt;)</h4>
@@ -1584,7 +1721,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithHorizontalDilutionOfPrecision_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithHorizontalDilutionOfPrecision(System.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L556">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L649">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithHorizontalDilutionOfPrecision_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithHorizontalDilutionOfPrecision*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithHorizontalDilutionOfPrecision_System_Nullable_System_Double__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithHorizontalDilutionOfPrecision(System.Nullable{System.Double})">WithHorizontalDilutionOfPrecision(Nullable&lt;Double&gt;)</h4>
@@ -1636,7 +1773,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithLatitude_NetTopologySuite_IO_GpxLatitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithLatitude(NetTopologySuite.IO.GpxLatitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L368">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L461">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithLatitude_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLatitude*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithLatitude_NetTopologySuite_IO_GpxLatitude_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLatitude(NetTopologySuite.IO.GpxLatitude)">WithLatitude(GpxLatitude)</h4>
@@ -1688,7 +1825,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray%7BNetTopologySuite.IO.GpxWebLink%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L491">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L584">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithLinks_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLinks*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})">WithLinks(ImmutableArray&lt;GpxWebLink&gt;)</h4>
@@ -1740,7 +1877,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithLongitude_NetTopologySuite_IO_GpxLongitude_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithLongitude(NetTopologySuite.IO.GpxLongitude)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L355">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L448">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithLongitude_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLongitude*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithLongitude_NetTopologySuite_IO_GpxLongitude_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLongitude(NetTopologySuite.IO.GpxLongitude)">WithLongitude(GpxLongitude)</h4>
@@ -1792,7 +1929,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithMagneticVariation_System_Nullable_NetTopologySuite_IO_GpxDegrees__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithMagneticVariation(System.Nullable%7BNetTopologySuite.IO.GpxDegrees%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L413">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L506">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithMagneticVariation_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithMagneticVariation*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithMagneticVariation_System_Nullable_NetTopologySuite_IO_GpxDegrees__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithMagneticVariation(System.Nullable{NetTopologySuite.IO.GpxDegrees})">WithMagneticVariation(Nullable&lt;GpxDegrees&gt;)</h4>
@@ -1844,7 +1981,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithName_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L439">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L532">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithName_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithName*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithName_System_String_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithName(System.String)">WithName(String)</h4>
@@ -1896,7 +2033,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithNumberOfSatellites_System_Nullable_System_UInt32__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithNumberOfSatellites(System.Nullable%7BSystem.UInt32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L543">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L636">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithNumberOfSatellites_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithNumberOfSatellites*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithNumberOfSatellites_System_Nullable_System_UInt32__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithNumberOfSatellites(System.Nullable{System.UInt32})">WithNumberOfSatellites(Nullable&lt;UInt32&gt;)</h4>
@@ -1948,7 +2085,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithPositionDilutionOfPrecision_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithPositionDilutionOfPrecision(System.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L582">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L675">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithPositionDilutionOfPrecision_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithPositionDilutionOfPrecision*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithPositionDilutionOfPrecision_System_Nullable_System_Double__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithPositionDilutionOfPrecision(System.Nullable{System.Double})">WithPositionDilutionOfPrecision(Nullable&lt;Double&gt;)</h4>
@@ -2000,7 +2137,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithSecondsSinceLastDgpsUpdate_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithSecondsSinceLastDgpsUpdate(System.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L595">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L688">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithSecondsSinceLastDgpsUpdate_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithSecondsSinceLastDgpsUpdate*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithSecondsSinceLastDgpsUpdate_System_Nullable_System_Double__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithSecondsSinceLastDgpsUpdate(System.Nullable{System.Double})">WithSecondsSinceLastDgpsUpdate(Nullable&lt;Double&gt;)</h4>
@@ -2052,7 +2189,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithSource_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithSource(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L478">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L571">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithSource_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithSource*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithSource_System_String_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithSource(System.String)">WithSource(String)</h4>
@@ -2104,7 +2241,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithSymbolText_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithSymbolText(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L504">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L597">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithSymbolText_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithSymbolText*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithSymbolText_System_String_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithSymbolText(System.String)">WithSymbolText(String)</h4>
@@ -2156,7 +2293,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithTimestampUtc_System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithTimestampUtc(System.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L400">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L493">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithTimestampUtc_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithTimestampUtc*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithTimestampUtc_System_Nullable_System_DateTime__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithTimestampUtc(System.Nullable{System.DateTime})">WithTimestampUtc(Nullable&lt;DateTime&gt;)</h4>
@@ -2224,7 +2361,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithVerticalDilutionOfPrecision_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithVerticalDilutionOfPrecision(System.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L569">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L662">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithVerticalDilutionOfPrecision_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithVerticalDilutionOfPrecision*"></a>
   <h4 id="NetTopologySuite_IO_GpxWaypoint_WithVerticalDilutionOfPrecision_System_Nullable_System_Double__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithVerticalDilutionOfPrecision(System.Nullable{System.Double})">WithVerticalDilutionOfPrecision(Nullable&lt;Double&gt;)</h4>
@@ -2282,7 +2419,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
                     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L19" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

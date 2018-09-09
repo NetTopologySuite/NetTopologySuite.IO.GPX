@@ -26,6 +26,38 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxBoundingBox.GpxBoundingBox
   nameWithType: GpxBoundingBox.GpxBoundingBox
+- uid: NetTopologySuite.IO.GpxBoundingBox.EntireWgs84Bounds
+  name: EntireWgs84Bounds
+  href: api/NetTopologySuite.IO.GpxBoundingBox.html#NetTopologySuite_IO_GpxBoundingBox_EntireWgs84Bounds
+  commentId: F:NetTopologySuite.IO.GpxBoundingBox.EntireWgs84Bounds
+  fullName: NetTopologySuite.IO.GpxBoundingBox.EntireWgs84Bounds
+  nameWithType: GpxBoundingBox.EntireWgs84Bounds
+- uid: NetTopologySuite.IO.GpxBoundingBox.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxBoundingBox.html#NetTopologySuite_IO_GpxBoundingBox_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxBoundingBox.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxBoundingBox.Equals(System.Object)
+  nameWithType: GpxBoundingBox.Equals(Object)
+- uid: NetTopologySuite.IO.GpxBoundingBox.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxBoundingBox.html#NetTopologySuite_IO_GpxBoundingBox_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxBoundingBox.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxBoundingBox.Equals
+  nameWithType: GpxBoundingBox.Equals
+- uid: NetTopologySuite.IO.GpxBoundingBox.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxBoundingBox.html#NetTopologySuite_IO_GpxBoundingBox_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxBoundingBox.GetHashCode
+  fullName: NetTopologySuite.IO.GpxBoundingBox.GetHashCode()
+  nameWithType: GpxBoundingBox.GetHashCode()
+- uid: NetTopologySuite.IO.GpxBoundingBox.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxBoundingBox.html#NetTopologySuite_IO_GpxBoundingBox_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxBoundingBox.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxBoundingBox.GetHashCode
+  nameWithType: GpxBoundingBox.GetHashCode
 - uid: NetTopologySuite.IO.GpxBoundingBox.MaxLatitude
   name: MaxLatitude
   href: api/NetTopologySuite.IO.GpxBoundingBox.html#NetTopologySuite_IO_GpxBoundingBox_MaxLatitude
@@ -132,6 +164,32 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxCopyright.Author
   nameWithType: GpxCopyright.Author
+- uid: NetTopologySuite.IO.GpxCopyright.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxCopyright.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxCopyright.Equals(System.Object)
+  nameWithType: GpxCopyright.Equals(Object)
+- uid: NetTopologySuite.IO.GpxCopyright.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxCopyright.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxCopyright.Equals
+  nameWithType: GpxCopyright.Equals
+- uid: NetTopologySuite.IO.GpxCopyright.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxCopyright.GetHashCode
+  fullName: NetTopologySuite.IO.GpxCopyright.GetHashCode()
+  nameWithType: GpxCopyright.GetHashCode()
+- uid: NetTopologySuite.IO.GpxCopyright.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxCopyright.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxCopyright.GetHashCode
+  nameWithType: GpxCopyright.GetHashCode
 - uid: NetTopologySuite.IO.GpxCopyright.LicenseUri
   name: LicenseUri
   href: api/NetTopologySuite.IO.GpxCopyright.html#NetTopologySuite_IO_GpxCopyright_LicenseUri
@@ -296,6 +354,18 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxDegrees.GetTypeCode
   nameWithType: GpxDegrees.GetTypeCode
+- uid: NetTopologySuite.IO.GpxDegrees.MaxValue
+  name: MaxValue
+  href: api/NetTopologySuite.IO.GpxDegrees.html#NetTopologySuite_IO_GpxDegrees_MaxValue
+  commentId: F:NetTopologySuite.IO.GpxDegrees.MaxValue
+  fullName: NetTopologySuite.IO.GpxDegrees.MaxValue
+  nameWithType: GpxDegrees.MaxValue
+- uid: NetTopologySuite.IO.GpxDegrees.MinValue
+  name: MinValue
+  href: api/NetTopologySuite.IO.GpxDegrees.html#NetTopologySuite_IO_GpxDegrees_MinValue
+  commentId: F:NetTopologySuite.IO.GpxDegrees.MinValue
+  fullName: NetTopologySuite.IO.GpxDegrees.MinValue
+  nameWithType: GpxDegrees.MinValue
 - uid: NetTopologySuite.IO.GpxDegrees.op_Equality(NetTopologySuite.IO.GpxDegrees,NetTopologySuite.IO.GpxDegrees)
   name: Equality(GpxDegrees, GpxDegrees)
   href: api/NetTopologySuite.IO.GpxDegrees.html#NetTopologySuite_IO_GpxDegrees_op_Equality_NetTopologySuite_IO_GpxDegrees_NetTopologySuite_IO_GpxDegrees_
@@ -781,6 +851,18 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxDgpsStationId.GetTypeCode
   nameWithType: GpxDgpsStationId.GetTypeCode
+- uid: NetTopologySuite.IO.GpxDgpsStationId.MaxValue
+  name: MaxValue
+  href: api/NetTopologySuite.IO.GpxDgpsStationId.html#NetTopologySuite_IO_GpxDgpsStationId_MaxValue
+  commentId: F:NetTopologySuite.IO.GpxDgpsStationId.MaxValue
+  fullName: NetTopologySuite.IO.GpxDgpsStationId.MaxValue
+  nameWithType: GpxDgpsStationId.MaxValue
+- uid: NetTopologySuite.IO.GpxDgpsStationId.MinValue
+  name: MinValue
+  href: api/NetTopologySuite.IO.GpxDgpsStationId.html#NetTopologySuite_IO_GpxDgpsStationId_MinValue
+  commentId: F:NetTopologySuite.IO.GpxDgpsStationId.MinValue
+  fullName: NetTopologySuite.IO.GpxDgpsStationId.MinValue
+  nameWithType: GpxDgpsStationId.MinValue
 - uid: NetTopologySuite.IO.GpxDgpsStationId.op_Equality(NetTopologySuite.IO.GpxDgpsStationId,NetTopologySuite.IO.GpxDgpsStationId)
   name: Equality(GpxDgpsStationId, GpxDgpsStationId)
   href: api/NetTopologySuite.IO.GpxDgpsStationId.html#NetTopologySuite_IO_GpxDgpsStationId_op_Equality_NetTopologySuite_IO_GpxDgpsStationId_NetTopologySuite_IO_GpxDgpsStationId_
@@ -1215,6 +1297,32 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxEmail.Domain
   nameWithType: GpxEmail.Domain
+- uid: NetTopologySuite.IO.GpxEmail.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxEmail.html#NetTopologySuite_IO_GpxEmail_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxEmail.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxEmail.Equals(System.Object)
+  nameWithType: GpxEmail.Equals(Object)
+- uid: NetTopologySuite.IO.GpxEmail.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxEmail.html#NetTopologySuite_IO_GpxEmail_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxEmail.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxEmail.Equals
+  nameWithType: GpxEmail.Equals
+- uid: NetTopologySuite.IO.GpxEmail.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxEmail.html#NetTopologySuite_IO_GpxEmail_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxEmail.GetHashCode
+  fullName: NetTopologySuite.IO.GpxEmail.GetHashCode()
+  nameWithType: GpxEmail.GetHashCode()
+- uid: NetTopologySuite.IO.GpxEmail.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxEmail.html#NetTopologySuite_IO_GpxEmail_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxEmail.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxEmail.GetHashCode
+  nameWithType: GpxEmail.GetHashCode
 - uid: NetTopologySuite.IO.GpxEmail.Id
   name: Id
   href: api/NetTopologySuite.IO.GpxEmail.html#NetTopologySuite_IO_GpxEmail_Id
@@ -1247,6 +1355,22 @@ references:
   commentId: T:NetTopologySuite.IO.GpxExtensionReader
   fullName: NetTopologySuite.IO.GpxExtensionReader
   nameWithType: GpxExtensionReader
+- uid: NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  name: ConvertExtensionElementsCommon(IEnumerable<XElement>)
+  href: api/NetTopologySuite.IO.GpxExtensionReader.html#NetTopologySuite_IO_GpxExtensionReader_ConvertExtensionElementsCommon_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__
+  commentId: M:NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  name.vb: ConvertExtensionElementsCommon(IEnumerable(Of XElement))
+  fullName: NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>)
+  fullName.vb: NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement))
+  nameWithType: GpxExtensionReader.ConvertExtensionElementsCommon(IEnumerable<XElement>)
+  nameWithType.vb: GpxExtensionReader.ConvertExtensionElementsCommon(IEnumerable(Of XElement))
+- uid: NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon*
+  name: ConvertExtensionElementsCommon
+  href: api/NetTopologySuite.IO.GpxExtensionReader.html#NetTopologySuite_IO_GpxExtensionReader_ConvertExtensionElementsCommon_
+  commentId: Overload:NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxExtensionReader.ConvertExtensionElementsCommon
+  nameWithType: GpxExtensionReader.ConvertExtensionElementsCommon
 - uid: NetTopologySuite.IO.GpxExtensionReader.ConvertGpxExtensionElement(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
   name: ConvertGpxExtensionElement(IEnumerable<XElement>)
   href: api/NetTopologySuite.IO.GpxExtensionReader.html#NetTopologySuite_IO_GpxExtensionReader_ConvertGpxExtensionElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__
@@ -1381,6 +1505,19 @@ references:
   commentId: T:NetTopologySuite.IO.GpxExtensionWriter
   fullName: NetTopologySuite.IO.GpxExtensionWriter
   nameWithType: GpxExtensionWriter
+- uid: NetTopologySuite.IO.GpxExtensionWriter.ConvertExtensionCommon(System.Object)
+  name: ConvertExtensionCommon(Object)
+  href: api/NetTopologySuite.IO.GpxExtensionWriter.html#NetTopologySuite_IO_GpxExtensionWriter_ConvertExtensionCommon_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxExtensionWriter.ConvertExtensionCommon(System.Object)
+  fullName: NetTopologySuite.IO.GpxExtensionWriter.ConvertExtensionCommon(System.Object)
+  nameWithType: GpxExtensionWriter.ConvertExtensionCommon(Object)
+- uid: NetTopologySuite.IO.GpxExtensionWriter.ConvertExtensionCommon*
+  name: ConvertExtensionCommon
+  href: api/NetTopologySuite.IO.GpxExtensionWriter.html#NetTopologySuite_IO_GpxExtensionWriter_ConvertExtensionCommon_
+  commentId: Overload:NetTopologySuite.IO.GpxExtensionWriter.ConvertExtensionCommon
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxExtensionWriter.ConvertExtensionCommon
+  nameWithType: GpxExtensionWriter.ConvertExtensionCommon
 - uid: NetTopologySuite.IO.GpxExtensionWriter.ConvertGpxExtension(System.Object)
   name: ConvertGpxExtension(Object)
   href: api/NetTopologySuite.IO.GpxExtensionWriter.html#NetTopologySuite_IO_GpxExtensionWriter_ConvertGpxExtension_System_Object_
@@ -1491,6 +1628,19 @@ references:
   commentId: T:NetTopologySuite.IO.GpxFile
   fullName: NetTopologySuite.IO.GpxFile
   nameWithType: GpxFile
+- uid: NetTopologySuite.IO.GpxFile.BuildString(NetTopologySuite.IO.GpxWriterSettings)
+  name: BuildString(GpxWriterSettings)
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_BuildString_NetTopologySuite_IO_GpxWriterSettings_
+  commentId: M:NetTopologySuite.IO.GpxFile.BuildString(NetTopologySuite.IO.GpxWriterSettings)
+  fullName: NetTopologySuite.IO.GpxFile.BuildString(NetTopologySuite.IO.GpxWriterSettings)
+  nameWithType: GpxFile.BuildString(GpxWriterSettings)
+- uid: NetTopologySuite.IO.GpxFile.BuildString*
+  name: BuildString
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_BuildString_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.BuildString
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.BuildString
+  nameWithType: GpxFile.BuildString
 - uid: NetTopologySuite.IO.GpxFile.Extensions
   name: Extensions
   href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Extensions
@@ -1517,6 +1667,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxFile.Metadata
   nameWithType: GpxFile.Metadata
+- uid: NetTopologySuite.IO.GpxFile.Parse(System.String,NetTopologySuite.IO.GpxReaderSettings)
+  name: Parse(String, GpxReaderSettings)
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Parse_System_String_NetTopologySuite_IO_GpxReaderSettings_
+  commentId: M:NetTopologySuite.IO.GpxFile.Parse(System.String,NetTopologySuite.IO.GpxReaderSettings)
+  fullName: NetTopologySuite.IO.GpxFile.Parse(System.String, NetTopologySuite.IO.GpxReaderSettings)
+  nameWithType: GpxFile.Parse(String, GpxReaderSettings)
+- uid: NetTopologySuite.IO.GpxFile.Parse*
+  name: Parse
+  href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_Parse_
+  commentId: Overload:NetTopologySuite.IO.GpxFile.Parse
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxFile.Parse
+  nameWithType: GpxFile.Parse
 - uid: NetTopologySuite.IO.GpxFile.ReadFrom(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings)
   name: ReadFrom(XmlReader, GpxReaderSettings)
   href: api/NetTopologySuite.IO.GpxFile.html#NetTopologySuite_IO_GpxFile_ReadFrom_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_
@@ -1701,6 +1864,18 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxLatitude.GetTypeCode
   nameWithType: GpxLatitude.GetTypeCode
+- uid: NetTopologySuite.IO.GpxLatitude.MaxValue
+  name: MaxValue
+  href: api/NetTopologySuite.IO.GpxLatitude.html#NetTopologySuite_IO_GpxLatitude_MaxValue
+  commentId: F:NetTopologySuite.IO.GpxLatitude.MaxValue
+  fullName: NetTopologySuite.IO.GpxLatitude.MaxValue
+  nameWithType: GpxLatitude.MaxValue
+- uid: NetTopologySuite.IO.GpxLatitude.MinValue
+  name: MinValue
+  href: api/NetTopologySuite.IO.GpxLatitude.html#NetTopologySuite_IO_GpxLatitude_MinValue
+  commentId: F:NetTopologySuite.IO.GpxLatitude.MinValue
+  fullName: NetTopologySuite.IO.GpxLatitude.MinValue
+  nameWithType: GpxLatitude.MinValue
 - uid: NetTopologySuite.IO.GpxLatitude.op_Equality(NetTopologySuite.IO.GpxLatitude,NetTopologySuite.IO.GpxLatitude)
   name: Equality(GpxLatitude, GpxLatitude)
   href: api/NetTopologySuite.IO.GpxLatitude.html#NetTopologySuite_IO_GpxLatitude_op_Equality_NetTopologySuite_IO_GpxLatitude_NetTopologySuite_IO_GpxLatitude_
@@ -2186,6 +2361,18 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxLongitude.GetTypeCode
   nameWithType: GpxLongitude.GetTypeCode
+- uid: NetTopologySuite.IO.GpxLongitude.MaxValue
+  name: MaxValue
+  href: api/NetTopologySuite.IO.GpxLongitude.html#NetTopologySuite_IO_GpxLongitude_MaxValue
+  commentId: F:NetTopologySuite.IO.GpxLongitude.MaxValue
+  fullName: NetTopologySuite.IO.GpxLongitude.MaxValue
+  nameWithType: GpxLongitude.MaxValue
+- uid: NetTopologySuite.IO.GpxLongitude.MinValue
+  name: MinValue
+  href: api/NetTopologySuite.IO.GpxLongitude.html#NetTopologySuite_IO_GpxLongitude_MinValue
+  commentId: F:NetTopologySuite.IO.GpxLongitude.MinValue
+  fullName: NetTopologySuite.IO.GpxLongitude.MinValue
+  nameWithType: GpxLongitude.MinValue
 - uid: NetTopologySuite.IO.GpxLongitude.op_Equality(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLongitude)
   name: Equality(GpxLongitude, GpxLongitude)
   href: api/NetTopologySuite.IO.GpxLongitude.html#NetTopologySuite_IO_GpxLongitude_op_Equality_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLongitude_
@@ -2694,6 +2881,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxMetadata.Description
   nameWithType: GpxMetadata.Description
+- uid: NetTopologySuite.IO.GpxMetadata.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxMetadata.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxMetadata.Equals(System.Object)
+  nameWithType: GpxMetadata.Equals(Object)
+- uid: NetTopologySuite.IO.GpxMetadata.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxMetadata.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxMetadata.Equals
+  nameWithType: GpxMetadata.Equals
 - uid: NetTopologySuite.IO.GpxMetadata.Extensions
   name: Extensions
   href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_Extensions
@@ -2707,6 +2907,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxMetadata.Extensions
   nameWithType: GpxMetadata.Extensions
+- uid: NetTopologySuite.IO.GpxMetadata.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxMetadata.GetHashCode
+  fullName: NetTopologySuite.IO.GpxMetadata.GetHashCode()
+  nameWithType: GpxMetadata.GetHashCode()
+- uid: NetTopologySuite.IO.GpxMetadata.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxMetadata.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxMetadata.GetHashCode
+  nameWithType: GpxMetadata.GetHashCode
 - uid: NetTopologySuite.IO.GpxMetadata.IsTrivial
   name: IsTrivial
   href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_IsTrivial
@@ -2946,6 +3159,32 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxPerson.Email
   nameWithType: GpxPerson.Email
+- uid: NetTopologySuite.IO.GpxPerson.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxPerson.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxPerson.Equals(System.Object)
+  nameWithType: GpxPerson.Equals(Object)
+- uid: NetTopologySuite.IO.GpxPerson.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxPerson.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxPerson.Equals
+  nameWithType: GpxPerson.Equals
+- uid: NetTopologySuite.IO.GpxPerson.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxPerson.GetHashCode
+  fullName: NetTopologySuite.IO.GpxPerson.GetHashCode()
+  nameWithType: GpxPerson.GetHashCode()
+- uid: NetTopologySuite.IO.GpxPerson.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxPerson.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxPerson.GetHashCode
+  nameWithType: GpxPerson.GetHashCode
 - uid: NetTopologySuite.IO.GpxPerson.Link
   name: Link
   href: api/NetTopologySuite.IO.GpxPerson.html#NetTopologySuite_IO_GpxPerson_Link
@@ -3062,6 +3301,19 @@ references:
   commentId: T:NetTopologySuite.IO.GpxReaderSettings
   fullName: NetTopologySuite.IO.GpxReaderSettings
   nameWithType: GpxReaderSettings
+- uid: NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
+  name: DefaultCreatorIfMissing
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_DefaultCreatorIfMissing
+  commentId: P:NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
+  fullName: NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
+  nameWithType: GpxReaderSettings.DefaultCreatorIfMissing
+- uid: NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing*
+  name: DefaultCreatorIfMissing
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_DefaultCreatorIfMissing_
+  commentId: Overload:NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
+  nameWithType: GpxReaderSettings.DefaultCreatorIfMissing
 - uid: NetTopologySuite.IO.GpxReaderSettings.ExtensionReader
   name: ExtensionReader
   href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_ExtensionReader
@@ -3155,6 +3407,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxRoute.Description
   nameWithType: GpxRoute.Description
+- uid: NetTopologySuite.IO.GpxRoute.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxRoute.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxRoute.Equals(System.Object)
+  nameWithType: GpxRoute.Equals(Object)
+- uid: NetTopologySuite.IO.GpxRoute.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxRoute.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxRoute.Equals
+  nameWithType: GpxRoute.Equals
 - uid: NetTopologySuite.IO.GpxRoute.Extensions
   name: Extensions
   href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Extensions
@@ -3168,6 +3433,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxRoute.Extensions
   nameWithType: GpxRoute.Extensions
+- uid: NetTopologySuite.IO.GpxRoute.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxRoute.GetHashCode
+  fullName: NetTopologySuite.IO.GpxRoute.GetHashCode()
+  nameWithType: GpxRoute.GetHashCode()
+- uid: NetTopologySuite.IO.GpxRoute.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxRoute.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxRoute.GetHashCode
+  nameWithType: GpxRoute.GetHashCode
 - uid: NetTopologySuite.IO.GpxRoute.Links
   name: Links
   href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Links
@@ -3439,6 +3717,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrack.Description
   nameWithType: GpxTrack.Description
+- uid: NetTopologySuite.IO.GpxTrack.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxTrack.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxTrack.Equals(System.Object)
+  nameWithType: GpxTrack.Equals(Object)
+- uid: NetTopologySuite.IO.GpxTrack.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxTrack.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxTrack.Equals
+  nameWithType: GpxTrack.Equals
 - uid: NetTopologySuite.IO.GpxTrack.Extensions
   name: Extensions
   href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Extensions
@@ -3452,6 +3743,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrack.Extensions
   nameWithType: GpxTrack.Extensions
+- uid: NetTopologySuite.IO.GpxTrack.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxTrack.GetHashCode
+  fullName: NetTopologySuite.IO.GpxTrack.GetHashCode()
+  nameWithType: GpxTrack.GetHashCode()
+- uid: NetTopologySuite.IO.GpxTrack.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxTrack.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxTrack.GetHashCode
+  nameWithType: GpxTrack.GetHashCode
 - uid: NetTopologySuite.IO.GpxTrack.Links
   name: Links
   href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Links
@@ -3681,6 +3985,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrackSegment.GpxTrackSegment
   nameWithType: GpxTrackSegment.GpxTrackSegment
+- uid: NetTopologySuite.IO.GpxTrackSegment.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxTrackSegment.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxTrackSegment.Equals(System.Object)
+  nameWithType: GpxTrackSegment.Equals(Object)
+- uid: NetTopologySuite.IO.GpxTrackSegment.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxTrackSegment.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxTrackSegment.Equals
+  nameWithType: GpxTrackSegment.Equals
 - uid: NetTopologySuite.IO.GpxTrackSegment.Extensions
   name: Extensions
   href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Extensions
@@ -3694,6 +4011,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrackSegment.Extensions
   nameWithType: GpxTrackSegment.Extensions
+- uid: NetTopologySuite.IO.GpxTrackSegment.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxTrackSegment.GetHashCode
+  fullName: NetTopologySuite.IO.GpxTrackSegment.GetHashCode()
+  nameWithType: GpxTrackSegment.GetHashCode()
+- uid: NetTopologySuite.IO.GpxTrackSegment.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxTrackSegment.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxTrackSegment.GetHashCode
+  nameWithType: GpxTrackSegment.GetHashCode
 - uid: NetTopologySuite.IO.GpxTrackSegment.ToString
   name: ToString()
   href: api/NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_ToString
@@ -3826,6 +4156,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWaypoint
   fullName: NetTopologySuite.IO.GpxWaypoint
   nameWithType: GpxWaypoint
+- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(GeoAPI.Geometries.Coordinate)
+  name: GpxWaypoint(Coordinate)
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate_
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(GeoAPI.Geometries.Coordinate)
+  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(GeoAPI.Geometries.Coordinate)
+  nameWithType: GpxWaypoint.GpxWaypoint(Coordinate)
 - uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude)
   name: GpxWaypoint(GpxLongitude, GpxLatitude)
   href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_
@@ -3922,6 +4258,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWaypoint.ElevationInMeters
   nameWithType: GpxWaypoint.ElevationInMeters
+- uid: NetTopologySuite.IO.GpxWaypoint.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxWaypoint.Equals(System.Object)
+  nameWithType: GpxWaypoint.Equals(Object)
+- uid: NetTopologySuite.IO.GpxWaypoint.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxWaypoint.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxWaypoint.Equals
+  nameWithType: GpxWaypoint.Equals
 - uid: NetTopologySuite.IO.GpxWaypoint.Extensions
   name: Extensions
   href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Extensions
@@ -3961,6 +4310,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWaypoint.GeoidHeight
   nameWithType: GpxWaypoint.GeoidHeight
+- uid: NetTopologySuite.IO.GpxWaypoint.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.GetHashCode
+  fullName: NetTopologySuite.IO.GpxWaypoint.GetHashCode()
+  nameWithType: GpxWaypoint.GetHashCode()
+- uid: NetTopologySuite.IO.GpxWaypoint.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxWaypoint.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxWaypoint.GetHashCode
+  nameWithType: GpxWaypoint.GetHashCode
 - uid: NetTopologySuite.IO.GpxWaypoint.HorizontalDilutionOfPrecision
   name: HorizontalDilutionOfPrecision
   href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_HorizontalDilutionOfPrecision
@@ -4458,6 +4820,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWebLink
   fullName: NetTopologySuite.IO.GpxWebLink
   nameWithType: GpxWebLink
+- uid: NetTopologySuite.IO.GpxWebLink.#ctor(System.Uri)
+  name: GpxWebLink(Uri)
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink__ctor_System_Uri_
+  commentId: M:NetTopologySuite.IO.GpxWebLink.#ctor(System.Uri)
+  fullName: NetTopologySuite.IO.GpxWebLink.GpxWebLink(System.Uri)
+  nameWithType: GpxWebLink.GpxWebLink(Uri)
 - uid: NetTopologySuite.IO.GpxWebLink.#ctor(System.Uri,System.String,System.String)
   name: GpxWebLink(Uri, String, String)
   href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink__ctor_System_Uri_System_String_System_String_
@@ -4484,6 +4852,32 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWebLink.ContentType
   nameWithType: GpxWebLink.ContentType
+- uid: NetTopologySuite.IO.GpxWebLink.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxWebLink.Equals(System.Object)
+  fullName: NetTopologySuite.IO.GpxWebLink.Equals(System.Object)
+  nameWithType: GpxWebLink.Equals(Object)
+- uid: NetTopologySuite.IO.GpxWebLink.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Equals_
+  commentId: Overload:NetTopologySuite.IO.GpxWebLink.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxWebLink.Equals
+  nameWithType: GpxWebLink.Equals
+- uid: NetTopologySuite.IO.GpxWebLink.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_GetHashCode
+  commentId: M:NetTopologySuite.IO.GpxWebLink.GetHashCode
+  fullName: NetTopologySuite.IO.GpxWebLink.GetHashCode()
+  nameWithType: GpxWebLink.GetHashCode()
+- uid: NetTopologySuite.IO.GpxWebLink.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.GpxWebLink.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxWebLink.GetHashCode
+  nameWithType: GpxWebLink.GetHashCode
 - uid: NetTopologySuite.IO.GpxWebLink.Href
   name: Href
   href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href
@@ -4758,6 +5152,19 @@ references:
   fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.Enumerator.System.IDisposable.Dispose
   nameWithType: ImmutableGpxWaypointTable.Enumerator.IDisposable.Dispose
   nameWithType.vb: ImmutableGpxWaypointTable.Enumerator.System.IDisposable.Dispose
+- uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.ImmutableGpxWaypointTable.Equals(System.Object)
+  fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.Equals(System.Object)
+  nameWithType: ImmutableGpxWaypointTable.Equals(Object)
+- uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable_Equals_
+  commentId: Overload:NetTopologySuite.IO.ImmutableGpxWaypointTable.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.Equals
+  nameWithType: ImmutableGpxWaypointTable.Equals
 - uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.GetEnumerator
   name: GetEnumerator()
   href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable_GetEnumerator
@@ -4771,6 +5178,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.GetEnumerator
   nameWithType: ImmutableGpxWaypointTable.GetEnumerator
+- uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable_GetHashCode
+  commentId: M:NetTopologySuite.IO.ImmutableGpxWaypointTable.GetHashCode
+  fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.GetHashCode()
+  nameWithType: ImmutableGpxWaypointTable.GetHashCode()
+- uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.ImmutableGpxWaypointTable.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.GetHashCode
+  nameWithType: ImmutableGpxWaypointTable.GetHashCode
 - uid: NetTopologySuite.IO.ImmutableGpxWaypointTable.Item(System.Int32)
   name: Item[Int32]
   href: api/NetTopologySuite.IO.ImmutableGpxWaypointTable.html#NetTopologySuite_IO_ImmutableGpxWaypointTable_Item_System_Int32_
@@ -4834,6 +5254,143 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.ImmutableGpxWaypointTable.ToString
   nameWithType: ImmutableGpxWaypointTable.ToString
+- uid: NetTopologySuite.IO.ImmutableXElementContainer
+  name: ImmutableXElementContainer
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html
+  commentId: T:NetTopologySuite.IO.ImmutableXElementContainer
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer
+  nameWithType: ImmutableXElementContainer
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.#ctor(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  name: ImmutableXElementContainer(IEnumerable<XElement>)
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer__ctor_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__
+  commentId: M:NetTopologySuite.IO.ImmutableXElementContainer.#ctor(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  name.vb: ImmutableXElementContainer(IEnumerable(Of XElement))
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.ImmutableXElementContainer(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>)
+  fullName.vb: NetTopologySuite.IO.ImmutableXElementContainer.ImmutableXElementContainer(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement))
+  nameWithType: ImmutableXElementContainer.ImmutableXElementContainer(IEnumerable<XElement>)
+  nameWithType.vb: ImmutableXElementContainer.ImmutableXElementContainer(IEnumerable(Of XElement))
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.#ctor*
+  name: ImmutableXElementContainer
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer__ctor_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.#ctor
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.ImmutableXElementContainer
+  nameWithType: ImmutableXElementContainer.ImmutableXElementContainer
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Count
+  name: Count
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Count
+  commentId: P:NetTopologySuite.IO.ImmutableXElementContainer.Count
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Count
+  nameWithType: ImmutableXElementContainer.Count
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Count*
+  name: Count
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Count_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.Count
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Count
+  nameWithType: ImmutableXElementContainer.Count
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Equals_System_Object_
+  commentId: M:NetTopologySuite.IO.ImmutableXElementContainer.Equals(System.Object)
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Equals(System.Object)
+  nameWithType: ImmutableXElementContainer.Equals(Object)
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Equals*
+  name: Equals
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Equals_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.Equals
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Equals
+  nameWithType: ImmutableXElementContainer.Equals
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.GetEnumerator
+  name: GetEnumerator()
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_GetEnumerator
+  commentId: M:NetTopologySuite.IO.ImmutableXElementContainer.GetEnumerator
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.GetEnumerator()
+  nameWithType: ImmutableXElementContainer.GetEnumerator()
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.GetEnumerator*
+  name: GetEnumerator
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_GetEnumerator_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.GetEnumerator
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.GetEnumerator
+  nameWithType: ImmutableXElementContainer.GetEnumerator
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.GetHashCode
+  name: GetHashCode()
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_GetHashCode
+  commentId: M:NetTopologySuite.IO.ImmutableXElementContainer.GetHashCode
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.GetHashCode()
+  nameWithType: ImmutableXElementContainer.GetHashCode()
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.GetHashCode*
+  name: GetHashCode
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_GetHashCode_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.GetHashCode
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.GetHashCode
+  nameWithType: ImmutableXElementContainer.GetHashCode
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Item(System.Int32)
+  name: Item[Int32]
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Item_System_Int32_
+  commentId: P:NetTopologySuite.IO.ImmutableXElementContainer.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Item[System.Int32]
+  fullName.vb: NetTopologySuite.IO.ImmutableXElementContainer.Item(System.Int32)
+  nameWithType: ImmutableXElementContainer.Item[Int32]
+  nameWithType.vb: ImmutableXElementContainer.Item(Int32)
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Item*
+  name: Item
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Item_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.Item
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Item
+  nameWithType: ImmutableXElementContainer.Item
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Items
+  name: Items
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Items
+  commentId: P:NetTopologySuite.IO.ImmutableXElementContainer.Items
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Items
+  nameWithType: ImmutableXElementContainer.Items
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.Items*
+  name: Items
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_Items_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.Items
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.Items
+  nameWithType: ImmutableXElementContainer.Items
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#Generic#IEnumerable{System#Xml#Linq#XElement}#GetEnumerator
+  name: IEnumerable<XElement>.GetEnumerator()
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__GetEnumerator
+  commentId: M:NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#Generic#IEnumerable{System#Xml#Linq#XElement}#GetEnumerator
+  name.vb: System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>.GetEnumerator()
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>.GetEnumerator()
+  nameWithType: ImmutableXElementContainer.IEnumerable<XElement>.GetEnumerator()
+  nameWithType.vb: ImmutableXElementContainer.System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>.GetEnumerator()
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#Generic#IEnumerable{System#Xml#Linq#XElement}#GetEnumerator*
+  name: IEnumerable<XElement>.GetEnumerator
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__GetEnumerator_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#Generic#IEnumerable{System#Xml#Linq#XElement}#GetEnumerator
+  isSpec: "True"
+  name.vb: System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>.GetEnumerator
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>.GetEnumerator
+  nameWithType: ImmutableXElementContainer.IEnumerable<XElement>.GetEnumerator
+  nameWithType.vb: ImmutableXElementContainer.System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>.GetEnumerator
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: ImmutableXElementContainer.IEnumerable.GetEnumerator()
+  nameWithType.vb: ImmutableXElementContainer.System.Collections.IEnumerable.GetEnumerator()
+- uid: NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/NetTopologySuite.IO.ImmutableXElementContainer.html#NetTopologySuite_IO_ImmutableXElementContainer_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:NetTopologySuite.IO.ImmutableXElementContainer.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: NetTopologySuite.IO.ImmutableXElementContainer.System.Collections.IEnumerable.GetEnumerator
+  nameWithType: ImmutableXElementContainer.IEnumerable.GetEnumerator
+  nameWithType.vb: ImmutableXElementContainer.System.Collections.IEnumerable.GetEnumerator
 - uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter
   name: NetTopologySuiteGpxFeatureConverter
   href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html

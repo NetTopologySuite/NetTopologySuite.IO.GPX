@@ -72,6 +72,36 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="nettopologysuiteiogpx-release-notes">NetTopologySuite.IO.GPX Release Notes</h1>
 
+<h2 id="030"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4">0.3.0</a></h2>
+<ul>
+<li><code>GpxReaderSettings</code> now has a <code>DefaultCreatorIfMissing</code> attribute to use for filling in a missing <code>GpxMetadata.Creator</code> value, to help read values saved from legacy versions of IHM (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/23">#23</a>).</li>
+<li>Custom <code>GpxExtensionReader</code> and <code>GpxExtensionWriter</code> subclasses can now override just one method if there's a common way to handle extensions regardless of where they show up (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/26">#26</a>).</li>
+<li>All immutable data model types now override <code>Equals(object)</code> and <code>GetHashCode()</code> to have &quot;value&quot; semantics (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/9">#9</a>).
+<ul>
+<li>Mutable types, such as <code>GpxFile</code>, do <strong>not</strong> do this, for your own safety.</li>
+<li>In <strong>all</strong> lists, including lists of web links, ordering matters.  [A, B] is not considered equal to [B, A].</li>
+<li><code>Extensions</code> values <strong>are</strong> considered for equality.
+<ul>
+<li>If you do not use a custom <code>GpxExtensionReader</code> for extensions, or if yours always returns <code>ImmutableXElementContainer</code>, then this should work like you would expect it to work.</li>
+<li>Otherwise, whenever you return non-<code>null</code>, it is your responsibility to make sure that the result's <code>Equals(object)</code> and <code>GetHashCode()</code> semantics match what you want the container's semantics to be.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>GpxWebLink</code> now has a constructor that accepts just the value for <code>Href</code>, since that's the only required value.</li>
+<li><code>GpxLongitude</code> no longer permits +180 as a legal value, in keeping with the GPX 1.1 schema. (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/25">#25</a>).
+<ul>
+<li>Converting from NTS features will automatically replace +180 with the equivalent -180.</li>
+</ul>
+</li>
+<li><code>GpxLongitude</code>, <code>GpxLatitude</code>, <code>GpxDegrees</code>, and <code>GpxDgpsStationId</code> now all have static <code>MinValue</code> and <code>MaxValue</code> fields to get the smallest and largest legal values.</li>
+<li><code>GpxBounds</code> now has a shortcut for getting the a value that covers the entire WGS-84 ellipsoid.</li>
+<li><code>GpxWaypoint</code> now has a constructor that accepts a <code>GeoAPI.Geometries.Coordinate</code> instance, for convenience (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/20">#20</a>).</li>
+<li><code>GpxWaypoint</code> constructors and helper method now both reject infinite values of <code>elevationInMeters</code> (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/24">#24</a>).</li>
+<li><code>GpxWaypoint</code> constructors and helper methods now throw <code>ArgumentOutOfRangeException</code> instead of <code>ArgumentException</code> in situations where the former is more appropriate.</li>
+<li>Trying to set <code>GpxFile.Metadata</code> to <code>null</code> now throws <code>ArgumentNullException</code> right away (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/21">#21</a>).</li>
+<li>Add methods on <code>GpxFile</code> to allow converting to / from string, for convenience (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/19">#19</a>).</li>
+</ul>
 <h2 id="021"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/5">0.2.1</a></h2>
 <ul>
 <li>Add a default constructor for <code>GpxTrackSegment</code> so that its <code>.WithX</code> methods are actually meaningful (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/22">#22</a>).</li>
