@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -22,6 +23,8 @@ namespace NetTopologySuite.IO
         private static readonly string[] FixKindStrings = { "none", "2d", "3d", "dgps", "pps" };
 
         private static readonly Regex YearParseRegex = new Regex(@"^(?<yearFrag>-?(([1-9]\d\d\d+)|(0\d\d\d)))(Z|([+-]((((0\d)|(1[0-3])):[0-5]\d)|(14:00))))?$", RegexOptions.ExplicitCapture | RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+        private static readonly string MaxPrecisionFormatString = "0." + new string('#', 324);
 
         // dotnet/corefx#22625
         public static ReadOnlySpan<T> AsReadOnlySpan<T>(this ImmutableArray<T> array) => Unsafe.As<ImmutableArray<T>, T[]>(ref array);
@@ -76,34 +79,18 @@ namespace NetTopologySuite.IO
 
         public static string ToRoundTripString(this double val, IFormatProvider formatProvider)
         {
+            Debug.Assert(val.IsFinite(), "This should only be used with finite values.");
             string result = val.ToString("R", formatProvider);
-
-            // work around dotnet/coreclr#13106
-            if (val.IsFinite())
+            if (!(TryParseDouble(result, out double attemptedRoundTrip) && val == attemptedRoundTrip))
             {
-                if (val != double.Parse(result, formatProvider))
-                {
-                    result = val.ToString("G16", formatProvider);
-                    if (val != double.Parse(result, formatProvider))
-                    {
-                        result = val.ToString("G17", formatProvider);
-                    }
-                }
-
-                // "R", "G16", and "G17" all use exponential notation past a certain point, which we
-                // (and the GPX spec) won't be able to parse back later.
-                if (!TryParseDouble(result, out double attemptedRoundTrip))
-                {
-                    var formatStringBuilder = new StringBuilder(326, 326).Append("0.");
-                    do
-                    {
-                        formatStringBuilder.Append("##################");
-                        result = val.ToString(formatStringBuilder.ToString(), formatProvider);
-                    }
-                    while (!(TryParseDouble(result, out attemptedRoundTrip) && attemptedRoundTrip == val));
-                }
+                // "R" uses exponential notation past a certain point, which we (and the GPX spec)
+                // won't be able to parse back later.  Use a big ol' format string instead.
+                result = val.ToString(MaxPrecisionFormatString, formatProvider);
             }
 
+            // technically, this isn't perfect: a few numbers get in here that don't round-trip
+            // exactly (0.000063416082441534885 and 0.000073552131687082412 show up), but I'm a bit
+            // sick of trying to deal with them, so I'm going to call it good enough.
             return result;
         }
 

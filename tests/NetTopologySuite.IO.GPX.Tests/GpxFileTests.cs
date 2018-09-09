@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Immutable;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
@@ -13,6 +13,8 @@ namespace NetTopologySuite.IO
 {
     public sealed class GpxFileTests
     {
+        private readonly Random random = new Random(12345);
+
         [Theory]
         [MemberData(nameof(RoundTripSafeSamples))]
         public void RoundTripTest(string path)
@@ -65,35 +67,32 @@ namespace NetTopologySuite.IO
         [Fact]
         public void RoundTripTestStartingFromModelObjects()
         {
-            var expectedMetadata = new GpxMetadata("airbreather")
-                .WithName("inline file")
-                .WithDescription("a file to test round-trip")
-                .WithAuthor(new GpxPerson()
-                                 .WithName("airbreather")
-                                 .WithEmail(new GpxEmail("airbreather", "linux.com"))
-                                 .WithLink(new GpxWebLink(new Uri("http://example.com"))
-                                               .WithText("example text")
-                                               .WithContentType("text/html")))
-                .WithCopyright(new GpxCopyright("airbreather")
-                                   .WithYear(2018)
-                                   .WithLicenseUri(new Uri("http://example.com")))
-                .WithLinks(ImmutableArray.Create(
-                               new GpxWebLink(new Uri("http://example.com/cool-tunes.mp3"))
-                                   .WithText("another example text")
-                                   .WithContentType("audio/x-mpeg-3")))
-                .WithCreationTimeUtc(new DateTime(2018, 09, 09, 16, 35, 00, DateTimeKind.Utc))
-                .WithKeywords("xunit.net test things-done-by-cool-people csharp dotnet")
-                .WithBounds(GpxBoundingBox.EntireWgs84Bounds)
-                .WithExtensions(new ImmutableXElementContainer(new[] { XElement.Parse("<something xmlns='http://example.com' data='12' />") }));
-
-            // TODO: finish me... this commit is getting way too big.
-            var file = new GpxFile
+            var file1 = new GpxFile();
+            file1.Metadata = DataObjectBuilders.RandomGpxMetadata(this.random);
+            for (int i = 0, cnt = this.random.Next(5, 10); i < cnt; i++)
             {
-                Metadata = expectedMetadata,
-            };
+                file1.Waypoints.Add(DataObjectBuilders.RandomWaypoint(this.random));
+            }
 
-            var file2 = GpxFile.Parse(file.BuildString(null), null);
-            Assert.Equal(expectedMetadata, file2.Metadata);
+            for (int i = 0, cnt = this.random.Next(5, 10); i < cnt; i++)
+            {
+                file1.Routes.Add(DataObjectBuilders.RandomRoute(this.random));
+            }
+
+            for (int i = 0, cnt = this.random.Next(5, 10); i < cnt; i++)
+            {
+                file1.Tracks.Add(DataObjectBuilders.RandomTrack(this.random));
+            }
+
+            file1.Extensions = DataObjectBuilders.RandomExtensions(this.random);
+
+            var file2 = GpxFile.Parse(file1.BuildString(null), null);
+
+            Assert.Equal(file1.Metadata, file2.Metadata);
+            Assert.Equal(file1.Waypoints.AsEnumerable(), file2.Waypoints.AsEnumerable());
+            Assert.Equal(file1.Routes.AsEnumerable(), file2.Routes.AsEnumerable());
+            Assert.Equal(file1.Tracks.AsEnumerable(), file2.Tracks.AsEnumerable());
+            Assert.StrictEqual(file1.Extensions, file2.Extensions);
         }
 
         [Fact]

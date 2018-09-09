@@ -75,7 +75,7 @@ namespace NetTopologySuite.IO
 
         private static XElement CloneAsImmutable(XElement item)
         {
-            item = new XElement(item);
+            item = XElement.Parse(item.ToString());
             item.Changing += DisallowXObjectChangeEventHandler;
             return item;
         }
