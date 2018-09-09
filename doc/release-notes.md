@@ -1,5 +1,8 @@
 # NetTopologySuite.IO.GPX Release Notes
 
+## [0.4.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/7)
+*Nothing yet...*
+
 ## [0.3.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4)
 - `GpxReaderSettings` now has a `DefaultCreatorIfMissing` attribute to use for filling in a missing `GpxMetadata.Creator` value, to help read values saved from legacy versions of IHM ([#23](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/23)).
 - Custom `GpxExtensionReader` and `GpxExtensionWriter` subclasses can now override just one method if there's a common way to handle extensions regardless of where they show up ([#26](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/26)).
