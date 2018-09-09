@@ -37,4 +37,9 @@
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="$(SolutionDir)ACKNOWLEDGEMENTS.md" Pack="True" PackagePath="licenses" />
+    <Content Include="$(SolutionDir)LICENSE.md" Pack="True" PackagePath="licenses" />
+  </ItemGroup>
+
 </Project>
