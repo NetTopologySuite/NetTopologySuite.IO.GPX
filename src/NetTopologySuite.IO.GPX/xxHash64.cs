@@ -119,7 +119,7 @@ namespace NetTopologySuite.IO
                     }
                     else
                     {
-                        h = values[2];
+                        h = values[2] + Prime5;
                     }
 
                     h += p->BytesProcessedSoFar;
