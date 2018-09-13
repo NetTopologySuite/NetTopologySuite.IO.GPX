@@ -100,14 +100,14 @@ namespace NetTopologySuite.IO
             settings = settings ?? new GpxReaderSettings();
             while (reader.ReadToFollowing("gpx", Helpers.GpxNamespace))
             {
-                string version = null;
+                bool versionAccepted = settings.AllowMissingVersionAttribute;
                 string creator = settings.DefaultCreatorIfMissing;
                 for (bool hasAttribute = reader.MoveToFirstAttribute(); hasAttribute; hasAttribute = reader.MoveToNextAttribute())
                 {
                     switch (reader.Name)
                     {
                         case "version":
-                            version = reader.Value;
+                            versionAccepted = reader.Value == "1.1";
                             break;
 
                         case "creator":
@@ -116,7 +116,7 @@ namespace NetTopologySuite.IO
                     }
                 }
 
-                if (version != "1.1")
+                if (!versionAccepted)
                 {
                     throw new XmlException("'version' must be '1.1'");
                 }

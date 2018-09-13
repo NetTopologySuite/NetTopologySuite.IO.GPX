@@ -32,5 +32,12 @@ namespace NetTopologySuite.IO
         /// (see NetTopologySuite/NetTopologySuite.IO.GPX#23).
         /// </summary>
         public string DefaultCreatorIfMissing { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not to ignore a missing <c>version="1.1"</c>
+        /// declaration, even though such files would not pass XSD validation (see
+        /// NetTopologySuite/NetTopologySuite.IO.GPX#27).
+        /// </summary>
+        public bool AllowMissingVersionAttribute { get; set; }
     }
 }
