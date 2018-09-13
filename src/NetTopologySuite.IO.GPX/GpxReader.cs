@@ -100,7 +100,7 @@ namespace NetTopologySuite.IO
             settings = settings ?? new GpxReaderSettings();
             while (reader.ReadToFollowing("gpx", Helpers.GpxNamespace))
             {
-                bool versionAccepted = settings.IgnoreMissingVersionFailure;
+                bool versionAccepted = settings.AllowMissingVersionAttribute;
                 string creator = settings.DefaultCreatorIfMissing;
                 for (bool hasAttribute = reader.MoveToFirstAttribute(); hasAttribute; hasAttribute = reader.MoveToNextAttribute())
                 {

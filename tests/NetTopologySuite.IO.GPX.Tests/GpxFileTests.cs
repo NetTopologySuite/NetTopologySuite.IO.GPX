@@ -219,7 +219,7 @@ namespace NetTopologySuite.IO
 ";
             Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
 
-            var settings = new GpxReaderSettings { IgnoreMissingVersionFailure = true };
+            var settings = new GpxReaderSettings { AllowMissingVersionAttribute = true };
             var file = GpxFile.Parse(GpxText, settings);
             Assert.Equal("someone", file.Metadata.Creator);
         }

@@ -38,6 +38,6 @@ namespace NetTopologySuite.IO
         /// declaration, even though such files would not pass XSD validation (see
         /// NetTopologySuite/NetTopologySuite.IO.GPX#27).
         /// </summary>
-        public bool IgnoreMissingVersionFailure { get; set; }
+        public bool AllowMissingVersionAttribute { get; set; }
     }
 }

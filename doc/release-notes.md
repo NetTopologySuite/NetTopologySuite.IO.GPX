@@ -1,7 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.3.1](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/8)
-- `GpxReaderSettings` now has an opt-in `IgnoreMissingVersionFailure` property, to allow reading files without a `version` attribute ([#27](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/27)).
+- `GpxReaderSettings` now has an opt-in `AllowMissingVersionAttribute` property, to allow reading files without a `version` attribute ([#27](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/27)).
 
 ## [0.3.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4)
 - `GpxReaderSettings` now has a `DefaultCreatorIfMissing` property to use for filling in a missing `GpxMetadata.Creator` value, to help read values saved from legacy versions of IHM ([#23](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/23)).
