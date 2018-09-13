@@ -72,9 +72,13 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="nettopologysuiteiogpx-release-notes">NetTopologySuite.IO.GPX Release Notes</h1>
 
+<h2 id="031"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/8">0.3.1</a></h2>
+<ul>
+<li><code>GpxReaderSettings</code> now has an opt-in <code>AllowMissingVersionAttribute</code> property, to allow reading files without a <code>version</code> attribute (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/27">#27</a>).</li>
+</ul>
 <h2 id="030"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/4">0.3.0</a></h2>
 <ul>
-<li><code>GpxReaderSettings</code> now has a <code>DefaultCreatorIfMissing</code> attribute to use for filling in a missing <code>GpxMetadata.Creator</code> value, to help read values saved from legacy versions of IHM (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/23">#23</a>).</li>
+<li><code>GpxReaderSettings</code> now has a <code>DefaultCreatorIfMissing</code> property to use for filling in a missing <code>GpxMetadata.Creator</code> value, to help read values saved from legacy versions of IHM (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/23">#23</a>).</li>
 <li>Custom <code>GpxExtensionReader</code> and <code>GpxExtensionWriter</code> subclasses can now override just one method if there's a common way to handle extensions regardless of where they show up (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/26">#26</a>).</li>
 <li>All immutable data model types now override <code>Equals(object)</code> and <code>GetHashCode()</code> to have &quot;value&quot; semantics (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/9">#9</a>).
 <ul>

@@ -3301,6 +3301,19 @@ references:
   commentId: T:NetTopologySuite.IO.GpxReaderSettings
   fullName: NetTopologySuite.IO.GpxReaderSettings
   nameWithType: GpxReaderSettings
+- uid: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
+  name: AllowMissingVersionAttribute
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_AllowMissingVersionAttribute
+  commentId: P:NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
+  fullName: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
+  nameWithType: GpxReaderSettings.AllowMissingVersionAttribute
+- uid: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute*
+  name: AllowMissingVersionAttribute
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_AllowMissingVersionAttribute_
+  commentId: Overload:NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
+  nameWithType: GpxReaderSettings.AllowMissingVersionAttribute
 - uid: NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
   name: DefaultCreatorIfMissing
   href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_DefaultCreatorIfMissing
