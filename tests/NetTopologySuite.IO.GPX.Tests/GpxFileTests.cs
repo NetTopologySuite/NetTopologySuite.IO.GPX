@@ -185,16 +185,43 @@ namespace NetTopologySuite.IO
             Assert.ThrowsAny<XmlException>(() => GpxFile.Parse("<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>" + inner + "</gpx>", null));
         }
 
+        [Theory]
+        [GitHubIssue(23, 27)]
+        [InlineData("<gpx xmlns='http://www.topografix.com/GPX/1/1' />")]
+        [InlineData("<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' />")]
+        [InlineData("<gpx xmlns='http://www.topografix.com/GPX/1/1' creator='someone' />")]
+        [InlineData("<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.2' creator='someone' />")]
+        public void RequiredGpxAttributesMustBePresentByDefault(string gpx)
+        {
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(gpx, null));
+        }
+
         [Fact]
         [GitHubIssue(23)]
-        public void MissingCreatorShouldFillInDefault()
+        public void MissingCreatorShouldFillInDefault_OptIn()
         {
             const string GpxText = @"
 <gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' />
 ";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
             var settings = new GpxReaderSettings { DefaultCreatorIfMissing = "Legacy IHM" };
             var file = GpxFile.Parse(GpxText, settings);
             Assert.Equal("Legacy IHM", file.Metadata.Creator);
+        }
+
+        [Fact]
+        [GitHubIssue(27)]
+        public void MissingVersionShouldBeValid_OptIn()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' creator='someone' />
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
+            var settings = new GpxReaderSettings { IgnoreMissingVersionFailure = true };
+            var file = GpxFile.Parse(GpxText, settings);
+            Assert.Equal("someone", file.Metadata.Creator);
         }
     }
 }
