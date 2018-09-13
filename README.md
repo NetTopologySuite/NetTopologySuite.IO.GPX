@@ -14,6 +14,6 @@ Documentation is currently being published as [GitHub Pages](https://nettopology
 See [`doc/release-notes.md`](doc/release-notes.md).
 
 ## Project status
-| License | Builds | NuGet | MyGet (pre-release) |
-| ------- | ------ | ----- | ------------------- |
-| [![License](https://img.shields.io/github/license/NetTopologySuite/NetTopologySuite.IO.GPX.svg)](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/LICENSE.md) | [![Travis](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX.svg?branch=develop)](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX) | [![NuGet](https://img.shields.io/nuget/v/NetTopologySuite.IO.GPX.svg)](https://www.nuget.org/packages/NetTopologySuite.IO.GPX/) | [![MyGet](https://img.shields.io/myget/airbreather/vpre/NetTopologySuite.IO.GPX.svg?style=flat)](https://myget.org/feed/airbreather/package/nuget/NetTopologySuite.IO.GPX) |
+| License | Travis | AppVeyor | NuGet | MyGet (pre-release) |
+| ------- | ------ | -------- | ----- | ------------------- |
+| [![License](https://img.shields.io/github/license/NetTopologySuite/NetTopologySuite.IO.GPX.svg)](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/LICENSE.md) | [![Travis](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX.svg?branch=develop)](https://travis-ci.org/NetTopologySuite/NetTopologySuite.IO.GPX) | [![AppVeyor](https://ci.appveyor.com/api/projects/status/vbat0vo7yisud5sx/branch/develop?svg=true)](https://ci.appveyor.com/project/airbreather/nettopologysuite-io-gpx) | [![NuGet](https://img.shields.io/nuget/v/NetTopologySuite.IO.GPX.svg)](https://www.nuget.org/packages/NetTopologySuite.IO.GPX/) | [![MyGet](https://img.shields.io/myget/airbreather/vpre/NetTopologySuite.IO.GPX.svg?style=flat)](https://myget.org/feed/airbreather/package/nuget/NetTopologySuite.IO.GPX) |
