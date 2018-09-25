@@ -1,7 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## [0.3.2](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/9)
-*Nothing yet...*
+- The opt-in `GpxReaderSettings.AllowMissingVersionAttribute` property added in 0.3.1 has been replaced by `IgnoreVersionAttribute`, which enables the same situations as `AllowMissingVersionAttribute` did, plus situations where `version` was specified as something other than `version='1.1'` ([#28](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/28)).
 
 ## [0.3.1](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/8)
 - `GpxReaderSettings` now has an opt-in `AllowMissingVersionAttribute` property, to allow reading files without a `version` attribute ([#27](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/27)).
