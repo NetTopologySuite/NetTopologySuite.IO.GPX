@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="$(SolutionDir)src\NetTopologySuite.IO.GPX\NetTopologySuite.IO.GPX.csproj" />
 
-    <PackageReference Include="NetTopologySuite" Version="1.15.0" />
+    <PackageReference Include="NetTopologySuite" Version="1.15.1" />
     <PackageReference Include="NetTopologySuite.Features" Version="1.15.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
     <PackageReference Include="XmlUnit.Core" Version="2.6.0" NoWarn="NU1701" />
