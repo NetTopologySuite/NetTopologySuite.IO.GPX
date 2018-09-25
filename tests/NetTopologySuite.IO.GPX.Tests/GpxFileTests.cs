@@ -182,11 +182,10 @@ namespace NetTopologySuite.IO
         [InlineData("<trk><trkseg><trkpt lat='1' lon='1'><ele>Infinity</ele></trkpt></trkseg></trk>")]
         public void ParseWithInfiniteWaypointElevationShouldFail(string inner)
         {
-            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse("<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>" + inner + "</gpx>", null));
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse($"<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>{inner}</gpx>", null));
         }
 
         [Theory]
-        [GitHubIssue(23, 27)]
         [InlineData("<gpx xmlns='http://www.topografix.com/GPX/1/1' />")]
         [InlineData("<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' />")]
         [InlineData("<gpx xmlns='http://www.topografix.com/GPX/1/1' creator='someone' />")]
@@ -219,7 +218,21 @@ namespace NetTopologySuite.IO
 ";
             Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
 
-            var settings = new GpxReaderSettings { AllowMissingVersionAttribute = true };
+            var settings = new GpxReaderSettings { IgnoreVersionAttribute = true };
+            var file = GpxFile.Parse(GpxText, settings);
+            Assert.Equal("someone", file.Metadata.Creator);
+        }
+
+        [Fact]
+        [GitHubIssue(28)]
+        public void DifferentVersionShouldBeValid_OptIn()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.2' creator='someone' />
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
+            var settings = new GpxReaderSettings { IgnoreVersionAttribute = true };
             var file = GpxFile.Parse(GpxText, settings);
             Assert.Equal("someone", file.Metadata.Creator);
         }
