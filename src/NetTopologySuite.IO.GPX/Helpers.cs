@@ -152,7 +152,7 @@ namespace NetTopologySuite.IO
                 int hc = RandomSeed;
                 for (int i = 0; i < lst.Length; i++)
                 {
-                    hc = (hc, comparer.GetHashCode(lst[i])).GetHashCode();
+                    hc = HashHelpersCombine(hc, comparer.GetHashCode(lst[i]));
                 }
 
                 return hc;
