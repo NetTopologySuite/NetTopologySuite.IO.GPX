@@ -3301,19 +3301,6 @@ references:
   commentId: T:NetTopologySuite.IO.GpxReaderSettings
   fullName: NetTopologySuite.IO.GpxReaderSettings
   nameWithType: GpxReaderSettings
-- uid: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
-  name: AllowMissingVersionAttribute
-  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_AllowMissingVersionAttribute
-  commentId: P:NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
-  fullName: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
-  nameWithType: GpxReaderSettings.AllowMissingVersionAttribute
-- uid: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute*
-  name: AllowMissingVersionAttribute
-  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_AllowMissingVersionAttribute_
-  commentId: Overload:NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
-  isSpec: "True"
-  fullName: NetTopologySuite.IO.GpxReaderSettings.AllowMissingVersionAttribute
-  nameWithType: GpxReaderSettings.AllowMissingVersionAttribute
 - uid: NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
   name: DefaultCreatorIfMissing
   href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_DefaultCreatorIfMissing
@@ -3340,6 +3327,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxReaderSettings.ExtensionReader
   nameWithType: GpxReaderSettings.ExtensionReader
+- uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute
+  name: IgnoreVersionAttribute
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreVersionAttribute
+  commentId: P:NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute
+  fullName: NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute
+  nameWithType: GpxReaderSettings.IgnoreVersionAttribute
+- uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute*
+  name: IgnoreVersionAttribute
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreVersionAttribute_
+  commentId: Overload:NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute
+  nameWithType: GpxReaderSettings.IgnoreVersionAttribute
 - uid: NetTopologySuite.IO.GpxReaderSettings.TimeZoneInfo
   name: TimeZoneInfo
   href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_TimeZoneInfo
