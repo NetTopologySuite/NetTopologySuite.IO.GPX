@@ -18,7 +18,7 @@
     <Authors>NetTopologySuite - Team</Authors>
     <Company>NetTopologySuite - Team</Company>
     <PackageProjectUrl>https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/develop/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageTags>NTS GPX</PackageTags>
     <Product>NTS - Topology Suite</Product>
     <AssemblyVersionSuffix Condition=" '$(TRAVIS_BUILD_NUMBER)' != '' ">.$(TRAVIS_BUILD_NUMBER)</AssemblyVersionSuffix>
