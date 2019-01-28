@@ -2,7 +2,7 @@ language: csharp
 mono: none
 sudo: false
 dotnet: 2.2
-dist: trusty
+dist: xenial
 script:
 - bash ./travis-build.sh
 env:
