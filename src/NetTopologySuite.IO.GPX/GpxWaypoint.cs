@@ -725,7 +725,7 @@ namespace NetTopologySuite.IO
                 longitude: Helpers.ParseLongitude(element.Attribute("lon")?.Value) ?? throw new XmlException("waypoint must have lon attribute"),
                 latitude: Helpers.ParseLatitude(element.Attribute("lat")?.Value) ?? throw new XmlException("waypoint must have lat attribute"),
                 elevationInMeters: Helpers.ParseDouble(element.GpxElement("ele")?.Value),
-                timestampUtc: Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo),
+                timestampUtc: Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo, settings.IgnoreBadDateTime),
                 magneticVariation: Helpers.ParseDegrees(element.GpxElement("magvar")?.Value),
                 geoidHeight: Helpers.ParseDouble(element.GpxElement("geoidheight")?.Value),
                 name: element.GpxElement("name")?.Value,

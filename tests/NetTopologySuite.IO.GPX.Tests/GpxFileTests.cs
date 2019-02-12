@@ -236,5 +236,42 @@ namespace NetTopologySuite.IO
             var file = GpxFile.Parse(GpxText, settings);
             Assert.Equal("someone", file.Metadata.Creator);
         }
+
+        [Fact]
+        [GitHubIssue(29)]
+        public void BadMetadataCreationTimeShouldBeValid_OptIn()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <time>0000-00-00T00:00:00Z</time>
+    </metadata>
+</gpx>
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
+            var settings = new GpxReaderSettings { IgnoreBadDateTime = true };
+            var file = GpxFile.Parse(GpxText, settings);
+            Assert.Null(file.Metadata.CreationTimeUtc);
+        }
+
+        [Fact]
+        [GitHubIssue(29)]
+        public void BadWaypointTimestampShouldBeValid_OptIn()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata />
+    <wpt lat='0.1' lon='2.3'>
+        <time>HELLO</time>
+    </wpt>
+</gpx>
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
+            var settings = new GpxReaderSettings { IgnoreBadDateTime = true };
+            var file = GpxFile.Parse(GpxText, settings);
+            Assert.Null(file.Waypoints[0].TimestampUtc);
+        }
     }
 }

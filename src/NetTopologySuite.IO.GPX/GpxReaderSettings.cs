@@ -39,5 +39,12 @@ namespace NetTopologySuite.IO
         /// NetTopologySuite/NetTopologySuite.IO.GPX#27 and #28).
         /// </summary>
         public bool IgnoreVersionAttribute { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not to ignore files with timestamps that do
+        /// not parse, even though such files would not pass XSD validation (see
+        /// NetTopologySuite/NetTopologySuite.IO.GPX#29).
+        /// </summary>
+        public bool IgnoreBadDateTime { get; set; }
     }
 }

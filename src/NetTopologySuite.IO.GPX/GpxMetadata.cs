@@ -402,7 +402,7 @@ namespace NetTopologySuite.IO
                 author: GpxPerson.Load(element.GpxElement("author")),
                 copyright: GpxCopyright.Load(element.GpxElement("copyright")),
                 links: ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)),
-                creationTimeUtc: Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo),
+                creationTimeUtc: Helpers.ParseDateTimeUtc(element.GpxElement("time")?.Value, settings.TimeZoneInfo, settings.IgnoreBadDateTime),
                 keywords: element.GpxElement("keywords")?.Value,
                 bounds: GpxBoundingBox.Load(element.GpxElement("bounds")),
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertMetadataExtensionElement(extensionsElement.Elements()));

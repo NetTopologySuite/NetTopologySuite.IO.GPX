@@ -464,7 +464,7 @@ namespace NetTopologySuite.IO
                 : throw new XmlException("year element must be formatted properly");
         }
 
-        public static DateTime? ParseDateTimeUtc(string text, TimeZoneInfo timeZoneInfo)
+        public static DateTime? ParseDateTimeUtc(string text, TimeZoneInfo timeZoneInfo, bool ignoreParseFailures)
         {
             if (text is null)
             {
@@ -473,7 +473,9 @@ namespace NetTopologySuite.IO
 
             if (!DateTime.TryParse(text, CultureInfo.InvariantCulture, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out var result))
             {
-                throw new XmlException("time element must be formatted properly");
+                return ignoreParseFailures
+                    ? default(DateTime?)
+                    : throw new XmlException("time element must be formatted properly");
             }
 
             if (result.Kind == DateTimeKind.Unspecified)
