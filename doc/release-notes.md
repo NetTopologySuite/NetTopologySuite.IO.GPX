@@ -1,5 +1,8 @@
 # NetTopologySuite.IO.GPX Release Notes
 
+## [0.5.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/10)
+*Nothing yet...*
+
 ## [0.4.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/7)
 - `GpxReaderSettings` now has an `IgnoreBadDateTime` property to use for ignoring a timestamp value that we cannot parse as an instance of the `DateTime` struct, to work around a `0000-00-00T00:00:00Z` coming from CompeGPS ([#29](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/29)).
 - Update referenced packages to latest revisions.
