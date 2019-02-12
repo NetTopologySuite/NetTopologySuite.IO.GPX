@@ -72,6 +72,11 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="nettopologysuiteiogpx-release-notes">NetTopologySuite.IO.GPX Release Notes</h1>
 
+<h2 id="040"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/7">0.4.0</a></h2>
+<ul>
+<li><code>GpxReaderSettings</code> now has an <code>IgnoreBadDateTime</code> property to use for ignoring a timestamp value that we cannot parse as an instance of the <code>DateTime</code> struct, to work around a <code>0000-00-00T00:00:00Z</code> coming from CompeGPS (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/29">#29</a>).</li>
+<li>Update referenced packages to latest revisions.</li>
+</ul>
 <h2 id="032"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/9">0.3.2</a></h2>
 <ul>
 <li>The opt-in <code>GpxReaderSettings.AllowMissingVersionAttribute</code> property added in 0.3.1 has been replaced by <code>IgnoreVersionAttribute</code>, which enables the same situations as <code>AllowMissingVersionAttribute</code> did, plus situations where <code>version</code> was specified as something other than <code>version='1.1'</code> (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/28">#28</a>).</li>

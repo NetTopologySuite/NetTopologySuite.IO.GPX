@@ -3327,6 +3327,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxReaderSettings.ExtensionReader
   nameWithType: GpxReaderSettings.ExtensionReader
+- uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreBadDateTime
+  name: IgnoreBadDateTime
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreBadDateTime
+  commentId: P:NetTopologySuite.IO.GpxReaderSettings.IgnoreBadDateTime
+  fullName: NetTopologySuite.IO.GpxReaderSettings.IgnoreBadDateTime
+  nameWithType: GpxReaderSettings.IgnoreBadDateTime
+- uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreBadDateTime*
+  name: IgnoreBadDateTime
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreBadDateTime_
+  commentId: Overload:NetTopologySuite.IO.GpxReaderSettings.IgnoreBadDateTime
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxReaderSettings.IgnoreBadDateTime
+  nameWithType: GpxReaderSettings.IgnoreBadDateTime
 - uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute
   name: IgnoreVersionAttribute
   href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreVersionAttribute
