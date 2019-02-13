@@ -325,11 +325,28 @@ namespace NetTopologySuite.IO
             }
         }
 
-        public static void WriteOptionalGpxElementValue(this XmlWriter writer, string localName, DateTime? valueUtc)
+        public static void WriteOptionalGpxElementValue(this XmlWriter writer, string localName, DateTime? valueUtc, TimeZoneInfo timeZoneInfo)
         {
             if (valueUtc.HasValue)
             {
-                writer.WriteGpxElementString(localName, valueUtc.GetValueOrDefault().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture));
+                const string Format = "yyyy-MM-ddTHH:mm:ssK";
+
+                string text;
+                if (timeZoneInfo == TimeZoneInfo.Utc)
+                {
+                    text = valueUtc.GetValueOrDefault().ToString(Format, CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    // only use this path when we truly need to convert.  not only is the other path
+                    // faster (probably), but DateTimeOffset's implementation always seems to write
+                    // "+00:00" for UTC, instead of just "Z".
+                    var value = new DateTimeOffset(valueUtc.GetValueOrDefault());
+                    value = TimeZoneInfo.ConvertTime(value, timeZoneInfo);
+                    text = value.ToString(Format, CultureInfo.InvariantCulture);
+                }
+
+                writer.WriteGpxElementString(localName, text);
             }
         }
 

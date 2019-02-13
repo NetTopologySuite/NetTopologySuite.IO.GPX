@@ -416,7 +416,7 @@ namespace NetTopologySuite.IO
             writer.WriteOptionalGpxElementValue("author", this.Author);
             writer.WriteOptionalGpxElementValue("copyright", this.Copyright);
             writer.WriteGpxElementValues("link", this.Links);
-            writer.WriteOptionalGpxElementValue("time", this.CreationTimeUtc);
+            writer.WriteOptionalGpxElementValue("time", this.CreationTimeUtc, settings.TimeZoneInfo);
             writer.WriteOptionalGpxElementValue("keywords", this.Keywords);
             writer.WriteOptionalGpxElementValue("bounds", this.Bounds);
             writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertMetadataExtension);

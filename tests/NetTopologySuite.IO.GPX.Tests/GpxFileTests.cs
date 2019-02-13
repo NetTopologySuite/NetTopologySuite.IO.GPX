@@ -273,5 +273,55 @@ namespace NetTopologySuite.IO
             var file = GpxFile.Parse(GpxText, settings);
             Assert.Null(file.Waypoints[0].TimestampUtc);
         }
+
+        [Fact]
+        public void TimestampsShouldBeInterpretedInGivenTimeZone()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <time>1234-05-06T07:08:09</time>
+    </metadata>
+    <wpt lat='0.1' lon='2.3'>
+        <time>5432-10-10T11:22:33</time>
+    </wpt>
+</gpx>
+";
+            var inputTimeZone = TimeZoneInfo.CreateCustomTimeZone("meh", TimeSpan.FromHours(3.5), "meh", "meh");
+            var settings = new GpxReaderSettings { TimeZoneInfo = inputTimeZone };
+            var file = GpxFile.Parse(GpxText, settings);
+
+            // we told it that our times are in a time zone that's at +3.5 hours from UTC, and the
+            // data is stored UTC, so we should see -3.5 from what's written.
+            Assert.Equal(new DateTime(1234, 05, 06, 03, 38, 09), file.Metadata.CreationTimeUtc.GetValueOrDefault());
+            Assert.Equal(new DateTime(5432, 10, 10, 07, 52, 33), file.Waypoints[0].TimestampUtc.GetValueOrDefault());
+        }
+
+        [Fact]
+        [Regression]
+        [GitHubIssue(30)]
+        public void TimestampsShouldBeWrittenInGivenTimeZone()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <time>1234-05-06T07:08:09</time>
+    </metadata>
+    <wpt lat='0.1' lon='2.3'>
+        <time>5432-10-10T11:22:33</time>
+    </wpt>
+</gpx>
+";
+            var outputTimeZone = TimeZoneInfo.CreateCustomTimeZone("meh", TimeSpan.FromHours(3.5), "meh", "meh");
+            var settings = new GpxWriterSettings { TimeZoneInfo = outputTimeZone };
+            string text = GpxFile.Parse(GpxText, null).BuildString(settings);
+
+            // we read in times assuming UTC, and then asked it to write them out in a time zone
+            // that's at +3.5 hours from UTC, so we should see +3.5 from what's written, *AND* with
+            // an offset (at least at the time of writing, we always write out the most unambiguous
+            // times that it seems like the framework allows).
+            Assert.Contains("1234-05-06T10:38:09+03:30", text);
+            Assert.Contains("5432-10-10T14:52:33+03:30", text);
+        }
     }
 }

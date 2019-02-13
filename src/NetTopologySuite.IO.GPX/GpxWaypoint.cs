@@ -750,7 +750,7 @@ namespace NetTopologySuite.IO
             writer.WriteAttributeString("lat", this.Latitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
             writer.WriteAttributeString("lon", this.Longitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
             writer.WriteOptionalGpxElementValue("ele", this.ElevationInMeters);
-            writer.WriteOptionalGpxElementValue("time", this.TimestampUtc);
+            writer.WriteOptionalGpxElementValue("time", this.TimestampUtc, settings.TimeZoneInfo);
             writer.WriteOptionalGpxElementValue("magvar", this.MagneticVariation);
             writer.WriteOptionalGpxElementValue("geoidheight", this.GeoidHeight);
             writer.WriteOptionalGpxElementValue("name", this.Name);
