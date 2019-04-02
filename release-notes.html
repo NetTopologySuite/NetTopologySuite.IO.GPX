@@ -8,7 +8,7 @@
     <title>NetTopologySuite.IO.GPX Release Notes | NetTopologySuite.IO.GPX </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="NetTopologySuite.IO.GPX Release Notes | NetTopologySuite.IO.GPX ">
-    <meta name="generator" content="docfx 2.40.12.0">
+    <meta name="generator" content="docfx 2.38.1.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -72,6 +72,12 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="nettopologysuiteiogpx-release-notes">NetTopologySuite.IO.GPX Release Notes</h1>
 
+<h2 id="050"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/10">0.5.0</a></h2>
+<ul>
+<li><code>GpxWriterSettings.TimeZoneInfo</code> is no longer completely ignored (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/30">#30</a>).</li>
+<li>Fix an issue where written timestamps were being rounded to the nearest second instead of preserving as many significant digits as <code>DateTime</code> allows (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/31">#31</a>).</li>
+<li>Tweak the settings used for <code>GpxFile.BuildString</code> to avoid repeating the <code>xmlns</code> declaration for extensions that are declared in the standard GPX namespace (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/33">#33</a>).</li>
+</ul>
 <h2 id="040"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/7">0.4.0</a></h2>
 <ul>
 <li><code>GpxReaderSettings</code> now has an <code>IgnoreBadDateTime</code> property to use for ignoring a timestamp value that we cannot parse as an instance of the <code>DateTime</code> struct, to work around a <code>0000-00-00T00:00:00Z</code> coming from CompeGPS (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/29">#29</a>).</li>

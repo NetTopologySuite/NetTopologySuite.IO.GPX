@@ -377,6 +377,7 @@ $(function () {
             href = navrel + href;
             $(e).attr("href", href);
 
+            // TODO: currently only support one level navbar
             var isActive = false;
             var originalHref = e.name;
             if (originalHref) {
