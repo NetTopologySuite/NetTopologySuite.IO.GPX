@@ -1,5 +1,8 @@
 # NetTopologySuite.IO.GPX Release Notes
 
+## 0.6.0
+*Nothing yet...*
+
 ## [0.5.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/10)
 - `GpxWriterSettings.TimeZoneInfo` is no longer completely ignored ([#30](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/30)).
 - Fix an issue where written timestamps were being rounded to the nearest second instead of preserving as many significant digits as `DateTime` allows ([#31](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/31)).
