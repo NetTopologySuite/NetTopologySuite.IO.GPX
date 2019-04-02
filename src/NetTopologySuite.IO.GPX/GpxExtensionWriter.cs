@@ -28,7 +28,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>/gpx/extensions</c>.
@@ -48,7 +48,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>/gpx/metadata/extensions</c>.
@@ -68,7 +68,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>wpt/extensions</c>.
@@ -88,7 +88,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>rte/extensions</c>.
@@ -108,7 +108,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>rtept/extensions</c>.
@@ -128,7 +128,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>trk/extensions</c>.
@@ -148,7 +148,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>trkseg/extensions</c>.
@@ -168,7 +168,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as <c>trkpt/extensions</c>.
@@ -188,7 +188,7 @@ namespace NetTopologySuite.IO
         /// </para>
         /// </summary>
         /// <param name="extension">
-        /// The extrension object to transform.
+        /// The extension object to transform.
         /// </param>
         /// <returns>
         /// The content to write out as the content of an "extensions" element.
