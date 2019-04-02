@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -347,6 +348,23 @@ namespace NetTopologySuite.IO
             Assert.Contains("1234-05-06T07:08:09.7654321Z", text);
             Assert.Contains("5432-10-10T11:22:33.8765432Z", text); // DateTime resolution is 100ns, so the value gets rounded to 7 digits
             Assert.Contains("1111-11-11T11:11:11.12345Z", text); // don't output extra zeroes
+        }
+
+        [Fact]
+        [Regression]
+        [GitHubIssue(33)]
+        public void ExtensionsElementInGpxNamespaceShouldNotRepeatNamespaceSpecByDefault()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <extensions><myTest someData='4' /></extensions>
+</gpx>
+";
+            string text = GpxFile.Parse(GpxText, null).BuildString(null);
+
+            // be careful when using regex to match XML.
+            var namespaceWasRepeatedRegex = new Regex("<extensions>.*topografix.*</extensions>", RegexOptions.Singleline);
+            Assert.DoesNotMatch(namespaceWasRepeatedRegex, text);
         }
     }
 }

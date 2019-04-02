@@ -26,6 +26,7 @@ namespace NetTopologySuite.IO
             Indent = true,
             NewLineOnAttributes = true,
             OmitXmlDeclaration = true,
+            NamespaceHandling = NamespaceHandling.OmitDuplicates,
         };
 
         private GpxMetadata metadata = new GpxMetadata(creator: "NetTopologySuite.IO.GPX");

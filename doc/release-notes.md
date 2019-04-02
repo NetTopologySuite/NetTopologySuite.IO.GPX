@@ -3,6 +3,7 @@
 ## [0.5.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/10)
 - `GpxWriterSettings.TimeZoneInfo` is no longer completely ignored ([#30](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/30)).
 - Fix an issue where written timestamps were being rounded to the nearest second instead of preserving as many significant digits as `DateTime` allows ([#31](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/31)).
+- Tweak the settings used for `GpxFile.BuildString` to avoid repeating the `xmlns` declaration for extensions that are declared in the standard GPX namespace ([#33](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/33)).
 
 ## [0.4.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/7)
 - `GpxReaderSettings` now has an `IgnoreBadDateTime` property to use for ignoring a timestamp value that we cannot parse as an instance of the `DateTime` struct, to work around a `0000-00-00T00:00:00Z` coming from CompeGPS ([#29](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/29)).
