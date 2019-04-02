@@ -323,5 +323,30 @@ namespace NetTopologySuite.IO
             Assert.Contains("1234-05-06T10:38:09+03:30", text);
             Assert.Contains("5432-10-10T14:52:33+03:30", text);
         }
+
+        [Fact]
+        [Regression]
+        [GitHubIssue(31)]
+        public void TimestampsShouldPreserveFractionalSecondsWithinDefinedPrecision()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <time>1234-05-06T07:08:09.7654321</time>
+    </metadata>
+    <wpt lat='0.1' lon='2.3'>
+        <time>5432-10-10T11:22:33.87654321</time>
+    </wpt>
+    <wpt lat='4.5' lon='6.7'>
+        <time>1111-11-11T11:11:11.12345</time>
+    </wpt>
+</gpx>
+";
+            string text = GpxFile.Parse(GpxText, null). BuildString(null);
+
+            Assert.Contains("1234-05-06T07:08:09.7654321Z", text);
+            Assert.Contains("5432-10-10T11:22:33.8765432Z", text); // DateTime resolution is 100ns, so the value gets rounded to 7 digits
+            Assert.Contains("1111-11-11T11:11:11.12345Z", text); // don't output extra zeroes
+        }
     }
 }

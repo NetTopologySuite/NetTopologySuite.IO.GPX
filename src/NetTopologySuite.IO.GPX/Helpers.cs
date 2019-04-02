@@ -329,7 +329,10 @@ namespace NetTopologySuite.IO
         {
             if (valueUtc.HasValue)
             {
-                const string Format = "yyyy-MM-ddTHH:mm:ssK";
+                // Format string is hardcoded, instead of allowing the user to override it, to
+                // ensure that we always write out timestamps that are valid according to the
+                // published XML schema.
+                const string Format = "yyyy-MM-ddTHH:mm:ss.FFFFFFFK";
 
                 string text;
                 if (timeZoneInfo == TimeZoneInfo.Utc)
