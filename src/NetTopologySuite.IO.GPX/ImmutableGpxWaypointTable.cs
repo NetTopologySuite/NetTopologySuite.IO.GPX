@@ -449,20 +449,20 @@ namespace NetTopologySuite.IO
                 }
                 else
                 {
-                    var flagsBuilder = ImmutableArray.CreateBuilder<bool>(values.Count);
-                    flagsBuilder.Count = values.Count;
-                    var valuesBuilder = ImmutableArray.CreateBuilder<T>(values.Count);
-                    valuesBuilder.Count = values.Count;
-                    int i = 0;
-                    foreach (var value in values)
+                    int cnt = values.Count;
+
+                    var flagsBuilder = ImmutableArray.CreateBuilder<bool>(cnt);
+                    flagsBuilder.Count = cnt;
+                    var valuesBuilder = ImmutableArray.CreateBuilder<T>(cnt);
+                    valuesBuilder.Count = cnt;
+                    for (int i = 0; i < cnt; i++)
                     {
+                        var value = values[i];
                         if (value.HasValue)
                         {
                             flagsBuilder[i] = true;
                             valuesBuilder[i] = value.GetValueOrDefault();
                         }
-
-                        i++;
                     }
 
                     this.flags = flagsBuilder.MoveToImmutable();
