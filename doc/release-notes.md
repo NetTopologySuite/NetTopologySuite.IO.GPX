@@ -1,7 +1,7 @@
 # NetTopologySuite.IO.GPX Release Notes
 
 ## 0.6.0
-*Nothing yet...*
+- Mark upper-bounds on package dependencies to make it clear that this only supports the 1.x series.
 
 ## [0.5.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/10)
 - `GpxWriterSettings.TimeZoneInfo` is no longer completely ignored ([#30](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/30)).
