@@ -17,7 +17,8 @@
     <VersionPrefix>0.6.0</VersionPrefix>
     <Authors>NetTopologySuite - Team</Authors>
     <Company>NetTopologySuite - Team</Company>
-    <PackageProjectUrl>https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX.git</RepositoryUrl>
+    <PackageProjectUrl>https://nettopologysuite.github.io/NetTopologySuite.IO.GPX</PackageProjectUrl>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageTags>NTS GPX</PackageTags>
     <Product>NTS - Topology Suite</Product>
