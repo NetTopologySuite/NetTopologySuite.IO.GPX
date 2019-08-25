@@ -35,7 +35,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value that <see cref="GpxVisitorBase.VisitExtensions"/> should observe.
         /// </returns>
-        public virtual object ConvertGpxExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertGpxExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"
@@ -58,7 +58,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value to store in <see cref="GpxMetadata.Extensions"/>.
         /// </returns>
-        public virtual object ConvertMetadataExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertMetadataExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"
@@ -83,7 +83,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value to store in <see cref="GpxWaypoint.Extensions"/>.
         /// </returns>
-        public virtual object ConvertWaypointExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertWaypointExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"
@@ -107,7 +107,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value to store in <see cref="GpxRoute.Extensions"/>.
         /// </returns>
-        public virtual object ConvertRouteExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertRouteExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"
@@ -132,7 +132,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value to store in <see cref="GpxWaypoint.Extensions"/>.
         /// </returns>
-        public virtual object ConvertRoutePointExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertRoutePointExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"
@@ -156,7 +156,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value to store in <see cref="GpxTrack.Extensions"/>.
         /// </returns>
-        public virtual object ConvertTrackExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertTrackExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"
@@ -180,7 +180,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value to store in <see cref="GpxTrackSegment.Extensions"/>.
         /// </returns>
-        public virtual object ConvertTrackSegmentExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertTrackSegmentExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"
@@ -205,7 +205,7 @@ namespace NetTopologySuite.IO
         /// <returns>
         /// The value to store in <see cref="GpxWaypoint.Extensions"/>.
         /// </returns>
-        public virtual object ConvertTrackPointExtensionElement(IEnumerable<XElement> extensionElements) => this.ConvertExtensionElementsCommon(extensionElements);
+        public virtual object ConvertTrackPointExtensionElement(IEnumerable<XElement> extensionElements) => ConvertExtensionElementsCommon(extensionElements);
 
         /// <summary>
         /// Transforms a sequence of <see cref="XElement"/> instances that represent an "extensions"

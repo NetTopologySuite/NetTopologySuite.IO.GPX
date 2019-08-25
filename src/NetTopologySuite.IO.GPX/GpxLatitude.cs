@@ -53,7 +53,7 @@ namespace NetTopologySuite.IO
                 ThrowArgumentOutOfRangeException();
             }
 
-            this.Value = val;
+            Value = val;
         }
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -75,13 +75,13 @@ namespace NetTopologySuite.IO
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => obj is GpxLatitude other && this.Value == other.Value;
+        public override bool Equals(object obj) => obj is GpxLatitude other && Value == other.Value;
 
         /// <inheritdoc />
-        public bool Equals(GpxLatitude other) => this.Value == other.Value;
+        public bool Equals(GpxLatitude other) => Value == other.Value;
 
         /// <inheritdoc />
-        public int CompareTo(GpxLatitude other) => this.Value.CompareTo(other.Value);
+        public int CompareTo(GpxLatitude other) => Value.CompareTo(other.Value);
 
         /// <inheritdoc />
         public int CompareTo(object obj)
@@ -92,20 +92,20 @@ namespace NetTopologySuite.IO
                 return 0;
             }
 
-            return this.Value.CompareTo(other.Value);
+            return Value.CompareTo(other.Value);
         }
 
         /// <inheritdoc />
-        public override int GetHashCode() => this.Value.GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => this.Value.ToString();
+        public override string ToString() => Value.ToString();
 
         /// <inheritdoc />
-        public string ToString(IFormatProvider provider) => this.Value.ToString(provider);
+        public string ToString(IFormatProvider provider) => Value.ToString(provider);
 
         /// <inheritdoc />
-        public string ToString(string format, IFormatProvider formatProvider) => this.Value.ToString(format, formatProvider);
+        public string ToString(string format, IFormatProvider formatProvider) => Value.ToString(format, formatProvider);
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static void ThrowArgumentException() => throw new ArgumentException("Type must be Latitude", "obj");
@@ -114,51 +114,51 @@ namespace NetTopologySuite.IO
         private static void ThrowArgumentOutOfRangeException() => throw new ArgumentOutOfRangeException("val", "Must be between -90 and +90, inclusive");
 
         /// <inheritdoc />
-        public TypeCode GetTypeCode() => this.Value.GetTypeCode();
+        public TypeCode GetTypeCode() => Value.GetTypeCode();
 
         /// <inheritdoc />
-        bool IConvertible.ToBoolean(IFormatProvider provider) => ((IConvertible)this.Value).ToBoolean(provider);
+        bool IConvertible.ToBoolean(IFormatProvider provider) => ((IConvertible)Value).ToBoolean(provider);
 
         /// <inheritdoc />
-        byte IConvertible.ToByte(IFormatProvider provider) => ((IConvertible)this.Value).ToByte(provider);
+        byte IConvertible.ToByte(IFormatProvider provider) => ((IConvertible)Value).ToByte(provider);
 
         /// <inheritdoc />
-        char IConvertible.ToChar(IFormatProvider provider) => ((IConvertible)this.Value).ToChar(provider);
+        char IConvertible.ToChar(IFormatProvider provider) => ((IConvertible)Value).ToChar(provider);
 
         /// <inheritdoc />
-        DateTime IConvertible.ToDateTime(IFormatProvider provider) => ((IConvertible)this.Value).ToDateTime(provider);
+        DateTime IConvertible.ToDateTime(IFormatProvider provider) => ((IConvertible)Value).ToDateTime(provider);
 
         /// <inheritdoc />
-        decimal IConvertible.ToDecimal(IFormatProvider provider) => ((IConvertible)this.Value).ToDecimal(provider);
+        decimal IConvertible.ToDecimal(IFormatProvider provider) => ((IConvertible)Value).ToDecimal(provider);
 
         /// <inheritdoc />
-        double IConvertible.ToDouble(IFormatProvider provider) => ((IConvertible)this.Value).ToDouble(provider);
+        double IConvertible.ToDouble(IFormatProvider provider) => ((IConvertible)Value).ToDouble(provider);
 
         /// <inheritdoc />
-        short IConvertible.ToInt16(IFormatProvider provider) => ((IConvertible)this.Value).ToInt16(provider);
+        short IConvertible.ToInt16(IFormatProvider provider) => ((IConvertible)Value).ToInt16(provider);
 
         /// <inheritdoc />
-        int IConvertible.ToInt32(IFormatProvider provider) => ((IConvertible)this.Value).ToInt32(provider);
+        int IConvertible.ToInt32(IFormatProvider provider) => ((IConvertible)Value).ToInt32(provider);
 
         /// <inheritdoc />
-        long IConvertible.ToInt64(IFormatProvider provider) => ((IConvertible)this.Value).ToInt64(provider);
+        long IConvertible.ToInt64(IFormatProvider provider) => ((IConvertible)Value).ToInt64(provider);
 
         /// <inheritdoc />
-        sbyte IConvertible.ToSByte(IFormatProvider provider) => ((IConvertible)this.Value).ToSByte(provider);
+        sbyte IConvertible.ToSByte(IFormatProvider provider) => ((IConvertible)Value).ToSByte(provider);
 
         /// <inheritdoc />
-        float IConvertible.ToSingle(IFormatProvider provider) => ((IConvertible)this.Value).ToSingle(provider);
+        float IConvertible.ToSingle(IFormatProvider provider) => ((IConvertible)Value).ToSingle(provider);
 
         /// <inheritdoc />
-        object IConvertible.ToType(Type conversionType, IFormatProvider provider) => ((IConvertible)this.Value).ToType(conversionType, provider);
+        object IConvertible.ToType(Type conversionType, IFormatProvider provider) => ((IConvertible)Value).ToType(conversionType, provider);
 
         /// <inheritdoc />
-        ushort IConvertible.ToUInt16(IFormatProvider provider) => ((IConvertible)this.Value).ToUInt16(provider);
+        ushort IConvertible.ToUInt16(IFormatProvider provider) => ((IConvertible)Value).ToUInt16(provider);
 
         /// <inheritdoc />
-        uint IConvertible.ToUInt32(IFormatProvider provider) => ((IConvertible)this.Value).ToUInt32(provider);
+        uint IConvertible.ToUInt32(IFormatProvider provider) => ((IConvertible)Value).ToUInt32(provider);
 
         /// <inheritdoc />
-        ulong IConvertible.ToUInt64(IFormatProvider provider) => ((IConvertible)this.Value).ToUInt64(provider);
+        ulong IConvertible.ToUInt64(IFormatProvider provider) => ((IConvertible)Value).ToUInt64(provider);
     }
 }

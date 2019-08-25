@@ -10,7 +10,7 @@ namespace NetTopologySuite.IO
     {
         private static readonly GpxExtensionReader DefaultExtensionReader = new GpxExtensionReader();
 
-        private TimeZoneInfo timeZoneInfo;
+        private TimeZoneInfo _timeZoneInfo;
 
         /// <summary>
         /// Gets or sets the <see cref="System.TimeZoneInfo"/> instance that the system should use
@@ -24,8 +24,8 @@ namespace NetTopologySuite.IO
         /// </summary>
         public TimeZoneInfo TimeZoneInfo
         {
-            get => this.timeZoneInfo ?? TimeZoneInfo.Utc;
-            set => this.timeZoneInfo = value;
+            get => _timeZoneInfo ?? TimeZoneInfo.Utc;
+            set => _timeZoneInfo = value;
         }
 
         /// <summary>

@@ -44,9 +44,9 @@ namespace NetTopologySuite.IO
         /// </exception>
         public GpxCopyright(string author, int? year, Uri licenseUri)
         {
-            this.Author = author ?? throw new ArgumentNullException(nameof(author));
-            this.Year = year;
-            this.LicenseUri = licenseUri;
+            Author = author ?? throw new ArgumentNullException(nameof(author));
+            Year = year;
+            LicenseUri = licenseUri;
         }
 
         /// <summary>
@@ -84,17 +84,17 @@ namespace NetTopologySuite.IO
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxCopyright other &&
-                                                   this.Author == other.Author &&
-                                                   this.Year == other.Year &&
-                                                   this.LicenseUri == other.LicenseUri;
+                                                   Author == other.Author &&
+                                                   Year == other.Year &&
+                                                   LicenseUri == other.LicenseUri;
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Author, this.Year, this.LicenseUri).GetHashCode();
+        public override int GetHashCode() => (Author, Year, LicenseUri).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Author), this.Author),
-                                                                 (nameof(this.Year), this.Year),
-                                                                 (nameof(this.LicenseUri), this.LicenseUri));
+        public override string ToString() => Helpers.BuildString((nameof(Author), Author),
+                                                                 (nameof(Year), Year),
+                                                                 (nameof(LicenseUri), LicenseUri));
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxCopyright"/> as a copy of this instance, but with
@@ -110,7 +110,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentNullException">
         /// Thrown when <paramref name="author"/> is <see langword="null"/>.
         /// </exception>
-        public GpxCopyright WithAuthor(string author) => new GpxCopyright(author, this.Year, this.LicenseUri);
+        public GpxCopyright WithAuthor(string author) => new GpxCopyright(author, Year, LicenseUri);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxCopyright"/> as a copy of this instance, but with
@@ -123,7 +123,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxCopyright"/> instance that's a copy of the current instance, but
         /// with its <see cref="Year"/> value set to <paramref name="year"/>.
         /// </returns>
-        public GpxCopyright WithYear(int? year) => new GpxCopyright(this.Author, year, this.LicenseUri);
+        public GpxCopyright WithYear(int? year) => new GpxCopyright(Author, year, LicenseUri);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxCopyright"/> as a copy of this instance, but with
@@ -136,7 +136,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxCopyright"/> instance that's a copy of the current instance, but
         /// with its <see cref="LicenseUri"/> value set to <paramref name="licenseUri"/>.
         /// </returns>
-        public GpxCopyright WithLicenseUri(Uri licenseUri) => new GpxCopyright(this.Author, this.Year, licenseUri);
+        public GpxCopyright WithLicenseUri(Uri licenseUri) => new GpxCopyright(Author, Year, licenseUri);
 
         internal static GpxCopyright Load(XElement element)
         {
@@ -153,9 +153,9 @@ namespace NetTopologySuite.IO
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)
         {
-            writer.WriteAttributeString("author", this.Author);
-            writer.WriteOptionalGpxElementValue("year", this.Year?.ToString("0000", CultureInfo.InvariantCulture));
-            writer.WriteOptionalGpxElementValue("license", this.LicenseUri?.OriginalString);
+            writer.WriteAttributeString("author", Author);
+            writer.WriteOptionalGpxElementValue("year", Year?.ToString("0000", CultureInfo.InvariantCulture));
+            writer.WriteOptionalGpxElementValue("license", LicenseUri?.OriginalString);
         }
     }
 }

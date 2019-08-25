@@ -10,7 +10,7 @@ namespace NetTopologySuite.IO
         public sealed override IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo traitAttribute)
         {
             var result = new List<KeyValuePair<string, string>>();
-            this.AddOtherTraits(traitAttribute, result);
+            AddOtherTraits(traitAttribute, result);
             result.Add(KeyValuePair.Create("Regression", string.Empty));
             return result;
         }

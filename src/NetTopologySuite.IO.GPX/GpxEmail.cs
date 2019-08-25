@@ -28,8 +28,8 @@ namespace NetTopologySuite.IO
         /// </exception>
         public GpxEmail(string id, string domain)
         {
-            this.Id = id ?? throw new ArgumentNullException(nameof(id));
-            this.Domain = domain ?? throw new ArgumentNullException(nameof(domain));
+            Id = id ?? throw new ArgumentNullException(nameof(id));
+            Domain = domain ?? throw new ArgumentNullException(nameof(domain));
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace NetTopologySuite.IO
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxEmail other &&
-                                                   this.Id == other.Id &&
-                                                   this.Domain == other.Domain;
+                                                   Id == other.Id &&
+                                                   Domain == other.Domain;
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Id, this.Domain).GetHashCode();
+        public override int GetHashCode() => (Id, Domain).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => this.Id + "@" + this.Domain;
+        public override string ToString() => Id + "@" + Domain;
 
         internal static GpxEmail Load(XElement element)
         {
@@ -75,8 +75,8 @@ namespace NetTopologySuite.IO
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)
         {
-            writer.WriteAttributeString("id", this.Id);
-            writer.WriteAttributeString("domain", this.Domain);
+            writer.WriteAttributeString("id", Id);
+            writer.WriteAttributeString("domain", Domain);
         }
     }
 }

@@ -34,10 +34,10 @@ namespace NetTopologySuite.IO
         /// </param>
         public GpxBoundingBox(GpxLongitude minLongitude, GpxLatitude minLatitude, GpxLongitude maxLongitude, GpxLatitude maxLatitude)
         {
-            this.MinLongitude = minLongitude;
-            this.MinLatitude = minLatitude;
-            this.MaxLongitude = maxLongitude;
-            this.MaxLatitude = maxLatitude;
+            MinLongitude = minLongitude;
+            MinLatitude = minLatitude;
+            MaxLongitude = maxLongitude;
+            MaxLatitude = maxLatitude;
         }
 
         /// <summary>
@@ -74,19 +74,19 @@ namespace NetTopologySuite.IO
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxBoundingBox other &&
-                                                   this.MinLongitude == other.MinLongitude &&
-                                                   this.MinLatitude == other.MinLatitude &&
-                                                   this.MaxLongitude == other.MaxLongitude &&
-                                                   this.MaxLatitude == other.MaxLatitude;
+                                                   MinLongitude == other.MinLongitude &&
+                                                   MinLatitude == other.MinLatitude &&
+                                                   MaxLongitude == other.MaxLongitude &&
+                                                   MaxLatitude == other.MaxLatitude;
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.MinLongitude, this.MinLatitude, this.MaxLongitude, this.MaxLatitude).GetHashCode();
+        public override int GetHashCode() => (MinLongitude, MinLatitude, MaxLongitude, MaxLatitude).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.MinLongitude), this.MinLongitude),
-                                                                 (nameof(this.MinLatitude), this.MinLatitude),
-                                                                 (nameof(this.MaxLongitude), this.MaxLongitude),
-                                                                 (nameof(this.MaxLatitude), this.MaxLatitude));
+        public override string ToString() => Helpers.BuildString((nameof(MinLongitude), MinLongitude),
+                                                                 (nameof(MinLatitude), MinLatitude),
+                                                                 (nameof(MaxLongitude), MaxLongitude),
+                                                                 (nameof(MaxLatitude), MaxLatitude));
 
         internal static GpxBoundingBox Load(XElement element)
         {
@@ -104,10 +104,10 @@ namespace NetTopologySuite.IO
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)
         {
-            writer.WriteAttributeString("minlat", this.MinLatitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
-            writer.WriteAttributeString("minlon", this.MinLongitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
-            writer.WriteAttributeString("maxlat", this.MaxLatitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
-            writer.WriteAttributeString("maxlon", this.MaxLongitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("minlat", MinLatitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("minlon", MinLongitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("maxlat", MaxLatitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("maxlon", MaxLongitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
         }
     }
 }

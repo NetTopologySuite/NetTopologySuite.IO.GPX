@@ -32,9 +32,9 @@ namespace NetTopologySuite.IO
         /// </param>
         public GpxPerson(string name, GpxEmail email, GpxWebLink link)
         {
-            this.Name = name;
-            this.Email = email;
-            this.Link = link;
+            Name = name;
+            Email = email;
+            Link = link;
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxPerson"/> instance that's a copy of the current instance, but
         /// with its <see cref="Name"/> value set to <paramref name="name"/>.
         /// </returns>
-        public GpxPerson WithName(string name) => new GpxPerson(name, this.Email, this.Link);
+        public GpxPerson WithName(string name) => new GpxPerson(name, Email, Link);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxPerson"/> as a copy of this instance, but with
@@ -85,7 +85,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxPerson"/> instance that's a copy of the current instance, but
         /// with its <see cref="Email"/> value set to <paramref name="email"/>.
         /// </returns>
-        public GpxPerson WithEmail(GpxEmail email) => new GpxPerson(this.Name, email, this.Link);
+        public GpxPerson WithEmail(GpxEmail email) => new GpxPerson(Name, email, Link);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxPerson"/> as a copy of this instance, but with
@@ -98,21 +98,21 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxPerson"/> instance that's a copy of the current instance, but
         /// with its <see cref="Link"/> value set to <paramref name="link"/>.
         /// </returns>
-        public GpxPerson WithLink(GpxWebLink link) => new GpxPerson(this.Name, this.Email, link);
+        public GpxPerson WithLink(GpxWebLink link) => new GpxPerson(Name, Email, link);
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxPerson other &&
-                                                   this.Name == other.Name &&
-                                                   Equals(this.Email, other.Email) &&
-                                                   Equals(this.Link, other.Link);
+                                                   Name == other.Name &&
+                                                   Equals(Email, other.Email) &&
+                                                   Equals(Link, other.Link);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Name, this.Email, this.Link).GetHashCode();
+        public override int GetHashCode() => (Name, Email, Link).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
-                                                                 (nameof(this.Email), this.Email),
-                                                                 (nameof(this.Link), this.Link));
+        public override string ToString() => Helpers.BuildString((nameof(Name), Name),
+                                                                 (nameof(Email), Email),
+                                                                 (nameof(Link), Link));
 
         internal static GpxPerson Load(XElement element)
         {
@@ -129,9 +129,9 @@ namespace NetTopologySuite.IO
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)
         {
-            writer.WriteOptionalGpxElementValue("name", this.Name);
-            writer.WriteOptionalGpxElementValue("email", this.Email);
-            writer.WriteOptionalGpxElementValue("link", this.Link);
+            writer.WriteOptionalGpxElementValue("name", Name);
+            writer.WriteOptionalGpxElementValue("email", Email);
+            writer.WriteOptionalGpxElementValue("link", Link);
         }
     }
 }

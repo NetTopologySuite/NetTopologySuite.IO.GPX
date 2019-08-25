@@ -22,47 +22,47 @@ namespace NetTopologySuite.IO
         /// </summary>
         public static readonly ImmutableGpxWaypointTable Empty = new ImmutableGpxWaypointTable(Enumerable.Empty<GpxWaypoint>());
 
-        private readonly ImmutableArray<GpxLongitude> longitudes = ImmutableArray<GpxLongitude>.Empty;
+        private readonly ImmutableArray<GpxLongitude> _longitudes = ImmutableArray<GpxLongitude>.Empty;
 
-        private readonly ImmutableArray<GpxLatitude> latitudes = ImmutableArray<GpxLatitude>.Empty;
+        private readonly ImmutableArray<GpxLatitude> _latitudes = ImmutableArray<GpxLatitude>.Empty;
 
-        private readonly OptionalStructList<double> elevationsInMeters;
+        private readonly OptionalStructList<double> _elevationsInMeters;
 
-        private readonly OptionalStructList<DateTime> timestampsUtc;
+        private readonly OptionalStructList<DateTime> _timestampsUtc;
 
-        private readonly OptionalClassList<string> names;
+        private readonly OptionalClassList<string> _names;
 
-        private readonly OptionalClassList<string> descriptions;
+        private readonly OptionalClassList<string> _descriptions;
 
-        private readonly OptionalClassList<string> symbolTexts;
+        private readonly OptionalClassList<string> _symbolTexts;
 
-        private readonly OptionalStructList<GpxDegrees> magneticVariations;
+        private readonly OptionalStructList<GpxDegrees> _magneticVariations;
 
-        private readonly OptionalStructList<double> geoidHeights;
+        private readonly OptionalStructList<double> _geoidHeights;
 
-        private readonly OptionalClassList<string> comments;
+        private readonly OptionalClassList<string> _comments;
 
-        private readonly OptionalClassList<string> sources;
+        private readonly OptionalClassList<string> _sources;
 
-        private readonly OptionalImmutableArrayList<GpxWebLink> webLinkLists;
+        private readonly OptionalImmutableArrayList<GpxWebLink> _webLinkLists;
 
-        private readonly OptionalClassList<string> classifications;
+        private readonly OptionalClassList<string> _classifications;
 
-        private readonly OptionalStructList<int> fixKinds;
+        private readonly OptionalStructList<int> _fixKinds;
 
-        private readonly OptionalStructList<uint> numbersOfSatellites;
+        private readonly OptionalStructList<uint> _numbersOfSatellites;
 
-        private readonly OptionalStructList<double> horizontalDilutionsOfPrecision;
+        private readonly OptionalStructList<double> _horizontalDilutionsOfPrecision;
 
-        private readonly OptionalStructList<double> verticalDilutionsOfPrecision;
+        private readonly OptionalStructList<double> _verticalDilutionsOfPrecision;
 
-        private readonly OptionalStructList<double> positionDilutionsOfPrecision;
+        private readonly OptionalStructList<double> _positionDilutionsOfPrecision;
 
-        private readonly OptionalStructList<double> secondsSinceLastDgpsUpdates;
+        private readonly OptionalStructList<double> _secondsSinceLastDgpsUpdates;
 
-        private readonly OptionalStructList<GpxDgpsStationId> dgpsStationIds;
+        private readonly OptionalStructList<GpxDgpsStationId> _dgpsStationIds;
 
-        private readonly OptionalClassList<object> allExtensions;
+        private readonly OptionalClassList<object> _allExtensions;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ImmutableGpxWaypointTable"/> class.
@@ -84,28 +84,28 @@ namespace NetTopologySuite.IO
                     throw new ArgumentNullException(nameof(waypoints));
 
                 case ImmutableGpxWaypointTable otherTable:
-                    this.longitudes = otherTable.longitudes;
-                    this.latitudes = otherTable.latitudes;
-                    this.elevationsInMeters = otherTable.elevationsInMeters;
-                    this.timestampsUtc = otherTable.timestampsUtc;
-                    this.names = otherTable.names;
-                    this.descriptions = otherTable.descriptions;
-                    this.symbolTexts = otherTable.symbolTexts;
-                    this.magneticVariations = otherTable.magneticVariations;
-                    this.geoidHeights = otherTable.geoidHeights;
-                    this.comments = otherTable.comments;
-                    this.sources = otherTable.sources;
-                    this.webLinkLists = otherTable.webLinkLists;
-                    this.classifications = otherTable.classifications;
-                    this.fixKinds = otherTable.fixKinds;
-                    this.numbersOfSatellites = otherTable.numbersOfSatellites;
-                    this.horizontalDilutionsOfPrecision = otherTable.horizontalDilutionsOfPrecision;
-                    this.verticalDilutionsOfPrecision = otherTable.verticalDilutionsOfPrecision;
-                    this.positionDilutionsOfPrecision = otherTable.positionDilutionsOfPrecision;
-                    this.secondsSinceLastDgpsUpdates = otherTable.secondsSinceLastDgpsUpdates;
-                    this.dgpsStationIds = otherTable.dgpsStationIds;
-                    this.allExtensions = otherTable.allExtensions;
-                    this.Count = otherTable.Count;
+                    _longitudes = otherTable._longitudes;
+                    _latitudes = otherTable._latitudes;
+                    _elevationsInMeters = otherTable._elevationsInMeters;
+                    _timestampsUtc = otherTable._timestampsUtc;
+                    _names = otherTable._names;
+                    _descriptions = otherTable._descriptions;
+                    _symbolTexts = otherTable._symbolTexts;
+                    _magneticVariations = otherTable._magneticVariations;
+                    _geoidHeights = otherTable._geoidHeights;
+                    _comments = otherTable._comments;
+                    _sources = otherTable._sources;
+                    _webLinkLists = otherTable._webLinkLists;
+                    _classifications = otherTable._classifications;
+                    _fixKinds = otherTable._fixKinds;
+                    _numbersOfSatellites = otherTable._numbersOfSatellites;
+                    _horizontalDilutionsOfPrecision = otherTable._horizontalDilutionsOfPrecision;
+                    _verticalDilutionsOfPrecision = otherTable._verticalDilutionsOfPrecision;
+                    _positionDilutionsOfPrecision = otherTable._positionDilutionsOfPrecision;
+                    _secondsSinceLastDgpsUpdates = otherTable._secondsSinceLastDgpsUpdates;
+                    _dgpsStationIds = otherTable._dgpsStationIds;
+                    _allExtensions = otherTable._allExtensions;
+                    Count = otherTable.Count;
                     return;
             }
 
@@ -164,29 +164,29 @@ namespace NetTopologySuite.IO
                 ++cnt;
             }
 
-            this.longitudes = longitudes.ToImmutableArray();
-            this.latitudes = latitudes.ToImmutableArray();
-            this.elevationsInMeters = Optional(elevationsInMeters);
-            this.timestampsUtc = Optional(timestampsUtc);
-            this.names = Optional(names);
-            this.descriptions = Optional(descriptions);
-            this.symbolTexts = Optional(symbolTexts);
-            this.magneticVariations = Optional(magneticVariations);
-            this.geoidHeights = Optional(geoidHeights);
-            this.comments = Optional(comments);
-            this.sources = Optional(sources);
-            this.webLinkLists = Optional(webLinkLists);
-            this.classifications = Optional(classifications);
-            this.fixKinds = Optional(fixKinds);
-            this.numbersOfSatellites = Optional(numbersOfSatellites);
-            this.horizontalDilutionsOfPrecision = Optional(horizontalDilutionsOfPrecision);
-            this.verticalDilutionsOfPrecision = Optional(verticalDilutionsOfPrecision);
-            this.positionDilutionsOfPrecision = Optional(positionDilutionsOfPrecision);
-            this.secondsSinceLastDgpsUpdates = Optional(secondsSinceLastDgpsUpdates);
-            this.dgpsStationIds = Optional(dgpsStationIds);
-            this.allExtensions = Optional(allExtensions);
+            _longitudes = longitudes.ToImmutableArray();
+            _latitudes = latitudes.ToImmutableArray();
+            _elevationsInMeters = Optional(elevationsInMeters);
+            _timestampsUtc = Optional(timestampsUtc);
+            _names = Optional(names);
+            _descriptions = Optional(descriptions);
+            _symbolTexts = Optional(symbolTexts);
+            _magneticVariations = Optional(magneticVariations);
+            _geoidHeights = Optional(geoidHeights);
+            _comments = Optional(comments);
+            _sources = Optional(sources);
+            _webLinkLists = Optional(webLinkLists);
+            _classifications = Optional(classifications);
+            _fixKinds = Optional(fixKinds);
+            _numbersOfSatellites = Optional(numbersOfSatellites);
+            _horizontalDilutionsOfPrecision = Optional(horizontalDilutionsOfPrecision);
+            _verticalDilutionsOfPrecision = Optional(verticalDilutionsOfPrecision);
+            _positionDilutionsOfPrecision = Optional(positionDilutionsOfPrecision);
+            _secondsSinceLastDgpsUpdates = Optional(secondsSinceLastDgpsUpdates);
+            _dgpsStationIds = Optional(dgpsStationIds);
+            _allExtensions = Optional(allExtensions);
 
-            this.Count = cnt;
+            Count = cnt;
         }
 
         internal ImmutableGpxWaypointTable(IEnumerable<XElement> elements, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
@@ -199,27 +199,27 @@ namespace NetTopologySuite.IO
 
         /// <inheritdoc />
         public GpxWaypoint this[int index] => new GpxWaypoint(
-            longitude: this.longitudes[index],
-            latitude: this.latitudes[index],
-            elevationInMeters: this.elevationsInMeters[index],
-            timestampUtc: this.timestampsUtc[index],
-            magneticVariation: this.magneticVariations[index],
-            geoidHeight: this.geoidHeights[index],
-            name: this.names[index],
-            comment: this.comments[index],
-            description: this.descriptions[index],
-            source: this.sources[index],
-            links: this.webLinkLists[index],
-            symbolText: this.symbolTexts[index],
-            classification: this.classifications[index],
-            fixKind: (GpxFixKind?)this.fixKinds[index],
-            numberOfSatellites: this.numbersOfSatellites[index],
-            horizontalDilutionOfPrecision: this.horizontalDilutionsOfPrecision[index],
-            verticalDilutionOfPrecision: this.verticalDilutionsOfPrecision[index],
-            positionDilutionOfPrecision: this.positionDilutionsOfPrecision[index],
-            secondsSinceLastDgpsUpdate: this.secondsSinceLastDgpsUpdates[index],
-            dgpsStationId: this.dgpsStationIds[index],
-            extensions: this.allExtensions[index]);
+            longitude: _longitudes[index],
+            latitude: _latitudes[index],
+            elevationInMeters: _elevationsInMeters[index],
+            timestampUtc: _timestampsUtc[index],
+            magneticVariation: _magneticVariations[index],
+            geoidHeight: _geoidHeights[index],
+            name: _names[index],
+            comment: _comments[index],
+            description: _descriptions[index],
+            source: _sources[index],
+            links: _webLinkLists[index],
+            symbolText: _symbolTexts[index],
+            classification: _classifications[index],
+            fixKind: (GpxFixKind?)_fixKinds[index],
+            numberOfSatellites: _numbersOfSatellites[index],
+            horizontalDilutionOfPrecision: _horizontalDilutionsOfPrecision[index],
+            verticalDilutionOfPrecision: _verticalDilutionsOfPrecision[index],
+            positionDilutionOfPrecision: _positionDilutionsOfPrecision[index],
+            secondsSinceLastDgpsUpdate: _secondsSinceLastDgpsUpdates[index],
+            dgpsStationId: _dgpsStationIds[index],
+            extensions: _allExtensions[index]);
 
         /// <inheritdoc />
         public int Count { get; }
@@ -241,32 +241,32 @@ namespace NetTopologySuite.IO
                 return true;
             }
 
-            if (!(obj is ImmutableGpxWaypointTable other) || this.Count != other.Count)
+            if (!(obj is ImmutableGpxWaypointTable other) || Count != other.Count)
             {
                 return false;
             }
 
-            return this.longitudes.ListEquals(other.longitudes) &&
-                   this.latitudes.ListEquals(other.latitudes) &&
-                   this.elevationsInMeters.Equals(other.elevationsInMeters) &&
-                   this.timestampsUtc.Equals(other.timestampsUtc) &&
-                   this.magneticVariations.Equals(other.magneticVariations) &&
-                   this.geoidHeights.Equals(other.geoidHeights) &&
-                   this.names.Equals(other.names) &&
-                   this.comments.Equals(other.comments) &&
-                   this.descriptions.Equals(other.descriptions) &&
-                   this.sources.Equals(other.sources) &&
-                   this.webLinkLists.Equals(other.webLinkLists) &&
-                   this.symbolTexts.Equals(other.symbolTexts) &&
-                   this.classifications.Equals(other.classifications) &&
-                   this.fixKinds.Equals(other.fixKinds) &&
-                   this.numbersOfSatellites.Equals(other.numbersOfSatellites) &&
-                   this.horizontalDilutionsOfPrecision.Equals(other.horizontalDilutionsOfPrecision) &&
-                   this.verticalDilutionsOfPrecision.Equals(other.verticalDilutionsOfPrecision) &&
-                   this.positionDilutionsOfPrecision.Equals(other.positionDilutionsOfPrecision) &&
-                   this.secondsSinceLastDgpsUpdates.Equals(other.secondsSinceLastDgpsUpdates) &&
-                   this.dgpsStationIds.Equals(other.dgpsStationIds) &&
-                   this.allExtensions.Equals(other.allExtensions);
+            return _longitudes.ListEquals(other._longitudes) &&
+                   _latitudes.ListEquals(other._latitudes) &&
+                   _elevationsInMeters.Equals(other._elevationsInMeters) &&
+                   _timestampsUtc.Equals(other._timestampsUtc) &&
+                   _magneticVariations.Equals(other._magneticVariations) &&
+                   _geoidHeights.Equals(other._geoidHeights) &&
+                   _names.Equals(other._names) &&
+                   _comments.Equals(other._comments) &&
+                   _descriptions.Equals(other._descriptions) &&
+                   _sources.Equals(other._sources) &&
+                   _webLinkLists.Equals(other._webLinkLists) &&
+                   _symbolTexts.Equals(other._symbolTexts) &&
+                   _classifications.Equals(other._classifications) &&
+                   _fixKinds.Equals(other._fixKinds) &&
+                   _numbersOfSatellites.Equals(other._numbersOfSatellites) &&
+                   _horizontalDilutionsOfPrecision.Equals(other._horizontalDilutionsOfPrecision) &&
+                   _verticalDilutionsOfPrecision.Equals(other._verticalDilutionsOfPrecision) &&
+                   _positionDilutionsOfPrecision.Equals(other._positionDilutionsOfPrecision) &&
+                   _secondsSinceLastDgpsUpdates.Equals(other._secondsSinceLastDgpsUpdates) &&
+                   _dgpsStationIds.Equals(other._dgpsStationIds) &&
+                   _allExtensions.Equals(other._allExtensions);
         }
 
         /// <inheritdoc />
@@ -282,7 +282,7 @@ namespace NetTopologySuite.IO
         }
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Count), this.Count));
+        public override string ToString() => Helpers.BuildString((nameof(Count), Count));
 
         private static void Add<T>(ref List<ImmutableArray<T>> lst, ImmutableArray<T> value, int cnt)
         {
@@ -329,48 +329,48 @@ namespace NetTopologySuite.IO
         public struct Enumerator : IEnumerator<GpxWaypoint>
         {
 #pragma warning disable IDE0044 // Add readonly modifier
-            private ImmutableGpxWaypointTable table;
+            private ImmutableGpxWaypointTable _table;
 #pragma warning restore IDE0044 // Add readonly modifier
 
             private int curr;
 
             internal Enumerator(ImmutableGpxWaypointTable table)
             {
-                this.table = table;
-                this.curr = -1;
+                _table = table;
+                curr = -1;
             }
 
             /// <inheritdoc />
-            public GpxWaypoint Current => this.table[this.curr];
+            public GpxWaypoint Current => _table[curr];
 
             /// <inheritdoc />
-            object IEnumerator.Current => this.Current;
+            object IEnumerator.Current => Current;
 
             /// <inheritdoc />
-            public bool MoveNext() => this.curr != this.table.Count &&
-                                      ++this.curr != this.table.Count;
+            public bool MoveNext() => curr != _table.Count &&
+                                      ++curr != _table.Count;
 
             /// <inheritdoc />
             void IDisposable.Dispose() { }
 
             /// <inheritdoc />
-            void IEnumerator.Reset() => this.curr = -1;
+            void IEnumerator.Reset() => curr = -1;
         }
 
         private readonly struct OptionalImmutableArrayList<T> : IEquatable<OptionalImmutableArrayList<T>>
         {
-            private readonly ImmutableArray<ImmutableArray<T>> values;
+            private readonly ImmutableArray<ImmutableArray<T>> _values;
 
-            public OptionalImmutableArrayList(List<ImmutableArray<T>> values) => this.values = values?.ToImmutableArray() ?? default;
+            public OptionalImmutableArrayList(List<ImmutableArray<T>> values) => _values = values?.ToImmutableArray() ?? default;
 
-            public ImmutableArray<T> this[int index] => this.values.IsDefault ? ImmutableArray<T>.Empty : this.values[index];
+            public ImmutableArray<T> this[int index] => _values.IsDefault ? ImmutableArray<T>.Empty : _values[index];
 
-            public override bool Equals(object obj) => obj is OptionalImmutableArrayList<T> other && this.Equals(other);
+            public override bool Equals(object obj) => obj is OptionalImmutableArrayList<T> other && Equals(other);
 
             public bool Equals(OptionalImmutableArrayList<T> other)
             {
-                var selfValues = this.values;
-                var otherValues = other.values;
+                var selfValues = _values;
+                var otherValues = other._values;
                 if (selfValues == otherValues)
                 {
                     return true;
@@ -399,7 +399,7 @@ namespace NetTopologySuite.IO
 
             public override int GetHashCode()
             {
-                var selfValues = this.values;
+                var selfValues = _values;
                 if (selfValues.IsDefault)
                 {
                     return 0;
@@ -418,17 +418,17 @@ namespace NetTopologySuite.IO
         private readonly struct OptionalClassList<T> : IEquatable<OptionalClassList<T>>
             where T : class
         {
-            private readonly ImmutableArray<T> values;
+            private readonly ImmutableArray<T> _values;
 
-            public OptionalClassList(List<T> values) => this.values = values?.ToImmutableArray() ?? default;
+            public OptionalClassList(List<T> values) => _values = values?.ToImmutableArray() ?? default;
 
-            public T this[int index] => this.values.IsDefault ? null : this.values[index];
+            public T this[int index] => _values.IsDefault ? null : _values[index];
 
-            public override bool Equals(object obj) => obj is OptionalClassList<T> other && this.Equals(other);
+            public override bool Equals(object obj) => obj is OptionalClassList<T> other && Equals(other);
 
-            public bool Equals(OptionalClassList<T> other) => this.values.ListEquals(other.values);
+            public bool Equals(OptionalClassList<T> other) => _values.ListEquals(other._values);
 
-            public override int GetHashCode() => this.values.ListToHashCode();
+            public override int GetHashCode() => _values.ListToHashCode();
         }
 
         private readonly struct OptionalStructList<T> : IEquatable<OptionalStructList<T>>
@@ -436,16 +436,16 @@ namespace NetTopologySuite.IO
         {
             // the resolution of dotnet/corefx#11861 means we're probably not going to be getting
             // ImmutableBitArray, but we still should separate out HasValue so it packs more nicely.
-            private readonly ImmutableArray<bool> flags;
+            private readonly ImmutableArray<bool> _flags;
 
-            private readonly ImmutableArray<T> values;
+            private readonly ImmutableArray<T> _values;
 
             public OptionalStructList(List<T?> values)
             {
                 if (values == null)
                 {
-                    this.flags = default;
-                    this.values = default;
+                    _flags = default;
+                    _values = default;
                 }
                 else
                 {
@@ -465,19 +465,19 @@ namespace NetTopologySuite.IO
                         }
                     }
 
-                    this.flags = flagsBuilder.MoveToImmutable();
-                    this.values = valuesBuilder.MoveToImmutable();
+                    _flags = flagsBuilder.MoveToImmutable();
+                    _values = valuesBuilder.MoveToImmutable();
                 }
             }
 
-            public T? this[int index] => (this.flags.IsDefault || !this.flags[index]) ? default(T?) : this.values[index];
+            public T? this[int index] => (_flags.IsDefault || !_flags[index]) ? default(T?) : _values[index];
 
-            public override bool Equals(object obj) => obj is OptionalStructList<T> other && this.Equals(other);
+            public override bool Equals(object obj) => obj is OptionalStructList<T> other && Equals(other);
 
-            public bool Equals(OptionalStructList<T> other) => this.values.ListEquals(other.values) &&
-                                                               this.flags.ListEquals(other.flags);
+            public bool Equals(OptionalStructList<T> other) => _values.ListEquals(other._values) &&
+                                                               _flags.ListEquals(other._flags);
 
-            public override int GetHashCode() => (this.flags.ListToHashCode(), this.values.ListToHashCode()).GetHashCode();
+            public override int GetHashCode() => (_flags.ListToHashCode(), _values.ListToHashCode()).GetHashCode();
         }
     }
 }

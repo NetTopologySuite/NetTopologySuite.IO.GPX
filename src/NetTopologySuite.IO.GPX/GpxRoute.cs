@@ -55,21 +55,21 @@ namespace NetTopologySuite.IO
         /// </param>
         public GpxRoute(string name, string comment, string description, string source, ImmutableArray<GpxWebLink> links, uint? number, string classification, object extensions, ImmutableGpxWaypointTable waypoints)
         {
-            this.Name = name;
-            this.Comment = comment;
-            this.Description = description;
-            this.Source = source;
+            Name = name;
+            Comment = comment;
+            Description = description;
+            Source = source;
             if (!links.IsDefault)
             {
-                this.Links = links;
+                Links = links;
             }
 
-            this.Number = number;
-            this.Classification = classification;
-            this.Extensions = extensions;
+            Number = number;
+            Classification = classification;
+            Extensions = extensions;
             if (!(waypoints is null))
             {
-                this.Waypoints = waypoints;
+                Waypoints = waypoints;
             }
         }
 
@@ -156,7 +156,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Name"/> value set to <paramref name="name"/>.
         /// </returns>
-        public GpxRoute WithName(string name) => new GpxRoute(name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+        public GpxRoute WithName(string name) => new GpxRoute(name, Comment, Description, Source, Links, Number, Classification, Extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -169,7 +169,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Comment"/> value set to <paramref name="comment"/>.
         /// </returns>
-        public GpxRoute WithComment(string comment) => new GpxRoute(this.Name, comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+        public GpxRoute WithComment(string comment) => new GpxRoute(Name, comment, Description, Source, Links, Number, Classification, Extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -182,7 +182,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Description"/> value set to <paramref name="description"/>.
         /// </returns>
-        public GpxRoute WithDescription(string description) => new GpxRoute(this.Name, this.Comment, description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+        public GpxRoute WithDescription(string description) => new GpxRoute(Name, Comment, description, Source, Links, Number, Classification, Extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -195,7 +195,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Source"/> value set to <paramref name="source"/>.
         /// </returns>
-        public GpxRoute WithSource(string source) => new GpxRoute(this.Name, this.Comment, this.Description, source, this.Links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+        public GpxRoute WithSource(string source) => new GpxRoute(Name, Comment, Description, source, Links, Number, Classification, Extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -208,7 +208,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Links"/> value set to <paramref name="links"/>.
         /// </returns>
-        public GpxRoute WithLinks(ImmutableArray<GpxWebLink> links) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, links, this.Number, this.Classification, this.Extensions, this.Waypoints);
+        public GpxRoute WithLinks(ImmutableArray<GpxWebLink> links) => new GpxRoute(Name, Comment, Description, Source, links, Number, Classification, Extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -221,7 +221,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Number"/> value set to <paramref name="number"/>.
         /// </returns>
-        public GpxRoute WithNumber(uint? number) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, number, this.Classification, this.Extensions, this.Waypoints);
+        public GpxRoute WithNumber(uint? number) => new GpxRoute(Name, Comment, Description, Source, Links, number, Classification, Extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -234,7 +234,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Classification"/> value set to <paramref name="classification"/>.
         /// </returns>
-        public GpxRoute WithClassification(string classification) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, classification, this.Extensions, this.Waypoints);
+        public GpxRoute WithClassification(string classification) => new GpxRoute(Name, Comment, Description, Source, Links, Number, classification, Extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -247,7 +247,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxRoute"/> instance that's a copy of the current instance, but
         /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
         /// </returns>
-        public GpxRoute WithExtensions(object extensions) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, extensions, this.Waypoints);
+        public GpxRoute WithExtensions(object extensions) => new GpxRoute(Name, Comment, Description, Source, Links, Number, Classification, extensions, Waypoints);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxRoute"/> as a copy of this instance, but with
@@ -263,33 +263,33 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="waypoints"/> contains <see langword="null"/> elements.
         /// </exception>
-        public GpxRoute WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxRoute(this.Name, this.Comment, this.Description, this.Source, this.Links, this.Number, this.Classification, this.Extensions, new ImmutableGpxWaypointTable(waypoints ?? ImmutableGpxWaypointTable.Empty));
+        public GpxRoute WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxRoute(Name, Comment, Description, Source, Links, Number, Classification, Extensions, new ImmutableGpxWaypointTable(waypoints ?? ImmutableGpxWaypointTable.Empty));
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxRoute other &&
-                                                   this.Name == other.Name &&
-                                                   this.Comment == other.Comment &&
-                                                   this.Description == other.Description &&
-                                                   this.Source == other.Source &&
-                                                   this.Links.ListEquals(other.Links) &&
-                                                   this.Number == other.Number &&
-                                                   this.Classification == other.Classification &&
-                                                   Equals(this.Extensions, other.Extensions) &&
-                                                   Equals(this.Waypoints, other.Waypoints);
+                                                   Name == other.Name &&
+                                                   Comment == other.Comment &&
+                                                   Description == other.Description &&
+                                                   Source == other.Source &&
+                                                   Links.ListEquals(other.Links) &&
+                                                   Number == other.Number &&
+                                                   Classification == other.Classification &&
+                                                   Equals(Extensions, other.Extensions) &&
+                                                   Equals(Waypoints, other.Waypoints);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Name, this.Comment, this.Description, this.Source, this.Links.ListToHashCode(), this.Number, this.Classification, this.Extensions, this.Waypoints).GetHashCode();
+        public override int GetHashCode() => (Name, Comment, Description, Source, Links.ListToHashCode(), Number, Classification, Extensions, Waypoints).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Name), this.Name),
-                                                                 (nameof(this.Comment), this.Comment),
-                                                                 (nameof(this.Description), this.Description),
-                                                                 (nameof(this.Source), this.Source),
-                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
-                                                                 (nameof(this.Number), this.Number),
-                                                                 (nameof(this.Classification), this.Classification),
-                                                                 (nameof(this.Extensions), this.Extensions),
-                                                                 (nameof(this.Waypoints), Helpers.BuildString((nameof(this.Waypoints.Count), this.Waypoints.Count))));
+        public override string ToString() => Helpers.BuildString((nameof(Name), Name),
+                                                                 (nameof(Comment), Comment),
+                                                                 (nameof(Description), Description),
+                                                                 (nameof(Source), Source),
+                                                                 (nameof(Links), Helpers.ListToString(Links)),
+                                                                 (nameof(Number), Number),
+                                                                 (nameof(Classification), Classification),
+                                                                 (nameof(Extensions), Extensions),
+                                                                 (nameof(Waypoints), Helpers.BuildString((nameof(Waypoints.Count), Waypoints.Count))));
 
         internal static GpxRoute Load(XElement element, GpxReaderSettings settings)
         {
@@ -318,16 +318,16 @@ namespace NetTopologySuite.IO
 
         internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {
-            writer.WriteOptionalGpxElementValue("name", this.Name);
-            writer.WriteOptionalGpxElementValue("cmt", this.Comment);
-            writer.WriteOptionalGpxElementValue("desc", this.Description);
-            writer.WriteOptionalGpxElementValue("src", this.Source);
-            writer.WriteGpxElementValues("link", this.Links);
-            writer.WriteOptionalGpxElementValue("number", this.Number);
-            writer.WriteOptionalGpxElementValue("type", this.Classification);
-            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertRouteExtension);
+            writer.WriteOptionalGpxElementValue("name", Name);
+            writer.WriteOptionalGpxElementValue("cmt", Comment);
+            writer.WriteOptionalGpxElementValue("desc", Description);
+            writer.WriteOptionalGpxElementValue("src", Source);
+            writer.WriteGpxElementValues("link", Links);
+            writer.WriteOptionalGpxElementValue("number", Number);
+            writer.WriteOptionalGpxElementValue("type", Classification);
+            writer.WriteExtensions(Extensions, settings.ExtensionWriter.ConvertRouteExtension);
             Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertRoutePointExtension;
-            foreach (var waypoint in this.Waypoints)
+            foreach (var waypoint in Waypoints)
             {
                 writer.WriteGpxStartElement("rtept");
                 waypoint.Save(writer, settings, extensionCallback);

@@ -25,8 +25,8 @@ namespace NetTopologySuite.IO
         /// </summary>
         public TimeZoneInfo TimeZoneInfo
         {
-            get => this.timeZoneInfo ?? TimeZoneInfo.Utc;
-            set => this.timeZoneInfo = value;
+            get => timeZoneInfo ?? TimeZoneInfo.Utc;
+            set => timeZoneInfo = value;
         }
 
         /// <summary>

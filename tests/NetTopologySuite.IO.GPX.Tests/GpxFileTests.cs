@@ -69,23 +69,23 @@ namespace NetTopologySuite.IO
         public void RoundTripTestStartingFromModelObjects()
         {
             var file1 = new GpxFile();
-            file1.Metadata = DataObjectBuilders.RandomGpxMetadata(this.random);
-            for (int i = 0, cnt = this.random.Next(5, 10); i < cnt; i++)
+            file1.Metadata = DataObjectBuilders.RandomGpxMetadata(random);
+            for (int i = 0, cnt = random.Next(5, 10); i < cnt; i++)
             {
-                file1.Waypoints.Add(DataObjectBuilders.RandomWaypoint(this.random));
+                file1.Waypoints.Add(DataObjectBuilders.RandomWaypoint(random));
             }
 
-            for (int i = 0, cnt = this.random.Next(5, 10); i < cnt; i++)
+            for (int i = 0, cnt = random.Next(5, 10); i < cnt; i++)
             {
-                file1.Routes.Add(DataObjectBuilders.RandomRoute(this.random));
+                file1.Routes.Add(DataObjectBuilders.RandomRoute(random));
             }
 
-            for (int i = 0, cnt = this.random.Next(5, 10); i < cnt; i++)
+            for (int i = 0, cnt = random.Next(5, 10); i < cnt; i++)
             {
-                file1.Tracks.Add(DataObjectBuilders.RandomTrack(this.random));
+                file1.Tracks.Add(DataObjectBuilders.RandomTrack(random));
             }
 
-            file1.Extensions = DataObjectBuilders.RandomExtensions(this.random);
+            file1.Extensions = DataObjectBuilders.RandomExtensions(random);
 
             var file2 = GpxFile.Parse(file1.BuildString(null), null);
 
