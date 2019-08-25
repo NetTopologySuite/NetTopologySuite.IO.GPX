@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 
-using GeoAPI;
-using GeoAPI.Geometries;
 using NetTopologySuite.Features;
+using NetTopologySuite.Geometries;
 
 namespace NetTopologySuite.IO
 {
@@ -15,7 +14,7 @@ namespace NetTopologySuite.IO
     public static class NetTopologySuiteGpxFeatureConverter
     {
         /// <summary>
-        /// Turns an <see cref="IPoint"/> <see cref="IFeature"/> into the <see cref="GpxWaypoint"/>
+        /// Turns a <see cref="Point"/> <see cref="IFeature"/> into the <see cref="GpxWaypoint"/>
         /// instance that's equivalent to it.
         /// </summary>
         /// <param name="feature">
@@ -32,16 +31,16 @@ namespace NetTopologySuite.IO
         /// </exception>
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="feature"/>'s <see cref="IFeature.Geometry"/> is not an
-        /// instance of <see cref="IPoint"/>.
+        /// instance of <see cref="Point"/>.
         /// </exception>
         /// <remarks>
         /// Values from <see cref="IFeature.Attributes"/> with keys whose names match the names of
         /// properties of <see cref="GpxWaypoint"/> will be used to populate those corresponding
         /// property values, with a few exceptions:
         /// <list type="bullet">
-        /// <item><description><see cref="GpxWaypoint.Longitude"/> comes from <see cref="IPoint.X"/>,</description></item>
-        /// <item><description><see cref="GpxWaypoint.Latitude"/> comes from <see cref="IPoint.Y"/>, and</description></item>
-        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> comes from <see cref="IPoint.Z"/> (when it's set)</description></item>
+        /// <item><description><see cref="GpxWaypoint.Longitude"/> comes from <see cref="Point.X"/>,</description></item>
+        /// <item><description><see cref="GpxWaypoint.Latitude"/> comes from <see cref="Point.Y"/>, and</description></item>
+        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> comes from <see cref="Point.Z"/> (when it's set)</description></item>
         /// </list>
         /// </remarks>
         public static GpxWaypoint ToGpxWaypoint(IFeature feature)
@@ -51,9 +50,9 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(feature));
             }
 
-            if (!(feature.Geometry is IPoint wpt))
+            if (!(feature.Geometry is Point wpt))
             {
-                throw new ArgumentException("Geometry must be IPoint.", nameof(feature));
+                throw new ArgumentException("Geometry must be Point.", nameof(feature));
             }
 
             var attributes = feature.Attributes;
@@ -90,7 +89,7 @@ namespace NetTopologySuite.IO
         }
 
         /// <summary>
-        /// Turns an <see cref="ILineString"/> <see cref="IFeature"/> into the
+        /// Turns a <see cref="LineString"/> <see cref="IFeature"/> into the
         /// <see cref="GpxRoute"/> instance that's equivalent to it.
         /// </summary>
         /// <param name="feature">
@@ -107,7 +106,7 @@ namespace NetTopologySuite.IO
         /// </exception>
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="feature"/>'s <see cref="IFeature.Geometry"/> is not an
-        /// instance of <see cref="ILineString"/>.
+        /// instance of <see cref="LineString"/>.
         /// </exception>
         /// <remarks>
         /// <para>
@@ -119,11 +118,11 @@ namespace NetTopologySuite.IO
         /// When the "Waypoints" attribute is populated in <see cref="IFeature.Attributes"/>, its
         /// values will be used for <see cref="GpxRoute.Waypoints"/>, and the
         /// <see cref="IFeature.Geometry"/> will be ignored except to validate that it is, in fact,
-        /// <see cref="ILineString"/>.  Otherwise, waypoints will be built with only values for:
+        /// <see cref="LineString"/>.  Otherwise, waypoints will be built with only values for:
         /// <list type="bullet">
         /// <item><description><see cref="GpxWaypoint.Longitude"/>,</description></item>
         /// <item><description><see cref="GpxWaypoint.Latitude"/>, and</description></item>
-        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> (where <see cref="IPoint.Z"/> is set).</description></item>
+        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> (where <see cref="Point.Z"/> is set).</description></item>
         /// </list>
         /// </para>
         /// </remarks>
@@ -134,9 +133,9 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(feature));
             }
 
-            if (!(feature.Geometry is ILineString rte))
+            if (!(feature.Geometry is LineString rte))
             {
-                throw new ArgumentException("Geometry must be ILineString.", nameof(feature));
+                throw new ArgumentException("Geometry must be LineString.", nameof(feature));
             }
 
             var attributes = feature.Attributes;
@@ -153,7 +152,7 @@ namespace NetTopologySuite.IO
         }
 
         /// <summary>
-        /// Turns an <see cref="IMultiLineString"/> <see cref="IFeature"/> into the
+        /// Turns a <see cref="MultiLineString"/> <see cref="IFeature"/> into the
         /// <see cref="GpxTrack"/> instance that's equivalent to it.
         /// </summary>
         /// <param name="feature">
@@ -170,7 +169,7 @@ namespace NetTopologySuite.IO
         /// </exception>
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="feature"/>'s <see cref="IFeature.Geometry"/> is not an
-        /// instance of <see cref="IMultiLineString"/>.
+        /// instance of <see cref="MultiLineString"/>.
         /// </exception>
         /// <remarks>
         /// <para>
@@ -182,12 +181,12 @@ namespace NetTopologySuite.IO
         /// When the "Segments" attribute is populated in <see cref="IFeature.Attributes"/>, its
         /// values will be used for <see cref="GpxTrack.Segments"/>, and the
         /// <see cref="IFeature.Geometry"/> will be ignored except to validate that it is, in fact,
-        /// <see cref="IMultiLineString"/>.  Otherwise, segments will be built without anything for
+        /// <see cref="MultiLineString"/>.  Otherwise, segments will be built without anything for
         /// <see cref="GpxTrackSegment.Extensions"/>, and whose waypoints only have these set:
         /// <list type="bullet">
         /// <item><description><see cref="GpxWaypoint.Longitude"/>,</description></item>
         /// <item><description><see cref="GpxWaypoint.Latitude"/>, and</description></item>
-        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> (if <see cref="ICoordinateSequence.Ordinates"/> has the <see cref="Ordinates.Z"/> flag).</description></item>
+        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> (if <see cref="CoordinateSequence.Ordinates"/> has the <see cref="Ordinates.Z"/> flag).</description></item>
         /// </list>
         /// </para>
         /// </remarks>
@@ -198,9 +197,9 @@ namespace NetTopologySuite.IO
                 throw new ArgumentNullException(nameof(feature));
             }
 
-            if (!(feature.Geometry is IMultiLineString trk))
+            if (!(feature.Geometry is MultiLineString trk))
             {
-                throw new ArgumentException("Geometry must be IMultiLineString.", nameof(feature));
+                throw new ArgumentException("Geometry must be MultiLineString.", nameof(feature));
             }
 
             var attributes = feature.Attributes;
@@ -219,16 +218,16 @@ namespace NetTopologySuite.IO
         }
 
         /// <summary>
-        /// Creates an <see cref="IPoint"/> <see cref="Feature"/> that contains the same data stored
+        /// Creates a <see cref="Point"/> <see cref="Feature"/> that contains the same data stored
         /// in a given <see cref="GpxWaypoint"/>.
         /// </summary>
         /// <param name="waypoint">
         /// The <see cref="GpxWaypoint"/> source.
         /// </param>
         /// <param name="geometryFactory">
-        /// The <see cref="IGeometryFactory"/> to use to create the <see cref="IPoint"/>, or
+        /// The <see cref="GeometryFactory"/> to use to create the <see cref="Point"/>, or
         /// <see langword="null"/> to create a new one to use on-the-fly using the current
-        /// <see cref="GeometryServiceProvider"/>.
+        /// <see cref="NtsGeometryServices"/>.
         /// </param>
         /// <returns>
         /// A <see cref="Feature"/> that contains the same data as <paramref name="waypoint"/>.
@@ -240,12 +239,12 @@ namespace NetTopologySuite.IO
         /// The values of <see cref="Feature.Attributes"/> will be populated with the values of the
         /// <see cref="GpxWaypoint"/> properties, even when <see langword="null"/>, with exceptions:
         /// <list type="bullet">
-        /// <item><description><see cref="GpxWaypoint.Longitude"/> goes to <see cref="IPoint.X"/> instead,</description></item>
-        /// <item><description><see cref="GpxWaypoint.Latitude"/> goes to <see cref="IPoint.Y"/> instead, and</description></item>
-        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> goes to <see cref="IPoint.Z"/> instead (when it's set)</description></item>
+        /// <item><description><see cref="GpxWaypoint.Longitude"/> goes to <see cref="Point.X"/> instead,</description></item>
+        /// <item><description><see cref="GpxWaypoint.Latitude"/> goes to <see cref="Point.Y"/> instead, and</description></item>
+        /// <item><description><see cref="GpxWaypoint.ElevationInMeters"/> goes to <see cref="Point.Z"/> instead (when it's set)</description></item>
         /// </list>
         /// </remarks>
-        public static Feature ToFeature(GpxWaypoint waypoint, IGeometryFactory geometryFactory)
+        public static Feature ToFeature(GpxWaypoint waypoint, GeometryFactory geometryFactory)
         {
             if (waypoint is null)
             {
@@ -254,11 +253,11 @@ namespace NetTopologySuite.IO
 
             if (geometryFactory is null)
             {
-                geometryFactory = GeometryServiceProvider.Instance.CreateGeometryFactory();
+                geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
             }
 
-            // a waypoint all on its own is an IPoint feature.
-            var coord = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
+            // a waypoint all on its own is an Point feature.
+            var coord = new CoordinateZ(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
             var point = geometryFactory.CreatePoint(coord);
             var attributes = new AttributesTable
             {
@@ -286,16 +285,16 @@ namespace NetTopologySuite.IO
         }
 
         /// <summary>
-        /// Creates an <see cref="ILineString"/> <see cref="Feature"/> that contains the same data
+        /// Creates a <see cref="LineString"/> <see cref="Feature"/> that contains the same data
         /// stored in a given <see cref="GpxRoute"/>.
         /// </summary>
         /// <param name="route">
         /// The <see cref="GpxRoute"/> source.
         /// </param>
         /// <param name="geometryFactory">
-        /// The <see cref="IGeometryFactory"/> to use to create the <see cref="ILineString"/>, or
+        /// The <see cref="GeometryFactory"/> to use to create the <see cref="LineString"/>, or
         /// <see langword="null"/> to create a new one to use on-the-fly using the current
-        /// <see cref="GeometryServiceProvider"/>.
+        /// <see cref="NtsGeometryServices"/>.
         /// </param>
         /// <returns>
         /// A <see cref="Feature"/> that contains the same data as <paramref name="route"/>.
@@ -307,7 +306,7 @@ namespace NetTopologySuite.IO
         /// The values of <see cref="Feature.Attributes"/> will be populated with the values of the
         /// <see cref="GpxRoute"/> properties, even when <see langword="null"/>.
         /// </remarks>
-        public static Feature ToFeature(GpxRoute route, IGeometryFactory geometryFactory)
+        public static Feature ToFeature(GpxRoute route, GeometryFactory geometryFactory)
         {
             if (route is null)
             {
@@ -316,10 +315,10 @@ namespace NetTopologySuite.IO
 
             if (geometryFactory is null)
             {
-                geometryFactory = GeometryServiceProvider.Instance.CreateGeometryFactory();
+                geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
             }
 
-            // a route is an ILineString feature.
+            // a route is an LineString feature.
             var lineString = BuildLineString(route.Waypoints, geometryFactory);
             var attributes = new AttributesTable
             {
@@ -338,16 +337,16 @@ namespace NetTopologySuite.IO
         }
 
         /// <summary>
-        /// Creates an <see cref="IMultiLineString"/> <see cref="Feature"/> that contains the same data
+        /// Creates a <see cref="MultiLineString"/> <see cref="Feature"/> that contains the same data
         /// stored in a given <see cref="GpxTrack"/>.
         /// </summary>
         /// <param name="track">
         /// The <see cref="GpxTrack"/> source.
         /// </param>
         /// <param name="geometryFactory">
-        /// The <see cref="IGeometryFactory"/> to use to create the <see cref="IMultiLineString"/>,
+        /// The <see cref="GeometryFactory"/> to use to create the <see cref="MultiLineString"/>,
         /// or <see langword="null"/> to create a new one to use on-the-fly using the current
-        /// <see cref="GeometryServiceProvider"/>.
+        /// <see cref="NtsGeometryServices"/>.
         /// </param>
         /// <returns>
         /// A <see cref="Feature"/> that contains the same data as <paramref name="track"/>.
@@ -359,7 +358,7 @@ namespace NetTopologySuite.IO
         /// The values of <see cref="Feature.Attributes"/> will be populated with the values of the
         /// <see cref="GpxTrack"/> properties, even when <see langword="null"/>.
         /// </remarks>
-        public static Feature ToFeature(GpxTrack track, IGeometryFactory geometryFactory)
+        public static Feature ToFeature(GpxTrack track, GeometryFactory geometryFactory)
         {
             if (track is null)
             {
@@ -368,17 +367,17 @@ namespace NetTopologySuite.IO
 
             if (geometryFactory is null)
             {
-                geometryFactory = GeometryServiceProvider.Instance.CreateGeometryFactory();
+                geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
             }
 
-            // a track is an IMultiLineString feature.
-            var lineStrings = new ILineString[track.Segments.Length];
+            // a track is an MultiLineString feature.
+            var lineStrings = new LineString[track.Segments.Length];
             for (int i = 0; i < lineStrings.Length; i++)
             {
                 lineStrings[i] = BuildLineString(track.Segments[i].Waypoints, geometryFactory);
             }
 
-            var multiLineString = geometryFactory.CreateMultiLineString(lineStrings);
+            var multLineString = geometryFactory.CreateMultiLineString(lineStrings);
             var attributes = new AttributesTable
             {
                 { nameof(track.Name), track.Name },
@@ -392,17 +391,17 @@ namespace NetTopologySuite.IO
                 { nameof(track.Extensions), track.Extensions },
             };
 
-            return new Feature(multiLineString, attributes);
+            return new Feature(multLineString, attributes);
         }
 
-        private static ILineString BuildLineString(ImmutableGpxWaypointTable waypoints, IGeometryFactory geometryFactory)
+        private static LineString BuildLineString(ImmutableGpxWaypointTable waypoints, GeometryFactory geometryFactory)
         {
             Coordinate[] coords;
             if (waypoints.Count == 1)
             {
                 var waypoint = waypoints[0];
                 coords = new Coordinate[2];
-                coords[0] = coords[1] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
+                coords[0] = coords[1] = new CoordinateZ(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
             }
             else
             {
@@ -410,17 +409,17 @@ namespace NetTopologySuite.IO
                 for (int i = 0; i < coords.Length; i++)
                 {
                     var waypoint = waypoints[i];
-                    coords[i] = new Coordinate(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
+                    coords[i] = new CoordinateZ(waypoint.Longitude, waypoint.Latitude, waypoint.ElevationInMeters ?? Coordinate.NullOrdinate);
                 }
             }
 
             return geometryFactory.CreateLineString(coords);
         }
 
-        private static IEnumerable<GpxWaypoint> GenerateWaypoints(ILineString rte, Coordinate coord = null)
+        private static IEnumerable<GpxWaypoint> GenerateWaypoints(LineString rte, Coordinate coord = null)
         {
             var seq = rte.CoordinateSequence;
-            coord = coord ?? new Coordinate();
+            coord = coord ?? seq.CreateCoordinate();
             for (int i = 0, cnt = seq.Count; i < cnt; i++)
             {
                 seq.GetCoordinate(i, coord);
@@ -428,10 +427,10 @@ namespace NetTopologySuite.IO
             }
         }
 
-        private static IEnumerable<GpxTrackSegment> GenerateTrackSegments(IMultiLineString lineStrings)
+        private static IEnumerable<GpxTrackSegment> GenerateTrackSegments(MultiLineString lineStrings)
         {
             var coord = new Coordinate();
-            foreach (ILineString lineString in lineStrings)
+            foreach (LineString lineString in lineStrings)
             {
                 yield return new GpxTrackSegment(waypoints: new ImmutableGpxWaypointTable(GenerateWaypoints(lineString, coord)),
                                                  extensions: null);

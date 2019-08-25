@@ -6,7 +6,7 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
-using GeoAPI.Geometries;
+using NetTopologySuite.Geometries;
 
 namespace NetTopologySuite.IO
 {

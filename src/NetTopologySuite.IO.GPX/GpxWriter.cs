@@ -4,7 +4,7 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
-using GeoAPI.Geometries;
+using NetTopologySuite.Geometries;
 using NetTopologySuite.Features;
 
 namespace NetTopologySuite.IO
@@ -29,15 +29,15 @@ namespace NetTopologySuite.IO
         /// </param>
         /// <param name="waypointFeatures">
         /// The <see cref="IFeature"/>s that include the top-level wpt instances.  Optional, but if
-        /// specified, each must be an <see cref="IPoint"/> feature.
+        /// specified, each must be a <see cref="Point"/> feature.
         /// </param>
         /// <param name="routeFeatures">
         /// The <see cref="IFeature"/>s that include the top-level rte instances.  Optional, but if
-        /// specified, each must be an <see cref="ILineString"/> feature.
+        /// specified, each must be a <see cref="LineString"/> feature.
         /// </param>
         /// <param name="trackFeatures">
         /// The <see cref="IFeature"/>s that include the top-level trk instances.  Optional, but if
-        /// specified, each must be an <see cref="IMultiLineString"/> feature.
+        /// specified, each must be a <see cref="MultiLineString"/> feature.
         /// </param>
         /// <param name="extensions">
         /// The top-level extension data.  Optional.
@@ -79,15 +79,15 @@ namespace NetTopologySuite.IO
         /// <term>Corresponding top-level data object</term>
         /// </listheader>
         /// <item>
-        /// <term><see cref="IPoint"/></term>
+        /// <term><see cref="Point"/></term>
         /// <term><see cref="GpxWaypoint"/></term>
         /// </item>
         /// <item>
-        /// <term><see cref="ILineString"/></term>
+        /// <term><see cref="LineString"/></term>
         /// <term><see cref="GpxRoute"/></term>
         /// </item>
         /// <item>
-        /// <term><see cref="IMultiLineString"/></term>
+        /// <term><see cref="MultiLineString"/></term>
         /// <term><see cref="GpxTrack"/></term>
         /// </item>
         /// </list>
@@ -128,20 +128,20 @@ namespace NetTopologySuite.IO
                     case null:
                         throw new ArgumentException("All features must be non-null and contain non-null geometries.", nameof(features));
 
-                    case IPoint _:
+                    case Point _:
                         waypoints.Add(NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(feature));
                         break;
 
-                    case ILineString _:
+                    case LineString _:
                         routes.Add(NetTopologySuiteGpxFeatureConverter.ToGpxRoute(feature));
                         break;
 
-                    case IMultiLineString _:
+                    case MultiLineString _:
                         tracks.Add(NetTopologySuiteGpxFeatureConverter.ToGpxTrack(feature));
                         break;
 
                     default:
-                        throw new ArgumentException("All features must be either IPoint (for wpt), ILineString (for rte), or IMultiLineString (for trk).  Not " + feature.Geometry.GetType(), nameof(features));
+                        throw new ArgumentException("All features must be either Point (for wpt), LineString (for rte), or MultiLineString (for trk).  Not " + feature.Geometry.GetType(), nameof(features));
                 }
             }
 

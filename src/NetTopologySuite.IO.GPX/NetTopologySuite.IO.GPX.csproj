@@ -1,40 +1,38 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <SolutionDir Condition=" '$(SolutionDir)' == '' ">$(ProjectDir)..\..\</SolutionDir>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>NetTopologySuite.IO</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
     <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
 
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>$(SolutionDir)nts.snk</AssemblyOriginatorKeyFile>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DebugType>embedded</DebugType>
+  <PropertyGroup Label="Assembly Info">
+    <AssemblyTitle>NetTopologySuite.IO.GPX</AssemblyTitle>
+  </PropertyGroup>
 
-    <VersionPrefix>0.6.0</VersionPrefix>
+  <PropertyGroup Label="NuGet Package Info">
+    <PackageId>NetTopologySuite.IO.GPX</PackageId>
+    <Title>NTS - Topology Suite - IO Library for GPX</Title>
     <Authors>NetTopologySuite - Team</Authors>
-    <Company>NetTopologySuite - Team</Company>
-    <RepositoryUrl>https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX.git</RepositoryUrl>
-    <PackageProjectUrl>https://nettopologysuite.github.io/NetTopologySuite.IO.GPX</PackageProjectUrl>
+    <Owners>NetTopologySuite - Team</Owners>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-    <PackageTags>NTS GPX</PackageTags>
-    <Product>NTS - Topology Suite</Product>
-    <AssemblyVersionSuffix Condition=" '$(TRAVIS_BUILD_NUMBER)' != '' ">.$(TRAVIS_BUILD_NUMBER)</AssemblyVersionSuffix>
-    <AssemblyVersion>$(VersionPrefix)$(AssemblyVersionSuffix)</AssemblyVersion>
-    <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageIconUrl>https://raw.githubusercontent.com/NetTopologySuite/GeoAPI/master/icon.png</PackageIconUrl>
     <Description>Adds reading/writing support to go between NetTopologySuite features and GPX files.</Description>
+    <PackageTags>NTS;GPX</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NetTopologySuite.Core" Version="[1.15.2, 2.0.0-A)" />
-    <PackageReference Include="NetTopologySuite.Features" Version="[1.15.1, 2.0.0-A)" />
+    <PackageReference Include="NetTopologySuite" Version="[2.0.0-pre001, 3.0.0-A)" />
+    <PackageReference Include="NetTopologySuite.Features" Version="[2.0.0-pre001, 3.0.0-A)" />
 
     <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
-    <PackageReference Include="System.Memory" Version="4.5.2" />
+    <PackageReference Include="System.Memory" Version="4.5.3" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
   </ItemGroup>
 

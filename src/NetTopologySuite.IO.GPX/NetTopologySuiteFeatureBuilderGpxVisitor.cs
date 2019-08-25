@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using GeoAPI.Geometries;
 using NetTopologySuite.Features;
+using NetTopologySuite.Geometries;
 
 namespace NetTopologySuite.IO
 {
     internal sealed class NetTopologySuiteFeatureBuilderGpxVisitor : GpxVisitorBase
     {
-        private readonly IGeometryFactory geometryFactory;
+        private readonly GeometryFactory geometryFactory;
 
         private readonly List<Feature> currentFeatures = new List<Feature>();
 
@@ -16,7 +16,7 @@ namespace NetTopologySuite.IO
 
         private object currentExtensions;
 
-        public NetTopologySuiteFeatureBuilderGpxVisitor(IGeometryFactory geometryFactory) => this.geometryFactory = geometryFactory;
+        public NetTopologySuiteFeatureBuilderGpxVisitor(GeometryFactory geometryFactory) => this.geometryFactory = geometryFactory;
 
         public override void VisitMetadata(GpxMetadata metadata)
         {

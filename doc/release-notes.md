@@ -1,5 +1,8 @@
 # NetTopologySuite.IO.GPX Release Notes
 
+## 1.0.0
+- Updates to make this compatible with v2 of the core NTS library.
+
 ## 0.6.0
 - Mark upper-bounds on package dependencies to make it clear that this only supports the 1.x series.
 
