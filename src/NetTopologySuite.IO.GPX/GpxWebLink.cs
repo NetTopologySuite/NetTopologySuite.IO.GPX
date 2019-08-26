@@ -44,9 +44,9 @@ namespace NetTopologySuite.IO
         /// </exception>
         public GpxWebLink(Uri href, string text, string contentType)
         {
-            this.Href = href ?? throw new ArgumentNullException(nameof(href));
-            this.Text = text;
-            this.ContentType = contentType;
+            Href = href ?? throw new ArgumentNullException(nameof(href));
+            Text = text;
+            ContentType = contentType;
         }
 
         /// <summary>
@@ -75,17 +75,17 @@ namespace NetTopologySuite.IO
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxWebLink other &&
-                                                   this.Text == other.Text &&
-                                                   this.ContentType == other.ContentType &&
-                                                   this.Href == other.Href;
+                                                   Text == other.Text &&
+                                                   ContentType == other.ContentType &&
+                                                   Href == other.Href;
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Href, this.Text, this.ContentType).GetHashCode();
+        public override int GetHashCode() => (Href, Text, ContentType).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Href), this.Href),
-                                                                 (nameof(this.Text), this.Text),
-                                                                 (nameof(this.ContentType), this.ContentType));
+        public override string ToString() => Helpers.BuildString((nameof(Href), Href),
+                                                                 (nameof(Text), Text),
+                                                                 (nameof(ContentType), ContentType));
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWebLink"/> as a copy of this instance, but with
@@ -98,7 +98,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWebLink"/> instance that's a copy of the current instance, but
         /// with its <see cref="Text"/> value set to <paramref name="text"/>.
         /// </returns>
-        public GpxWebLink WithText(string text) => new GpxWebLink(this.Href, text, this.ContentType);
+        public GpxWebLink WithText(string text) => new GpxWebLink(Href, text, ContentType);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWebLink"/> as a copy of this instance, but with
@@ -111,7 +111,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWebLink"/> instance that's a copy of the current instance, but
         /// with its <see cref="ContentType"/> value set to <paramref name="contentType"/>.
         /// </returns>
-        public GpxWebLink WithContentType(string contentType) => new GpxWebLink(this.Href, this.Text, contentType);
+        public GpxWebLink WithContentType(string contentType) => new GpxWebLink(Href, Text, contentType);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWebLink"/> as a copy of this instance, but with
@@ -127,7 +127,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentNullException">
         /// <paramref name="href"/> is <see langword="null"/>.
         /// </exception>
-        public GpxWebLink WithHref(Uri href) => new GpxWebLink(href, this.Text, this.ContentType);
+        public GpxWebLink WithHref(Uri href) => new GpxWebLink(href, Text, ContentType);
 
         internal static GpxWebLink Load(XElement element)
         {
@@ -144,9 +144,9 @@ namespace NetTopologySuite.IO
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)
         {
-            writer.WriteAttributeString("href", this.Href.OriginalString);
-            writer.WriteOptionalGpxElementValue("text", this.Text);
-            writer.WriteOptionalGpxElementValue("type", this.ContentType);
+            writer.WriteAttributeString("href", Href.OriginalString);
+            writer.WriteOptionalGpxElementValue("text", Text);
+            writer.WriteOptionalGpxElementValue("type", ContentType);
         }
     }
 }

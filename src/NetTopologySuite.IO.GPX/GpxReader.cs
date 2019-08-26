@@ -2,8 +2,8 @@
 using System.Xml;
 using System.Xml.Linq;
 
-using GeoAPI.Geometries;
 using NetTopologySuite.Features;
+using NetTopologySuite.Geometries;
 
 namespace NetTopologySuite.IO
 {
@@ -23,7 +23,7 @@ namespace NetTopologySuite.IO
         /// read in, or <c>null</c> to use a general-purpose default.
         /// </param>
         /// <param name="geometryFactory">
-        /// The <see cref="IGeometryFactory"/> instance to use when creating the individual
+        /// The <see cref="GeometryFactory"/> instance to use when creating the individual
         /// <see cref="Feature.Geometry"/> elements.
         /// </param>
         /// <returns>
@@ -41,7 +41,7 @@ namespace NetTopologySuite.IO
         /// the slightly stricter, but still completely reasonable, limits imposed by the idiomatic
         /// .NET data types above and beyond the XSD limits).
         /// </exception>
-        public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)
+        public static (GpxMetadata metadata, Feature[] features, object extensions) ReadFeatures(XmlReader reader, GpxReaderSettings settings, GeometryFactory geometryFactory)
         {
             if (reader is null)
             {

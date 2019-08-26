@@ -33,10 +33,10 @@ namespace NetTopologySuite.IO
         {
             if (waypoints != null)
             {
-                this.Waypoints = waypoints;
+                Waypoints = waypoints;
             }
 
-            this.Extensions = extensions;
+            Extensions = extensions;
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="waypoints"/> contains <see langword="null"/> elements.
         /// </exception>
-        public GpxTrackSegment WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxTrackSegment(new ImmutableGpxWaypointTable(waypoints ?? ImmutableGpxWaypointTable.Empty), this.Extensions);
+        public GpxTrackSegment WithWaypoints(IEnumerable<GpxWaypoint> waypoints) => new GpxTrackSegment(new ImmutableGpxWaypointTable(waypoints ?? ImmutableGpxWaypointTable.Empty), Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxTrackSegment"/> as a copy of this instance, but with
@@ -82,19 +82,19 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxTrackSegment"/> instance that's a copy of the current instance, but
         /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
         /// </returns>
-        public GpxTrackSegment WithExtensions(object extensions) => new GpxTrackSegment(this.Waypoints, extensions);
+        public GpxTrackSegment WithExtensions(object extensions) => new GpxTrackSegment(Waypoints, extensions);
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxTrackSegment other &&
-                                                   Equals(this.Waypoints, other.Waypoints) &&
-                                                   Equals(this.Extensions, other.Extensions);
+                                                   Equals(Waypoints, other.Waypoints) &&
+                                                   Equals(Extensions, other.Extensions);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Waypoints, this.Extensions).GetHashCode();
+        public override int GetHashCode() => (Waypoints, Extensions).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Waypoints), Helpers.BuildString((nameof(this.Waypoints.Count), this.Waypoints.Count))),
-                                                                 (nameof(this.Extensions), this.Extensions));
+        public override string ToString() => Helpers.BuildString((nameof(Waypoints), Helpers.BuildString((nameof(Waypoints.Count), Waypoints.Count))),
+                                                                 (nameof(Extensions), Extensions));
 
         internal static GpxTrackSegment Load(XElement element, GpxReaderSettings settings)
         {
@@ -112,14 +112,14 @@ namespace NetTopologySuite.IO
         internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {
             Func<object, IEnumerable<XElement>> extensionCallback = settings.ExtensionWriter.ConvertTrackPointExtension;
-            foreach (var waypoint in this.Waypoints)
+            foreach (var waypoint in Waypoints)
             {
                 writer.WriteGpxStartElement("trkpt");
                 waypoint.Save(writer, settings, extensionCallback);
                 writer.WriteEndElement();
             }
 
-            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertTrackSegmentExtension);
+            writer.WriteExtensions(Extensions, settings.ExtensionWriter.ConvertTrackSegmentExtension);
         }
     }
 }

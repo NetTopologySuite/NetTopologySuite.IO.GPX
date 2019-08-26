@@ -3,8 +3,33 @@ mono: none
 sudo: false
 dotnet: 2.2
 dist: xenial
+
+
 script:
-- bash ./travis-build.sh
+  - dotnet build -c Release
+  - dotnet test  -c Release --no-build
+  - dotnet pack  -c Release --no-build -p:NoWarn=NU5105
+
+
+deploy:
+
+
+  - on:
+      branch: master
+    provider: script
+    script:
+      - dotnet nuget push **/*.nupkg -s https://api.nuget.org/v3/index.json -k $NUGET_API_KEY
+    skip_cleanup: true
+
+
+  - on:
+      branch: develop
+    provider: script
+    script:
+      - dotnet nuget push **/*.nupkg -s https://www.myget.org/F/nettopologysuite/api/v2/package -k $MYGET_API_KEY
+    skip_cleanup: true
+
 env:
   global:
-    secure: "RYzpD2A3pmq1lGGN/Bemrlk37jEqZSD6oWe40LQ8XHYeVUgiio/vdwhPdQNOT9y7/JK2eGzSiBfi5Z16AfKLa+/JAr2XIUKE+YhcAjlVmJrzhqRXFDLVOgtCJ1QzzV8s8f3nNgQC8Xw1y9T57wXv+u2Hrr/Xbis0cWHTDiEYyDpj2NijEdCJCyLtnR0TSoNsI4/pRp09OV5viUHgWstYiKzoHAcLTOSDtN2ARGRE51z2HWd7zCDKXi92h7t34kZ3ZTSy28wAxf/HrGX/2bLkNxERqj1KkjQ1T2K+KF4Cq8GgpTPzQpAdJCPGSSjkPHbh9HgV0QwToHfcALdHtka+o5h++OMCA91rDBP6UZgojE/9qQhZv1DEKeMLl+sRbnO+7AUsEouYFYpw0mbbI+xvtjIpRbtzRQ0WQV3k5IcBMvjB8SNSJrmSOcuPmbvJuuRlHeAUNrwELL+2kUqyQ42C+NgnpNaHUy4j/iYper/sVsg6eF7E9eBibIYMKXBtSPgkU/oV9fEDnskGeqXKSb3Vw5E9HSCEy4Hf3kgByzbVHG84OnZVq5OUQymdgvXannDRcs4aihNBSqZXM8tQQ3dxqCxQzZ9aNaBnBwddR40qJ9nflMRF6dogLqKZ23RgvWrYR2g6IYkAhPTY7XOJnKOA1xo/CmRviNSH3pKibbisjrM="
+  - secure: ohCUxgPQW62/Ky74nw7PrrEHRxZQGsHx85nSqh0zw6nuPYERnrz/z8YQ2UBMith9Lfi6Nsqm7AsNxhPcakXUHXTQzNcmK+qg5gA1MrPPF6mRht84qUkGXbLjF115waNlpy6Ifc9ymmUY3ILGymSy3mX6M1nrN93AwzBgU8qRyfnbsNW3T1hHBGdA2ChC3peNFw1I3TLblS/nKGvfQJc/PFVmm4WnawCzi3yt5X2CQIXN3fbPd+0NWZuk+EW7uL71A6sJtUAwWjkfvbGSQF4NPLJq6oE+MncWBtuVqiqzHs3Fx0By/Rs2VJNUGYqGdrTEtwD1PaLtiVDCuGKNAEfA56pjnEJSxiKPC67N9JngnKm4SeNeID5ABuUo8nTvfgWrs9Yi9o0T9ufVpZYF+F7Ea9XRq+ZEVmmt1vQPy61oj4h43Nj0hYvGv4/CxA2o8AqN6T+jG91mobufy8Ep1hz9ZxHGdMjHGou0A1qLIpyqwnEvykutgGGPefJET7v5isgr6JkgdVO3saIUeL4cY8CKMLIiNkfxE4yl8AFenRxjb1kxCcVSVSGe9qO7JF3z/j0tVJoc6wGFul7AK+B/oaHGz2fYJlc+Cz3PjGQ7/UGCDyK4kOTKYI0qTNB4hnOuWUd4NPuZ+2QTos6KeHsux7cMVKu61ka3pvg2UluVYRmGNrM=
+  - secure: ECaW1SV6ieZvo2iCFUyAGpdXr/lM+nHPAM/s06P4//ZLiPSnS0rmOl7/TD5bJ+jUDtTLIOzPRrAzht4LpQhuBRkhlvT6sw+rM/na4y13MpAr+cervp46MsX91te3QjBR7T3Eu0iSy9hVb3z4Acb3Ey8/zEt0KMAbom3mDI7SPE8p0Ww4f0lfhiyl29QaXJ3FSm3IZSY5C3tpVv5WUzAjW+CcyBj8A9V9xTjOYIKAFqT2TZkhIo71SN2s15mU0J+MXJBVu7Jg9GhG1JLTE2TqbX12PWcw8Y0kHkbV0+6AnXmMFlgqYP2BjNYCcKP/wX47AUdM5ZLVSZnm52bTM7Mz272i5OvWv12cpJHDgdSCLoJvma/kVZ927ievwEhiajgcM3bEVXiByB6wYtczTmdz3c04aR4KJqh0DwJtadl7aQzhrZvsgm+HSWlOpizOska7VbmNbyODrv/m38lMxlPDAJVtCmy86CXCx0KI3jrcvtA+vJSiwo/QP6w1yU4sPsaL3fEW8oy4l7jQv9OPS6JBXed3x35JwZRfd8iQjo25+IS5KA9iWUWDYiROaWBQgxCs+/wAUiiFwPpU+7k1419XnUzwk+EAjQ6M9l3ZJTeop3XnjnNCrORu8Not48+AooGMTB3/n32OHe+CP536iuLWtFIwGpDiLCVTbifoy/o8gH0=

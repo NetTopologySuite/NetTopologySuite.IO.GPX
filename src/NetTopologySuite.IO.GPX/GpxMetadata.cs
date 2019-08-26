@@ -81,21 +81,21 @@ namespace NetTopologySuite.IO
                 throw new ArgumentException("Must be in UTC.", nameof(creationTimeUtc));
             }
 
-            this.Creator = creator ?? throw new ArgumentNullException(nameof(creator));
-            this.Name = name;
-            this.Description = description;
-            this.Author = author;
-            this.Copyright = copyright;
+            Creator = creator ?? throw new ArgumentNullException(nameof(creator));
+            Name = name;
+            Description = description;
+            Author = author;
+            Copyright = copyright;
             if (!links.IsDefault)
             {
-                this.Links = links;
+                Links = links;
             }
 
-            this.CreationTimeUtc = creationTimeUtc;
-            this.Keywords = keywords;
-            this.Bounds = bounds;
-            this.Extensions = extensions;
-            this.IsTrivial = name is null && description is null && author is null && copyright is null && links.IsDefaultOrEmpty && creationTimeUtc is null && keywords is null && bounds is null && extensions is null;
+            CreationTimeUtc = creationTimeUtc;
+            Keywords = keywords;
+            Bounds = bounds;
+            Extensions = extensions;
+            IsTrivial = name is null && description is null && author is null && copyright is null && links.IsDefaultOrEmpty && creationTimeUtc is null && keywords is null && bounds is null && extensions is null;
         }
 
         /// <summary>
@@ -218,31 +218,31 @@ namespace NetTopologySuite.IO
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxMetadata other &&
-                                                   this.Creator == other.Creator &&
-                                                   this.Name == other.Name &&
-                                                   this.Description == other.Description &&
-                                                   Equals(this.Author, other.Author) &&
-                                                   Equals(this.Copyright, other.Copyright) &&
-                                                   this.Links.ListEquals(other.Links) &&
-                                                   this.CreationTimeUtc == other.CreationTimeUtc &&
-                                                   this.Keywords == other.Keywords &&
-                                                   Equals(this.Bounds, other.Bounds) &&
-                                                   Equals(this.Extensions, other.Extensions);
+                                                   Creator == other.Creator &&
+                                                   Name == other.Name &&
+                                                   Description == other.Description &&
+                                                   Equals(Author, other.Author) &&
+                                                   Equals(Copyright, other.Copyright) &&
+                                                   Links.ListEquals(other.Links) &&
+                                                   CreationTimeUtc == other.CreationTimeUtc &&
+                                                   Keywords == other.Keywords &&
+                                                   Equals(Bounds, other.Bounds) &&
+                                                   Equals(Extensions, other.Extensions);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links.ListToHashCode(), this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions).GetHashCode();
+        public override int GetHashCode() => (Creator, Name, Description, Author, Copyright, Links.ListToHashCode(), CreationTimeUtc, Keywords, Bounds, Extensions).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Creator), this.Creator),
-                                                                 (nameof(this.Name), this.Name),
-                                                                 (nameof(this.Description), this.Description),
-                                                                 (nameof(this.Author), this.Author),
-                                                                 (nameof(this.Copyright), this.Copyright),
-                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
-                                                                 (nameof(this.CreationTimeUtc), this.CreationTimeUtc),
-                                                                 (nameof(this.Keywords), this.Keywords),
-                                                                 (nameof(this.Bounds), this.Bounds),
-                                                                 (nameof(this.Extensions), this.Extensions));
+        public override string ToString() => Helpers.BuildString((nameof(Creator), Creator),
+                                                                 (nameof(Name), Name),
+                                                                 (nameof(Description), Description),
+                                                                 (nameof(Author), Author),
+                                                                 (nameof(Copyright), Copyright),
+                                                                 (nameof(Links), Helpers.ListToString(Links)),
+                                                                 (nameof(CreationTimeUtc), CreationTimeUtc),
+                                                                 (nameof(Keywords), Keywords),
+                                                                 (nameof(Bounds), Bounds),
+                                                                 (nameof(Extensions), Extensions));
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -258,7 +258,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentNullException">
         /// Thrown when <paramref name="creator"/> is <see langword="null"/>.
         /// </exception>
-        public GpxMetadata WithCreator(string creator) => new GpxMetadata(creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithCreator(string creator) => new GpxMetadata(creator, Name, Description, Author, Copyright, Links, CreationTimeUtc, Keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -271,7 +271,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Name"/> value set to <paramref name="name"/>.
         /// </returns>
-        public GpxMetadata WithName(string name) => new GpxMetadata(this.Creator, name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithName(string name) => new GpxMetadata(Creator, name, Description, Author, Copyright, Links, CreationTimeUtc, Keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -284,7 +284,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Description"/> value set to <paramref name="description"/>.
         /// </returns>
-        public GpxMetadata WithDescription(string description) => new GpxMetadata(this.Creator, this.Name, description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithDescription(string description) => new GpxMetadata(Creator, Name, description, Author, Copyright, Links, CreationTimeUtc, Keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -297,7 +297,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Author"/> value set to <paramref name="author"/>.
         /// </returns>
-        public GpxMetadata WithAuthor(GpxPerson author) => new GpxMetadata(this.Creator, this.Name, this.Description, author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithAuthor(GpxPerson author) => new GpxMetadata(Creator, Name, Description, author, Copyright, Links, CreationTimeUtc, Keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -310,7 +310,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Copyright"/> value set to <paramref name="copyright"/>.
         /// </returns>
-        public GpxMetadata WithCopyright(GpxCopyright copyright) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithCopyright(GpxCopyright copyright) => new GpxMetadata(Creator, Name, Description, Author, copyright, Links, CreationTimeUtc, Keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -323,7 +323,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Links"/> value set to <paramref name="links"/>.
         /// </returns>
-        public GpxMetadata WithLinks(ImmutableArray<GpxWebLink> links) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, links, this.CreationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithLinks(ImmutableArray<GpxWebLink> links) => new GpxMetadata(Creator, Name, Description, Author, Copyright, links, CreationTimeUtc, Keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -336,7 +336,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="CreationTimeUtc"/> value set to <paramref name="creationTimeUtc"/>.
         /// </returns>
-        public GpxMetadata WithCreationTimeUtc(DateTime? creationTimeUtc) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, creationTimeUtc, this.Keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithCreationTimeUtc(DateTime? creationTimeUtc) => new GpxMetadata(Creator, Name, Description, Author, Copyright, Links, creationTimeUtc, Keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -349,7 +349,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Keywords"/> value set to <paramref name="keywords"/>.
         /// </returns>
-        public GpxMetadata WithKeywords(string keywords) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, keywords, this.Bounds, this.Extensions);
+        public GpxMetadata WithKeywords(string keywords) => new GpxMetadata(Creator, Name, Description, Author, Copyright, Links, CreationTimeUtc, keywords, Bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -362,7 +362,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Bounds"/> value set to <paramref name="bounds"/>.
         /// </returns>
-        public GpxMetadata WithBounds(GpxBoundingBox bounds) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, bounds, this.Extensions);
+        public GpxMetadata WithBounds(GpxBoundingBox bounds) => new GpxMetadata(Creator, Name, Description, Author, Copyright, Links, CreationTimeUtc, Keywords, bounds, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxMetadata"/> as a copy of this instance, but with
@@ -375,7 +375,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxMetadata"/> instance that's a copy of the current instance, but
         /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
         /// </returns>
-        public GpxMetadata WithExtensions(object extensions) => new GpxMetadata(this.Creator, this.Name, this.Description, this.Author, this.Copyright, this.Links, this.CreationTimeUtc, this.Keywords, this.Bounds, extensions);
+        public GpxMetadata WithExtensions(object extensions) => new GpxMetadata(Creator, Name, Description, Author, Copyright, Links, CreationTimeUtc, Keywords, Bounds, extensions);
 
         internal static GpxMetadata Load(XElement element, GpxReaderSettings settings, string creator)
         {
@@ -411,15 +411,15 @@ namespace NetTopologySuite.IO
         internal void Save(XmlWriter writer, GpxWriterSettings settings)
         {
             // caller wrote Creator (it's an attribute on the root tag)
-            writer.WriteOptionalGpxElementValue("name", this.Name);
-            writer.WriteOptionalGpxElementValue("desc", this.Description);
-            writer.WriteOptionalGpxElementValue("author", this.Author);
-            writer.WriteOptionalGpxElementValue("copyright", this.Copyright);
-            writer.WriteGpxElementValues("link", this.Links);
-            writer.WriteOptionalGpxElementValue("time", this.CreationTimeUtc, settings.TimeZoneInfo);
-            writer.WriteOptionalGpxElementValue("keywords", this.Keywords);
-            writer.WriteOptionalGpxElementValue("bounds", this.Bounds);
-            writer.WriteExtensions(this.Extensions, settings.ExtensionWriter.ConvertMetadataExtension);
+            writer.WriteOptionalGpxElementValue("name", Name);
+            writer.WriteOptionalGpxElementValue("desc", Description);
+            writer.WriteOptionalGpxElementValue("author", Author);
+            writer.WriteOptionalGpxElementValue("copyright", Copyright);
+            writer.WriteGpxElementValues("link", Links);
+            writer.WriteOptionalGpxElementValue("time", CreationTimeUtc, settings.TimeZoneInfo);
+            writer.WriteOptionalGpxElementValue("keywords", Keywords);
+            writer.WriteOptionalGpxElementValue("bounds", Bounds);
+            writer.WriteExtensions(Extensions, settings.ExtensionWriter.ConvertMetadataExtension);
         }
     }
 }

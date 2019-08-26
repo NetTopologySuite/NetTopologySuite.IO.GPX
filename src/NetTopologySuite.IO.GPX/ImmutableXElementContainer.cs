@@ -42,8 +42,8 @@ namespace NetTopologySuite.IO
             }
 
             resultBuilder.Capacity = resultBuilder.Count;
-            this.Items = resultBuilder.MoveToImmutable();
-            this.upcasted = ImmutableArray<XNode>.CastUp(this.Items);
+            Items = resultBuilder.MoveToImmutable();
+            upcasted = ImmutableArray<XNode>.CastUp(Items);
         }
 
         /// <summary>
@@ -52,26 +52,26 @@ namespace NetTopologySuite.IO
         public ImmutableArray<XElement> Items { get; }
 
         /// <inheritdoc />
-        public XElement this[int index] => this.Items[index];
+        public XElement this[int index] => Items[index];
 
         /// <inheritdoc />
-        public int Count => this.Items.Length;
+        public int Count => Items.Length;
 
         /// <inheritdoc cref="ImmutableArray{T}.GetEnumerator" />
-        public ImmutableArray<XElement>.Enumerator GetEnumerator() => this.Items.GetEnumerator();
+        public ImmutableArray<XElement>.Enumerator GetEnumerator() => Items.GetEnumerator();
 
         /// <inheritdoc />
-        IEnumerator<XElement> IEnumerable<XElement>.GetEnumerator() => ((IEnumerable<XElement>)this.Items).GetEnumerator();
+        IEnumerator<XElement> IEnumerable<XElement>.GetEnumerator() => ((IEnumerable<XElement>)Items).GetEnumerator();
 
         /// <inheritdoc />
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => ((System.Collections.IEnumerable)this.Items).GetEnumerator();
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => ((System.Collections.IEnumerable)Items).GetEnumerator();
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is ImmutableXElementContainer other &&
-                                                   this.upcasted.SequenceEqual(other.upcasted, XNode.EqualityComparer);
+                                                   upcasted.SequenceEqual(other.upcasted, XNode.EqualityComparer);
 
         /// <inheritdoc />
-        public override int GetHashCode() => this.upcasted.ListToHashCode(XNode.EqualityComparer);
+        public override int GetHashCode() => upcasted.ListToHashCode(XNode.EqualityComparer);
 
         private static XElement CloneAsImmutable(XElement item)
         {

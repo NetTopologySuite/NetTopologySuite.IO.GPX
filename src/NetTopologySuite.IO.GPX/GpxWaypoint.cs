@@ -6,7 +6,7 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
-using GeoAPI.Geometries;
+using NetTopologySuite.Geometries;
 
 namespace NetTopologySuite.IO
 {
@@ -18,11 +18,11 @@ namespace NetTopologySuite.IO
     /// </remarks>
     public sealed class GpxWaypoint
     {
-        private readonly double elevationInMeters = double.NaN;
+        private readonly double _elevationInMeters = double.NaN;
 
-        private readonly DateTime timestampUtc = new DateTime(0, DateTimeKind.Unspecified);
+        private readonly DateTime _timestampUtc = new DateTime(0, DateTimeKind.Unspecified);
 
-        private readonly UncommonProperties uncommonProperties;
+        private readonly UncommonProperties _uncommonProperties;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GpxWaypoint"/> class.
@@ -92,11 +92,11 @@ namespace NetTopologySuite.IO
                 longitudeValue = -180;
             }
 
-            this.Longitude = new GpxLongitude(longitudeValue);
-            this.Latitude = new GpxLatitude(coordinate.Y);
+            Longitude = new GpxLongitude(longitudeValue);
+            Latitude = new GpxLatitude(coordinate.Y);
             if (!double.IsNaN(coordinate.Z))
             {
-                this.elevationInMeters = coordinate.Z;
+                _elevationInMeters = coordinate.Z;
             }
         }
 
@@ -195,12 +195,12 @@ namespace NetTopologySuite.IO
         /// </exception>
         public GpxWaypoint(GpxLongitude longitude, GpxLatitude latitude, double? elevationInMeters, DateTime? timestampUtc, GpxDegrees? magneticVariation, double? geoidHeight, string name, string comment, string description, string source, ImmutableArray<GpxWebLink> links, string symbolText, string classification, GpxFixKind? fixKind, uint? numberOfSatellites, double? horizontalDilutionOfPrecision, double? verticalDilutionOfPrecision, double? positionDilutionOfPrecision, double? secondsSinceLastDgpsUpdate, GpxDgpsStationId? dgpsStationId, object extensions)
         {
-            this.Longitude = longitude;
-            this.Latitude = latitude;
+            Longitude = longitude;
+            Latitude = latitude;
             if (!(elevationInMeters is null))
             {
-                this.elevationInMeters = elevationInMeters.GetValueOrDefault();
-                if (!this.elevationInMeters.IsFinite())
+                _elevationInMeters = elevationInMeters.GetValueOrDefault();
+                if (!_elevationInMeters.IsFinite())
                 {
                     throw new ArgumentOutOfRangeException(nameof(elevationInMeters), elevationInMeters, "Must be a finite number");
                 }
@@ -208,16 +208,16 @@ namespace NetTopologySuite.IO
 
             if (!(timestampUtc is null))
             {
-                this.timestampUtc = timestampUtc.GetValueOrDefault();
-                if (this.timestampUtc.Kind != DateTimeKind.Utc)
+                _timestampUtc = timestampUtc.GetValueOrDefault();
+                if (_timestampUtc.Kind != DateTimeKind.Utc)
                 {
                     throw new ArgumentOutOfRangeException(nameof(timestampUtc), timestampUtc, "Must be UTC");
                 }
             }
 
-            this.Name = name;
-            this.Description = description;
-            this.SymbolText = symbolText;
+            Name = name;
+            Description = description;
+            SymbolText = symbolText;
 
             // only allocate space for these less commonly used properties if they're used.
             if (magneticVariation is null && geoidHeight is null && comment is null && source is null && links.IsDefaultOrEmpty && classification is null && fixKind is null && numberOfSatellites is null && horizontalDilutionOfPrecision is null && verticalDilutionOfPrecision is null && positionDilutionOfPrecision is null && secondsSinceLastDgpsUpdate is null && dgpsStationId is null && extensions is null)
@@ -225,7 +225,7 @@ namespace NetTopologySuite.IO
                 return;
             }
 
-            this.uncommonProperties = new UncommonProperties(magneticVariation, geoidHeight, comment, source, links, classification, fixKind, numberOfSatellites, horizontalDilutionOfPrecision, verticalDilutionOfPrecision, positionDilutionOfPrecision, secondsSinceLastDgpsUpdate, dgpsStationId, extensions);
+            _uncommonProperties = new UncommonProperties(magneticVariation, geoidHeight, comment, source, links, classification, fixKind, numberOfSatellites, horizontalDilutionOfPrecision, verticalDilutionOfPrecision, positionDilutionOfPrecision, secondsSinceLastDgpsUpdate, dgpsStationId, extensions);
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "ele" element.
         /// </remarks>
-        public double? ElevationInMeters => double.IsNaN(this.elevationInMeters) ? default(double?) : this.elevationInMeters;
+        public double? ElevationInMeters => double.IsNaN(_elevationInMeters) ? default(double?) : _elevationInMeters;
 
         /// <summary>
         /// Gets the creation / modification timestamp of this location, in UTC time.
@@ -258,7 +258,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "time" element.
         /// </remarks>
-        public DateTime? TimestampUtc => this.timestampUtc.Kind == DateTimeKind.Unspecified ? default(DateTime?) : this.timestampUtc;
+        public DateTime? TimestampUtc => _timestampUtc.Kind == DateTimeKind.Unspecified ? default(DateTime?) : _timestampUtc;
 
         /// <summary>
         /// Gets the magnetic variation at this location.
@@ -266,7 +266,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "magvar" element.
         /// </remarks>
-        public GpxDegrees? MagneticVariation => this.uncommonProperties?.MagneticVariation;
+        public GpxDegrees? MagneticVariation => _uncommonProperties?.MagneticVariation;
 
         /// <summary>
         /// Gets the height (in meters) of geoid (mean sea level) above WGS84 earth ellipsoid at
@@ -275,7 +275,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "geoidheight" element.
         /// </remarks>
-        public double? GeoidHeight => this.uncommonProperties?.GeoidHeight;
+        public double? GeoidHeight => _uncommonProperties?.GeoidHeight;
 
         /// <summary>
         /// Gets the GPS name of this location, to be transferred to and from the GPS.
@@ -291,7 +291,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "cmt" element.
         /// </remarks>
-        public string Comment => this.uncommonProperties?.Comment;
+        public string Comment => _uncommonProperties?.Comment;
 
         /// <summary>
         /// Gets an additional text description for this location for the user (not the GPS).
@@ -307,7 +307,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "src" element.
         /// </remarks>
-        public string Source => this.uncommonProperties?.Source;
+        public string Source => _uncommonProperties?.Source;
 
         /// <summary>
         /// Gets links to additional information about this location.
@@ -315,7 +315,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "link" elements.
         /// </remarks>
-        public ImmutableArray<GpxWebLink> Links => this.uncommonProperties?.Links ?? ImmutableArray<GpxWebLink>.Empty;
+        public ImmutableArray<GpxWebLink> Links => _uncommonProperties?.Links ?? ImmutableArray<GpxWebLink>.Empty;
 
         /// <summary>
         /// Gets the text of the GPS symbol name for this location.
@@ -331,7 +331,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "type" element.
         /// </remarks>
-        public string Classification => this.uncommonProperties?.Classification;
+        public string Classification => _uncommonProperties?.Classification;
 
         /// <summary>
         /// Gets the type of fix when this waypoint was generated.
@@ -339,7 +339,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "fix" element.
         /// </remarks>
-        public GpxFixKind? FixKind => this.uncommonProperties?.FixKind;
+        public GpxFixKind? FixKind => _uncommonProperties?.FixKind;
 
         /// <summary>
         /// Gets the number of satellites used to calculate the GPS fix.
@@ -347,7 +347,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "sat" element.
         /// </remarks>
-        public uint? NumberOfSatellites => this.uncommonProperties?.NumberOfSatellites;
+        public uint? NumberOfSatellites => _uncommonProperties?.NumberOfSatellites;
 
         /// <summary>
         /// Gets the horizontal dilution of precision.
@@ -355,7 +355,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "hdop" element.
         /// </remarks>
-        public double? HorizontalDilutionOfPrecision => this.uncommonProperties?.HorizontalDilutionOfPrecision;
+        public double? HorizontalDilutionOfPrecision => _uncommonProperties?.HorizontalDilutionOfPrecision;
 
         /// <summary>
         /// Gets the vertical dilution of precision.
@@ -363,7 +363,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "vdop" element.
         /// </remarks>
-        public double? VerticalDilutionOfPrecision => this.uncommonProperties?.VerticalDilutionOfPrecision;
+        public double? VerticalDilutionOfPrecision => _uncommonProperties?.VerticalDilutionOfPrecision;
 
         /// <summary>
         /// Gets the position dilution of precision.
@@ -371,7 +371,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "pdop" element.
         /// </remarks>
-        public double? PositionDilutionOfPrecision => this.uncommonProperties?.PositionDilutionOfPrecision;
+        public double? PositionDilutionOfPrecision => _uncommonProperties?.PositionDilutionOfPrecision;
 
         /// <summary>
         /// Gets the number of seconds since the last DGPS update when this waypoint was generated.
@@ -379,7 +379,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "ageofdgpsdata" element.
         /// </remarks>
-        public double? SecondsSinceLastDgpsUpdate => this.uncommonProperties?.SecondsSinceLastDgpsUpdate;
+        public double? SecondsSinceLastDgpsUpdate => _uncommonProperties?.SecondsSinceLastDgpsUpdate;
 
         /// <summary>
         /// Gets the ID of the DGPS station used in differential correction.
@@ -387,7 +387,7 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "dgpsid" element.
         /// </remarks>
-        public GpxDgpsStationId? DgpsStationId => this.uncommonProperties?.DgpsStationId;
+        public GpxDgpsStationId? DgpsStationId => _uncommonProperties?.DgpsStationId;
 
         /// <summary>
         /// Gets arbitrary extension information associated with this waypoint.
@@ -395,44 +395,44 @@ namespace NetTopologySuite.IO
         /// <remarks>
         /// In the official XSD schema for GPX 1.1, this corresponds to the "extensions" element.
         /// </remarks>
-        public object Extensions => this.uncommonProperties?.Extensions;
+        public object Extensions => _uncommonProperties?.Extensions;
 
         /// <inheritdoc />
         public override bool Equals(object obj) => obj is GpxWaypoint other &&
-                                                   this.Longitude == other.Longitude &&
-                                                   this.Latitude == other.Latitude &&
-                                                   this.elevationInMeters == other.elevationInMeters &&
-                                                   this.timestampUtc == other.timestampUtc &&
-                                                   this.Name == other.Name &&
-                                                   this.Description == other.Description &&
-                                                   this.SymbolText == other.SymbolText &&
-                                                   Equals(this.uncommonProperties, other.uncommonProperties);
+                                                   Longitude == other.Longitude &&
+                                                   Latitude == other.Latitude &&
+                                                   _elevationInMeters == other._elevationInMeters &&
+                                                   _timestampUtc == other._timestampUtc &&
+                                                   Name == other.Name &&
+                                                   Description == other.Description &&
+                                                   SymbolText == other.SymbolText &&
+                                                   Equals(_uncommonProperties, other._uncommonProperties);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (this.Longitude, this.Latitude, this.elevationInMeters, this.timestampUtc, this.Name, this.Description, this.SymbolText, this.uncommonProperties).GetHashCode();
+        public override int GetHashCode() => (Longitude, Latitude, _elevationInMeters, _timestampUtc, Name, Description, SymbolText, _uncommonProperties).GetHashCode();
 
         /// <inheritdoc />
-        public override string ToString() => Helpers.BuildString((nameof(this.Longitude), this.Longitude),
-                                                                 (nameof(this.Latitude), this.Latitude),
-                                                                 (nameof(this.ElevationInMeters), this.ElevationInMeters),
-                                                                 (nameof(this.TimestampUtc), this.TimestampUtc),
-                                                                 (nameof(this.MagneticVariation), this.MagneticVariation),
-                                                                 (nameof(this.GeoidHeight), this.GeoidHeight),
-                                                                 (nameof(this.Name), this.Name),
-                                                                 (nameof(this.Comment), this.Comment),
-                                                                 (nameof(this.Description), this.Description),
-                                                                 (nameof(this.Source), this.Source),
-                                                                 (nameof(this.Links), Helpers.ListToString(this.Links)),
-                                                                 (nameof(this.SymbolText), this.SymbolText),
-                                                                 (nameof(this.Classification), this.Classification),
-                                                                 (nameof(this.FixKind), this.FixKind),
-                                                                 (nameof(this.NumberOfSatellites), this.NumberOfSatellites),
-                                                                 (nameof(this.HorizontalDilutionOfPrecision), this.HorizontalDilutionOfPrecision),
-                                                                 (nameof(this.VerticalDilutionOfPrecision), this.VerticalDilutionOfPrecision),
-                                                                 (nameof(this.PositionDilutionOfPrecision), this.PositionDilutionOfPrecision),
-                                                                 (nameof(this.SecondsSinceLastDgpsUpdate), this.SecondsSinceLastDgpsUpdate),
-                                                                 (nameof(this.DgpsStationId), this.DgpsStationId),
-                                                                 (nameof(this.Extensions), this.Extensions));
+        public override string ToString() => Helpers.BuildString((nameof(Longitude), Longitude),
+                                                                 (nameof(Latitude), Latitude),
+                                                                 (nameof(ElevationInMeters), ElevationInMeters),
+                                                                 (nameof(TimestampUtc), TimestampUtc),
+                                                                 (nameof(MagneticVariation), MagneticVariation),
+                                                                 (nameof(GeoidHeight), GeoidHeight),
+                                                                 (nameof(Name), Name),
+                                                                 (nameof(Comment), Comment),
+                                                                 (nameof(Description), Description),
+                                                                 (nameof(Source), Source),
+                                                                 (nameof(Links), Helpers.ListToString(Links)),
+                                                                 (nameof(SymbolText), SymbolText),
+                                                                 (nameof(Classification), Classification),
+                                                                 (nameof(FixKind), FixKind),
+                                                                 (nameof(NumberOfSatellites), NumberOfSatellites),
+                                                                 (nameof(HorizontalDilutionOfPrecision), HorizontalDilutionOfPrecision),
+                                                                 (nameof(VerticalDilutionOfPrecision), VerticalDilutionOfPrecision),
+                                                                 (nameof(PositionDilutionOfPrecision), PositionDilutionOfPrecision),
+                                                                 (nameof(SecondsSinceLastDgpsUpdate), SecondsSinceLastDgpsUpdate),
+                                                                 (nameof(DgpsStationId), DgpsStationId),
+                                                                 (nameof(Extensions), Extensions));
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -445,7 +445,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Longitude"/> value set to <paramref name="longitude"/>.
         /// </returns>
-        public GpxWaypoint WithLongitude(GpxLongitude longitude) => new GpxWaypoint(longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithLongitude(GpxLongitude longitude) => new GpxWaypoint(longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -458,7 +458,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Latitude"/> value set to <paramref name="latitude"/>.
         /// </returns>
-        public GpxWaypoint WithLatitude(GpxLatitude latitude) => new GpxWaypoint(this.Longitude, latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithLatitude(GpxLatitude latitude) => new GpxWaypoint(Longitude, latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -474,7 +474,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="elevationInMeters"/> is <see cref="Nullable{T}.HasValue">non-null</see> and <see cref="double.IsNaN">not a number</see>.
         /// </exception>
-        public GpxWaypoint WithElevationInMeters(double? elevationInMeters) => new GpxWaypoint(this.Longitude, this.Latitude, elevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithElevationInMeters(double? elevationInMeters) => new GpxWaypoint(Longitude, Latitude, elevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -490,7 +490,7 @@ namespace NetTopologySuite.IO
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="timestampUtc"/> is <see cref="Nullable{T}.HasValue">non-null</see> and its <see cref="DateTime.Kind"/> is not <see cref="DateTimeKind.Utc"/>.
         /// </exception>
-        public GpxWaypoint WithTimestampUtc(DateTime? timestampUtc) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, timestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithTimestampUtc(DateTime? timestampUtc) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, timestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -503,7 +503,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="MagneticVariation"/> value set to <paramref name="magneticVariation"/>.
         /// </returns>
-        public GpxWaypoint WithMagneticVariation(GpxDegrees? magneticVariation) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, magneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithMagneticVariation(GpxDegrees? magneticVariation) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, magneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -516,7 +516,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="GeoidHeight"/> value set to <paramref name="geoidHeight"/>.
         /// </returns>
-        public GpxWaypoint WithGeoidHeight(double? geoidHeight) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, geoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithGeoidHeight(double? geoidHeight) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, geoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -529,7 +529,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Name"/> value set to <paramref name="name"/>.
         /// </returns>
-        public GpxWaypoint WithName(string name) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithName(string name) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -542,7 +542,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Comment"/> value set to <paramref name="comment"/>.
         /// </returns>
-        public GpxWaypoint WithComment(string comment) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithComment(string comment) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -555,7 +555,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Description"/> value set to <paramref name="description"/>.
         /// </returns>
-        public GpxWaypoint WithDescription(string description) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithDescription(string description) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -568,7 +568,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Source"/> value set to <paramref name="source"/>.
         /// </returns>
-        public GpxWaypoint WithSource(string source) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithSource(string source) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -581,7 +581,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Links"/> value set to <paramref name="links"/>.
         /// </returns>
-        public GpxWaypoint WithLinks(ImmutableArray<GpxWebLink> links) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithLinks(ImmutableArray<GpxWebLink> links) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -594,7 +594,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="SymbolText"/> value set to <paramref name="symbolText"/>.
         /// </returns>
-        public GpxWaypoint WithSymbolText(string symbolText) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, symbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithSymbolText(string symbolText) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, symbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -607,7 +607,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Classification"/> value set to <paramref name="classification"/>.
         /// </returns>
-        public GpxWaypoint WithClassification(string classification) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithClassification(string classification) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -620,7 +620,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="FixKind"/> value set to <paramref name="fixKind"/>.
         /// </returns>
-        public GpxWaypoint WithFixKind(GpxFixKind? fixKind) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, fixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithFixKind(GpxFixKind? fixKind) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, fixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -633,7 +633,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="NumberOfSatellites"/> value set to <paramref name="numberOfSatellites"/>.
         /// </returns>
-        public GpxWaypoint WithNumberOfSatellites(uint? numberOfSatellites) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, numberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithNumberOfSatellites(uint? numberOfSatellites) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, numberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -646,7 +646,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="HorizontalDilutionOfPrecision"/> value set to <paramref name="horizontalDilutionOfPrecision"/>.
         /// </returns>
-        public GpxWaypoint WithHorizontalDilutionOfPrecision(double? horizontalDilutionOfPrecision) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, horizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithHorizontalDilutionOfPrecision(double? horizontalDilutionOfPrecision) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, horizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -659,7 +659,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="VerticalDilutionOfPrecision"/> value set to <paramref name="verticalDilutionOfPrecision"/>.
         /// </returns>
-        public GpxWaypoint WithVerticalDilutionOfPrecision(double? verticalDilutionOfPrecision) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, verticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithVerticalDilutionOfPrecision(double? verticalDilutionOfPrecision) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, verticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -672,7 +672,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="PositionDilutionOfPrecision"/> value set to <paramref name="positionDilutionOfPrecision"/>.
         /// </returns>
-        public GpxWaypoint WithPositionDilutionOfPrecision(double? positionDilutionOfPrecision) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, positionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithPositionDilutionOfPrecision(double? positionDilutionOfPrecision) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, positionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -685,7 +685,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="SecondsSinceLastDgpsUpdate"/> value set to <paramref name="secondsSinceLastDgpsUpdate"/>.
         /// </returns>
-        public GpxWaypoint WithSecondsSinceLastDgpsUpdate(double? secondsSinceLastDgpsUpdate) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, secondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions);
+        public GpxWaypoint WithSecondsSinceLastDgpsUpdate(double? secondsSinceLastDgpsUpdate) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, secondsSinceLastDgpsUpdate, DgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -698,7 +698,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="DgpsStationId"/> value set to <paramref name="dgpsStationId"/>.
         /// </returns>
-        public GpxWaypoint WithDgpsStationId(GpxDgpsStationId? dgpsStationId) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, dgpsStationId, this.Extensions);
+        public GpxWaypoint WithDgpsStationId(GpxDgpsStationId? dgpsStationId) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, dgpsStationId, Extensions);
 
         /// <summary>
         /// Builds a new instance of <see cref="GpxWaypoint"/> as a copy of this instance, but with
@@ -711,7 +711,7 @@ namespace NetTopologySuite.IO
         /// A new <see cref="GpxWaypoint"/> instance that's a copy of the current instance, but
         /// with its <see cref="Extensions"/> value set to <paramref name="extensions"/>.
         /// </returns>
-        public GpxWaypoint WithExtensions(object extensions) => new GpxWaypoint(this.Longitude, this.Latitude, this.ElevationInMeters, this.TimestampUtc, this.MagneticVariation, this.GeoidHeight, this.Name, this.Comment, this.Description, this.Source, this.Links, this.SymbolText, this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, extensions);
+        public GpxWaypoint WithExtensions(object extensions) => new GpxWaypoint(Longitude, Latitude, ElevationInMeters, TimestampUtc, MagneticVariation, GeoidHeight, Name, Comment, Description, Source, Links, SymbolText, Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, extensions);
 
         internal static GpxWaypoint Load(XElement element, GpxReaderSettings settings, Func<IEnumerable<XElement>, object> extensionCallback)
         {
@@ -747,47 +747,47 @@ namespace NetTopologySuite.IO
 
         internal void Save(XmlWriter writer, GpxWriterSettings settings, Func<object, IEnumerable<XElement>> extensionCallback)
         {
-            writer.WriteAttributeString("lat", this.Latitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
-            writer.WriteAttributeString("lon", this.Longitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
-            writer.WriteOptionalGpxElementValue("ele", this.ElevationInMeters);
-            writer.WriteOptionalGpxElementValue("time", this.TimestampUtc, settings.TimeZoneInfo);
-            writer.WriteOptionalGpxElementValue("magvar", this.MagneticVariation);
-            writer.WriteOptionalGpxElementValue("geoidheight", this.GeoidHeight);
-            writer.WriteOptionalGpxElementValue("name", this.Name);
-            writer.WriteOptionalGpxElementValue("cmt", this.Comment);
-            writer.WriteOptionalGpxElementValue("desc", this.Description);
-            writer.WriteOptionalGpxElementValue("src", this.Source);
-            writer.WriteGpxElementValues("link", this.Links);
-            writer.WriteOptionalGpxElementValue("sym", this.SymbolText);
-            writer.WriteOptionalGpxElementValue("type", this.Classification);
-            writer.WriteOptionalGpxElementValue("fix", this.FixKind);
-            writer.WriteOptionalGpxElementValue("sat", this.NumberOfSatellites);
-            writer.WriteOptionalGpxElementValue("hdop", this.HorizontalDilutionOfPrecision);
-            writer.WriteOptionalGpxElementValue("vdop", this.VerticalDilutionOfPrecision);
-            writer.WriteOptionalGpxElementValue("pdop", this.PositionDilutionOfPrecision);
-            writer.WriteOptionalGpxElementValue("ageofdgpsdata", this.SecondsSinceLastDgpsUpdate);
-            writer.WriteOptionalGpxElementValue("dgpsid", this.DgpsStationId);
-            writer.WriteExtensions(this.Extensions, extensionCallback);
+            writer.WriteAttributeString("lat", Latitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("lon", Longitude.Value.ToRoundTripString(CultureInfo.InvariantCulture));
+            writer.WriteOptionalGpxElementValue("ele", ElevationInMeters);
+            writer.WriteOptionalGpxElementValue("time", TimestampUtc, settings.TimeZoneInfo);
+            writer.WriteOptionalGpxElementValue("magvar", MagneticVariation);
+            writer.WriteOptionalGpxElementValue("geoidheight", GeoidHeight);
+            writer.WriteOptionalGpxElementValue("name", Name);
+            writer.WriteOptionalGpxElementValue("cmt", Comment);
+            writer.WriteOptionalGpxElementValue("desc", Description);
+            writer.WriteOptionalGpxElementValue("src", Source);
+            writer.WriteGpxElementValues("link", Links);
+            writer.WriteOptionalGpxElementValue("sym", SymbolText);
+            writer.WriteOptionalGpxElementValue("type", Classification);
+            writer.WriteOptionalGpxElementValue("fix", FixKind);
+            writer.WriteOptionalGpxElementValue("sat", NumberOfSatellites);
+            writer.WriteOptionalGpxElementValue("hdop", HorizontalDilutionOfPrecision);
+            writer.WriteOptionalGpxElementValue("vdop", VerticalDilutionOfPrecision);
+            writer.WriteOptionalGpxElementValue("pdop", PositionDilutionOfPrecision);
+            writer.WriteOptionalGpxElementValue("ageofdgpsdata", SecondsSinceLastDgpsUpdate);
+            writer.WriteOptionalGpxElementValue("dgpsid", DgpsStationId);
+            writer.WriteExtensions(Extensions, extensionCallback);
         }
 
         private sealed class UncommonProperties
         {
             public UncommonProperties(GpxDegrees? magneticVariation, double? geoidHeight, string comment, string source, ImmutableArray<GpxWebLink> links, string classification, GpxFixKind? fixKind, uint? numberOfSatellites, double? horizontalDilutionOfPrecision, double? verticalDilutionOfPrecision, double? positionDilutionOfPrecision, double? secondsSinceLastDgpsUpdate, GpxDgpsStationId? dgpsStationId, object extensions)
             {
-                this.MagneticVariation = magneticVariation;
-                this.GeoidHeight = geoidHeight;
-                this.Comment = comment;
-                this.Source = source;
-                this.Links = links.IsDefault ? ImmutableArray<GpxWebLink>.Empty : links;
-                this.Classification = classification;
-                this.FixKind = fixKind;
-                this.NumberOfSatellites = numberOfSatellites;
-                this.HorizontalDilutionOfPrecision = horizontalDilutionOfPrecision;
-                this.VerticalDilutionOfPrecision = verticalDilutionOfPrecision;
-                this.PositionDilutionOfPrecision = positionDilutionOfPrecision;
-                this.SecondsSinceLastDgpsUpdate = secondsSinceLastDgpsUpdate;
-                this.DgpsStationId = dgpsStationId;
-                this.Extensions = extensions;
+                MagneticVariation = magneticVariation;
+                GeoidHeight = geoidHeight;
+                Comment = comment;
+                Source = source;
+                Links = links.IsDefault ? ImmutableArray<GpxWebLink>.Empty : links;
+                Classification = classification;
+                FixKind = fixKind;
+                NumberOfSatellites = numberOfSatellites;
+                HorizontalDilutionOfPrecision = horizontalDilutionOfPrecision;
+                VerticalDilutionOfPrecision = verticalDilutionOfPrecision;
+                PositionDilutionOfPrecision = positionDilutionOfPrecision;
+                SecondsSinceLastDgpsUpdate = secondsSinceLastDgpsUpdate;
+                DgpsStationId = dgpsStationId;
+                Extensions = extensions;
             }
 
             public GpxDegrees? MagneticVariation { get; }
@@ -819,22 +819,22 @@ namespace NetTopologySuite.IO
             public object Extensions { get; }
 
             public override bool Equals(object obj) => obj is UncommonProperties other &&
-                                                       this.MagneticVariation == other.MagneticVariation &&
-                                                       this.GeoidHeight == other.GeoidHeight &&
-                                                       this.Comment == other.Comment &&
-                                                       this.Source == other.Source &&
-                                                       this.Links.ListEquals(other.Links) &&
-                                                       this.Classification == other.Classification &&
-                                                       this.FixKind == other.FixKind &&
-                                                       this.NumberOfSatellites == other.NumberOfSatellites &&
-                                                       this.HorizontalDilutionOfPrecision == other.HorizontalDilutionOfPrecision &&
-                                                       this.VerticalDilutionOfPrecision == other.VerticalDilutionOfPrecision &&
-                                                       this.PositionDilutionOfPrecision == other.PositionDilutionOfPrecision &&
-                                                       this.SecondsSinceLastDgpsUpdate == other.SecondsSinceLastDgpsUpdate &&
-                                                       this.DgpsStationId == other.DgpsStationId &&
-                                                       Equals(this.Extensions, other.Extensions);
+                                                       MagneticVariation == other.MagneticVariation &&
+                                                       GeoidHeight == other.GeoidHeight &&
+                                                       Comment == other.Comment &&
+                                                       Source == other.Source &&
+                                                       Links.ListEquals(other.Links) &&
+                                                       Classification == other.Classification &&
+                                                       FixKind == other.FixKind &&
+                                                       NumberOfSatellites == other.NumberOfSatellites &&
+                                                       HorizontalDilutionOfPrecision == other.HorizontalDilutionOfPrecision &&
+                                                       VerticalDilutionOfPrecision == other.VerticalDilutionOfPrecision &&
+                                                       PositionDilutionOfPrecision == other.PositionDilutionOfPrecision &&
+                                                       SecondsSinceLastDgpsUpdate == other.SecondsSinceLastDgpsUpdate &&
+                                                       DgpsStationId == other.DgpsStationId &&
+                                                       Equals(Extensions, other.Extensions);
 
-            public override int GetHashCode() => (this.MagneticVariation, this.GeoidHeight, this.Comment, this.Source, this.Links.ListToHashCode(), this.Classification, this.FixKind, this.NumberOfSatellites, this.HorizontalDilutionOfPrecision, this.VerticalDilutionOfPrecision, this.PositionDilutionOfPrecision, this.SecondsSinceLastDgpsUpdate, this.DgpsStationId, this.Extensions).GetHashCode();
+            public override int GetHashCode() => (MagneticVariation, GeoidHeight, Comment, Source, Links.ListToHashCode(), Classification, FixKind, NumberOfSatellites, HorizontalDilutionOfPrecision, VerticalDilutionOfPrecision, PositionDilutionOfPrecision, SecondsSinceLastDgpsUpdate, DgpsStationId, Extensions).GetHashCode();
         }
     }
 }

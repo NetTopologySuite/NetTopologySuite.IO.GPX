@@ -29,7 +29,7 @@ namespace NetTopologySuite.IO
             NamespaceHandling = NamespaceHandling.OmitDuplicates,
         };
 
-        private GpxMetadata metadata = new GpxMetadata(creator: "NetTopologySuite.IO.GPX");
+        private GpxMetadata _metadata = new GpxMetadata(creator: "NetTopologySuite.IO.GPX");
 
         /// <summary>
         /// Gets or sets the <see cref="GpxMetadata"/> instance that describes the contents of this
@@ -40,8 +40,8 @@ namespace NetTopologySuite.IO
         /// </exception>
         public GpxMetadata Metadata
         {
-            get => this.metadata;
-            set => this.metadata = value ?? throw new ArgumentNullException(nameof(value));
+            get => _metadata;
+            set => _metadata = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         /// <summary>
@@ -146,11 +146,11 @@ namespace NetTopologySuite.IO
         public void WriteTo(XmlWriter writer, GpxWriterSettings settings) =>
             GpxWriter.Write(writer,
                             settings,
-                            this.Metadata,
-                            this.Waypoints,
-                            this.Routes,
-                            this.Tracks,
-                            this.Extensions);
+                            Metadata,
+                            Waypoints,
+                            Routes,
+                            Tracks,
+                            Extensions);
 
         /// <summary>
         /// Builds the string representation of this file.
@@ -168,7 +168,7 @@ namespace NetTopologySuite.IO
             using (var stringWriter = new StringWriter(stringBuilder))
             using (var xmlWriter = XmlWriter.Create(stringWriter, XmlWriterSettings))
             {
-                this.WriteTo(xmlWriter, settings);
+                WriteTo(xmlWriter, settings);
             }
 
             return stringBuilder.ToString();
@@ -176,19 +176,19 @@ namespace NetTopologySuite.IO
 
         private sealed class GpxFileBuilderVisitor : GpxVisitorBase
         {
-            private readonly GpxFile fileToBuild;
+            private readonly GpxFile _fileToBuild;
 
-            public GpxFileBuilderVisitor(GpxFile fileToBuild) => this.fileToBuild = fileToBuild;
+            public GpxFileBuilderVisitor(GpxFile fileToBuild) => _fileToBuild = fileToBuild;
 
-            public override void VisitMetadata(GpxMetadata metadata) => this.fileToBuild.Metadata = metadata;
+            public override void VisitMetadata(GpxMetadata metadata) => _fileToBuild.Metadata = metadata;
 
-            public override void VisitWaypoint(GpxWaypoint waypoint) => this.fileToBuild.Waypoints.Add(waypoint);
+            public override void VisitWaypoint(GpxWaypoint waypoint) => _fileToBuild.Waypoints.Add(waypoint);
 
-            public override void VisitRoute(GpxRoute route) => this.fileToBuild.Routes.Add(route);
+            public override void VisitRoute(GpxRoute route) => _fileToBuild.Routes.Add(route);
 
-            public override void VisitTrack(GpxTrack track) => this.fileToBuild.Tracks.Add(track);
+            public override void VisitTrack(GpxTrack track) => _fileToBuild.Tracks.Add(track);
 
-            public override void VisitExtensions(object extensions) => this.fileToBuild.Extensions = extensions;
+            public override void VisitExtensions(object extensions) => _fileToBuild.Extensions = extensions;
         }
     }
 }
