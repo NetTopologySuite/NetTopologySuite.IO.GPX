@@ -201,19 +201,19 @@ the slightly stricter, but still completely reasonable, limits imposed by the id
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_GeoAPI_Geometries_IGeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader%2CNetTopologySuite.IO.GpxReaderSettings%2CGeoAPI.Geometries.IGeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_NetTopologySuite_Geometries_GeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader%2CNetTopologySuite.IO.GpxReaderSettings%2CNetTopologySuite.Geometries.GeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxReader.cs/#L44">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxReader_ReadFeatures_" data-uid="NetTopologySuite.IO.GpxReader.ReadFeatures*"></a>
-  <h4 id="NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_GeoAPI_Geometries_IGeometryFactory_" data-uid="NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,GeoAPI.Geometries.IGeometryFactory)">ReadFeatures(XmlReader, GpxReaderSettings, IGeometryFactory)</h4>
+  <h4 id="NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_NetTopologySuite_Geometries_GeometryFactory_" data-uid="NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,NetTopologySuite.Geometries.GeometryFactory)">ReadFeatures(XmlReader, GpxReaderSettings, GeometryFactory)</h4>
   <div class="markdown level1 summary"><p>Reads in NTS <span class="xref">NetTopologySuite.Features.Feature</span>s and GPX metadata from an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.xml.xmlreader">XmlReader</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static (GpxMetadata metadata, Feature[] features, object extensions)ReadFeatures(XmlReader reader, GpxReaderSettings settings, IGeometryFactory geometryFactory)</code></pre>
+    <pre><code class="lang-csharp hljs">public static (GpxMetadata metadata, Feature[] features, object extensions)ReadFeatures(XmlReader reader, GpxReaderSettings settings, GeometryFactory geometryFactory)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -239,9 +239,9 @@ read in, or <code>null</code> to use a general-purpose default.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">GeoAPI.Geometries.IGeometryFactory</span></td>
+        <td><span class="xref">NetTopologySuite.Geometries.GeometryFactory</span></td>
         <td><span class="parametername">geometryFactory</span></td>
-        <td><p>The <span class="xref">GeoAPI.Geometries.IGeometryFactory</span> instance to use when creating the individual
+        <td><p>The <span class="xref">NetTopologySuite.Geometries.GeometryFactory</span> instance to use when creating the individual
 <span class="xref">NetTopologySuite.Features.Feature.Geometry</span> elements.</p>
 </td>
       </tr>

@@ -172,21 +172,21 @@ written out, or <code>null</code> to use a general-purpose default.</p>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">NetTopologySuite.Features.IFeature</span>&gt;</td>
         <td><span class="parametername">waypointFeatures</span></td>
         <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span>s that include the top-level wpt instances.  Optional, but if
-specified, each must be an <span class="xref">GeoAPI.Geometries.IPoint</span> feature.</p>
+specified, each must be a <span class="xref">NetTopologySuite.Geometries.Point</span> feature.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">NetTopologySuite.Features.IFeature</span>&gt;</td>
         <td><span class="parametername">routeFeatures</span></td>
         <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span>s that include the top-level rte instances.  Optional, but if
-specified, each must be an <span class="xref">GeoAPI.Geometries.ILineString</span> feature.</p>
+specified, each must be a <span class="xref">NetTopologySuite.Geometries.LineString</span> feature.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">NetTopologySuite.Features.IFeature</span>&gt;</td>
         <td><span class="parametername">trackFeatures</span></td>
         <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span>s that include the top-level trk instances.  Optional, but if
-specified, each must be an <span class="xref">GeoAPI.Geometries.IMultiLineString</span> feature.</p>
+specified, each must be a <span class="xref">NetTopologySuite.Geometries.MultiLineString</span> feature.</p>
 </td>
       </tr>
       <tr>
@@ -259,7 +259,7 @@ written out, or <code>null</code> to use a general-purpose default.</p>
   <h5 id="NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The top-level GPX data objects written out depend on the <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span>
 type, as follows:</p>
-<table><thead><tr><th>Type of <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span>Corresponding top-level data object</th><th></th></tr></thead><tbody><tr><td><span class="xref">GeoAPI.Geometries.IPoint</span><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a></td><td></td></tr><tr><td><span class="xref">GeoAPI.Geometries.ILineString</span><a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a></td><td></td></tr><tr><td><span class="xref">GeoAPI.Geometries.IMultiLineString</span><a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Type of <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span>Corresponding top-level data object</th><th></th></tr></thead><tbody><tr><td><span class="xref">NetTopologySuite.Geometries.Point</span><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a></td><td></td></tr><tr><td><span class="xref">NetTopologySuite.Geometries.LineString</span><a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a></td><td></td></tr><tr><td><span class="xref">NetTopologySuite.Geometries.MultiLineString</span><a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a></td><td></td></tr></tbody></table>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">

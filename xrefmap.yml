@@ -3282,12 +3282,12 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxReader.Read
   nameWithType: GpxReader.Read
-- uid: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,GeoAPI.Geometries.IGeometryFactory)
-  name: ReadFeatures(XmlReader, GpxReaderSettings, IGeometryFactory)
-  href: api/NetTopologySuite.IO.GpxReader.html#NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_GeoAPI_Geometries_IGeometryFactory_
-  commentId: M:NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,GeoAPI.Geometries.IGeometryFactory)
-  fullName: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings, GeoAPI.Geometries.IGeometryFactory)
-  nameWithType: GpxReader.ReadFeatures(XmlReader, GpxReaderSettings, IGeometryFactory)
+- uid: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,NetTopologySuite.Geometries.GeometryFactory)
+  name: ReadFeatures(XmlReader, GpxReaderSettings, GeometryFactory)
+  href: api/NetTopologySuite.IO.GpxReader.html#NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_NetTopologySuite_Geometries_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,NetTopologySuite.Geometries.GeometryFactory)
+  fullName: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings, NetTopologySuite.Geometries.GeometryFactory)
+  nameWithType: GpxReader.ReadFeatures(XmlReader, GpxReaderSettings, GeometryFactory)
 - uid: NetTopologySuite.IO.GpxReader.ReadFeatures*
   name: ReadFeatures
   href: api/NetTopologySuite.IO.GpxReader.html#NetTopologySuite_IO_GpxReader_ReadFeatures_
@@ -4182,11 +4182,11 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWaypoint
   fullName: NetTopologySuite.IO.GpxWaypoint
   nameWithType: GpxWaypoint
-- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(GeoAPI.Geometries.Coordinate)
+- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.Geometries.Coordinate)
   name: GpxWaypoint(Coordinate)
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate_
-  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(GeoAPI.Geometries.Coordinate)
-  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(GeoAPI.Geometries.Coordinate)
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate_
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.Geometries.Coordinate)
+  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.Geometries.Coordinate)
   nameWithType: GpxWaypoint.GpxWaypoint(Coordinate)
 - uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude)
   name: GpxWaypoint(GpxLongitude, GpxLatitude)
@@ -5423,24 +5423,24 @@ references:
   commentId: T:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter
   fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter
   nameWithType: NetTopologySuiteGpxFeatureConverter
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,GeoAPI.Geometries.IGeometryFactory)
-  name: ToFeature(GpxRoute, IGeometryFactory)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_GeoAPI_Geometries_IGeometryFactory_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,GeoAPI.Geometries.IGeometryFactory)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute, GeoAPI.Geometries.IGeometryFactory)
-  nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxRoute, IGeometryFactory)
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,GeoAPI.Geometries.IGeometryFactory)
-  name: ToFeature(GpxTrack, IGeometryFactory)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_GeoAPI_Geometries_IGeometryFactory_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,GeoAPI.Geometries.IGeometryFactory)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack, GeoAPI.Geometries.IGeometryFactory)
-  nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxTrack, IGeometryFactory)
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,GeoAPI.Geometries.IGeometryFactory)
-  name: ToFeature(GpxWaypoint, IGeometryFactory)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_GeoAPI_Geometries_IGeometryFactory_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,GeoAPI.Geometries.IGeometryFactory)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint, GeoAPI.Geometries.IGeometryFactory)
-  nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxWaypoint, IGeometryFactory)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,NetTopologySuite.Geometries.GeometryFactory)
+  name: ToFeature(GpxRoute, GeometryFactory)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_NetTopologySuite_Geometries_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,NetTopologySuite.Geometries.GeometryFactory)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute, NetTopologySuite.Geometries.GeometryFactory)
+  nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxRoute, GeometryFactory)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,NetTopologySuite.Geometries.GeometryFactory)
+  name: ToFeature(GpxTrack, GeometryFactory)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_NetTopologySuite_Geometries_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,NetTopologySuite.Geometries.GeometryFactory)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack, NetTopologySuite.Geometries.GeometryFactory)
+  nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxTrack, GeometryFactory)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,NetTopologySuite.Geometries.GeometryFactory)
+  name: ToFeature(GpxWaypoint, GeometryFactory)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_NetTopologySuite_Geometries_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,NetTopologySuite.Geometries.GeometryFactory)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint, NetTopologySuite.Geometries.GeometryFactory)
+  nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxWaypoint, GeometryFactory)
 - uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature*
   name: ToFeature
   href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_

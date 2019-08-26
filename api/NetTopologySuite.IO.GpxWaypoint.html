@@ -119,13 +119,13 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(GeoAPI.Geometries.Coordinate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(NetTopologySuite.Geometries.Coordinate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L64">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint__ctor_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor*"></a>
-  <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(GeoAPI.Geometries.Coordinate)">GpxWaypoint(Coordinate)</h4>
+  <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.Geometries.Coordinate)">GpxWaypoint(Coordinate)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -144,18 +144,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">GeoAPI.Geometries.Coordinate</span></td>
+        <td><span class="xref">NetTopologySuite.Geometries.Coordinate</span></td>
         <td><span class="parametername">coordinate</span></td>
-        <td><p>A <span class="xref">GeoAPI.Geometries.Coordinate</span> to use to initialize <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> and
+        <td><p>A <span class="xref">NetTopologySuite.Geometries.Coordinate</span> to use to initialize <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> and
 <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_GpxWaypoint__ctor_GeoAPI_Geometries_Coordinate__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p><span class="xref">GeoAPI.Geometries.Coordinate.X</span> and <span class="xref">GeoAPI.Geometries.Coordinate.Y</span> are assumed to be WGS-84
-degrees, and <span class="xref">GeoAPI.Geometries.Coordinate.Z</span> is assumed to be an elevation in meters when it
-isn't equal to <span class="xref">GeoAPI.Geometries.Coordinate.NullOrdinate</span>.</p>
+  <h5 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><span class="xref">NetTopologySuite.Geometries.Coordinate.X</span> and <span class="xref">NetTopologySuite.Geometries.Coordinate.Y</span> are assumed to be WGS-84
+degrees, and <span class="xref">NetTopologySuite.Geometries.Coordinate.Z</span> is assumed to be an elevation in meters when it
+isn't equal to <span class="xref">NetTopologySuite.Geometries.Coordinate.NullOrdinate</span>.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,7 +174,7 @@ isn't equal to <span class="xref">GeoAPI.Geometries.Coordinate.NullOrdinate</spa
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
         <td><p>Thrown when:</p>
-<ul><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">GeoAPI.Geometries.Coordinate.X</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLongitude.html">GpxLongitude</a>,</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">GeoAPI.Geometries.Coordinate.Y</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLatitude.html">GpxLatitude</a>, or</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">GeoAPI.Geometries.Coordinate.Z</span> value <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double.isinfinity#System_Double_IsInfinity_System_Double_">IsInfinity(Double)</a></li></ul>
+<ul><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">NetTopologySuite.Geometries.Coordinate.X</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLongitude.html">GpxLongitude</a>,</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">NetTopologySuite.Geometries.Coordinate.Y</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLatitude.html">GpxLatitude</a>, or</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">NetTopologySuite.Geometries.Coordinate.Z</span> value <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double.isinfinity#System_Double_IsInfinity_System_Double_">IsInfinity(Double)</a></li></ul>
 </td>
       </tr>
     </tbody>
