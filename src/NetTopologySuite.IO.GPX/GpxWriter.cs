@@ -76,19 +76,19 @@ namespace NetTopologySuite.IO
         /// <list type="table">
         /// <listheader>
         /// <term>Type of <see cref="IFeature.Geometry"/></term>
-        /// <term>Corresponding top-level data object</term>
+        /// <description>Corresponding top-level data object</description>
         /// </listheader>
         /// <item>
         /// <term><see cref="Point"/></term>
-        /// <term><see cref="GpxWaypoint"/></term>
+        /// <description><see cref="GpxWaypoint"/></description>
         /// </item>
         /// <item>
         /// <term><see cref="LineString"/></term>
-        /// <term><see cref="GpxRoute"/></term>
+        /// <description><see cref="GpxRoute"/></description>
         /// </item>
         /// <item>
         /// <term><see cref="MultiLineString"/></term>
-        /// <term><see cref="GpxTrack"/></term>
+        /// <description><see cref="GpxTrack"/></description>
         /// </item>
         /// </list>
         /// </remarks>
