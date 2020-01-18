@@ -10,8 +10,6 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
-using NetTopologySuite.Features;
-
 namespace NetTopologySuite.IO
 {
     internal static class Helpers
@@ -28,17 +26,6 @@ namespace NetTopologySuite.IO
 
         // dotnet/corefx#22625
         public static ReadOnlySpan<T> AsReadOnlySpan<T>(this ImmutableArray<T> array) => Unsafe.As<ImmutableArray<T>, T[]>(ref array);
-
-        public static object GetOptionalValue(this IAttributesTable attributes, string attributeName)
-        {
-            object result = null;
-            if (attributes.Exists(attributeName))
-            {
-                result = attributes[attributeName];
-            }
-
-            return result;
-        }
 
         public static bool TryGetCount<T>(this IEnumerable<T> source, out int count)
         {
