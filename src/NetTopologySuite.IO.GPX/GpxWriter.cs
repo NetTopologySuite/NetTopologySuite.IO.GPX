@@ -203,12 +203,9 @@ namespace NetTopologySuite.IO
             writer.WriteAttributeString("version", "1.1");
             writer.WriteAttributeString("creator", metadata.Creator);
 
-            if (settings.Namespaces.Any())
+            foreach (var (desiredPrefix, namespaceUri) in settings.CommonXmlNamespacesByDesiredPrefix)
             {
-                foreach (var ns in settings.Namespaces)
-                {
-                    writer.WriteAttributeString("xmlns", ns.Key, null, ns.Value.ToString());
-                }
+                writer.WriteAttributeString("xmlns", desiredPrefix, null, namespaceUri.ToString());
             }
 
             if (!metadata.IsTrivial)

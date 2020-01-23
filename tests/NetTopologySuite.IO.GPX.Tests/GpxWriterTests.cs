@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
+
 using NetTopologySuite.Features;
 using NetTopologySuite.Geometries;
 
@@ -49,48 +50,59 @@ namespace NetTopologySuite.IO
         [GitHubIssue(36)]
         public void CustomRootNamespacesShouldBeAbleToBeSpecified()
         {
-            string expected = @"<gpx version='1.1' creator='Creator'
-                    xmlns='http://www.topografix.com/GPX/1/1'
-                    xmlns:ABC='http://www.mycustomnamespace.net/xml'>
-                <extensions>
-                    <ABC:Key>Value</ABC:Key>
-                </extensions>
-            </gpx>";
+            const string DesiredPrefix = "ABC";
+            const string NamespaceName = "http://www.example.com/xml";
 
+            string expected = $@"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='Creator' xmlns:{DesiredPrefix}= '{NamespaceName}'>
+    <extensions>
+        <{DesiredPrefix}:Key>Value</{DesiredPrefix}:Key>
+    </extensions>
+</gpx>";
+
+            XElement parsedRoot;
             using (var ms = new MemoryStream())
             {
-                var xmlWriterSettings = new XmlWriterSettings { Encoding = Encoding.UTF8, CloseOutput = false };
-
+                var xmlWriterSettings = new XmlWriterSettings { Encoding = Encoding.UTF8, CloseOutput = false, NamespaceHandling = NamespaceHandling.OmitDuplicates };
                 using (var wr = XmlWriter.Create(ms, xmlWriterSettings))
                 {
-                    XNamespace ns = "http://www.mycustomnamespace.net/xml";
-
-                    var gpxWriterSettings = new GpxWriterSettings();
-                    gpxWriterSettings.Namespaces["ABC"] = new Uri(ns.NamespaceName);
-
-                    var gpxMetadata = new GpxMetadata("Creator");
-                    var features = new List<IFeature>();
-
-                    var extensions = new List<XElement>()
+                    var gpxWriterSettings = new GpxWriterSettings
                     {
-                        new XElement(ns + "Key", "Value"),
+                        CommonXmlNamespacesByDesiredPrefix =
+                        {
+                            [DesiredPrefix] = new Uri(NamespaceName),
+                        },
                     };
 
-                    GpxWriter.Write(wr, gpxWriterSettings, gpxMetadata, features, extensions);
+                    XElement[] extensions = { new XElement(XName.Get("Key", NamespaceName), "Value"), };
+
+                    GpxWriter.Write(wr, gpxWriterSettings, new GpxMetadata("Creator"), Enumerable.Empty<IFeature>(), extensions);
                 }
 
                 ms.Position = 0;
-                var diff = DiffBuilder.Compare(expected)
-                                      .NormalizeWhitespace()
-                                      .WithTest(ms)
-                                      .IgnoreComments()
-                                      .CheckForSimilar()
-                                      .Build();
-
-                // note that this is not a guarantee in the general case.  the inputs here have all been
-                // slightly tweaked such that it should succeed for our purposes.
-                Assert.False(diff.HasDifferences(), string.Join(Environment.NewLine, diff.Differences));
+                parsedRoot = XDocument.Load(ms).Root;
             }
+
+            // first check that it defines the same content
+            var diff = DiffBuilder.Compare(expected)
+                                  .NormalizeWhitespace()
+                                  .WithTest(parsedRoot)
+                                  .IgnoreComments()
+                                  .CheckForSimilar()
+                                  .Build();
+            Assert.False(diff.HasDifferences(), string.Join(Environment.NewLine, diff.Differences));
+
+            // everything above actually passes without the fix for #36 or if we ignore the desired
+            // prefix that we're given, so make sure to test that we actually put the namespace
+            // declaration on the root with the desired prefix.
+            Assert.Equal(DesiredPrefix, parsedRoot.GetPrefixOfNamespace(NamespaceName));
+
+            // prove that, with NamespaceHandling.OmitDuplicates, duplicates are actually omitted.
+            var redundantDeclarations = from descendant in parsedRoot.Descendants()
+                                        from attribute in descendant.Attributes()
+                                        where attribute.IsNamespaceDeclaration && attribute.Value == NamespaceName
+                                        select (descendant, attribute);
+            Assert.Empty(redundantDeclarations);
         }
     }
 }

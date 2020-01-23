@@ -1,6 +1,9 @@
 # NetTopologySuite.IO.GPX Release Notes
 
-## 1.0.0
+## [1.1.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/11)
+- Allow specifying arbitrary namespaces (+prefixes) on the root element so that they don't have to be repeated on every `extensions` element ([#36](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/36)).
+
+## [1.0.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/6)
 - Updates to make this compatible with v2 of the core NTS library.
 
 ## 0.6.0

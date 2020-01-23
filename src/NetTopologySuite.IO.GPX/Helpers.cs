@@ -24,6 +24,8 @@ namespace NetTopologySuite.IO
 
         private static readonly string MaxPrecisionFormatString = "0." + new string('#', 324);
 
+        public static void Deconstruct<TKey, TValue>(this KeyValuePair<TKey, TValue> kvp, out TKey key, out TValue value) => (key, value) = (kvp.Key, kvp.Value);
+
         // dotnet/corefx#22625
         public static ReadOnlySpan<T> AsReadOnlySpan<T>(this ImmutableArray<T> array) => Unsafe.As<ImmutableArray<T>, T[]>(ref array);
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace NetTopologySuite.IO
 {
@@ -38,8 +39,16 @@ namespace NetTopologySuite.IO
         public GpxExtensionWriter ExtensionWriter { get; set; } = DefaultExtensionWriter;
 
         /// <summary>
-        /// Gets the namespaces.
+        /// Gets an <see cref="IDictionary{TKey, TValue}"/> instance that can be used to register
+        /// additional namespaces to declare on the root element, keyed by the desired prefix to use
+        /// in the result.  These can be used to avoid duplicating the namespace declaration for
+        /// every single "extensions" element that uses the exact same namespace.
+        /// <para>
+        /// The <see cref="XmlWriterSettings"/>'s <see cref="XmlWriterSettings.NamespaceHandling"/>
+        /// value will need to be set to <see cref="NamespaceHandling.OmitDuplicates"/> when the
+        /// writer is created in order to fully benefit from using this property.
+        /// </para>
         /// </summary>
-        public Dictionary<string, Uri> Namespaces { get; } = new Dictionary<string, Uri>();
+        public IDictionary<string, Uri> CommonXmlNamespacesByDesiredPrefix { get; } = new Dictionary<string, Uri>();
     }
 }
