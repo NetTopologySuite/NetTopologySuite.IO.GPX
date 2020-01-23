@@ -1637,7 +1637,7 @@
                 <ele>157.4000244</ele>
                 <time>2015-08-18T17:27:31Z</time>
             </trkpt>
-            <trkpt lat="33.774543799999996" lon="-118.341">
+            <trkpt lat="33.7745438" lon="-118.341">
                 <ele>154.5999756</ele>
                 <time>2015-08-18T17:27:39Z</time>
             </trkpt>
@@ -2417,7 +2417,7 @@
                 <ele>118.2000122</ele>
                 <time>2015-08-18T17:53:20Z</time>
             </trkpt>
-            <trkpt lat="33.801534" lon="-118.36849839999999">
+            <trkpt lat="33.801534" lon="-118.3684984">
                 <ele>119.7999878</ele>
                 <time>2015-08-18T17:53:26Z</time>
             </trkpt>
@@ -15650,7 +15650,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="40.470773199999996" lon="-111.4865139">
+            <trkpt lat="40.4707732" lon="-111.4865139">
                 <ele>1705.3999023</ele>
                 <time>2015-08-26T16:53:04Z</time>
                 <extensions>
@@ -15956,7 +15956,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="40.4763848" lon="-111.48639059999999">
+            <trkpt lat="40.4763848" lon="-111.4863906">
                 <ele>1690</ele>
                 <time>2015-08-26T16:55:54Z</time>
                 <extensions>
@@ -20454,7 +20454,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.803156799999996" lon="-118.3902315">
+            <trkpt lat="33.8031568" lon="-118.3902315">
                 <ele>54.5999756</ele>
                 <time>2015-08-17T00:54:19Z</time>
                 <extensions>
@@ -22053,7 +22053,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.7955986" lon="-118.36677829999999">
+            <trkpt lat="33.7955986" lon="-118.3667783">
                 <ele>133.7999878</ele>
                 <time>2015-08-17T01:09:04Z</time>
                 <extensions>
@@ -36962,7 +36962,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.800110599999996" lon="-118.3895615">
+            <trkpt lat="33.8001106" lon="-118.3895615">
                 <ele>72.5999756</ele>
                 <time>2015-08-17T17:42:35Z</time>
                 <extensions>
@@ -39575,7 +39575,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="40.812280199999996" lon="-111.5916057">
+            <trkpt lat="40.8122802" lon="-111.5916057">
                 <ele>1858.3999023</ele>
                 <time>2015-08-23T15:59:00Z</time>
                 <extensions>
@@ -40281,7 +40281,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="40.8219828" lon="-111.58276239999999">
+            <trkpt lat="40.8219828" lon="-111.5827624">
                 <ele>1860.8000488</ele>
                 <time>2015-08-23T16:05:19Z</time>
                 <extensions>
@@ -42372,7 +42372,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="40.857647299999996" lon="-111.5892959">
+            <trkpt lat="40.8576473" lon="-111.5892959">
                 <ele>1783.1999512</ele>
                 <time>2015-08-23T16:24:34Z</time>
                 <extensions>
@@ -58278,7 +58278,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.7993195" lon="-118.39272389999999">
+            <trkpt lat="33.7993195" lon="-118.3927239">
                 <ele>52.5999756</ele>
                 <time>2015-08-20T17:19:46Z</time>
                 <extensions>
@@ -68546,7 +68546,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="40.677035" lon="-111.46811339999999">
+            <trkpt lat="40.677035" lon="-111.4681134">
                 <ele>2042.8000488</ele>
                 <time>2015-08-25T16:21:05Z</time>
                 <extensions>
@@ -73635,7 +73635,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.7949739" lon="-118.40346889999999">
+            <trkpt lat="33.7949739" lon="-118.4034689">
                 <ele>115.4000244</ele>
                 <time>2015-08-15T15:00:31Z</time>
                 <extensions>
@@ -75789,7 +75789,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.7579492" lon="-118.41303189999999">
+            <trkpt lat="33.7579492" lon="-118.4130319">
                 <ele>82.4000244</ele>
                 <time>2015-08-15T15:20:30Z</time>
                 <extensions>
@@ -80458,7 +80458,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.765208199999996" lon="-118.414179">
+            <trkpt lat="33.7652082" lon="-118.414179">
                 <ele>81</ele>
                 <time>2015-08-15T16:03:53Z</time>
                 <extensions>
@@ -82275,7 +82275,7 @@
                     </tp1:TrackPointExtension>
                 </extensions>
             </trkpt>
-            <trkpt lat="33.7967748" lon="-118.40279459999999">
+            <trkpt lat="33.7967748" lon="-118.4027946">
                 <ele>106.5999756</ele>
                 <time>2015-08-15T16:22:02Z</time>
                 <extensions>

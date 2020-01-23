@@ -217,7 +217,7 @@
         <mytrails:ele_alt>100</mytrails:ele_alt>
       </extensions>
     </rtept>
-    <rtept lat="43.254447999999996" lon="-4.614184">
+    <rtept lat="43.254448" lon="-4.614184">
       <ele>95</ele>
       <time>2016-06-17T08:25:06Z</time>
       <fix>3d</fix>
@@ -7774,7 +7774,7 @@
         <mytrails:ele_alt>594</mytrails:ele_alt>
       </extensions>
     </rtept>
-    <rtept lat="43.241459999999996" lon="-4.64577">
+    <rtept lat="43.24146" lon="-4.64577">
       <ele>584</ele>
       <time>2016-06-17T08:39:03Z</time>
       <fix>3d</fix>
@@ -7785,7 +7785,7 @@
         <mytrails:ele_alt>595</mytrails:ele_alt>
       </extensions>
     </rtept>
-    <rtept lat="43.241459999999996" lon="-4.64577">
+    <rtept lat="43.24146" lon="-4.64577">
       <ele>585</ele>
       <time>2016-06-17T08:39:04Z</time>
       <fix>3d</fix>
