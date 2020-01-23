@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NetTopologySuite.IO
 {
@@ -35,5 +36,10 @@ namespace NetTopologySuite.IO
         /// is an instance of the base class (see its summary documentation for details).
         /// </summary>
         public GpxExtensionWriter ExtensionWriter { get; set; } = DefaultExtensionWriter;
+
+        /// <summary>
+        /// Gets the namespaces.
+        /// </summary>
+        public Dictionary<string, Uri> Namespaces { get; } = new Dictionary<string, Uri>();
     }
 }
