@@ -8,7 +8,7 @@
     <title>NetTopologySuite.IO.GPX Release Notes | NetTopologySuite.IO.GPX </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="NetTopologySuite.IO.GPX Release Notes | NetTopologySuite.IO.GPX ">
-    <meta name="generator" content="docfx 2.43.1.0">
+    <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -72,7 +72,16 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="nettopologysuiteiogpx-release-notes">NetTopologySuite.IO.GPX Release Notes</h1>
 
-<h2 id="100">1.0.0</h2>
+<h2 id="110"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/11">1.1.0</a></h2>
+<ul>
+<li>Allow specifying arbitrary namespaces (+prefixes) on the root element so that they don't have to be repeated on every <code>extensions</code> element (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/36">#36</a>).</li>
+<li>Add opt-in support in <code>GpxWebLink</code> for URI strings longer than 65519 characters, as a workaround for dotnet/runtime#1875 (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/39">#39</a>).
+<ul>
+<li>If upstream relaxes this restriction in a later release, then this code will automatically &quot;upgrade&quot; to fully support the new higher restriction.</li>
+</ul>
+</li>
+</ul>
+<h2 id="100"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/6">1.0.0</a></h2>
 <ul>
 <li>Updates to make this compatible with v2 of the core NTS library.</li>
 </ul>

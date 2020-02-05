@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class GpxWebLink
    | NetTopologySuite.IO.GPX ">
-    <meta name="generator" content="docfx 2.43.1.0">
+    <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -118,6 +118,78 @@ information.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink__ctor_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.%23ctor(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L76">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxWebLink__ctor_" data-uid="NetTopologySuite.IO.GpxWebLink.#ctor*"></a>
+  <h4 id="NetTopologySuite_IO_GpxWebLink__ctor_System_String_System_String_System_String_" data-uid="NetTopologySuite.IO.GpxWebLink.#ctor(System.String,System.String,System.String)">GpxWebLink(String, String, String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a> class.</p>
+<p>
+If <code data-dev-comment-type="paramref" class="paramref">hrefString</code> is never longer than 65519 characters, then favor using
+<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink__ctor_System_Uri_System_String_System_String_">GpxWebLink(Uri, String, String)</a> instead of this, since <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a>
+will never be <span class="xref">null</span> when using that constructor.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GpxWebLink(string hrefString, string text, string contentType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">hrefString</span></td>
+        <td><p>The value of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString">HrefString</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The value of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Text">Text</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contentType</span></td>
+        <td><p>The value of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_ContentType">ContentType</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">hrefString</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">hrefString</code> does not look like a valid URI string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink__ctor_System_Uri_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.%23ctor(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -237,7 +309,7 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_ContentType.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.ContentType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L66">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L121">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_ContentType_" data-uid="NetTopologySuite.IO.GpxWebLink.ContentType*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_ContentType" data-uid="NetTopologySuite.IO.GpxWebLink.ContentType">ContentType</h4>
@@ -271,11 +343,12 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_Href.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.Href%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L74">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L130">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_Href_" data-uid="NetTopologySuite.IO.GpxWebLink.Href*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_Href" data-uid="NetTopologySuite.IO.GpxWebLink.Href">Href</h4>
-  <div class="markdown level1 summary"><p>Gets the URL of the hyperlink.</p>
+  <div class="markdown level1 summary"><p>Gets the URL of the hyperlink, or <span class="xref">null</span> if this instance was created
+from a valid-looking data URI whose total length exceeded 65519 characters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -302,10 +375,44 @@ information.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_HrefString.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.HrefString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L138">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxWebLink_HrefString_" data-uid="NetTopologySuite.IO.GpxWebLink.HrefString*"></a>
+  <h4 id="NetTopologySuite_IO_GpxWebLink_HrefString" data-uid="NetTopologySuite.IO.GpxWebLink.HrefString">HrefString</h4>
+  <div class="markdown level1 summary"><p>Gets the URL of the hyperlink, as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string HrefString { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="NetTopologySuite_IO_GpxWebLink_HrefString_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In the official XSD schema for GPX 1.1, this corresponds to the &quot;href&quot; attribute.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_Text.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.Text%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L58">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L113">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_Text_" data-uid="NetTopologySuite.IO.GpxWebLink.Text*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_Text" data-uid="NetTopologySuite.IO.GpxWebLink.Text">Text</h4>
@@ -341,7 +448,7 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_Equals_System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L77">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L141">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_Equals_" data-uid="NetTopologySuite.IO.GpxWebLink.Equals*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_Equals_System_Object_" data-uid="NetTopologySuite.IO.GpxWebLink.Equals(System.Object)">Equals(Object)</h4>
@@ -390,7 +497,7 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_GetHashCode.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L83">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L147">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_GetHashCode_" data-uid="NetTopologySuite.IO.GpxWebLink.GetHashCode*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_GetHashCode" data-uid="NetTopologySuite.IO.GpxWebLink.GetHashCode">GetHashCode()</h4>
@@ -422,7 +529,7 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_ToString.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L86">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L150">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_ToString_" data-uid="NetTopologySuite.IO.GpxWebLink.ToString*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_ToString" data-uid="NetTopologySuite.IO.GpxWebLink.ToString">ToString()</h4>
@@ -454,7 +561,7 @@ information.</p>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_WithContentType_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.WithContentType(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L114">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L178">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_WithContentType_" data-uid="NetTopologySuite.IO.GpxWebLink.WithContentType*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_WithContentType_System_String_" data-uid="NetTopologySuite.IO.GpxWebLink.WithContentType(System.String)">WithContentType(String)</h4>
@@ -506,12 +613,12 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySu
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_WithHref_System_Uri_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.WithHref(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L130">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L195">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_WithHref_" data-uid="NetTopologySuite.IO.GpxWebLink.WithHref*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_WithHref_System_Uri_" data-uid="NetTopologySuite.IO.GpxWebLink.WithHref(System.Uri)">WithHref(Uri)</h4>
   <div class="markdown level1 summary"><p>Builds a new instance of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a> as a copy of this instance, but with
-<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a> replaced by the given value.</p>
+<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a> and <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString">HrefString</a> replaced by the given value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -531,7 +638,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySu
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">href</span></td>
-        <td><p>The new value for <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a>.</p>
+        <td><p>The new value for <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a> and <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString">HrefString</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -548,7 +655,8 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySu
       <tr>
         <td><a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a></td>
         <td><p>A new <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a> instance that's a copy of the current instance, but
-with its <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a> value set to <code data-dev-comment-type="paramref" class="paramref">href</code>.</p>
+with its <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a> value set to <code data-dev-comment-type="paramref" class="paramref">href</code> and with its
+<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString">HrefString</a> set accordingly.</p>
 </td>
       </tr>
     </tbody>
@@ -571,10 +679,84 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySu
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_WithHrefString_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.WithHrefString(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L215">View Source</a>
+  </span>
+  <a id="NetTopologySuite_IO_GpxWebLink_WithHrefString_" data-uid="NetTopologySuite.IO.GpxWebLink.WithHrefString*"></a>
+  <h4 id="NetTopologySuite_IO_GpxWebLink_WithHrefString_System_String_" data-uid="NetTopologySuite.IO.GpxWebLink.WithHrefString(System.String)">WithHrefString(String)</h4>
+  <div class="markdown level1 summary"><p>Builds a new instance of <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a> as a copy of this instance, but with
+<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString">HrefString</a> and <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a> replaced according to the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GpxWebLink WithHrefString(string hrefString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">hrefString</span></td>
+        <td><p>The new value for <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString">HrefString</a> and (if possible) <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a></td>
+        <td><p>A new <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a> instance that's a copy of the current instance, but
+with its <a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString">HrefString</a> value set to <code data-dev-comment-type="paramref" class="paramref">hrefString</code> and its
+<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Href">Href</a> value set accordingly.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">hrefString</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">hrefString</code> does not look like a valid URI string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWebLink_WithText_System_String_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWebLink.WithText(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L101">View Source</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWebLink.cs/#L165">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWebLink_WithText_" data-uid="NetTopologySuite.IO.GpxWebLink.WithText*"></a>
   <h4 id="NetTopologySuite_IO_GpxWebLink_WithText_System_String_" data-uid="NetTopologySuite.IO.GpxWebLink.WithText(System.String)">WithText(String)</h4>

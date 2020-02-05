@@ -3301,6 +3301,19 @@ references:
   commentId: T:NetTopologySuite.IO.GpxReaderSettings
   fullName: NetTopologySuite.IO.GpxReaderSettings
   nameWithType: GpxReaderSettings
+- uid: NetTopologySuite.IO.GpxReaderSettings.BuildWebLinksForVeryLongUriValues
+  name: BuildWebLinksForVeryLongUriValues
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_BuildWebLinksForVeryLongUriValues
+  commentId: P:NetTopologySuite.IO.GpxReaderSettings.BuildWebLinksForVeryLongUriValues
+  fullName: NetTopologySuite.IO.GpxReaderSettings.BuildWebLinksForVeryLongUriValues
+  nameWithType: GpxReaderSettings.BuildWebLinksForVeryLongUriValues
+- uid: NetTopologySuite.IO.GpxReaderSettings.BuildWebLinksForVeryLongUriValues*
+  name: BuildWebLinksForVeryLongUriValues
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_BuildWebLinksForVeryLongUriValues_
+  commentId: Overload:NetTopologySuite.IO.GpxReaderSettings.BuildWebLinksForVeryLongUriValues
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxReaderSettings.BuildWebLinksForVeryLongUriValues
+  nameWithType: GpxReaderSettings.BuildWebLinksForVeryLongUriValues
 - uid: NetTopologySuite.IO.GpxReaderSettings.DefaultCreatorIfMissing
   name: DefaultCreatorIfMissing
   href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_DefaultCreatorIfMissing
@@ -4846,6 +4859,12 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWebLink
   fullName: NetTopologySuite.IO.GpxWebLink
   nameWithType: GpxWebLink
+- uid: NetTopologySuite.IO.GpxWebLink.#ctor(System.String,System.String,System.String)
+  name: GpxWebLink(String, String, String)
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink__ctor_System_String_System_String_System_String_
+  commentId: M:NetTopologySuite.IO.GpxWebLink.#ctor(System.String,System.String,System.String)
+  fullName: NetTopologySuite.IO.GpxWebLink.GpxWebLink(System.String, System.String, System.String)
+  nameWithType: GpxWebLink.GpxWebLink(String, String, String)
 - uid: NetTopologySuite.IO.GpxWebLink.#ctor(System.Uri)
   name: GpxWebLink(Uri)
   href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink__ctor_System_Uri_
@@ -4917,6 +4936,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWebLink.Href
   nameWithType: GpxWebLink.Href
+- uid: NetTopologySuite.IO.GpxWebLink.HrefString
+  name: HrefString
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString
+  commentId: P:NetTopologySuite.IO.GpxWebLink.HrefString
+  fullName: NetTopologySuite.IO.GpxWebLink.HrefString
+  nameWithType: GpxWebLink.HrefString
+- uid: NetTopologySuite.IO.GpxWebLink.HrefString*
+  name: HrefString
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_HrefString_
+  commentId: Overload:NetTopologySuite.IO.GpxWebLink.HrefString
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxWebLink.HrefString
+  nameWithType: GpxWebLink.HrefString
 - uid: NetTopologySuite.IO.GpxWebLink.Text
   name: Text
   href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_Text
@@ -4969,6 +5001,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWebLink.WithHref
   nameWithType: GpxWebLink.WithHref
+- uid: NetTopologySuite.IO.GpxWebLink.WithHrefString(System.String)
+  name: WithHrefString(String)
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_WithHrefString_System_String_
+  commentId: M:NetTopologySuite.IO.GpxWebLink.WithHrefString(System.String)
+  fullName: NetTopologySuite.IO.GpxWebLink.WithHrefString(System.String)
+  nameWithType: GpxWebLink.WithHrefString(String)
+- uid: NetTopologySuite.IO.GpxWebLink.WithHrefString*
+  name: WithHrefString
+  href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_WithHrefString_
+  commentId: Overload:NetTopologySuite.IO.GpxWebLink.WithHrefString
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxWebLink.WithHrefString
+  nameWithType: GpxWebLink.WithHrefString
 - uid: NetTopologySuite.IO.GpxWebLink.WithText(System.String)
   name: WithText(String)
   href: api/NetTopologySuite.IO.GpxWebLink.html#NetTopologySuite_IO_GpxWebLink_WithText_System_String_
@@ -5028,6 +5073,19 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWriterSettings
   fullName: NetTopologySuite.IO.GpxWriterSettings
   nameWithType: GpxWriterSettings
+- uid: NetTopologySuite.IO.GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix
+  name: CommonXmlNamespacesByDesiredPrefix
+  href: api/NetTopologySuite.IO.GpxWriterSettings.html#NetTopologySuite_IO_GpxWriterSettings_CommonXmlNamespacesByDesiredPrefix
+  commentId: P:NetTopologySuite.IO.GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix
+  fullName: NetTopologySuite.IO.GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix
+  nameWithType: GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix
+- uid: NetTopologySuite.IO.GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix*
+  name: CommonXmlNamespacesByDesiredPrefix
+  href: api/NetTopologySuite.IO.GpxWriterSettings.html#NetTopologySuite_IO_GpxWriterSettings_CommonXmlNamespacesByDesiredPrefix_
+  commentId: Overload:NetTopologySuite.IO.GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix
+  nameWithType: GpxWriterSettings.CommonXmlNamespacesByDesiredPrefix
 - uid: NetTopologySuite.IO.GpxWriterSettings.ExtensionWriter
   name: ExtensionWriter
   href: api/NetTopologySuite.IO.GpxWriterSettings.html#NetTopologySuite_IO_GpxWriterSettings_ExtensionWriter
