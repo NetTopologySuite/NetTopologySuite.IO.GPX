@@ -148,7 +148,7 @@ namespace NetTopologySuite.IO
             return new GpxCopyright(
                 author: element.Attribute("author")?.Value ?? throw new XmlException("copyright element must have author attribute."),
                 year: Helpers.ParseGregorianYear(element.GpxElement("year")?.Value),
-                licenseUri: Helpers.ParseUri(element.GpxElement("license")?.Value));
+                licenseUri: Helpers.ParseUri(element.GpxElement("license")?.Value)); // assumption: overlong URIs don't really make sense here, so we can ignore the issue here
         }
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)

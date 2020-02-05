@@ -306,7 +306,7 @@ namespace NetTopologySuite.IO
                 comment: element.GpxElement("cmt")?.Value,
                 description: element.GpxElement("desc")?.Value,
                 source: element.GpxElement("src")?.Value,
-                links: ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)),
+                links: ImmutableArray.CreateRange(element.GpxElements("link").Select(el => GpxWebLink.Load(el, settings.BuildWebLinksForVeryLongUriValues))),
                 number: Helpers.ParseUInt32(element.GpxElement("number")?.Value),
                 classification: element.GpxElement("type")?.Value,
                 extensions: extensionsElement is null ? null : settings.ExtensionReader.ConvertTrackExtensionElement(extensionsElement.Elements()),

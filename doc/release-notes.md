@@ -1,6 +1,11 @@
 # NetTopologySuite.IO.GPX Release Notes
 
-## 1.0.0
+## [1.1.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/11)
+- Allow specifying arbitrary namespaces (+prefixes) on the root element so that they don't have to be repeated on every `extensions` element ([#36](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/36)).
+- Add opt-in support in `GpxWebLink` for URI strings longer than 65519 characters, as a workaround for dotnet/runtime#1875 ([#39](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/39)).
+    - If upstream relaxes this restriction in a later release, then this code will automatically "upgrade" to fully support the new higher restriction.
+
+## [1.0.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/6)
 - Updates to make this compatible with v2 of the core NTS library.
 
 ## 0.6.0

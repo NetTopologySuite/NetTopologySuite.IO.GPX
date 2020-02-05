@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -365,6 +366,141 @@ namespace NetTopologySuite.IO
             // be careful when using regex to match XML.
             var namespaceWasRepeatedRegex = new Regex("<extensions>.*topografix.*</extensions>", RegexOptions.Singleline);
             Assert.DoesNotMatch(namespaceWasRepeatedRegex, text);
+        }
+
+        [Fact]
+        [GitHubIssue(39)]
+        public void BarelyLegalUrisShouldBeAccepted()
+        {
+            string uriText = "http://www.example.com/?" + new string('a', 65495);
+            Debug.Assert(uriText.Length == 65519);
+
+            string gpxText = $@"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <link href='{uriText}' />
+    </metadata>
+</gpx>
+";
+            var file = GpxFile.Parse(gpxText, null);
+            Assert.Equal(uriText, file.Metadata.Links[0].Href.OriginalString);
+            Assert.Equal(uriText, file.Metadata.Links[0].HrefString);
+
+            string text = file.BuildString(null);
+            Assert.Contains(uriText, text);
+        }
+
+        [Fact]
+        [GitHubIssue(39)]
+        public void BarelyOverlongNonDataUrisShouldBeRejected()
+        {
+            string uriText = "http://www.example.com/?" + new string('a', 65496);
+            Debug.Assert(uriText.Length == 65520);
+
+            string gpxText = $@"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <link href='{uriText}' />
+    </metadata>
+</gpx>
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(gpxText, null));
+        }
+
+        [Fact]
+        [GitHubIssue(39)]
+        public void InvalidShortUrisShouldBeRejected()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <link href='http://www.example.com\\' />
+    </metadata>
+</gpx>
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+        }
+
+        [Fact]
+        [GitHubIssue(39)]
+        public void BarelyLegalDataUrisShouldBeAccepted()
+        {
+            string uriText = "data:," + new string('a', 65513);
+            Debug.Assert(uriText.Length == 65519);
+
+            string gpxText = $@"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <link href='{uriText}' />
+    </metadata>
+</gpx>
+";
+            var file = GpxFile.Parse(gpxText, null);
+            Assert.Equal(uriText, file.Metadata.Links[0].Href.OriginalString);
+            Assert.Equal(uriText, file.Metadata.Links[0].HrefString);
+
+            string text = file.BuildString(null);
+            Assert.Contains(uriText, text);
+        }
+
+        [Fact]
+        [GitHubIssue(39)]
+        public void BarelyOverlongDataUrisShouldBeRejectedByDefault()
+        {
+            string uriText = "data:," + new string('a', 65514);
+            Debug.Assert(uriText.Length == 65520);
+
+            string gpxText = $@"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <link href='{uriText}' />
+    </metadata>
+</gpx>
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(gpxText, null));
+        }
+
+        [Theory]
+        [Regression]
+        [GitHubIssue(39)]
+        [InlineData(65520)]
+        [InlineData(65521)]
+        [InlineData(65522)]
+        [InlineData(65523)]
+        [InlineData(99999)]
+        public void OverlongDataUrisShouldBeAccepted_OptIn(int totalUriLength)
+        {
+            var sb = new StringBuilder(totalUriLength, totalUriLength);
+            sb.Append("data:application/octet-stream;base64,");
+            if ((sb.Capacity - sb.Length) % 4 != 0)
+            {
+                // it wouldn't be valid base64, so try again.
+                sb.Clear();
+                sb.Append("data:text/plain;charset=US-ASCII;foo=bar;x=y,");
+            }
+
+            sb.Append('A', sb.Capacity - sb.Length);
+
+            string uriText = sb.ToString();
+            Debug.Assert(uriText.Length == totalUriLength);
+
+            string gpxText = $@"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <link href='{uriText}' />
+    </metadata>
+</gpx>
+";
+            var settings = new GpxReaderSettings { BuildWebLinksForVeryLongUriValues = true };
+            var file = GpxFile.Parse(gpxText, settings);
+            Assert.Equal(uriText, file.Metadata.Links[0].HrefString);
+
+            // don't assert this: we *want* it to be non-null, and a later version of .NET Core may
+            // or may not relax this restriction (dotnet/runtime#1857).
+            ////Assert.Null(file.Metadata.Links[0].Href);
+
+            string text = file.BuildString(null);
+            Assert.Contains(uriText, text);
         }
     }
 }
