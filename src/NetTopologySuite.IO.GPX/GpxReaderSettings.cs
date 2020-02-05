@@ -55,5 +55,15 @@ namespace NetTopologySuite.IO
         /// NetTopologySuite/NetTopologySuite.IO.GPX#29).
         /// </summary>
         public bool IgnoreBadDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not to build <see cref="GpxWebLink"/> objects
+        /// for strings whose lengths are greater than or equal to 65520 characters.  Older versions
+        /// of this library would throw exceptions for such strings (see dotnet/runtime#1857 and
+        /// NetTopologySuite/NetTopologySuite.IO.GPX#39), and the workaround involves relaxing an
+        /// invariant of <see cref="GpxWebLink"/>, so it is guarded by an opt-in flag to avoid a
+        /// breaking change.
+        /// </summary>
+        public bool BuildWebLinksForVeryLongUriValues { get; set; }
     }
 }

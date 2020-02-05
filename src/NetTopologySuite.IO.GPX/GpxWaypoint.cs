@@ -732,7 +732,7 @@ namespace NetTopologySuite.IO
                 comment: element.GpxElement("cmt")?.Value,
                 description: element.GpxElement("desc")?.Value,
                 source: element.GpxElement("src")?.Value,
-                links: ImmutableArray.CreateRange(element.GpxElements("link").Select(GpxWebLink.Load)),
+                links: ImmutableArray.CreateRange(element.GpxElements("link").Select(el => GpxWebLink.Load(el, settings.BuildWebLinksForVeryLongUriValues))),
                 symbolText: element.GpxElement("sym")?.Value,
                 classification: element.GpxElement("type")?.Value,
                 fixKind: Helpers.ParseFixKind(element.GpxElement("fix")?.Value),

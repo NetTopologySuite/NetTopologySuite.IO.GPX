@@ -114,7 +114,7 @@ namespace NetTopologySuite.IO
                                                                  (nameof(Email), Email),
                                                                  (nameof(Link), Link));
 
-        internal static GpxPerson Load(XElement element)
+        internal static GpxPerson Load(XElement element, bool allowOverlongDataUri)
         {
             if (element is null)
             {
@@ -124,7 +124,7 @@ namespace NetTopologySuite.IO
             return new GpxPerson(
                 name: element.GpxElement("name")?.Value,
                 email: GpxEmail.Load(element.GpxElement("email")),
-                link: GpxWebLink.Load(element.GpxElement("link")));
+                link: GpxWebLink.Load(element.GpxElement("link"), allowOverlongDataUri));
         }
 
         void ICanWriteToXmlWriter.Save(XmlWriter writer)

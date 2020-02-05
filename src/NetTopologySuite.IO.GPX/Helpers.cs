@@ -229,6 +229,36 @@ namespace NetTopologySuite.IO
             return sb.Append("]").ToString();
         }
 
+        public static UriValidationResult InterpretUri(string text, out Uri bestEffortUri)
+        {
+            if (text is null)
+            {
+                bestEffortUri = null;
+                return UriValidationResult.NullValue;
+            }
+
+            if (Uri.TryCreate(text, UriKind.RelativeOrAbsolute, out bestEffortUri))
+            {
+                return UriValidationResult.ValidSystemUri;
+            }
+
+            // dotnet/runtime#1857: System.Uri doesn't support URI values with length >= 65520, but
+            // at least one consumer of this library has a legitimate use case for data URIs that
+            // might hit that limit.  this method is here to help support that a bit.
+            if (text.Length < 65520)
+            {
+                // as far as I know, the framework behaves correctly for URI values that are *below*
+                // the limit (at least, no issues have been reported so far), so let's trust it.
+                return UriValidationResult.InvalidUri;
+            }
+
+            // I'm not exactly interested in implementing a general-purpose URI validation toolkit,
+            // so this is only a best-effort attempt (e.g., it ignores invalid base64).
+            return Regex.IsMatch(text, @"^\s*data:([+\-\w\.]+\/[+\-\w\.]+(;[+\-\w\.]+=[+\-\w\.]+)*)?(;base64)?,.*?\s*$", RegexOptions.CultureInvariant | RegexOptions.Compiled | RegexOptions.ExplicitCapture)
+                ? UriValidationResult.ValidOverlongDataUri
+                : UriValidationResult.InvalidUri;
+        }
+
         public static XElement GpxElement(this XElement element, string localName) => element.Element(XName.Get(localName, GpxNamespace));
 
         public static IEnumerable<XElement> GpxElements(this XElement element, string localName) => element.Elements(XName.Get(localName, GpxNamespace));
