@@ -1,7 +1,9 @@
 # NetTopologySuite.IO.GPX Release Notes
 
-## 1.2.0
-- *nothing yet...*
+## [1.1.1](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/13)
+- `GpxReader` will now throw an `XmlException` when it encounters an unexpected top-level child element of the root `gpx` element, instead of running into an infinite loop ([#41](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/41)).
+    - "Unexpected top-level child elements" are elements whose names we do not recognize, `metadata` or `extensions` showing up more than once, or the `metadata` element showing up somewhere *after* the first child element.
+- `GpxReaderSettings` now has an `IgnoreUnexpectedChildrenOfTopLevelElement` property to use to ignore those elements instead of throwing `XmlException`.
 
 ## [1.1.0](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/11)
 - Allow specifying arbitrary namespaces (+prefixes) on the root element so that they don't have to be repeated on every `extensions` element ([#36](https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/36)).

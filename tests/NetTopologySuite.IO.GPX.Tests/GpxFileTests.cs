@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -344,7 +345,7 @@ namespace NetTopologySuite.IO
     </wpt>
 </gpx>
 ";
-            string text = GpxFile.Parse(GpxText, null).BuildString(null);
+            string text = GpxFile.Parse(GpxText, null). BuildString(null);
 
             Assert.Contains("1234-05-06T07:08:09.7654321Z", text);
             Assert.Contains("5432-10-10T11:22:33.8765432Z", text); // DateTime resolution is 100ns, so the value gets rounded to 7 digits
@@ -504,10 +505,11 @@ namespace NetTopologySuite.IO
         }
 
         [Fact]
+        [Regression]
         [GitHubIssue(41)]
-        public void BadFileWithIncorrectXmlNode_ShouldThrow()
+        public void ChildElementWithUnexpectedNameShouldBeIgnored_OptIn()
         {
-            string gpxText = $@"
+            const string GpxText = @"
 <gpx version='1.1' creator='S Health_0.2' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
   <metadate>2020-07-31T03:01:31Z</metadate>
   <trk>
@@ -524,60 +526,22 @@ namespace NetTopologySuite.IO
   </exerciseinfo>
 </gpx>
 ";
-            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(gpxText, null));
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
+            var gpx = GpxFile.Parse(GpxText, new GpxReaderSettings { IgnoreUnexpectedChildrenOfTopLevelElement = true });
+            var trk = Assert.Single(gpx.Tracks);
+            var trkseg = Assert.Single(trk.Segments);
+            var trkpt = Assert.Single(trkseg.Waypoints);
+            Assert.Equal(new GpxLatitude(32.737328), trkpt.Latitude);
+            Assert.Equal(new GpxLongitude(35.65718), trkpt.Longitude);
         }
 
         [Fact]
+        [Regression]
         [GitHubIssue(41)]
-        public void BadFileWithIncorrectXmlNode_Ignored_ShouldNotThrow()
+        public void MetadataOutOfOrderShouldBeIgnored_OptIn()
         {
-            string gpxText = $@"
-<gpx version='1.1' creator='S Health_0.2' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
-  <trk>
-    <name>20200731_090010.gpx</name>
-    <trkseg>
-      <trkpt lat='32.737328' lon='35.65718'>
-        <ele>346.0538</ele>
-        <time>2020-07-31T03:01:31Z</time>
-      </trkpt>
-	</trkseg>
-  </trk>
-  <exerciseinfo>
-    <exercisetype>11007</exercisetype>
-  </exerciseinfo>
-</gpx>
-";
-            var gpx = GpxFile.Parse(gpxText, new GpxReaderSettings { IgnoreBadElements = true });
-            Assert.NotNull(gpx);
-        }
-
-        [Fact]
-        [GitHubIssue(41)]
-        public void BadFileWithMetadate_Ignored_ShouldNotThrow()
-        {
-            string gpxText = $@"
-<gpx version='1.1' creator='S Health_0.2' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
-  <metadate>2020-07-31T03:01:31Z</metadate>
-  <trk>
-    <name>20200731_090010.gpx</name>
-    <trkseg>
-      <trkpt lat='32.737328' lon='35.65718'>
-        <ele>346.0538</ele>
-        <time>2020-07-31T03:01:31Z</time>
-      </trkpt>
-	</trkseg>
-  </trk>
-</gpx>
-";
-            var gpx = GpxFile.Parse(gpxText, new GpxReaderSettings { IgnoreBadElements = true });
-            Assert.NotNull(gpx);
-        }
-
-        [Fact]
-        [GitHubIssue(41)]
-        public void MetadataIsNotFirst_ShouldNotHang()
-        {
-            string gpxText = $@"
+            const string GpxText = @"
 <gpx version='1.1' creator='HarelM' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
   <trk>
     <name>20200731_090010.gpx</name>
@@ -593,8 +557,52 @@ namespace NetTopologySuite.IO
   </metadata>
 </gpx>
 ";
-            var gpx = GpxFile.Parse(gpxText, null);
-            Assert.Single(gpx.Metadata.Links.ToArray());
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
+            var gpx = GpxFile.Parse(GpxText, new GpxReaderSettings { IgnoreUnexpectedChildrenOfTopLevelElement = true });
+            Assert.Equal("HarelM", gpx.Metadata.Creator);
+            Assert.True(gpx.Metadata.IsTrivial); // metadata element came too late
+        }
+
+        [Fact]
+        [Regression]
+        [GitHubIssue(41)]
+        public void ExtraMetadataOrExtensionsShouldBeIgnored_OptIn()
+        {
+            const string GpxText = @"
+<gpx xmlns='http://www.topografix.com/GPX/1/1' version='1.1' creator='airbreather'>
+    <metadata>
+        <desc>desc1</desc>
+        <name>name1</name>
+    </metadata>
+    <extensions xmlns='http://www.example.com'>
+        <element1 />
+        <element2 />
+    </extensions>
+    <wpt lat='0.1' lon='2.3' />
+    <rte><rtept lat='4.5' lon='6.7' /></rte>
+    <trk><trkseg><trkpt lat='8.9' lon='10.11' /></trkseg></trk>
+    <metadata>
+        <desc>desc2</desc>
+        <keywords>kwds2</keywords>
+    </metadata>
+    <extensions xmlns='http://www.example.com'>
+        <element2 />
+        <element3 />
+    </extensions>
+</gpx>
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(GpxText, null));
+
+            var gpx = GpxFile.Parse(GpxText, new GpxReaderSettings { IgnoreUnexpectedChildrenOfTopLevelElement = true });
+            Assert.Equal("airbreather", gpx.Metadata.Creator);
+            Assert.Equal("desc1", gpx.Metadata.Description);
+            Assert.Equal("name1", gpx.Metadata.Name);
+            Assert.Null(gpx.Metadata.Keywords);
+            var extensions = Assert.IsAssignableFrom<IEnumerable<XElement>>(gpx.Extensions).ToArray();
+            Assert.Contains(extensions, e => e.Name == XName.Get("element1", "http://www.example.com"));
+            Assert.Contains(extensions, e => e.Name == XName.Get("element2", "http://www.example.com"));
+            Assert.DoesNotContain(extensions, e => e.Name == XName.Get("element3", "http://www.example.com"));
         }
     }
 }
