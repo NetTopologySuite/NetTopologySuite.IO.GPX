@@ -344,7 +344,7 @@ namespace NetTopologySuite.IO
     </wpt>
 </gpx>
 ";
-            string text = GpxFile.Parse(GpxText, null). BuildString(null);
+            string text = GpxFile.Parse(GpxText, null).BuildString(null);
 
             Assert.Contains("1234-05-06T07:08:09.7654321Z", text);
             Assert.Contains("5432-10-10T11:22:33.8765432Z", text); // DateTime resolution is 100ns, so the value gets rounded to 7 digits
@@ -501,6 +501,100 @@ namespace NetTopologySuite.IO
 
             string text = file.BuildString(null);
             Assert.Contains(uriText, text);
+        }
+
+        [Fact]
+        [GitHubIssue(41)]
+        public void BadFileWithIncorrectXmlNode_ShouldThrow()
+        {
+            string gpxText = $@"
+<gpx version='1.1' creator='S Health_0.2' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
+  <metadate>2020-07-31T03:01:31Z</metadate>
+  <trk>
+    <name>20200731_090010.gpx</name>
+    <trkseg>
+      <trkpt lat='32.737328' lon='35.65718'>
+        <ele>346.0538</ele>
+        <time>2020-07-31T03:01:31Z</time>
+      </trkpt>
+	</trkseg>
+  </trk>
+  <exerciseinfo>
+    <exercisetype>11007</exercisetype>
+  </exerciseinfo>
+</gpx>
+";
+            Assert.ThrowsAny<XmlException>(() => GpxFile.Parse(gpxText, null));
+        }
+
+        [Fact]
+        [GitHubIssue(41)]
+        public void BadFileWithIncorrectXmlNode_Ignored_ShouldNotThrow()
+        {
+            string gpxText = $@"
+<gpx version='1.1' creator='S Health_0.2' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
+  <trk>
+    <name>20200731_090010.gpx</name>
+    <trkseg>
+      <trkpt lat='32.737328' lon='35.65718'>
+        <ele>346.0538</ele>
+        <time>2020-07-31T03:01:31Z</time>
+      </trkpt>
+	</trkseg>
+  </trk>
+  <exerciseinfo>
+    <exercisetype>11007</exercisetype>
+  </exerciseinfo>
+</gpx>
+";
+            var gpx = GpxFile.Parse(gpxText, new GpxReaderSettings { IgnoreBadElements = true });
+            Assert.NotNull(gpx);
+        }
+
+        [Fact]
+        [GitHubIssue(41)]
+        public void BadFileWithMetadate_Ignored_ShouldNotThrow()
+        {
+            string gpxText = $@"
+<gpx version='1.1' creator='S Health_0.2' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
+  <metadate>2020-07-31T03:01:31Z</metadate>
+  <trk>
+    <name>20200731_090010.gpx</name>
+    <trkseg>
+      <trkpt lat='32.737328' lon='35.65718'>
+        <ele>346.0538</ele>
+        <time>2020-07-31T03:01:31Z</time>
+      </trkpt>
+	</trkseg>
+  </trk>
+</gpx>
+";
+            var gpx = GpxFile.Parse(gpxText, new GpxReaderSettings { IgnoreBadElements = true });
+            Assert.NotNull(gpx);
+        }
+
+        [Fact]
+        [GitHubIssue(41)]
+        public void MetadataIsNotFirst_ShouldNotHang()
+        {
+            string gpxText = $@"
+<gpx version='1.1' creator='HarelM' n0:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns='http://www.topografix.com/GPX/1/1' n1:xsi='http://www.w3.org/2001/XMLSchema-instance' n1:gpx1='http://www.topografix.com/GPX/1/0' n1:ogt10='http://gpstracker.android.sogeti.n1/GPX/1/0' xmlns:n0='xsi' xmlns:n1='xmlns'>
+  <trk>
+    <name>20200731_090010.gpx</name>
+    <trkseg>
+      <trkpt lat='32.737328' lon='35.65718'>
+        <ele>346.0538</ele>
+        <time>2020-07-31T03:01:31Z</time>
+      </trkpt>
+	</trkseg>
+  </trk>
+  <metadata>
+    <link href='somelink.com' />
+  </metadata>
+</gpx>
+";
+            var gpx = GpxFile.Parse(gpxText, null);
+            Assert.Single(gpx.Metadata.Links.ToArray());
         }
     }
 }

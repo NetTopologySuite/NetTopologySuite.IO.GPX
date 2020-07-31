@@ -65,5 +65,12 @@ namespace NetTopologySuite.IO
         /// breaking change.
         /// </summary>
         public bool BuildWebLinksForVeryLongUriValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not to ignore files with elements not part of the contract
+        /// even though such files would not pass XSD validation (see
+        /// NetTopologySuite/NetTopologySuite.IO.GPX#29).
+        /// </summary>
+        public bool IgnoreBadElements { get; set; }
     }
 }

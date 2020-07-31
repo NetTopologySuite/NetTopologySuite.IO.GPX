@@ -132,27 +132,19 @@ namespace NetTopologySuite.IO
                     break;
                 }
 
-                bool expectingMetadata = true;
+                bool foundMetadata = false;
                 bool expectingExtensions = true;
                 do
                 {
-                    if (expectingMetadata)
-                    {
-                        expectingMetadata = false;
-                        if (reader.Name == "metadata")
-                        {
-                            ReadMetadata(reader, settings, creator, visitor);
-                        }
-                        else
-                        {
-                            visitor.VisitMetadata(new GpxMetadata(creator));
-                        }
-                    }
-
                     switch (reader.Name)
                     {
                         // ideally, it should all be in this order, since the XSD validation
                         // would fail otherwise, but whatever.
+                        case "metadata":
+                            ReadMetadata(reader, settings, creator, visitor);
+                            foundMetadata = true;
+                            break;
+
                         case "wpt":
                             ReadWaypoint(reader, settings, visitor);
                             break;
@@ -175,9 +167,27 @@ namespace NetTopologySuite.IO
                             }
 
                             break;
+                        case "":
+                        case "gpx":
+                            break;
+                        default:
+                            if (settings.IgnoreBadElements)
+                            {
+                                ReadTo(reader, XmlNodeType.EndElement, XmlNodeType.EndElement);
+                            }
+                            else
+                            {
+                                throw new XmlException($"Invalid xml node '{reader.Name}'");
+                            }
+                            break;
                     }
                 }
                 while (ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement));
+
+                if (!foundMetadata)
+                {
+                    visitor.VisitMetadata(new GpxMetadata(creator));
+                }
             }
         }
 
