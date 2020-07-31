@@ -345,7 +345,7 @@ namespace NetTopologySuite.IO
     </wpt>
 </gpx>
 ";
-            string text = GpxFile.Parse(GpxText, null). BuildString(null);
+            string text = GpxFile.Parse(GpxText, null).BuildString(null);
 
             Assert.Contains("1234-05-06T07:08:09.7654321Z", text);
             Assert.Contains("5432-10-10T11:22:33.8765432Z", text); // DateTime resolution is 100ns, so the value gets rounded to 7 digits
