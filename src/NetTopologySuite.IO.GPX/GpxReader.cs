@@ -142,6 +142,10 @@ namespace NetTopologySuite.IO
                         if (reader.Name == "metadata")
                         {
                             ReadMetadata(reader, settings, creator, visitor);
+                            if (!ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement))
+                            {
+                                break;
+                            }
                         }
                         else
                         {
@@ -175,6 +179,13 @@ namespace NetTopologySuite.IO
                             }
 
                             break;
+
+                        case string _ when settings.IgnoreUnexpectedChildrenOfTopLevelElement:
+                            reader.Skip();
+                            break;
+
+                        default:
+                            throw new XmlException($"Unexpected xml node '{reader.Name}'");
                     }
                 }
                 while (ReadTo(reader, XmlNodeType.Element, XmlNodeType.EndElement));

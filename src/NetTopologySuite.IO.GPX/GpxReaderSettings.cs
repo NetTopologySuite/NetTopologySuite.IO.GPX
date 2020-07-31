@@ -15,11 +15,11 @@ namespace NetTopologySuite.IO
         /// <summary>
         /// Gets or sets the <see cref="System.TimeZoneInfo"/> instance that the system should use
         /// to interpret timestamps in the GPX file, when the file itself does not contain time zone
-        /// information.  Default is <see cref="TimeZoneInfo.Utc"/>.
+        /// information.  Default is <see cref="System.TimeZoneInfo.Utc"/>.
         /// <para>
-        /// <see langword="null"/> is treated as <see cref="TimeZoneInfo.Utc"/>, but please prefer
-        /// <see langword="null"/> so that <see cref="TimeZoneInfo.ClearCachedData"/> does not
-        /// affect our correctness.
+        /// <see langword="null"/> is treated as <see cref="System.TimeZoneInfo.Utc"/>, but please
+        /// prefer <see langword="null"/> so that <see cref="System.TimeZoneInfo.ClearCachedData"/>
+        /// does not affect our correctness.
         /// </para>
         /// </summary>
         public TimeZoneInfo TimeZoneInfo
@@ -65,5 +65,20 @@ namespace NetTopologySuite.IO
         /// breaking change.
         /// </summary>
         public bool BuildWebLinksForVeryLongUriValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not to ignore child elements of the top-level
+        /// <c>&lt;gpx&gt;</c>element that are not expected to appear where they do, even though
+        /// such files would not pass XSD validation (see
+        /// NetTopologySuite/NetTopologySuite.IO.GPX#41).
+        /// <para>
+        /// This covers elements whose names are completely unrecognized, but also:
+        /// <list type="bullet">
+        /// <item><description><c>&lt;metadata&gt;</c> somewhere other than the first child element of <c>&lt;gpx&gt;</c></description></item>
+        /// <item><description><c>&lt;metadata&gt;</c> or <c>&lt;extensions&gt;</c> appearing more than once</description></item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public bool IgnoreUnexpectedChildrenOfTopLevelElement { get; set; }
     }
 }
