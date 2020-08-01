@@ -2787,13 +2787,13 @@ references:
   commentId: M:NetTopologySuite.IO.GpxMetadata.#ctor(System.String)
   fullName: NetTopologySuite.IO.GpxMetadata.GpxMetadata(System.String)
   nameWithType: GpxMetadata.GpxMetadata(String)
-- uid: NetTopologySuite.IO.GpxMetadata.#ctor(System.String,System.String,System.String,NetTopologySuite.IO.GpxPerson,NetTopologySuite.IO.GpxCopyright,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.DateTime},System.String,NetTopologySuite.IO.GpxBoundingBox,System.Object)
+- uid: NetTopologySuite.IO.GpxMetadata.#ctor(System.String,System.String,System.String,NetTopologySuite.IO.GpxPerson,NetTopologySuite.IO.GpxCopyright,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.DateTime},System.String,NetTopologySuite.IO.GpxBoundingBox,System.Object)
   name: GpxMetadata(String, String, String, GpxPerson, GpxCopyright, ImmutableArray<GpxWebLink>, Nullable<DateTime>, String, GpxBoundingBox, Object)
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata__ctor_System_String_System_String_System_String_NetTopologySuite_IO_GpxPerson_NetTopologySuite_IO_GpxCopyright_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_DateTime__System_String_NetTopologySuite_IO_GpxBoundingBox_System_Object_
-  commentId: M:NetTopologySuite.IO.GpxMetadata.#ctor(System.String,System.String,System.String,NetTopologySuite.IO.GpxPerson,NetTopologySuite.IO.GpxCopyright,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.DateTime},System.String,NetTopologySuite.IO.GpxBoundingBox,System.Object)
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata__ctor_System_String_System_String_System_String_NetTopologySuite_IO_GpxPerson_NetTopologySuite_IO_GpxCopyright_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_DateTime__System_String_NetTopologySuite_IO_GpxBoundingBox_System_Object_
+  commentId: M:NetTopologySuite.IO.GpxMetadata.#ctor(System.String,System.String,System.String,NetTopologySuite.IO.GpxPerson,NetTopologySuite.IO.GpxCopyright,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.DateTime},System.String,NetTopologySuite.IO.GpxBoundingBox,System.Object)
   name.vb: GpxMetadata(String, String, String, GpxPerson, GpxCopyright, ImmutableArray(Of GpxWebLink), Nullable(Of DateTime), String, GpxBoundingBox, Object)
-  fullName: NetTopologySuite.IO.GpxMetadata.GpxMetadata(System.String, System.String, System.String, NetTopologySuite.IO.GpxPerson, NetTopologySuite.IO.GpxCopyright, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.DateTime>, System.String, NetTopologySuite.IO.GpxBoundingBox, System.Object)
-  fullName.vb: NetTopologySuite.IO.GpxMetadata.GpxMetadata(System.String, System.String, System.String, NetTopologySuite.IO.GpxPerson, NetTopologySuite.IO.GpxCopyright, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.DateTime), System.String, NetTopologySuite.IO.GpxBoundingBox, System.Object)
+  fullName: NetTopologySuite.IO.GpxMetadata.GpxMetadata(System.String, System.String, System.String, NetTopologySuite.IO.GpxPerson, NetTopologySuite.IO.GpxCopyright, ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.DateTime>, System.String, NetTopologySuite.IO.GpxBoundingBox, System.Object)
+  fullName.vb: NetTopologySuite.IO.GpxMetadata.GpxMetadata(System.String, System.String, System.String, NetTopologySuite.IO.GpxPerson, NetTopologySuite.IO.GpxCopyright, ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.DateTime), System.String, NetTopologySuite.IO.GpxBoundingBox, System.Object)
   nameWithType: GpxMetadata.GpxMetadata(String, String, String, GpxPerson, GpxCopyright, ImmutableArray<GpxWebLink>, Nullable<DateTime>, String, GpxBoundingBox, Object)
   nameWithType.vb: GpxMetadata.GpxMetadata(String, String, String, GpxPerson, GpxCopyright, ImmutableArray(Of GpxWebLink), Nullable(Of DateTime), String, GpxBoundingBox, Object)
 - uid: NetTopologySuite.IO.GpxMetadata.#ctor*
@@ -3092,13 +3092,13 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxMetadata.WithKeywords
   nameWithType: GpxMetadata.WithKeywords
-- uid: NetTopologySuite.IO.GpxMetadata.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+- uid: NetTopologySuite.IO.GpxMetadata.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name: WithLinks(ImmutableArray<GpxWebLink>)
-  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
-  commentId: M:NetTopologySuite.IO.GpxMetadata.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+  href: api/NetTopologySuite.IO.GpxMetadata.html#NetTopologySuite_IO_GpxMetadata_WithLinks_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
+  commentId: M:NetTopologySuite.IO.GpxMetadata.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name.vb: WithLinks(ImmutableArray(Of GpxWebLink))
-  fullName: NetTopologySuite.IO.GpxMetadata.WithLinks(System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
-  fullName.vb: NetTopologySuite.IO.GpxMetadata.WithLinks(System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
+  fullName: NetTopologySuite.IO.GpxMetadata.WithLinks(ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
+  fullName.vb: NetTopologySuite.IO.GpxMetadata.WithLinks(ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
   nameWithType: GpxMetadata.WithLinks(ImmutableArray<GpxWebLink>)
   nameWithType.vb: GpxMetadata.WithLinks(ImmutableArray(Of GpxWebLink))
 - uid: NetTopologySuite.IO.GpxMetadata.WithLinks*
@@ -3282,11 +3282,11 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxReader.Read
   nameWithType: GpxReader.Read
-- uid: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,NetTopologySuite.Geometries.GeometryFactory)
+- uid: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,GeometryFactory)
   name: ReadFeatures(XmlReader, GpxReaderSettings, GeometryFactory)
-  href: api/NetTopologySuite.IO.GpxReader.html#NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_NetTopologySuite_Geometries_GeometryFactory_
-  commentId: M:NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,NetTopologySuite.Geometries.GeometryFactory)
-  fullName: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings, NetTopologySuite.Geometries.GeometryFactory)
+  href: api/NetTopologySuite.IO.GpxReader.html#NetTopologySuite_IO_GpxReader_ReadFeatures_System_Xml_XmlReader_NetTopologySuite_IO_GpxReaderSettings_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader,NetTopologySuite.IO.GpxReaderSettings,GeometryFactory)
+  fullName: NetTopologySuite.IO.GpxReader.ReadFeatures(System.Xml.XmlReader, NetTopologySuite.IO.GpxReaderSettings, GeometryFactory)
   nameWithType: GpxReader.ReadFeatures(XmlReader, GpxReaderSettings, GeometryFactory)
 - uid: NetTopologySuite.IO.GpxReader.ReadFeatures*
   name: ReadFeatures
@@ -3353,6 +3353,19 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxReaderSettings.IgnoreBadDateTime
   nameWithType: GpxReaderSettings.IgnoreBadDateTime
+- uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement
+  name: IgnoreUnexpectedChildrenOfTopLevelElement
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreUnexpectedChildrenOfTopLevelElement
+  commentId: P:NetTopologySuite.IO.GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement
+  fullName: NetTopologySuite.IO.GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement
+  nameWithType: GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement
+- uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement*
+  name: IgnoreUnexpectedChildrenOfTopLevelElement
+  href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreUnexpectedChildrenOfTopLevelElement_
+  commentId: Overload:NetTopologySuite.IO.GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement
+  isSpec: "True"
+  fullName: NetTopologySuite.IO.GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement
+  nameWithType: GpxReaderSettings.IgnoreUnexpectedChildrenOfTopLevelElement
 - uid: NetTopologySuite.IO.GpxReaderSettings.IgnoreVersionAttribute
   name: IgnoreVersionAttribute
   href: api/NetTopologySuite.IO.GpxReaderSettings.html#NetTopologySuite_IO_GpxReaderSettings_IgnoreVersionAttribute
@@ -3391,13 +3404,13 @@ references:
   commentId: M:NetTopologySuite.IO.GpxRoute.#ctor
   fullName: NetTopologySuite.IO.GpxRoute.GpxRoute()
   nameWithType: GpxRoute.GpxRoute()
-- uid: NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,NetTopologySuite.IO.ImmutableGpxWaypointTable)
+- uid: NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,NetTopologySuite.IO.ImmutableGpxWaypointTable)
   name: GpxRoute(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableGpxWaypointTable)
-  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_NetTopologySuite_IO_ImmutableGpxWaypointTable_
-  commentId: M:NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,NetTopologySuite.IO.ImmutableGpxWaypointTable)
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute__ctor_System_String_System_String_System_String_System_String_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_NetTopologySuite_IO_ImmutableGpxWaypointTable_
+  commentId: M:NetTopologySuite.IO.GpxRoute.#ctor(System.String,System.String,System.String,System.String,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,NetTopologySuite.IO.ImmutableGpxWaypointTable)
   name.vb: GpxRoute(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableGpxWaypointTable)
-  fullName: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, System.Object, NetTopologySuite.IO.ImmutableGpxWaypointTable)
-  fullName.vb: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, System.Object, NetTopologySuite.IO.ImmutableGpxWaypointTable)
+  fullName: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, System.Object, NetTopologySuite.IO.ImmutableGpxWaypointTable)
+  fullName.vb: NetTopologySuite.IO.GpxRoute.GpxRoute(System.String, System.String, System.String, System.String, ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, System.Object, NetTopologySuite.IO.ImmutableGpxWaypointTable)
   nameWithType: GpxRoute.GpxRoute(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableGpxWaypointTable)
   nameWithType.vb: GpxRoute.GpxRoute(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableGpxWaypointTable)
 - uid: NetTopologySuite.IO.GpxRoute.#ctor*
@@ -3615,13 +3628,13 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxRoute.WithExtensions
   nameWithType: GpxRoute.WithExtensions
-- uid: NetTopologySuite.IO.GpxRoute.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+- uid: NetTopologySuite.IO.GpxRoute.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name: WithLinks(ImmutableArray<GpxWebLink>)
-  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
-  commentId: M:NetTopologySuite.IO.GpxRoute.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+  href: api/NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_WithLinks_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
+  commentId: M:NetTopologySuite.IO.GpxRoute.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name.vb: WithLinks(ImmutableArray(Of GpxWebLink))
-  fullName: NetTopologySuite.IO.GpxRoute.WithLinks(System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
-  fullName.vb: NetTopologySuite.IO.GpxRoute.WithLinks(System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
+  fullName: NetTopologySuite.IO.GpxRoute.WithLinks(ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
+  fullName.vb: NetTopologySuite.IO.GpxRoute.WithLinks(ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
   nameWithType: GpxRoute.WithLinks(ImmutableArray<GpxWebLink>)
   nameWithType.vb: GpxRoute.WithLinks(ImmutableArray(Of GpxWebLink))
 - uid: NetTopologySuite.IO.GpxRoute.WithLinks*
@@ -3701,13 +3714,13 @@ references:
   commentId: M:NetTopologySuite.IO.GpxTrack.#ctor
   fullName: NetTopologySuite.IO.GpxTrack.GpxTrack()
   nameWithType: GpxTrack.GpxTrack()
-- uid: NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
+- uid: NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
   name: GpxTrack(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableArray<GpxTrackSegment>)
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack__ctor_System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxTrackSegment__
-  commentId: M:NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack__ctor_System_String_System_String_System_String_System_String_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_Nullable_System_UInt32__System_String_System_Object_ImmutableArray_NetTopologySuite_IO_GpxTrackSegment__
+  commentId: M:NetTopologySuite.IO.GpxTrack.#ctor(System.String,System.String,System.String,System.String,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.Nullable{System.UInt32},System.String,System.Object,ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
   name.vb: GpxTrack(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableArray(Of GpxTrackSegment))
-  fullName: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, System.Object, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxTrackSegment>)
-  fullName.vb: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, System.Object, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxTrackSegment))
+  fullName: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.Nullable<System.UInt32>, System.String, System.Object, ImmutableArray<NetTopologySuite.IO.GpxTrackSegment>)
+  fullName.vb: NetTopologySuite.IO.GpxTrack.GpxTrack(System.String, System.String, System.String, System.String, ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.Nullable(Of System.UInt32), System.String, System.Object, ImmutableArray(Of NetTopologySuite.IO.GpxTrackSegment))
   nameWithType: GpxTrack.GpxTrack(String, String, String, String, ImmutableArray<GpxWebLink>, Nullable<UInt32>, String, Object, ImmutableArray<GpxTrackSegment>)
   nameWithType.vb: GpxTrack.GpxTrack(String, String, String, String, ImmutableArray(Of GpxWebLink), Nullable(Of UInt32), String, Object, ImmutableArray(Of GpxTrackSegment))
 - uid: NetTopologySuite.IO.GpxTrack.#ctor*
@@ -3925,13 +3938,13 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrack.WithExtensions
   nameWithType: GpxTrack.WithExtensions
-- uid: NetTopologySuite.IO.GpxTrack.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+- uid: NetTopologySuite.IO.GpxTrack.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name: WithLinks(ImmutableArray<GpxWebLink>)
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
-  commentId: M:NetTopologySuite.IO.GpxTrack.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_WithLinks_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
+  commentId: M:NetTopologySuite.IO.GpxTrack.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name.vb: WithLinks(ImmutableArray(Of GpxWebLink))
-  fullName: NetTopologySuite.IO.GpxTrack.WithLinks(System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
-  fullName.vb: NetTopologySuite.IO.GpxTrack.WithLinks(System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
+  fullName: NetTopologySuite.IO.GpxTrack.WithLinks(ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
+  fullName.vb: NetTopologySuite.IO.GpxTrack.WithLinks(ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
   nameWithType: GpxTrack.WithLinks(ImmutableArray<GpxWebLink>)
   nameWithType.vb: GpxTrack.WithLinks(ImmutableArray(Of GpxWebLink))
 - uid: NetTopologySuite.IO.GpxTrack.WithLinks*
@@ -3970,13 +3983,13 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxTrack.WithNumber
   nameWithType: GpxTrack.WithNumber
-- uid: NetTopologySuite.IO.GpxTrack.WithSegments(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
+- uid: NetTopologySuite.IO.GpxTrack.WithSegments(ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
   name: WithSegments(ImmutableArray<GpxTrackSegment>)
-  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_WithSegments_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxTrackSegment__
-  commentId: M:NetTopologySuite.IO.GpxTrack.WithSegments(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
+  href: api/NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_WithSegments_ImmutableArray_NetTopologySuite_IO_GpxTrackSegment__
+  commentId: M:NetTopologySuite.IO.GpxTrack.WithSegments(ImmutableArray{NetTopologySuite.IO.GpxTrackSegment})
   name.vb: WithSegments(ImmutableArray(Of GpxTrackSegment))
-  fullName: NetTopologySuite.IO.GpxTrack.WithSegments(System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxTrackSegment>)
-  fullName.vb: NetTopologySuite.IO.GpxTrack.WithSegments(System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxTrackSegment))
+  fullName: NetTopologySuite.IO.GpxTrack.WithSegments(ImmutableArray<NetTopologySuite.IO.GpxTrackSegment>)
+  fullName.vb: NetTopologySuite.IO.GpxTrack.WithSegments(ImmutableArray(Of NetTopologySuite.IO.GpxTrackSegment))
   nameWithType: GpxTrack.WithSegments(ImmutableArray<GpxTrackSegment>)
   nameWithType.vb: GpxTrack.WithSegments(ImmutableArray(Of GpxTrackSegment))
 - uid: NetTopologySuite.IO.GpxTrack.WithSegments*
@@ -4195,11 +4208,11 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWaypoint
   fullName: NetTopologySuite.IO.GpxWaypoint
   nameWithType: GpxWaypoint
-- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.Geometries.Coordinate)
+- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(Coordinate)
   name: GpxWaypoint(Coordinate)
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate_
-  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.Geometries.Coordinate)
-  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.Geometries.Coordinate)
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_Coordinate_
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(Coordinate)
+  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(Coordinate)
   nameWithType: GpxWaypoint.GpxWaypoint(Coordinate)
 - uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude)
   name: GpxWaypoint(GpxLongitude, GpxLatitude)
@@ -4216,13 +4229,13 @@ references:
   fullName.vb: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.IO.GpxLongitude, NetTopologySuite.IO.GpxLatitude, System.Nullable(Of System.Double))
   nameWithType: GpxWaypoint.GpxWaypoint(GpxLongitude, GpxLatitude, Nullable<Double>)
   nameWithType.vb: GpxWaypoint.GpxWaypoint(GpxLongitude, GpxLatitude, Nullable(Of Double))
-- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double},System.Nullable{System.DateTime},System.Nullable{NetTopologySuite.IO.GpxDegrees},System.Nullable{System.Double},System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.String,System.String,System.Nullable{NetTopologySuite.IO.GpxFixKind},System.Nullable{System.UInt32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{NetTopologySuite.IO.GpxDgpsStationId},System.Object)
+- uid: NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double},System.Nullable{System.DateTime},System.Nullable{NetTopologySuite.IO.GpxDegrees},System.Nullable{System.Double},System.String,System.String,System.String,System.String,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.String,System.String,System.Nullable{NetTopologySuite.IO.GpxFixKind},System.Nullable{System.UInt32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{NetTopologySuite.IO.GpxDgpsStationId},System.Object)
   name: GpxWaypoint(GpxLongitude, GpxLatitude, Nullable<Double>, Nullable<DateTime>, Nullable<GpxDegrees>, Nullable<Double>, String, String, String, String, ImmutableArray<GpxWebLink>, String, String, Nullable<GpxFixKind>, Nullable<UInt32>, Nullable<Double>, Nullable<Double>, Nullable<Double>, Nullable<Double>, Nullable<GpxDgpsStationId>, Object)
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_
-  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double},System.Nullable{System.DateTime},System.Nullable{NetTopologySuite.IO.GpxDegrees},System.Nullable{System.Double},System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.String,System.String,System.Nullable{NetTopologySuite.IO.GpxFixKind},System.Nullable{System.UInt32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{NetTopologySuite.IO.GpxDgpsStationId},System.Object)
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double},System.Nullable{System.DateTime},System.Nullable{NetTopologySuite.IO.GpxDegrees},System.Nullable{System.Double},System.String,System.String,System.String,System.String,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.String,System.String,System.Nullable{NetTopologySuite.IO.GpxFixKind},System.Nullable{System.UInt32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{NetTopologySuite.IO.GpxDgpsStationId},System.Object)
   name.vb: GpxWaypoint(GpxLongitude, GpxLatitude, Nullable(Of Double), Nullable(Of DateTime), Nullable(Of GpxDegrees), Nullable(Of Double), String, String, String, String, ImmutableArray(Of GpxWebLink), String, String, Nullable(Of GpxFixKind), Nullable(Of UInt32), Nullable(Of Double), Nullable(Of Double), Nullable(Of Double), Nullable(Of Double), Nullable(Of GpxDgpsStationId), Object)
-  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.IO.GpxLongitude, NetTopologySuite.IO.GpxLatitude, System.Nullable<System.Double>, System.Nullable<System.DateTime>, System.Nullable<NetTopologySuite.IO.GpxDegrees>, System.Nullable<System.Double>, System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.String, System.String, System.Nullable<NetTopologySuite.IO.GpxFixKind>, System.Nullable<System.UInt32>, System.Nullable<System.Double>, System.Nullable<System.Double>, System.Nullable<System.Double>, System.Nullable<System.Double>, System.Nullable<NetTopologySuite.IO.GpxDgpsStationId>, System.Object)
-  fullName.vb: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.IO.GpxLongitude, NetTopologySuite.IO.GpxLatitude, System.Nullable(Of System.Double), System.Nullable(Of System.DateTime), System.Nullable(Of NetTopologySuite.IO.GpxDegrees), System.Nullable(Of System.Double), System.String, System.String, System.String, System.String, System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.String, System.String, System.Nullable(Of NetTopologySuite.IO.GpxFixKind), System.Nullable(Of System.UInt32), System.Nullable(Of System.Double), System.Nullable(Of System.Double), System.Nullable(Of System.Double), System.Nullable(Of System.Double), System.Nullable(Of NetTopologySuite.IO.GpxDgpsStationId), System.Object)
+  fullName: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.IO.GpxLongitude, NetTopologySuite.IO.GpxLatitude, System.Nullable<System.Double>, System.Nullable<System.DateTime>, System.Nullable<NetTopologySuite.IO.GpxDegrees>, System.Nullable<System.Double>, System.String, System.String, System.String, System.String, ImmutableArray<NetTopologySuite.IO.GpxWebLink>, System.String, System.String, System.Nullable<NetTopologySuite.IO.GpxFixKind>, System.Nullable<System.UInt32>, System.Nullable<System.Double>, System.Nullable<System.Double>, System.Nullable<System.Double>, System.Nullable<System.Double>, System.Nullable<NetTopologySuite.IO.GpxDgpsStationId>, System.Object)
+  fullName.vb: NetTopologySuite.IO.GpxWaypoint.GpxWaypoint(NetTopologySuite.IO.GpxLongitude, NetTopologySuite.IO.GpxLatitude, System.Nullable(Of System.Double), System.Nullable(Of System.DateTime), System.Nullable(Of NetTopologySuite.IO.GpxDegrees), System.Nullable(Of System.Double), System.String, System.String, System.String, System.String, ImmutableArray(Of NetTopologySuite.IO.GpxWebLink), System.String, System.String, System.Nullable(Of NetTopologySuite.IO.GpxFixKind), System.Nullable(Of System.UInt32), System.Nullable(Of System.Double), System.Nullable(Of System.Double), System.Nullable(Of System.Double), System.Nullable(Of System.Double), System.Nullable(Of NetTopologySuite.IO.GpxDgpsStationId), System.Object)
   nameWithType: GpxWaypoint.GpxWaypoint(GpxLongitude, GpxLatitude, Nullable<Double>, Nullable<DateTime>, Nullable<GpxDegrees>, Nullable<Double>, String, String, String, String, ImmutableArray<GpxWebLink>, String, String, Nullable<GpxFixKind>, Nullable<UInt32>, Nullable<Double>, Nullable<Double>, Nullable<Double>, Nullable<Double>, Nullable<GpxDgpsStationId>, Object)
   nameWithType.vb: GpxWaypoint.GpxWaypoint(GpxLongitude, GpxLatitude, Nullable(Of Double), Nullable(Of DateTime), Nullable(Of GpxDegrees), Nullable(Of Double), String, String, String, String, ImmutableArray(Of GpxWebLink), String, String, Nullable(Of GpxFixKind), Nullable(Of UInt32), Nullable(Of Double), Nullable(Of Double), Nullable(Of Double), Nullable(Of Double), Nullable(Of GpxDgpsStationId), Object)
 - uid: NetTopologySuite.IO.GpxWaypoint.#ctor*
@@ -4689,13 +4702,13 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.GpxWaypoint.WithLatitude
   nameWithType: GpxWaypoint.WithLatitude
-- uid: NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+- uid: NetTopologySuite.IO.GpxWaypoint.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name: WithLinks(ImmutableArray<GpxWebLink>)
-  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
-  commentId: M:NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})
+  href: api/NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_WithLinks_ImmutableArray_NetTopologySuite_IO_GpxWebLink__
+  commentId: M:NetTopologySuite.IO.GpxWaypoint.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})
   name.vb: WithLinks(ImmutableArray(Of GpxWebLink))
-  fullName: NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
-  fullName.vb: NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
+  fullName: NetTopologySuite.IO.GpxWaypoint.WithLinks(ImmutableArray<NetTopologySuite.IO.GpxWebLink>)
+  fullName.vb: NetTopologySuite.IO.GpxWaypoint.WithLinks(ImmutableArray(Of NetTopologySuite.IO.GpxWebLink))
   nameWithType: GpxWaypoint.WithLinks(ImmutableArray<GpxWebLink>)
   nameWithType.vb: GpxWaypoint.WithLinks(ImmutableArray(Of GpxWebLink))
 - uid: NetTopologySuite.IO.GpxWaypoint.WithLinks*
@@ -5033,22 +5046,22 @@ references:
   commentId: T:NetTopologySuite.IO.GpxWriter
   fullName: NetTopologySuite.IO.GpxWriter
   nameWithType: GpxWriter
-- uid: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Object)
+- uid: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{IFeature},System.Collections.Generic.IEnumerable{IFeature},System.Collections.Generic.IEnumerable{IFeature},System.Object)
   name: Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable<IFeature>, IEnumerable<IFeature>, IEnumerable<IFeature>, Object)
-  href: api/NetTopologySuite.IO.GpxWriter.html#NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object_
-  commentId: M:NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Object)
+  href: api/NetTopologySuite.IO.GpxWriter.html#NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_IFeature__System_Collections_Generic_IEnumerable_IFeature__System_Collections_Generic_IEnumerable_IFeature__System_Object_
+  commentId: M:NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{IFeature},System.Collections.Generic.IEnumerable{IFeature},System.Collections.Generic.IEnumerable{IFeature},System.Object)
   name.vb: Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable(Of IFeature), IEnumerable(Of IFeature), IEnumerable(Of IFeature), Object)
-  fullName: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable<NetTopologySuite.Features.IFeature>, System.Collections.Generic.IEnumerable<NetTopologySuite.Features.IFeature>, System.Collections.Generic.IEnumerable<NetTopologySuite.Features.IFeature>, System.Object)
-  fullName.vb: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable(Of NetTopologySuite.Features.IFeature), System.Collections.Generic.IEnumerable(Of NetTopologySuite.Features.IFeature), System.Collections.Generic.IEnumerable(Of NetTopologySuite.Features.IFeature), System.Object)
+  fullName: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable<IFeature>, System.Collections.Generic.IEnumerable<IFeature>, System.Collections.Generic.IEnumerable<IFeature>, System.Object)
+  fullName.vb: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable(Of IFeature), System.Collections.Generic.IEnumerable(Of IFeature), System.Collections.Generic.IEnumerable(Of IFeature), System.Object)
   nameWithType: GpxWriter.Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable<IFeature>, IEnumerable<IFeature>, IEnumerable<IFeature>, Object)
   nameWithType.vb: GpxWriter.Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable(Of IFeature), IEnumerable(Of IFeature), IEnumerable(Of IFeature), Object)
-- uid: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Object)
+- uid: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{IFeature},System.Object)
   name: Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable<IFeature>, Object)
-  href: api/NetTopologySuite.IO.GpxWriter.html#NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_NetTopologySuite_Features_IFeature__System_Object_
-  commentId: M:NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.Features.IFeature},System.Object)
+  href: api/NetTopologySuite.IO.GpxWriter.html#NetTopologySuite_IO_GpxWriter_Write_System_Xml_XmlWriter_NetTopologySuite_IO_GpxWriterSettings_NetTopologySuite_IO_GpxMetadata_System_Collections_Generic_IEnumerable_IFeature__System_Object_
+  commentId: M:NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{IFeature},System.Object)
   name.vb: Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable(Of IFeature), Object)
-  fullName: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable<NetTopologySuite.Features.IFeature>, System.Object)
-  fullName.vb: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable(Of NetTopologySuite.Features.IFeature), System.Object)
+  fullName: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable<IFeature>, System.Object)
+  fullName.vb: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter, NetTopologySuite.IO.GpxWriterSettings, NetTopologySuite.IO.GpxMetadata, System.Collections.Generic.IEnumerable(Of IFeature), System.Object)
   nameWithType: GpxWriter.Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable<IFeature>, Object)
   nameWithType.vb: GpxWriter.Write(XmlWriter, GpxWriterSettings, GpxMetadata, IEnumerable(Of IFeature), Object)
 - uid: NetTopologySuite.IO.GpxWriter.Write(System.Xml.XmlWriter,NetTopologySuite.IO.GpxWriterSettings,NetTopologySuite.IO.GpxMetadata,System.Collections.Generic.IEnumerable{NetTopologySuite.IO.GpxWaypoint},System.Collections.Generic.IEnumerable{NetTopologySuite.IO.GpxRoute},System.Collections.Generic.IEnumerable{NetTopologySuite.IO.GpxTrack},System.Object)
@@ -5481,23 +5494,23 @@ references:
   commentId: T:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter
   fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter
   nameWithType: NetTopologySuiteGpxFeatureConverter
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,NetTopologySuite.Geometries.GeometryFactory)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,GeometryFactory)
   name: ToFeature(GpxRoute, GeometryFactory)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_NetTopologySuite_Geometries_GeometryFactory_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,NetTopologySuite.Geometries.GeometryFactory)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute, NetTopologySuite.Geometries.GeometryFactory)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,GeometryFactory)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute, GeometryFactory)
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxRoute, GeometryFactory)
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,NetTopologySuite.Geometries.GeometryFactory)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,GeometryFactory)
   name: ToFeature(GpxTrack, GeometryFactory)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_NetTopologySuite_Geometries_GeometryFactory_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,NetTopologySuite.Geometries.GeometryFactory)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack, NetTopologySuite.Geometries.GeometryFactory)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,GeometryFactory)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack, GeometryFactory)
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxTrack, GeometryFactory)
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,NetTopologySuite.Geometries.GeometryFactory)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,GeometryFactory)
   name: ToFeature(GpxWaypoint, GeometryFactory)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_NetTopologySuite_Geometries_GeometryFactory_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,NetTopologySuite.Geometries.GeometryFactory)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint, NetTopologySuite.Geometries.GeometryFactory)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_GeometryFactory_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,GeometryFactory)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint, GeometryFactory)
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature(GpxWaypoint, GeometryFactory)
 - uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature*
   name: ToFeature
@@ -5506,11 +5519,11 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToFeature
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(NetTopologySuite.Features.IFeature)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(IFeature)
   name: ToGpxRoute(IFeature)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_NetTopologySuite_Features_IFeature_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(NetTopologySuite.Features.IFeature)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(NetTopologySuite.Features.IFeature)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_IFeature_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(IFeature)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(IFeature)
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToGpxRoute(IFeature)
 - uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute*
   name: ToGpxRoute
@@ -5519,11 +5532,11 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToGpxRoute
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(NetTopologySuite.Features.IFeature)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(IFeature)
   name: ToGpxTrack(IFeature)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_NetTopologySuite_Features_IFeature_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(NetTopologySuite.Features.IFeature)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(NetTopologySuite.Features.IFeature)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_IFeature_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(IFeature)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(IFeature)
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToGpxTrack(IFeature)
 - uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack*
   name: ToGpxTrack
@@ -5532,11 +5545,11 @@ references:
   isSpec: "True"
   fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToGpxTrack
-- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(NetTopologySuite.Features.IFeature)
+- uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(IFeature)
   name: ToGpxWaypoint(IFeature)
-  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_NetTopologySuite_Features_IFeature_
-  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(NetTopologySuite.Features.IFeature)
-  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(NetTopologySuite.Features.IFeature)
+  href: api/NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.html#NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_IFeature_
+  commentId: M:NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(IFeature)
+  fullName: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(IFeature)
   nameWithType: NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(IFeature)
 - uid: NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint*
   name: ToGpxWaypoint

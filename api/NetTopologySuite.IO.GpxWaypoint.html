@@ -119,13 +119,13 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(NetTopologySuite.Geometries.Coordinate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_Coordinate_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(Coordinate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L64">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint__ctor_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor*"></a>
-  <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.Geometries.Coordinate)">GpxWaypoint(Coordinate)</h4>
+  <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_Coordinate_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(Coordinate)">GpxWaypoint(Coordinate)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -144,18 +144,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NetTopologySuite.Geometries.Coordinate</span></td>
+        <td><span class="xref">Coordinate</span></td>
         <td><span class="parametername">coordinate</span></td>
-        <td><p>A <span class="xref">NetTopologySuite.Geometries.Coordinate</span> to use to initialize <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> and
+        <td><p>A <see cref="!:Coordinate"></see> to use to initialize <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> and
 <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_Geometries_Coordinate__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p><span class="xref">NetTopologySuite.Geometries.Coordinate.X</span> and <span class="xref">NetTopologySuite.Geometries.Coordinate.Y</span> are assumed to be WGS-84
-degrees, and <span class="xref">NetTopologySuite.Geometries.Coordinate.Z</span> is assumed to be an elevation in meters when it
-isn't equal to <span class="xref">NetTopologySuite.Geometries.Coordinate.NullOrdinate</span>.</p>
+  <h5 id="NetTopologySuite_IO_GpxWaypoint__ctor_Coordinate__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><see cref="!:Coordinate.X"></see> and <see cref="!:Coordinate.Y"></see> are assumed to be WGS-84
+degrees, and <see cref="!:Coordinate.Z"></see> is assumed to be an elevation in meters when it
+isn't equal to <see cref="!:Coordinate.NullOrdinate"></see>.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,7 +174,7 @@ isn't equal to <span class="xref">NetTopologySuite.Geometries.Coordinate.NullOrd
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
         <td><p>Thrown when:</p>
-<ul><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">NetTopologySuite.Geometries.Coordinate.X</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLongitude.html">GpxLongitude</a>,</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">NetTopologySuite.Geometries.Coordinate.Y</span> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLatitude.html">GpxLatitude</a>, or</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <span class="xref">NetTopologySuite.Geometries.Coordinate.Z</span> value <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double.isinfinity#System_Double_IsInfinity_System_Double_">IsInfinity(Double)</a></li></ul>
+<ul><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <see cref="!:Coordinate.X"></see> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLongitude.html">GpxLongitude</a>,</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <see cref="!:Coordinate.Y"></see> value is not within the range of valid values for <a class="xref" href="NetTopologySuite.IO.GpxLatitude.html">GpxLatitude</a>, or</li><li><code data-dev-comment-type="paramref" class="paramref">coordinate</code>&apos;s <see cref="!:Coordinate.Z"></see> value <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double.isinfinity#System_Double_IsInfinity_System_Double_">IsInfinity(Double)</a></li></ul>
 </td>
       </tr>
     </tbody>
@@ -283,13 +283,13 @@ isn't equal to <span class="xref">NetTopologySuite.Geometries.Coordinate.NullOrd
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(NetTopologySuite.IO.GpxLongitude%2CNetTopologySuite.IO.GpxLatitude%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BNetTopologySuite.IO.GpxDegrees%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Collections.Immutable.ImmutableArray%7BNetTopologySuite.IO.GpxWebLink%7D%2CSystem.String%2CSystem.String%2CSystem.Nullable%7BNetTopologySuite.IO.GpxFixKind%7D%2CSystem.Nullable%7BSystem.UInt32%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BNetTopologySuite.IO.GpxDgpsStationId%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.%23ctor(NetTopologySuite.IO.GpxLongitude%2CNetTopologySuite.IO.GpxLatitude%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BNetTopologySuite.IO.GpxDegrees%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CImmutableArray%7BNetTopologySuite.IO.GpxWebLink%7D%2CSystem.String%2CSystem.String%2CSystem.Nullable%7BNetTopologySuite.IO.GpxFixKind%7D%2CSystem.Nullable%7BSystem.UInt32%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BSystem.Double%7D%2CSystem.Nullable%7BNetTopologySuite.IO.GpxDgpsStationId%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L196">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint__ctor_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor*"></a>
-  <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double},System.Nullable{System.DateTime},System.Nullable{NetTopologySuite.IO.GpxDegrees},System.Nullable{System.Double},System.String,System.String,System.String,System.String,System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.String,System.String,System.Nullable{NetTopologySuite.IO.GpxFixKind},System.Nullable{System.UInt32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{NetTopologySuite.IO.GpxDgpsStationId},System.Object)">GpxWaypoint(GpxLongitude, GpxLatitude, Nullable&lt;Double&gt;, Nullable&lt;DateTime&gt;, Nullable&lt;GpxDegrees&gt;, Nullable&lt;Double&gt;, String, String, String, String, ImmutableArray&lt;GpxWebLink&gt;, String, String, Nullable&lt;GpxFixKind&gt;, Nullable&lt;UInt32&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;GpxDgpsStationId&gt;, Object)</h4>
+  <h4 id="NetTopologySuite_IO_GpxWaypoint__ctor_NetTopologySuite_IO_GpxLongitude_NetTopologySuite_IO_GpxLatitude_System_Nullable_System_Double__System_Nullable_System_DateTime__System_Nullable_NetTopologySuite_IO_GpxDegrees__System_Nullable_System_Double__System_String_System_String_System_String_System_String_ImmutableArray_NetTopologySuite_IO_GpxWebLink__System_String_System_String_System_Nullable_NetTopologySuite_IO_GpxFixKind__System_Nullable_System_UInt32__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_NetTopologySuite_IO_GpxDgpsStationId__System_Object_" data-uid="NetTopologySuite.IO.GpxWaypoint.#ctor(NetTopologySuite.IO.GpxLongitude,NetTopologySuite.IO.GpxLatitude,System.Nullable{System.Double},System.Nullable{System.DateTime},System.Nullable{NetTopologySuite.IO.GpxDegrees},System.Nullable{System.Double},System.String,System.String,System.String,System.String,ImmutableArray{NetTopologySuite.IO.GpxWebLink},System.String,System.String,System.Nullable{NetTopologySuite.IO.GpxFixKind},System.Nullable{System.UInt32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{NetTopologySuite.IO.GpxDgpsStationId},System.Object)">GpxWaypoint(GpxLongitude, GpxLatitude, Nullable&lt;Double&gt;, Nullable&lt;DateTime&gt;, Nullable&lt;GpxDegrees&gt;, Nullable&lt;Double&gt;, String, String, String, String, ImmutableArray&lt;GpxWebLink&gt;, String, String, Nullable&lt;GpxFixKind&gt;, Nullable&lt;UInt32&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;Double&gt;, Nullable&lt;GpxDgpsStationId&gt;, Object)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -368,7 +368,7 @@ isn't equal to <span class="xref">NetTopologySuite.Geometries.Coordinate.NullOrd
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a>&gt;</td>
+        <td><span class="xref">ImmutableArray</span>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a>&gt;</td>
         <td><span class="parametername">links</span></td>
         <td><p>The value for <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Links">Links</a>.</p>
 </td>
@@ -821,7 +821,7 @@ this location, as defined in NMEA GGA message.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a>&gt;</td>
+        <td><span class="xref">ImmutableArray</span>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1822,13 +1822,13 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray%7BNetTopologySuite.IO.GpxWebLink%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_GpxWaypoint_WithLinks_ImmutableArray_NetTopologySuite_IO_GpxWebLink__.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.GpxWaypoint.WithLinks(ImmutableArray%7BNetTopologySuite.IO.GpxWebLink%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/GpxWaypoint.cs/#L584">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_GpxWaypoint_WithLinks_" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLinks*"></a>
-  <h4 id="NetTopologySuite_IO_GpxWaypoint_WithLinks_System_Collections_Immutable_ImmutableArray_NetTopologySuite_IO_GpxWebLink__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLinks(System.Collections.Immutable.ImmutableArray{NetTopologySuite.IO.GpxWebLink})">WithLinks(ImmutableArray&lt;GpxWebLink&gt;)</h4>
+  <h4 id="NetTopologySuite_IO_GpxWaypoint_WithLinks_ImmutableArray_NetTopologySuite_IO_GpxWebLink__" data-uid="NetTopologySuite.IO.GpxWaypoint.WithLinks(ImmutableArray{NetTopologySuite.IO.GpxWebLink})">WithLinks(ImmutableArray&lt;GpxWebLink&gt;)</h4>
   <div class="markdown level1 summary"><p>Builds a new instance of <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> as a copy of this instance, but with
 <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Links">Links</a> replaced by the given value.</p>
 </div>
@@ -1848,7 +1848,7 @@ with its <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologyS
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a>&gt;</td>
+        <td><span class="xref">ImmutableArray</span>&lt;<a class="xref" href="NetTopologySuite.IO.GpxWebLink.html">GpxWebLink</a>&gt;</td>
         <td><span class="parametername">links</span></td>
         <td><p>The new value for <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Links">Links</a>.</p>
 </td>

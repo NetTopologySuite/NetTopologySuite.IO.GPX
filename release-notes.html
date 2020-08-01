@@ -72,6 +72,15 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="nettopologysuiteiogpx-release-notes">NetTopologySuite.IO.GPX Release Notes</h1>
 
+<h2 id="111"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/13">1.1.1</a></h2>
+<ul>
+<li><code>GpxReader</code> will now throw an <code>XmlException</code> when it encounters an unexpected top-level child element of the root <code>gpx</code> element, instead of running into an infinite loop (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/41">#41</a>).
+<ul>
+<li>&quot;Unexpected top-level child elements&quot; are elements whose names we do not recognize, <code>metadata</code> or <code>extensions</code> showing up more than once, or the <code>metadata</code> element showing up somewhere <em>after</em> the first child element.</li>
+</ul>
+</li>
+<li><code>GpxReaderSettings</code> now has an <code>IgnoreUnexpectedChildrenOfTopLevelElement</code> property to use to ignore those elements instead of throwing <code>XmlException</code>.</li>
+</ul>
 <h2 id="110"><a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/milestone/11">1.1.0</a></h2>
 <ul>
 <li>Allow specifying arbitrary namespaces (+prefixes) on the root element so that they don't have to be repeated on every <code>extensions</code> element (<a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/issues/36">#36</a>).</li>

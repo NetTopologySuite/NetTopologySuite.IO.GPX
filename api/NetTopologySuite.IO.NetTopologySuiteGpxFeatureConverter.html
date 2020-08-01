@@ -83,7 +83,7 @@
   
   <h1 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter" class="text-break">Class NetTopologySuiteGpxFeatureConverter
   </h1>
-  <div class="markdown level0 summary"><p>Contains helper methods to convert back and forth between <span class="xref">NetTopologySuite.Features.IFeature</span> instances
+  <div class="markdown level0 summary"><p>Contains helper methods to convert back and forth between <see cref="!:IFeature"></see> instances
 and the corresponding GPX data object.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -126,14 +126,14 @@ and the corresponding GPX data object.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_NetTopologySuite_Geometries_GeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute%2CNetTopologySuite.Geometries.GeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_GeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute%2CGeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/NetTopologySuiteGpxFeatureConverter.cs/#L309">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature*"></a>
-  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_NetTopologySuite_Geometries_GeometryFactory_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,NetTopologySuite.Geometries.GeometryFactory)">ToFeature(GpxRoute, GeometryFactory)</h4>
-  <div class="markdown level1 summary"><p>Creates a <span class="xref">NetTopologySuite.Geometries.LineString</span> <span class="xref">NetTopologySuite.Features.Feature</span> that contains the same data
+  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_GeometryFactory_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxRoute,GeometryFactory)">ToFeature(GpxRoute, GeometryFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a <see cref="!:LineString"></see> <see cref="!:Feature"></see> that contains the same data
 stored in a given <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -158,11 +158,11 @@ stored in a given <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRo
 </td>
       </tr>
       <tr>
-        <td><span class="xref">NetTopologySuite.Geometries.GeometryFactory</span></td>
+        <td><span class="xref">GeometryFactory</span></td>
         <td><span class="parametername">geometryFactory</span></td>
-        <td><p>The <span class="xref">NetTopologySuite.Geometries.GeometryFactory</span> to use to create the <span class="xref">NetTopologySuite.Geometries.LineString</span>, or
+        <td><p>The <see cref="!:GeometryFactory"></see> to use to create the <see cref="!:LineString"></see>, or
 <span class="xref">null</span> to create a new one to use on-the-fly using the current
-<span class="xref">NetTopologySuite.NtsGeometryServices</span>.</p>
+<see cref="!:NtsGeometryServices"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -177,14 +177,14 @@ stored in a given <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRo
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NetTopologySuite.Features.Feature</span></td>
-        <td><p>A <span class="xref">NetTopologySuite.Features.Feature</span> that contains the same data as <code data-dev-comment-type="paramref" class="paramref">route</code>.</p>
+        <td><span class="xref">Feature</span></td>
+        <td><p>A <see cref="!:Feature"></see> that contains the same data as <code data-dev-comment-type="paramref" class="paramref">route</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_NetTopologySuite_Geometries_GeometryFactory__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The values of <span class="xref">NetTopologySuite.Features.Feature.Attributes</span> will be populated with the values of the
+  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxRoute_GeometryFactory__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The values of <see cref="!:Feature.Attributes"></see> will be populated with the values of the
 <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a> properties, even when <span class="xref">null</span>.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
@@ -205,14 +205,14 @@ stored in a given <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRo
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_NetTopologySuite_Geometries_GeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack%2CNetTopologySuite.Geometries.GeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_GeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack%2CGeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/NetTopologySuiteGpxFeatureConverter.cs/#L361">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature*"></a>
-  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_NetTopologySuite_Geometries_GeometryFactory_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,NetTopologySuite.Geometries.GeometryFactory)">ToFeature(GpxTrack, GeometryFactory)</h4>
-  <div class="markdown level1 summary"><p>Creates a <span class="xref">NetTopologySuite.Geometries.MultiLineString</span> <span class="xref">NetTopologySuite.Features.Feature</span> that contains the same data
+  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_GeometryFactory_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxTrack,GeometryFactory)">ToFeature(GpxTrack, GeometryFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a <see cref="!:MultiLineString"></see> <see cref="!:Feature"></see> that contains the same data
 stored in a given <a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -237,11 +237,11 @@ stored in a given <a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTr
 </td>
       </tr>
       <tr>
-        <td><span class="xref">NetTopologySuite.Geometries.GeometryFactory</span></td>
+        <td><span class="xref">GeometryFactory</span></td>
         <td><span class="parametername">geometryFactory</span></td>
-        <td><p>The <span class="xref">NetTopologySuite.Geometries.GeometryFactory</span> to use to create the <span class="xref">NetTopologySuite.Geometries.MultiLineString</span>,
+        <td><p>The <see cref="!:GeometryFactory"></see> to use to create the <see cref="!:MultiLineString"></see>,
 or <span class="xref">null</span> to create a new one to use on-the-fly using the current
-<span class="xref">NetTopologySuite.NtsGeometryServices</span>.</p>
+<see cref="!:NtsGeometryServices"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -256,14 +256,14 @@ or <span class="xref">null</span> to create a new one to use on-the-fly using th
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NetTopologySuite.Features.Feature</span></td>
-        <td><p>A <span class="xref">NetTopologySuite.Features.Feature</span> that contains the same data as <code data-dev-comment-type="paramref" class="paramref">track</code>.</p>
+        <td><span class="xref">Feature</span></td>
+        <td><p>A <see cref="!:Feature"></see> that contains the same data as <code data-dev-comment-type="paramref" class="paramref">track</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_NetTopologySuite_Geometries_GeometryFactory__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The values of <span class="xref">NetTopologySuite.Features.Feature.Attributes</span> will be populated with the values of the
+  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxTrack_GeometryFactory__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The values of <see cref="!:Feature.Attributes"></see> will be populated with the values of the
 <a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a> properties, even when <span class="xref">null</span>.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
@@ -284,14 +284,14 @@ or <span class="xref">null</span> to create a new one to use on-the-fly using th
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_NetTopologySuite_Geometries_GeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint%2CNetTopologySuite.Geometries.GeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_GeometryFactory_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint%2CGeometryFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/NetTopologySuiteGpxFeatureConverter.cs/#L247">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature*"></a>
-  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_NetTopologySuite_Geometries_GeometryFactory_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,NetTopologySuite.Geometries.GeometryFactory)">ToFeature(GpxWaypoint, GeometryFactory)</h4>
-  <div class="markdown level1 summary"><p>Creates a <span class="xref">NetTopologySuite.Geometries.Point</span> <span class="xref">NetTopologySuite.Features.Feature</span> that contains the same data stored
+  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_GeometryFactory_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToFeature(NetTopologySuite.IO.GpxWaypoint,GeometryFactory)">ToFeature(GpxWaypoint, GeometryFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a <see cref="!:Point"></see> <see cref="!:Feature"></see> that contains the same data stored
 in a given <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -316,11 +316,11 @@ in a given <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoi
 </td>
       </tr>
       <tr>
-        <td><span class="xref">NetTopologySuite.Geometries.GeometryFactory</span></td>
+        <td><span class="xref">GeometryFactory</span></td>
         <td><span class="parametername">geometryFactory</span></td>
-        <td><p>The <span class="xref">NetTopologySuite.Geometries.GeometryFactory</span> to use to create the <span class="xref">NetTopologySuite.Geometries.Point</span>, or
+        <td><p>The <see cref="!:GeometryFactory"></see> to use to create the <see cref="!:Point"></see>, or
 <span class="xref">null</span> to create a new one to use on-the-fly using the current
-<span class="xref">NetTopologySuite.NtsGeometryServices</span>.</p>
+<see cref="!:NtsGeometryServices"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -335,16 +335,16 @@ in a given <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoi
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NetTopologySuite.Features.Feature</span></td>
-        <td><p>A <span class="xref">NetTopologySuite.Features.Feature</span> that contains the same data as <code data-dev-comment-type="paramref" class="paramref">waypoint</code>.</p>
+        <td><span class="xref">Feature</span></td>
+        <td><p>A <see cref="!:Feature"></see> that contains the same data as <code data-dev-comment-type="paramref" class="paramref">waypoint</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_NetTopologySuite_Geometries_GeometryFactory__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The values of <span class="xref">NetTopologySuite.Features.Feature.Attributes</span> will be populated with the values of the
+  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToFeature_NetTopologySuite_IO_GpxWaypoint_GeometryFactory__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The values of <see cref="!:Feature.Attributes"></see> will be populated with the values of the
 <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> properties, even when <span class="xref">null</span>, with exceptions:</p>
-<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> goes to <span class="xref">NetTopologySuite.Geometries.Point.X</span> instead,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a> goes to <span class="xref">NetTopologySuite.Geometries.Point.Y</span> instead, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> goes to <span class="xref">NetTopologySuite.Geometries.Point.Z</span> instead (when it&apos;s set)</li></ul>
+<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> goes to <see cref="!:Point.X"></see> instead,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a> goes to <see cref="!:Point.Y"></see> instead, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> goes to <see cref="!:Point.Z"></see> instead (when it&apos;s set)</li></ul>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -364,14 +364,14 @@ in a given <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoi
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_NetTopologySuite_Features_IFeature_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(NetTopologySuite.Features.IFeature)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_IFeature_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(IFeature)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/NetTopologySuiteGpxFeatureConverter.cs/#L129">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute*"></a>
-  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_NetTopologySuite_Features_IFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(NetTopologySuite.Features.IFeature)">ToGpxRoute(IFeature)</h4>
-  <div class="markdown level1 summary"><p>Turns a <span class="xref">NetTopologySuite.Geometries.LineString</span> <span class="xref">NetTopologySuite.Features.IFeature</span> into the
+  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_IFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxRoute(IFeature)">ToGpxRoute(IFeature)</h4>
+  <div class="markdown level1 summary"><p>Turns a <see cref="!:LineString"></see> <see cref="!:IFeature"></see> into the
 <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a> instance that's equivalent to it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -390,9 +390,9 @@ in a given <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoi
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NetTopologySuite.Features.IFeature</span></td>
+        <td><span class="xref">IFeature</span></td>
         <td><span class="parametername">feature</span></td>
-        <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span> to convert.</p>
+        <td><p>The <see cref="!:IFeature"></see> to convert.</p>
 </td>
       </tr>
     </tbody>
@@ -413,18 +413,18 @@ in a given <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoi
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_NetTopologySuite_Features_IFeature__remarks">Remarks</h5>
+  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxRoute_IFeature__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-Values from <span class="xref">NetTopologySuite.Features.IFeature.Attributes</span> with keys whose names match the names of
+Values from <see cref="!:IFeature.Attributes"></see> with keys whose names match the names of
 properties of <a class="xref" href="NetTopologySuite.IO.GpxRoute.html">GpxRoute</a> will be used to populate those corresponding
 property values.
 </p>
 <p>
-When the &quot;Waypoints&quot; attribute is populated in <span class="xref">NetTopologySuite.Features.IFeature.Attributes</span>, its
+When the &quot;Waypoints&quot; attribute is populated in <see cref="!:IFeature.Attributes"></see>, its
 values will be used for <a class="xref" href="NetTopologySuite.IO.GpxRoute.html#NetTopologySuite_IO_GpxRoute_Waypoints">Waypoints</a>, and the
-<span class="xref">NetTopologySuite.Features.IFeature.Geometry</span> will be ignored except to validate that it is, in fact,
-<span class="xref">NetTopologySuite.Geometries.LineString</span>.  Otherwise, waypoints will be built with only values for:
-<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a>,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a>, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> (where <span class="xref">NetTopologySuite.Geometries.Point.Z</span> is set).</li></ul>
+<see cref="!:IFeature.Geometry"></see> will be ignored except to validate that it is, in fact,
+<see cref="!:LineString"></see>.  Otherwise, waypoints will be built with only values for:
+<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a>,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a>, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> (where <see cref="!:Point.Z"></see> is set).</li></ul>
 </p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
@@ -448,22 +448,22 @@ values will be used for <a class="xref" href="NetTopologySuite.IO.GpxRoute.html#
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">feature</code>'s <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span> is not an
-instance of <span class="xref">NetTopologySuite.Geometries.LineString</span>.</p>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">feature</code>'s <see cref="!:IFeature.Geometry"></see> is not an
+instance of <see cref="!:LineString"></see>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_NetTopologySuite_Features_IFeature_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(NetTopologySuite.Features.IFeature)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_IFeature_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(IFeature)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/NetTopologySuiteGpxFeatureConverter.cs/#L193">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack*"></a>
-  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_NetTopologySuite_Features_IFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(NetTopologySuite.Features.IFeature)">ToGpxTrack(IFeature)</h4>
-  <div class="markdown level1 summary"><p>Turns a <span class="xref">NetTopologySuite.Geometries.MultiLineString</span> <span class="xref">NetTopologySuite.Features.IFeature</span> into the
+  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_IFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxTrack(IFeature)">ToGpxTrack(IFeature)</h4>
+  <div class="markdown level1 summary"><p>Turns a <see cref="!:MultiLineString"></see> <see cref="!:IFeature"></see> into the
 <a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a> instance that's equivalent to it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -482,9 +482,9 @@ instance of <span class="xref">NetTopologySuite.Geometries.LineString</span>.</p
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NetTopologySuite.Features.IFeature</span></td>
+        <td><span class="xref">IFeature</span></td>
         <td><span class="parametername">feature</span></td>
-        <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span> to convert.</p>
+        <td><p>The <see cref="!:IFeature"></see> to convert.</p>
 </td>
       </tr>
     </tbody>
@@ -505,19 +505,19 @@ instance of <span class="xref">NetTopologySuite.Geometries.LineString</span>.</p
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_NetTopologySuite_Features_IFeature__remarks">Remarks</h5>
+  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxTrack_IFeature__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-Values from <span class="xref">NetTopologySuite.Features.IFeature.Attributes</span> with keys whose names match the names of
+Values from <see cref="!:IFeature.Attributes"></see> with keys whose names match the names of
 properties of <a class="xref" href="NetTopologySuite.IO.GpxTrack.html">GpxTrack</a> will be used to populate those corresponding
 property values.
 </p>
 <p>
-When the &quot;Segments&quot; attribute is populated in <span class="xref">NetTopologySuite.Features.IFeature.Attributes</span>, its
+When the &quot;Segments&quot; attribute is populated in <see cref="!:IFeature.Attributes"></see>, its
 values will be used for <a class="xref" href="NetTopologySuite.IO.GpxTrack.html#NetTopologySuite_IO_GpxTrack_Segments">Segments</a>, and the
-<span class="xref">NetTopologySuite.Features.IFeature.Geometry</span> will be ignored except to validate that it is, in fact,
-<span class="xref">NetTopologySuite.Geometries.MultiLineString</span>.  Otherwise, segments will be built without anything for
+<see cref="!:IFeature.Geometry"></see> will be ignored except to validate that it is, in fact,
+<see cref="!:MultiLineString"></see>.  Otherwise, segments will be built without anything for
 <a class="xref" href="NetTopologySuite.IO.GpxTrackSegment.html#NetTopologySuite_IO_GpxTrackSegment_Extensions">Extensions</a>, and whose waypoints only have these set:
-<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a>,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a>, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> (if <span class="xref">NetTopologySuite.Geometries.CoordinateSequence.Ordinates</span> has the <span class="xref">NetTopologySuite.Geometries.Ordinates.Z</span> flag).</li></ul>
+<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a>,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a>, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> (if <see cref="!:CoordinateSequence.Ordinates"></see> has the <see cref="!:Ordinates.Z"></see> flag).</li></ul>
 </p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
@@ -541,22 +541,22 @@ values will be used for <a class="xref" href="NetTopologySuite.IO.GpxTrack.html#
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">feature</code>'s <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span> is not an
-instance of <span class="xref">NetTopologySuite.Geometries.MultiLineString</span>.</p>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">feature</code>'s <see cref="!:IFeature.Geometry"></see> is not an
+instance of <see cref="!:MultiLineString"></see>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_NetTopologySuite_Features_IFeature_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(NetTopologySuite.Features.IFeature)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/new/master/doc/overwrite/new?filename=NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_IFeature_.md&amp;value=---%0Auid%3A%20NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(IFeature)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/NetTopologySuite/NetTopologySuite.IO.GPX/blob/master/src/NetTopologySuite.IO.GPX/NetTopologySuiteGpxFeatureConverter.cs/#L46">View Source</a>
   </span>
   <a id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint*"></a>
-  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_NetTopologySuite_Features_IFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(NetTopologySuite.Features.IFeature)">ToGpxWaypoint(IFeature)</h4>
-  <div class="markdown level1 summary"><p>Turns a <span class="xref">NetTopologySuite.Geometries.Point</span> <span class="xref">NetTopologySuite.Features.IFeature</span> into the <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a>
+  <h4 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_IFeature_" data-uid="NetTopologySuite.IO.NetTopologySuiteGpxFeatureConverter.ToGpxWaypoint(IFeature)">ToGpxWaypoint(IFeature)</h4>
+  <div class="markdown level1 summary"><p>Turns a <see cref="!:Point"></see> <see cref="!:IFeature"></see> into the <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a>
 instance that's equivalent to it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -575,9 +575,9 @@ instance that's equivalent to it.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NetTopologySuite.Features.IFeature</span></td>
+        <td><span class="xref">IFeature</span></td>
         <td><span class="parametername">feature</span></td>
-        <td><p>The <span class="xref">NetTopologySuite.Features.IFeature</span> to convert.</p>
+        <td><p>The <see cref="!:IFeature"></see> to convert.</p>
 </td>
       </tr>
     </tbody>
@@ -598,11 +598,11 @@ instance that's equivalent to it.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_NetTopologySuite_Features_IFeature__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Values from <span class="xref">NetTopologySuite.Features.IFeature.Attributes</span> with keys whose names match the names of
+  <h5 id="NetTopologySuite_IO_NetTopologySuiteGpxFeatureConverter_ToGpxWaypoint_IFeature__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Values from <see cref="!:IFeature.Attributes"></see> with keys whose names match the names of
 properties of <a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html">GpxWaypoint</a> will be used to populate those corresponding
 property values, with a few exceptions:</p>
-<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> comes from <span class="xref">NetTopologySuite.Geometries.Point.X</span>,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a> comes from <span class="xref">NetTopologySuite.Geometries.Point.Y</span>, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> comes from <span class="xref">NetTopologySuite.Geometries.Point.Z</span> (when it&apos;s set)</li></ul>
+<ul><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Longitude">Longitude</a> comes from <see cref="!:Point.X"></see>,</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_Latitude">Latitude</a> comes from <see cref="!:Point.Y"></see>, and</li><li><a class="xref" href="NetTopologySuite.IO.GpxWaypoint.html#NetTopologySuite_IO_GpxWaypoint_ElevationInMeters">ElevationInMeters</a> comes from <see cref="!:Point.Z"></see> (when it&apos;s set)</li></ul>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -625,8 +625,8 @@ property values, with a few exceptions:</p>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">feature</code>'s <span class="xref">NetTopologySuite.Features.IFeature.Geometry</span> is not an
-instance of <span class="xref">NetTopologySuite.Geometries.Point</span>.</p>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">feature</code>'s <see cref="!:IFeature.Geometry"></see> is not an
+instance of <see cref="!:Point"></see>.</p>
 </td>
       </tr>
     </tbody>
